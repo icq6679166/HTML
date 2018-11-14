@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>BLOCKUI</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/jq.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/block.css?v3" />
+
+<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="js/jquery.blockUI.js?v2.24"></script>
+<script type="text/javascript"> 
+$(document).ready(function() { 
+    $('#demo1').click(function() { 
+        $.blockUI({ message: $('#loginForm') }); 
+ 
+        setTimeout($.unblockUI, 2000); 
+    }); 
+});
+</script> 
+ 
+</head>
+ 
+<body>
+ 
+... 
+
+	<td><button id="demo1">Run</button><td>Blue Overlay</td>
+
+
+        <div id="loginForm" style="display:none">
+            <p><label>Username:</label><input type="text" name="demo1" /></p>
+            <p><label>Password:</label><input type="text" name="demo1" /></p>
+        </div>
+
+
+</body>
+</html>
+ 

@@ -1,0 +1,50 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="tb_multi">
+                <tr>
+                    <td width="5%" class="hd1">編號</td>
+                    <td width="22%" class="hd1">修改日</td>
+                    <td width="22%" class="hd1">修改申請書號碼</td>
+                    <td width="22%" class="hd1">修改通知書號碼</td>
+                    <td class="hd1">狀態</td>
+                    <td width="9%" class="hd1">功能</td>
+                </tr>
+                <tr>
+                    <td class="td_sn"><a href="javascript:void(0);" class="link">0</a></td>
+                    <td class="td_date">2010/12/31</td>
+                    <td class="ct"><a href="javascript:winopen('../Common/cm_modify_UCP_application_pop.html',700,630)" class="link">R100000012</a></td>
+                    <td class="ct"><a href="javascript:winopen('../Common/cm_modify_UCP_notice_pop.html',700,600)" class="link">RD10002154</a></td>
+                    <td class="lt">未到期</td>
+                    <td class="td_func"><a href="javascript:void(0);" class="btn_tb" title="檢視" onClick="winopen('../Common/cm_UCP_detail_forward.html',700,700)">檢視</a></td>
+                </tr>
+                <tr>
+                    <td class="td_sn"><a href="javascript:void(0);" class="link">1</a></td>
+                    <td class="td_date">2010/12/31</td>
+                    <td class="ct"><a href="javascript:winopen('../Common/cm_modify_UCP_application_pop.html',700,630)" class="link">R100000013</a></td>
+                    <td class="ct"><a href="javascript:winopen('../Common/cm_modify_UCP_notice_pop.html',700,600)" class="link">RD10002155</a></td>
+                    <td class="lt">已註銷</td>
+                    <td class="td_func"><a href="javascript:void(0);" class="btn_tb" title="檢視" onClick="winopen('../Common/cm_CreditDetail_Logouted.html',700,300)">檢視</a></td>
+                </tr>
+                <tr>
+                    <td class="td_sn"><a href="javascript:void(0);" class="link">2</a></td>
+                    <td class="td_date">2010/12/31</td>
+                    <td class="ct"><a href="javascript:winopen('../Common/cm_modify_UCP_application_pop.html',700,630)" class="link">R100000014</a></td>
+                    <td class="ct"><a href="javascript:winopen('../Common/cm_modify_UCP_notice_pop.html',700,600)" class="link">RD10002156</a></td>
+                    <td class="lt">已修改</td>
+                    <td class="td_func"><a href="javascript:void(0);" class="btn_tb" title="檢視" onClick="winopen('../Common/cm_UCP_detail_forward.html',700,700)">檢視</a></td>
+                </tr>
+                <tr>
+                    <td class="td_sn"><a href="javascript:void(0);" class="link">3</a></td>
+                    <td class="td_date">2010/12/31</td>
+                    <td class="ct"><a href="javascript:winopen('../Common/cm_modify_UCP_application_pop.html',700,630)" class="link">R100000015</a></td>
+                    <td class="ct"><a href="javascript:winopen('../Common/cm_modify_UCP_notice_pop.html',700,600)" class="link">RD10002157</a></td>
+                    <td class="lt">部分押匯</td>
+                    <td class="td_func"><a href="javascript:void(0);" class="btn_tb" title="檢視" onClick="winopen('../Common/cm_CreditDetail_Documentary.html',700,300)">檢視</a></td>
+                </tr>
+                <tr>
+                    <td class="td_sn"><a href="javascript:void(0);" class="link">4</a></td>
+                    <td class="td_date">2010/12/31</td>
+                    <td class="ct"><a href="javascript:winopen('../Common/cm_modify_UCP_application_pop.html',700,630)" class="link">R100000016</a></td>
+                    <td class="ct"><a href="javascript:winopen('../Common/cm_modify_UCP_notice_pop.html',700,600)" class="link">RD10002158</a></td>
+                    <td class="lt">全部押匯</td>
+                    <td class="td_func"><a href="javascript:void(0);" class="btn_tb" title="檢視" onClick="winopen('../Common/cm_CreditDetail_Documentary.html',700,300)">檢視</a></td>
+                </tr>
+            </table>

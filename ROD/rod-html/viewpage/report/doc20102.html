@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<link rel="stylesheet" href="../../static/lib/css/yui_reset.css" />
+	<link rel="stylesheet" href="../../static/lib/js/jquery/ui/css/custom-theme/jquery-ui-1.8.16.custom.css" />
+	<link rel="stylesheet" href="../../static/lib/js/jquery/plugin/jquery.jqGrid-4.2.0/css/ui.jqgrid.css" />
+	
+	<link rel="stylesheet" href="../../static/css/menu.css" />
+	<link rel="stylesheet" href="../../static/css/ui.jqreport.css" />
+	<link rel="stylesheet" href="../../static/css/ui.combobox.css" />
+	<link rel="stylesheet" href="../../static/css/ui.multiselect.css" />
+	<link rel="stylesheet" href="../../static/lib/js/jquery/plugin/formValidator/css/validationEngine.jquery.css" />
+	<!--[if lt IE 9]>
+	<script src="../../static/js/html5.js"></script>
+	<![endif]-->
+	<script src="../../static/lib/js/json3.min.js"></script>
+	<script src="../../static/lib/js/jquery/jquery-1.8.2.min.js"></script>
+	<script src="../../static/lib/js/jquery/ui/js/jquery-ui-1.8.23.custom.min.js"></script>
+	<script src="../../static/lib/js/jquery/plugin/jquery.jqGrid-4.2.0/js/i18n/grid.locale-zh.js"></script>
+	<script src="../../static/lib/js/jquery/plugin/jquery.jqGrid-4.2.0/js/jquery.jqGrid.min.js"></script>
+	<script src="../../static/lib/js/jquery/plugin/formValidator/languages/jquery.validationEngine-zh_TW.js"></script>
+	<script src="../../static/lib/js/jquery/plugin/formValidator/jquery.validationEngine.js"></script>
+	<script src="../../static/lib/js/jquery/plugin/ajaxfileupload/ajaxfileupload.js"></script>
+	<script src="../../static/lib/js/jquery/plugin/blockUI/jquery.blockUI.js"></script>
+	<script src="../../static/lib/js/jquery/plugin/combobox.js"></script>
+	<script src="../../static/lib/js/jquery/plugin/multiselect/locale/ui-multiselect-zh-tw.js"></script>
+	<script src="../../static/lib/js/jquery/plugin/multiselect/jquery.localisation-min.js"></script>
+	<script src="../../static/lib/js/jquery/plugin/multiselect/jquery.scrollTo-min.js"></script>
+	<script src="../../static/lib/js/common/common.properties.js"></script>
+	<script src="../../static/lib/js/common/common.js"></script>
+	<script src="../../static/lib/js/common/common.jqgrid.js"></script>
+	<script src="../../static/lib/js/common/common.jqreport.js"></script>
+	<script src="../../static/lib/js/common/common.combobox.js"></script>
+	<script src="../../static/js/common/cust.common.js"></script>
+	<script type="text/javascript" src="../../static/js/report/doc20102.js"></script>
+	<title>報表查詢</title>
+</head>
+<body>
+	<!-- viewer applet for print/download 
+	<applet id="rodApplet" name="rodApplet" mayscript="mayscript" code="com.iisigroup.rod.job.PrintJob.class" 
+		archive="rod-applet.jar" codebase="../../static/applet/" height="100" width="100">
+		<param name="scriptable" value="true" />
+	</applet>
+	-->
+	<div
+		class="fg-toolbar ui-widget-header ui-corner-all ui-helper-clearfix">
+			
+		<div class="fg-buttonset ui-helper-clearfix">
+			<table>
+				<tr>
+					<td>
+						<select id="fwDefault" class="ui-widget ui-corner-all" style="position: relative;">
+							<option selected="selected" value="1">1001</option>
+							<option value="2">1002</option>
+							<option value="3">1003</option>
+							<option value="4">1004</option>
+							<option value="5">1005</option>
+						</select>
+
+					</td>
+				</tr>
+			</table>
+		</div>
+			
+		<div class="fg-buttonset ui-helper-clearfix">
+			<table>
+				<tr>
+					<td>
+						<a id="lastPage" title="前一頁" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all" href="#">
+						<span class="ui-icon ui-icon-arrowthick-1-w"></span>
+						前一頁</a> 
+						<a id="nextPage" title="後一頁" class="fg-button ui-state-default fg-button-icon-solo ui-corner-all" href="#">
+						<span class="ui-icon ui-icon-arrowthick-1-e"></span>
+						後一頁</a>
+						<input id="pageInput" name="pageInput" value="1" size="1" />/690
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="fg-buttonset ui-helper-clearfix">
+			<table>
+				<tr>
+					<td style="width:350px;">
+						<a id="zoomin" title="放大"
+						class="fg-button ui-state-default ui-corner-all" href="#">放大</a> 
+						<a id="zoomout" title="縮小" 
+						class="fg-button ui-state-default ui-corner-all" href="#">縮小</a>
+						<!--
+						<div id="zoomVal" name="zoomVal" />
+						-->
+						<div class="ui-widget">
+							  <select id="zoomInput">
+							  	<option value="0.75">75%</option>
+								<option value="1">100%</option>
+								<option value="2">200%</option>
+								<option value="byWidth">頁寬</option>
+								<option value="byHeight">整頁</option>
+							 </select>
+						</div>
+						
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="fg-buttonset ui-helper-clearfix">
+			<table>
+				<tr>
+					<td>
+						<a id="search" title="查詢" class="fg-button ui-state-default ui-corner-all" href="#">查詢</a> 
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<!-- 標記 & 註釋
+		<div class="fg-buttonset ui-helper-clearfix">
+			<table>
+				<tr>
+					<td style="width:250;">
+						<a id="plainMark" title="標記" class="fg-button ui-state-default fg-button-icon-left ui-corner-all" href="#">
+							<span class="ui-icon ui-icon-pencil"></span>標記(<span id="plainMarkNum">0</span>)
+						</a> 
+						<a id="plainMarkClearAll" title="全部清除" class="fg-button ui-state-default ui-corner-all" href="#">全部清除</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="fg-buttonset ui-helper-clearfix">
+			<table>
+				<tr>
+					<td>
+					<a id="plainComment" title="註解"
+						class="fg-button ui-state-default fg-button-icon-left ui-corner-all"
+						href="#"><span class="ui-icon ui-icon-comment"></span>註解(<span
+							id="plainCommentNum">0</span>)</a> 
+					<a id="plainCommentClearAll"
+						title="全部清除" class="fg-button ui-state-default ui-corner-all"
+						href="#">全部清除</a>
+					<a id="print"
+						title="列印" class="fg-button ui-state-default ui-corner-all"
+						href="#">列印</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		-->
+		
+		<div class="fg-buttonset ui-helper-clearfix">
+			<table>
+				<tr>
+					<td style="width:350px">
+					<a id="print"
+						title="列印" class="fg-button ui-state-default ui-corner-all"
+						href="#">列印</a>
+					</td>
+					<a id="dlPdf"
+						title="下載PDF" class="fg-button ui-state-default ui-corner-all"
+						href="#">下載PDF</a>
+					</td>
+					
+					<a id="dlTxt"
+						title="下載TXT" class="fg-button ui-state-default ui-corner-all"
+						href="#">下載TXT</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<div id="watermarkDiv" class="watermark_box">
+		<img src="file:///C:/Users/Thomas/Desktop/logo_HNCB.gif" />HB0992 20130101192131&nbsp;<img src="file:///C:/Users/Thomas/Desktop/logo_HNCB.gif" />HB0992
+	</div>
+	
+	<div id="form-report-viewer" style="width: 100%; height: 100%;">
+		<div id="rptArea" name="rptArea" style="width: 100%; height: 100%;"></div>
+	</div>
+	
+	<div id="searchDialog" class="hide" title="查詢">
+		<form id="searchForm" onsubmit="return false;">
+			<table id="basicSetting" class="row-data">
+				<tr>
+					<th>尋找</th>						
+					<td>	
+					  <input id="keyword" name ="keyword" type="text" size="10" maxlength="10"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	
+	
+</body>
+</html>

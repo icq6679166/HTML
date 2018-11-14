@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function() {
+	var grid = $("#gridview").jqGrid({
+		localFirst: true,multiselect : true,height : 450,
+		colModel : [ 
+		{header : '群組代號',name:'groupId',width : 10,align : "left"},
+		{header : '群組名稱',name:'groupName',width : 20,align : "left"},
+		{header : '分行別',name:'branch',width : 10,align : "left"},
+		{header : '備註',name:'notes',width : 10,align : "left"}
+		],
+		ondblClickRow: function(){
+        	//var ret = grid.getSelRowDatas();
+        	//eDialog.dialog({title:'維護'}).dialog('open').find("#mform").injectData(ret);
+        }
+	}).addGridData([
+		['','0760-01(ALL)','商品規劃科(全行性報表)','全行','新增'],
+		['','0760-01(ONLY)','商品規劃科(單位專用報表)','本行','刪除'],
+		['','0920','南區區域中心','自訂','修改'],
+		['','@ACCD','會計科子目','本行','新增'],
+		['','@ATM','ATM','本行','新增']
+    ]);
+	
+	var qDialog = $("#qDialog") , eDialog = $("#eDialog");
+	qDialog.dialog({ //查詢畫面
+    	height: 200,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+	$("#qry").click(function(){
+		qDialog.dialog('open');
+    });
+	eDialog.dialog({ //維謢畫面height: 540
+    	height: 250,width: 700,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+    //撤回	
+	var rDialog = $("#rDialog")
+	
+		rDialog.dialog({ 
+    	height: 230,width: 500,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			rDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			rDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+		
+	
+    $("#approve").click(function(){
+
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length==0){
+			alert("請至少選一筆資料!");
+		}else{
+			
+			var i=0,msg="";
+			
+			for (i=0;i<selRowIds.length;i++)
+			 {
+				var row=grid.getRowData(selRowIds[i]);
+				msg=msg + row['groupId'] + "-" + row['groupName'] + "\n"; 	
+			 }
+						
+			alert("群組 ：\n" + msg + " 放行成功!!");
+		}	
+    });
+	
+    $("#reject").click(function(){
+		
+    	//rDialog.dialog({title:'撤回'}).dialog('open');
+		
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length==0){
+			alert("請至少選一筆資料!");
+		}else{
+			
+			var i=0,msg="";
+			
+			for (i=0;i<selRowIds.length;i++)
+			 {
+				var row=grid.getRowData(selRowIds[i]);
+				msg=msg + row['groupId'] + "-" + row['groupName'] + "\n"; 	
+			 }
+
+			
+			alert("群組 ：\n" + msg + " 撤回成功!!");
+		}	
+    });
+
+
+	
+    $(".multiselect").multiselect();
+	
+	//@
+	$('#groupIdAdd').keyup(function(){
+            if($('#groupIdAdd').val().indexOf("@")==0){
+				$("#labGroupId").text("(分行)");
+				eDialog.dialog({height:230});
+				$("#branchUI").hide();	
+				$("#groupRange").hide();
+			}else{
+				$("#labGroupId").text("(總行)");
+				eDialog.dialog({height:230});
+				$("#groupRange").show();
+			}
+     });
+	 
+	 //range
+	 $('input:radio[name=range]').change(function(){
+	 	
+		if($('input:radio[name=range]:checked').val()=="partial"){
+			eDialog.dialog({height:540});
+			$("#branchUI").show();
+		}
+		else {
+			eDialog.dialog({height:230});
+			$("#branchUI").hide();	
+		}		
+	 	//alert($('input:radio[name=range]:checked').val());
+	 });
+	
+	
+});
+
+</script>
+</head>
+<body>
+	<div class="tit">群組維護放行</div>
+	<div class="btns">
+		<button id="qry" type="button" class="btn1">查詢</button>
+        <button id="approve" type="button" class="btn1">放行</button>
+        <button id="reject" type="button" class="btn1">撤回</button>
+     </div>
+     <div id="gridview" />
+	 
+	 
+     <div id="qDialog" class="hide" title="查詢">
+     	<form id="qform" onsubmit="return false;">
+     	<table id="qTable" class="row-data">
+			<tr>
+				<th nowrap="nowrap">群組代號</th>						
+				<td>	
+				  <input id="groupId" name ="groupId" type="text" size="10" maxlength="10"/>
+				</td>			
+			</tr>
+			<tr>
+				<th>群組名稱</th>						
+				<td>	
+				  <input id="groupName" name ="groupName" type="text" size="20" maxlength="20"/>
+				</td>			
+			</tr>
+		</table>
+		</form>
+     </div>
+	 
+     <div id="eDialog" class="hide" class="維護">
+		<form id="mform" onsubmit="return false;">
+			<table id="eTable" class="row-data">
+			<tr>
+				<th>群組代號</th>						
+				<td>	
+				  <input id="groupIdAdd" name ="groupIdAdd" type="text" size="10" maxlength="10"/>
+				  <Label id="labGroupId"></Label>
+				</td>			
+			</tr>
+			<tr>
+				<th>群組名稱</th>						
+				<td>	
+				  <input id="groupNameAdd" name ="groupNameAdd" type="text" size="20" maxlength="20"/>
+				</td>			
+			</tr>
+			
+			
+			<tr id ="groupRange">
+				<th>查詢範圍</th>						
+				<td>	
+				  <input id="range1" name ="range" type="radio" value="self" checked="checked">本行</input>
+				  <input id="range2" name ="range" type="radio" value="partial">自訂</input>
+				  <input id="range3" name ="range" type="radio" value="all">全部</input>
+				</td>			
+			</tr>
+						
+			
+			<tr id ="branchUI" style="display:none">
+				<th>分行別</th>						
+				<td>	
+				  <select id="branch" class="multiselect" multiple="multiple" name="branch">
+			        <option value="0590" >0590-0590分行</option>
+			        <option value="1290" >1290-1290分行</option>
+			        <option value="1640" >1640-1640分行</option>
+			        <option value="0660" >0660-0660分行</option>
+					<option value="0650" >0650-0650分行</option>
+		      		</select> 
+				</td>			
+			</tr>
+		</table>
+		</form>
+	</div>
+	
+	<div id="rDialog" class="hide" title="撤回">
+     	<form id="rform" onsubmit="return false;">
+     	<table id="rTable" class="row-data">
+			<tr>
+				<th nowrap="nowrap">撤回原因</th>						
+				<td>	
+				  <textarea id="rejectReason" rows="5" cols="50"></textarea>
+				</td>			
+			</tr>
+		</table>
+		</form>
+     </div>
+	
+	
+	
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>BLOCKUI</title>
+<link rel="stylesheet" type="text/css" media="screen" href="css/jq.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/block.css?v3" />
+ 
+<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="js/jquery.blockUI.js?v2.24"></script>
+ <script type="text/javascript"> 
+    $(document).ready(function() { 
+ 
+        $('#test').click(function() { 
+            $.blockUI({ message: $('#question'), css: { width: '275px' } }); 
+        }); 
+ 
+        $('#yes').click(function() { 
+            // update the block message 
+             alert ('yes');
+            $.blockUI({ message: "<h1>WAIT 3s ....</h1>" ,fadeIn: 0}); 
+ 
+            $.ajax({ 
+                url: 'wait.php', 
+                cache: false, 
+                complete: function() { 
+                    // unblock when remote call returns 
+                    $.unblockUI(); 
+                } 
+            }); 
+        }); 
+ 
+        $('#no').click(function() { 
+            $.unblockUI(); 
+            return false; 
+        }); 
+ 
+    }); 
+</script> 
+ 
+</head>
+ 
+<body>
+   <input id="test" type="submit" value="Show Dialog" /> 
+ 
+... 
+ 
+<div id="question" style="display:none; cursor: default"> 
+        <h1>Would you like to contine?.</h1> 
+        <input type="button" id="yes" value="Yes" /> 
+        <input type="button" id="no" value="No" /> 
+</div> 
+ 
+ 
+</body>
+</html>
+ 

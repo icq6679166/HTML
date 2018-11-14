@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner2">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>新手上路</li>
+    <li>基金Q&A </li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">基金Q&A </span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+        <a name="QA_top"></a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <div class="QA_list"><a href="#QA1">申購篇</a></div>
+    <div class="QA_list"><a href="#QA2">贖回篇</a></div>
+    <div class="QA_list"><a href="#QA3">轉換篇</a></div>
+    <div class="QA_list"><a href="#QA4">收益分配篇</a></div>
+    <div class="QA_list"><a href="#QA5">網銀、語音篇</a></div>
+    <div class="QA_list"><a href="#QA6">外幣投資國外結構型債券篇</a></div> 
+<table class="QA_titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">  
+        <tr>  
+            <td><span class="tb_tit">觀念篇</span></td>
+      </tr>  
+    </table>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_QA">
+        <tr class="lv1">
+            <td>
+                <div class="question_1">
+                <b>Q1.</b>
+                <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a>
+                </div>
+                </td>
+        </tr>
+        <tr class="lv2 hide">
+            <td>
+            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+              <tr>
+                <td class="aw"><span class="answer">A：</span>
+                <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+                基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+              </tr>
+            </table>
+            </td>
+        </tr>
+      <tr class="lv1">
+        <td>
+                <div class="question_1">
+                <b>Q2.</b>
+                <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a>
+                </div>
+                
+        </td>
+        </tr>
+        <tr class="lv2 hide">
+          <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+            <tr>
+              <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+                基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+            </tr>
+          </table></td>
+        </tr>
+      <tr class="lv1">
+        <td>
+                <div class="question_1">
+                <b>Q3.</b>
+                <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a>
+                </div>
+                
+        </td>
+        </tr>
+        <tr class="lv2 hide">
+          <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+            <tr>
+              <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+                基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+            </tr>
+          </table></td>
+        </tr>
+    </table>
+<table class="QA_titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">  
+        <tr>  
+            <td><span class="tb_tit">贖回篇</span></td> 
+      </tr>  
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_QA">
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q1.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a> </div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q2.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a> </div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q3.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a> </div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+    <table class="QA_titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><a name="QA3"></a><span class="tb_tit">轉換篇</span></td>
+      </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_QA">
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q1.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a></div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q2.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a></div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q3.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a></div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+    <table class="QA_titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><a name="QA4"></a><span class="tb_tit">收益分配篇</span></td>
+        <td width="5%"><span class="top"><a href="#QA_top">&nbsp;</a></span></td>
+      </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_QA">
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q1.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a></div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q2.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a></div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q3.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a></div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+    <table class="QA_titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><a name="QA4"></a><span class="tb_tit">收益分配篇</span></td>
+        <td width="5%"><span class="top"><a href="#QA_top">&nbsp;</a></span></td>
+      </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_QA">
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q1.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a></div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q2.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a></div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr class="lv1">
+        <td><div class="question_1"> <b>Q3.</b> <a href="javascript:void(0)" onclick="tbDropDown(this,1)"><span>甚麼是共同基金?</span></a></div></td>
+      </tr>
+      <tr class="lv2 hide">
+        <td><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="tb_lv2">
+          <tr>
+            <td class="aw"><span class="answer">A：</span> <span class="word">共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同
+              基共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金共同基金甚麼是共同基金</span></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+</div>
+    
+    </div>
+    
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var grid, mform = $("#mform");
+		
+        grid = $("#gridview").jqGrid({
+            localFirst:true,multiselect:true,
+            sortname: 'codeType',sortorder: "desc",height: 450,
+            colModel: [
+			{header: '選單代號',name: 'codeType',width:20,align:"center"},
+			{header: '選單代號說明',name: 'codeTypeDesc',width:20,align:"center"},
+			{header: '選單值',name: 'codeValue',width:15},
+			{header: '值說明',name: 'codeDesc',width:25},
+			{header: '顯示順序',name: 'codeOrder',width: 10,align:"center"},
+			{header: '修改者', name: 'updater',width: 10,align:"center"},
+			{header: '修改時間',name: 'updateTime',width: 10,align:"center"}
+			],
+            ondblClickRow: function(rowid,iRow,iCol,e){
+            	//var ret = grid.getRowData(rowid);
+                //eDialog.dialog('open').find("#mform").injectData(ret).find("#type").val("");
+            }
+        });
+
+		
+        var eDialog = $("#editDialog") , qDialog = $("#qryDailog");
+		
+        eDialog.dialog({ //維護畫面
+        	height: 300,width: 500,modal: true,
+        	buttons:API.createJSON([{
+        		key:i18n.def.sure,
+        		value:function(){
+        			eDialog.dialog('close');
+					
+        		}
+        	},{
+        		key:i18n.def.close,
+        		value:function(){
+        			eDialog.dialog('close');
+        		}
+        	}])
+        });
+		
+        qDialog.dialog({
+        	height: 150,width: 350,modal: true,
+        	buttons:API.createJSON([{
+        		key:i18n.def.sure,
+        		value:function(){
+        			qDialog.dialog('close');
+					$("#gridview").clearGridData().addGridData([
+						["",'rptCycle','報表週期','D','日報','1','王大明','2012-12-31'],
+						["",'rptCycle','報表週期','M','月報','2','王大明','2012-12-31']
+					]);
+        		}
+        	},{
+        		key:i18n.def.close,
+        		value:function(){
+        			qDialog.dialog('close');
+        		}
+        	}])
+        });
+        $("#qry").click(function(){
+        	qDialog.dialog('open');
+        }).trigger('click');
+        // 新增
+        $("#add").click(function(){
+        	eDialog.dialog('open');
+        });
+		
+		//修改
+		$("#edit").click(function(){
+			var rowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+			
+			if(rowIds.length>1)
+			{
+				alert("只能選一筆資料!");
+			}
+			else if(rowIds.length == 0)
+			{
+				alert("請選一筆資料!");
+			}
+			else if(rowIds.length == 1) 
+			{
+				var rowData = grid.jqGrid ('getRowData', rowIds);
+				eDialog.dialog('open').find("#mform").injectData(rowData);
+			}
+		});
+		
+		
+		//刪除多筆
+	$("#delete").click(function(){
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length==0)
+		{
+			alert("請至少選一筆資料");	
+		}
+		else
+		{
+			var row;
+			var i,msg="";
+			
+			for(i=0; i<selRowIds.length; i++ )
+			{	
+				row=grid.getRowData(selRowIds[i])
+				msg = msg + row['codeType'] + "-" + row['codeTypeDesc'] + "-" + row['codeValue'] + "\n" ;
+			}			
+			alert("確定要刪除?  \n" + msg);	
+		}		
+    });			
+		
+		
+		
+	});
+	</script>
+</head>
+<body>
+	<div class="tit">下拉選單維護</div>
+	<div>
+		<div class="btns">
+			<button id="qry" type="button" class="btn1">查詢</button>
+			
+			
+			<button id="add" type="button" class="btn1">新增</button>
+			<button id="edit" type="button" class="btn1">修改</button>
+			<button id="delete" type="button" class="btn1">刪除</button>
+			<button id="export" type="button" class="btn1">匯出</button>
+			
+		</div>
+		
+		<div id="gridview"></div>
+		
+		<div id="qryDailog" class="hide" title="查詢">
+			<form id="qform" onsubmit="return false;">
+				<table class="row-data">
+					<tr>
+						<th nowrap="nowrap">選單代號</th>
+						<td><input type="text" id="codeType" name="codeType"
+							maxlength="32"  /></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div id="editDialog" class="hide" title="編輯" >
+			<form id="mform" onsubmit="return false;">
+				<input type="text" id="oid" name="oid" class="hide" />
+				<input type="text" id="mtype" name="mtype" class="hide" />
+				<table class="row-data">
+					<tr>
+						<th>✽選單代號</th>
+						<td><input type="text" id="codeType" name="codeType"
+							maxlength="32"  /></td>
+					</tr>
+					<tr>
+						<th nowrap>✽選單代號說明</th>
+						<td><input type="text" id="codeTypeDesc" name="codeTypeDesc"
+							maxlength="32" /></td>
+					</tr>
+					
+					<tr>
+						<th>✽選單值</th>
+						<td><input type="text" id="codeValue" maxlength="48"
+							name="codeValue"  />
+						</td>
+					</tr>
+					<tr>
+						<th>✽值說明</th>
+						<td><input type="text" id="codeDesc" name="codeDesc"
+							maxlength="100"  /></td>
+					</tr>
+					<tr>
+						<th>✽排序</th>
+						<td><input type="text" id="codeOrder" name="codeOrder"
+							maxlength="3" size="3"
+							 />
+						</td>
+					</tr>
+				</table>
+				<input type="hidden" id="locale" name="locale" value="zh_TW"/>
+				<input type="hidden" id="type" name="type" value=""/>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

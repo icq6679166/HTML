@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="inc/css/sso.css">
+<link rel="stylesheet" type="text/css" media="all" href="inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="inc/css/print.css">
+<script type="text/javascript" src="inc/js/base.js"></script>
+<script type="text/javascript" src="inc/js/sso.js"></script>
+<script type="text/javascript">
+
+</script> 
+<style type="text/css">
+
+</style>
+</head>
+
+<body class="sso">
+<div id="wrapper">
+    <div id="header"><div class="header_wp">
+            <div class="logo">
+                <h1><a href="html/sample/styleCenter.html" target="mainFrame"><img src="inc/img/layout/tcb_logo.gif"></a></h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li>
+
+                        <select name="lang" class="lang">
+                            <option>Language</option>
+                            <option>繁體</option>
+                            <option>簡體</option>
+                            <option>English</option>
+                        </select>
+                    </li>
+
+                </ul>
+            </div>
+        </div></div>
+    <div id="pageBody">
+        <div class="pageBody_wp">
+            <div class="sideRight"> 
+            	<div class="sso_login">           	
+                    <div id="sso_tabs">  
+                        <ul class="clearfix">  
+                            <li class="current">
+								<a href="javascript:void(0)" onClick="onTabClick();"><span class="tab1">企業網銀</span></a>
+
+                            </li>  
+                            <li>
+                            	<a href="javascript:void(0)" onClick="onTabClick();"><span class="tab2">個人網銀</span></a>
+                            </li>
+                        </ul>  
+                    </div>  
+                    <div>
+                        <table class="sso_loginForm" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="hd1">身分證號/統一編號</td>
+
+                                    <td><input type="text" size="17"></td>
+                                    </tr>
+                                <tr>
+                                    <td class="hd1">網路連線代號</td>
+                                    <td><input type="text" size="17"></td>
+                                    </tr>
+                                <tr>
+                                    <td class="hd1">網路連線密碼</td>
+
+                                    <td><input type="text" size="17"></td>
+                                    </tr>
+                                <tr>
+                                  <td class="hd1">安控機制</td>
+                                  <td colspan="2">
+                                    <select name="sel" onChange="tbView(this,this.value)">
+                                        <option value="#" selected>===請選擇===</option>
+                                       <option value="0,1,2,3">憑證認證</option>
+
+                                       <option value="all">OTP認證</option>
+                                       <option value="0,1,2,3">晶片金融卡認證</option>
+                                    </select></td>
+                                </tr>
+                                <tr class="hide">
+                                  <td class="hd1">OTP密碼</td>
+                                  <td>
+
+                                  	<div style="float:left; padding:2px 3px 0 0;">
+                                    <input type="password" id="password" size="8" style="padding:0;">  
+                                   </div>
+                                   <div> 
+                                    <a href="javascript:void(0);" class="btn_keyBoard" onclick="keyBoard(this)"><span> </span></a>          
+                                        <div id="keyBoard_pop" class="keyBoard hide"> 
+                                        <div align="right">  
+                                        <a href="javascript:void(0);" class="btn_keyBoard_close" onclick="addClass(gets('#keyBoard_pop'),'hide')">close</a>  
+                                        </div>  
+                                            <div id="container">
+                                                <ul id="keys">
+
+                                                <div id="nums">
+                                                    <li class="num">1</li>
+                                                    <li class="num">2</li>
+                                                    <li class="num">3</li>
+                                                    <li class="num">4</li>
+                                                    <li class="num">5</li>
+                                                    <li class="num">6</li>
+                                                    <li class="num">7</li>
+                                                    <li class="num">8</li>
+                                                    <li class="num">9</li>
+                                                    <li class="num">0</li>
+                                                </div>
+                                                    <li class="ltr">a</li>
+                                                    <li class="ltr">b</li>
+                                                    <li class="ltr">c</li>
+                                                    <li class="ltr">d</li>
+                                                    <li class="ltr">e</li>
+                                                    <li class="ltr">f</li>
+                                                    <li class="ltr">g</li>
+                                                    <li class="ltr">h</li>
+                                                    <li class="ltr">i</li>
+                                                    <li class="ltr">j</li>
+                                                    <li class="ltr">k</li>
+                                                    <li class="ltr">l</li>
+                                                    <li class="ltr">m</li>
+                                                    <li class="ltr">n</li>
+                                                    <li class="ltr">o</li>
+                                                    <li class="ltr">p</li>
+                                                    <li class="ltr">q</li>
+                                                    <li class="ltr">r</li>
+                                                    <li class="ltr">s</li>
+                                                    <li class="ltr">t</li>
+                                                    <li class="tab" onClick="shuffleAll(this);">更 新</li>
+                                                    <li class="ltr">u</li>
+                                                    <li class="ltr">v</li>
+                                                    <li class="ltr">w</li>
+                                                    <li class="ltr">x</li>
+                                                    <li class="ltr">y</li>
+                                                    <li class="ltr">z</li>
+                                                    <li class="upper" id="upc" onClick="toUp(this);">大 寫</li>
+                                                    <li class="submit" onClick="login('main.html');">登 入</li>
+                                                    <li class="refresh" onClick="clearPassword();">清 除</li>
+                                                </ul>
+                                            </div>                                      
+                                    	</div>
+                                    </div>
+                                  </td>
+                                </tr>
+                            </table>
+                            
+                            <div class="ssoBtn">
+                                <a href="main.html" class="btn_submit">登入</a>
+                                <a href="#" class="btn_submit">清除</a>
+                            </div>
+                    </div> 
+                </div> 
+                
+                <div align="center">
+                	<a href="javascript:void(0);"><img src="inc/img/sso/webAtm.gif"/></a>
+                </div>          
+            </div>            
+            <div class="ssoContent">
+            	<div class="ssoContent_head">
+                	<span class="ssoContent_front">
+                    	<span class="ssoContent_end"></span>
+                    </span>     	
+                </div>
+                
+                <div id="ssoBanner">
+                    <table class="sso_banner_cont">
+                        <tr>
+                        <td class="sso_banner_btn_L">
+                        	<div id="prev"><a href="javascript:void(0);" onClick="prev_lst();" class="enabled_L">&nbsp;</a></div>
+                        </td>
+                        <td width="90%" align="center">
+                        <div id="img_container">
+                            <ul>
+                                <li class="current">
+                                    <a href="javascript:void(0)" class="link" onClick="winopen('html/sso/QA.html',700,650)">
+                                	<img src="inc/img/sso/banner/01.gif"/>
+                                    </a>
+                                </li>
+                                <li class="current">
+                                	<a href="http://cs.tcb-bank.com.tw/fund2011/" target="_blank">
+                                	<img src="inc/img/sso/banner/02.gif"/>
+                                    </a>
+                                </li>
+                                <li class="current">
+                                	<a href="javascript:void(0)" class="link" onClick="winopen('html/sso/demo.html',700,650)">
+                                	<img src="inc/img/sso/banner/03.gif"/>
+                                    </a>
+                                </li>
+                                <li>
+                                	<a href="javascript:void(0);">
+                                	<img src="inc/img/sso/banner/04.gif"/>
+                                    </a>
+                                </li>
+                                <li>
+                                	<a href="javascript:void(0);">
+                                	<img src="inc/img/sso/banner/05.gif"/>
+                                    </a>
+                                </li>     
+                            </ul>  
+                        </div>
+                        </td>
+                        <td class="sso_banner_btn_L">
+                        	<div id="next"><a href="javascript:void(0);" onClick="next_lst();" class="enabled_R">&nbsp;</a></div>
+                        </td>
+                        </tr>
+                    </table>
+                </div>   
+                <div class="ssoBoard">
+                	<span class="ssoBoard_more">
+                        <a href="javascript:void(0)" class="btn_more" onClick="winopen('html/sso/msg_pop.html',600,330)">more</a>
+                    </span>
+                	<h1>合庫快訊</h1>                    
+                    <span class="ssoBoardLine"></span>
+                	<div><a href="javascript:void(0)" class="link" onClick="winopen('html/sso/msg_pop.html',600,330)">100年度個人網路銀行優惠跨行轉帳手續費每筆新臺幣10元(優惠至100年6月30日)</a></div>
+                    <div><a href="javascript:void(0)" class="link" onClick="winopen('html/sso/msg_pop.html',600,330)">自100年1月24日起，本行企業網路銀行調整200萬元(含)以下跨行帳手續費為每筆新臺幣15元</a></div>
+                    <div><a href="javascript:void(0)" class="link" onClick="winopen('html/sso/msg_pop.html',600,330)">網路銀行真方便，多道防線更安全。</a></div>
+                    <div><a href="javascript:void(0)" class="link" onClick="winopen('html/sso/msg_pop.html',600,330)">即日起合庫開辦台北市、台北縣、台南市及高雄市之「代繳路邊停車費服務」 </a></div>
+                    <div><a href="javascript:void(0)" class="link" onClick="winopen('html/sso/msg_pop.html',600,330)">本行網路銀行繳費/稅交易安全機制變更公告。 </a></div>
+                    <div><a href="javascript:void(0)" class="link" onClick="winopen('html/sso/msg_pop.html',600,330)">網路銀行外匯綜定存款利率加碼優惠，971201開始囉！！ 網路銀行外匯綜定存款利率加碼優惠，971201開始囉！！</a></div>
+                </div>
+
+    		</div>           
+        </div>
+    </div>
+    <!--footer--> 
+    <div id="footer">
+        <p> <a href="javascript:void(0)" onclick="winopen('../../../web/html/security.html')">安全宣告</a> . <a href="javascript:void(0)" onclick="winopen('../../../web/html/responsibility.html')">免責宣言</a> . <a href="javascript:void(0)" onclick="winopen('../../../web/html/privacy.html')">隱私權保密政策聲明</a> . <a href="javascript:void(0)" onclick="winopen('../../../web/html/shelter.html')">安全防護注意事項</a> </p>
+
+        <p>合作金庫銀行　版權所有 © 2011 TCB BANK. All Rights Reserved. 客服中心電話：886-800-033-175, 886-4-2227-3131</p>
+        <p>建議瀏覽器使用IE6.0 以上版本，1024x768螢幕解析度瀏覽。</p>
+    </div>    
+</div>
+</body>
+</html>

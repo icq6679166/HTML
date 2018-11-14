@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+    var grid = $("#gridview").jqGrid({
+    	localFirst:true,multiselect:true,height:450,
+    	sortname: 'schId',sortorder: "asc",
+        colModel: [
+		{header: '是否啟用',name: 'isEnabled',width: 15,align: "center"},
+		{header: '排程代號',name: 'schId',width: 40}, 
+		{header: '排程說明',name: 'schDesc',width: 60}, 
+		{header: '類別',name: 'schType1',width: 20}, 
+		{header: '修改者',name: 'updater',width: 20,align: "center"}, 
+		{header: '修改時間',name: 'updateTime',width: 20,align: "center"}
+		],
+        ondblClickRow: function(){
+            var ret = grid.getSelRowDatas();
+            eDialog.find("#schId").readOnly(true);
+        	eDialog.dialog('open').find("#mform").injectData(ret);
+        }
+    });
+
+	
+    var eDialog = $("#editDialog") , qDialog = $("#qryDailog") ;
+    
+	eDialog.find("input[name=schType]").click(function(){
+    	var v = $(this).val();
+    	eDialog.find(".schType"+v).show().end().find(".schType"+ (v=='C' ? 'T' : 'C')).hide();
+    }).end().find("input[name=isNotify]").click(function(){
+    	eDialog.find(".notify")[$(this).val()=='Y' ? 'show' : 'hide']();
+    });
+    
+	eDialog.dialog({ //維護畫面
+    	height: 560,width: 650,modal: true,
+    	close:function(){
+    		eDialog.find("#mform").reset().find(".hide").hide().siblings(".show").show();
+    	},
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	}])
+    });
+    qDialog.dialog({ //查詢畫面
+    	height: 150,width: 350,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+					['','Y','SCH0001','LoadRptData','Cron(週期)','SYSTEM','2012-12-31 14:21'],
+					['','Y','SCH0002','HouseKeeping','Timer(區間)','SYSTEM','2012-12-31 14:21']
+				]);
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+    
+	/*
+    $(".btns").find("#add").click(function(){ //新增
+    	eDialog.dialog('open').find("#schId").readOnly(false);
+    }).end().find("#delete").click(function(){ //刪除
+    	var ret = grid.getSelRowDatas();
+		if (ret) {
+            API.showConfirmMessage(i18n.def.actoin_001, function(data){
+                
+            });
+        } else {
+            API.showErrorMessage(i18n.def.grid_selector);
+        }
+    }).end().find("#qry").click(function(){ //查詢
+    	qDialog.dialog('open');
+    });
+	*/
+	
+	//查詢
+	$("#qry").click(function(){ 
+    	qDialog.dialog('open');
+    }).trigger('click');
+	
+	//新增
+	$("#add").click(function(){ 
+    	eDialog.dialog('open').find("#schId").readOnly(false);
+    });
+	
+	//修改
+	$("#edit").click(function(){ 
+ 		
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length==0)
+		{
+			alert("請選一筆資料");	
+		}
+		else if(selRowIds.length>1) 
+		{
+			alert("只能選一筆資料");
+		}
+		else if(selRowIds.length==1) 
+		{
+			var row=grid.getRowData(selRowIds[0]);
+			
+			if(row['isEnabled']=='Y') 
+			{
+				$('input[name="isEnabled"]')[0].checked = true;
+			}
+			else 
+			{
+				$('input[name="isEnabled"]')[1].checked = true;
+			}
+
+			$("#editSchId").val(row['schId']);
+			$("#editSchDesc").val(row['schDesc']); //'LoadRptData'
+			
+			//選定select 中的值
+			$("#jobId").children().each(function()
+			{
+				if(row['schId'] == "SCH0001") 
+				{
+					if ($(this).text()== "LoadRptData-資料轉檔")
+					{
+	    				$(this).attr("selected",true);
+					}				
+				}
+				else
+				{
+					if ($(this).text()== "HouseKeeping-清檔作業")
+					{
+	    				$(this).attr("selected",true);
+					}				
+					
+				}				
+			});
+			// ===============			
+			
+			
+			if(row['schType1'] == "Cron(週期)")
+			{
+				$('input[name="schType"]')[0].checked = true;
+				$("#cronExpression").val("0 0 12 * * *");
+			}
+			else
+			{
+				$('input[name="schType"]')[1].checked = true;
+				$("#cronExpression").val("");
+			}
+			eDialog.dialog('open');
+		}
+    });	
+
+	//刪除多筆
+	$("#delete").click(function(){
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length==0)
+		{
+			alert("請至少選一筆資料");	
+		}
+		else
+		{
+			var row;
+			var i,msg="";
+			
+			for(i=0; i<selRowIds.length; i++ )
+			{	
+				row=grid.getRowData(selRowIds[i])
+				msg = msg + row['schId'] + "-" + row['schDesc'] + "\n" ;
+			}			
+			alert("確定要刪除?  \n" + msg);	
+		}		
+    });				
+
+
+
+	
+	
+});
+</script>
+</head>
+<body>
+	<div class="tit">排程維護</div>
+	<div class="btns">
+		<button id="qry" type="button" class="btn1">查詢</button>
+		<button id="add" type="button" class="btn1">新增</button>
+		<button id="edit" type="button" class="btn1">修改</button>
+		<button id="delete" type="button" class="btn1">刪除</button>
+	</div>
+	<div id="gridview"></div>
+	<div id="qryDailog" class="hide" title="查詢">
+		<form id="qform" onsubmit="return false;">
+			<table class="row-data">
+				<tr>
+					<th nowrap="nowrap">排程代號</th>
+					<td><input type="text" id="schId" name="schId" maxlength="80" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	
+	<div id="editDialog" class="hide" title="維護" >
+		<form id="mform" onsubmit="return false;">
+		<table class="row-data">
+			<tr>
+				<th>✽排程代號</th>
+				<td><input type="text" id="editSchId" name="editSchId" maxlength="80" class="validate[required]" /></td>
+			</tr>
+			<tr>
+				<th>說明</th>
+				<td><input type="text" id="editSchDesc" name="editSchDesc" size="70" maxlength="300" class="validate[funcCall[maxUTF8[300]]]" /></td>
+			</tr>
+			<tr>
+				<th>JOB代號</th>
+				<td><select id="jobId" name="jobId">
+					<option>LoadRptData-資料轉檔</option>
+					<option>HouseKeeping-清檔作業</option>
+				</select></td>
+			</tr>
+			<tr>
+				<th>是否啟用</th>
+				<td><label><input type="radio" id="isEnabled1" name="isEnabled" value="Y" />是</label>
+					<label><input type="radio" id="isEnabled2" name="isEnabled" value="N" checked="checked"/>否</label></td>
+			</tr>
+			<!--
+			<tr>
+				<th>執行主機</th>
+				<td><select id="exeHost" name="exeHost">
+					<option>localhost-本機</option>
+				</select></td>
+			</tr>
+			-->
+			<tr>
+				<th>執行參數</th>
+				<td><textarea id="jobData" name="jobData" cols="70" rows="2" maxlength="2000" class="validate[funcCall[maxUTF8[2000]]]" ></textarea><br/>
+					Ex.key=value,key2=value2</td>
+			</tr>
+			<tr>
+				<th>優先順序</th>
+				<td><input type="text" id="priority" name="priority" value="5" size="5" maxlength="10" class="integer"/></td>
+			</tr>
+			<tr>
+				<th>類別</th>
+				<td><label><input type="radio" id="schType1" name="schType" value="C" checked="checked"/>Cron(週期)</label>
+					<label><input type="radio" id="schType2" name="schType" value="T" />Timer(區間)</label></td>
+			</tr>
+			<tr class="schTypeC show">
+				<th>執行週期</th>
+				<td><input type="text" id="cronExpression" name="cronExpression" size="30" maxlength="120"/>(<a target="_blank" href="http://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm">說明</a>)</td>
+			</tr>
+			<tr class="schTypeC show">
+				<th>時區代號</th>
+				<td><select id="timeZoneId" name="timeZoneId">
+					<option>中原標準時間</option>
+				</select></td>
+			</tr>
+			<tr class="schTypeT hide">
+				<th>時間區間</th>
+				<td><input type="text" id="repeatInterval" name="repeatInterval" size="10" maxlength="10" class="integer"/>
+					秒
+				</td>
+			</tr>
+			<tr class="schTypeT hide">
+				<th>重覆次數</th>
+				<td><input type="text" id="repeatCount" name="repeatCount" size="10" maxlength="10" value="0" class="integer"/></td>
+			</tr>
+			<tr>
+				<th>結果通知</th>
+				<td><label><input type="radio" id="isNotify1" name="isNotify" value="Y" />是</label>
+					<label><input type="radio" id="isNotify2" name="isNotify" value="N" checked="checked"/>否</label></td>
+			</tr>
+			<tr class="notify hide">
+				<th>JOB執行結果</th>
+				<td>
+					
+				</td>
+			</tr>
+			<tr class="notify hide">
+				<th>收信人</th>
+				<td><textarea id="notifyTo" name="notifyTo" cols="70" rows="2" maxlength="200" class="validate[funcCall[maxUTF8[200]]]" ></textarea><br/>
+					以「,」分隔</td>
+			</tr>
+		</table>
+		</form>
+	</div>
+</body>
+</html>

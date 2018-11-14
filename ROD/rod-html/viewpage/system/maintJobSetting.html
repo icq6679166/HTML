@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+    var grid = $("#gridview").jqGrid({
+    	localFirst:true,multiselect:false,height:450,
+    	sortname: 'jobId',sortorder: "asc",
+        colModel: [
+		{header: ' ',name: 'jobStatus',width: 5,align:'center',sortable:false},
+		{header: '工作代號',name: 'jobId',width: 20},
+		{header: '工作說明',name: 'jobDesc',width: 30},
+		{header: 'Job設定檔路徑',name: 'jobResource',width: 30},
+		{header: '修改者',name: 'updater',width: 15,align: "center"}, 
+		{header: '修改時間',name: 'updateTime',width: 15,align: "center"}
+		],
+        ondblClickRow: function(){
+            var ret = grid.getSelRowDatas();
+            eDialog.dialog('open').find("#mform").injectData(ret);
+        }
+    });
+		
+    var eDialog = $("#editDialog") , qDialog = $("#qryDailog") , exeDialog = $("#exeDailog");
+    eDialog.dialog({ //維護畫面
+    	height: 250,width: 650,modal: true,
+    	close:function(){
+    		eDialog.find("#mform").reset();
+    	},
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	}])
+    });
+    qDialog.dialog({ //查詢畫面
+    	height: 150,width: 350,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+				['<span class="r-icon r-icon-v"/>','LoadRptData','資料轉檔','classpath:batch/jobs/convert-job.xml','SYSTEM','2012-12-31 14:21'],
+				['<span class="r-icon r-icon-x"/>','HouseKeeping','清除過期檔','classpath:batch/jobs/clean-job.xml','SYSTEM','2012-12-31 14:21']
+				]);
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+    exeDialog.dialog({ //手動執行畫面
+    	height: 320,width: 500,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			exeDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			exeDialog.dialog('close');
+    		}
+    	}])
+    });
+    $(".btns").find("#add").click(function(){ //新增
+    	eDialog.dialog('open');
+    }).end().find("#delete").click(function(){ //刪除
+    	
+    }).end().find("#qry").click(function(){ //查詢
+    	qDialog.dialog('open');
+    }).trigger('click').end().find("#jobLoad").click(function(){ //重新註冊
+    	var ret = grid.getSelRowDatas();
+    	if (ret){
+    		
+    	} else {
+            API.showErrorMessage(i18n.def.grid_selector);
+    	}
+    }).end().find("#jobExe").click(function(){//手動執行
+    	var ret = grid.getSelRowDatas();
+    	if (ret){
+    		exeDialog.dialog('open').find("#exeJobId").html(ret.jobId);
+    	} else {
+            API.showErrorMessage(i18n.def.grid_selector);
+    	}
+    });
+    
+    exeDialog.find("#jglp").click(function(){//取得最後一次的執行參數
+    	exeDialog.find("#jobParams").val("param=xxxxxx");
+    });
+});
+</script>
+</head>
+<body>
+	<div class="tit">JOB維護</div>
+	<div class="btns">
+		<button id="qry" type="button" class="btn1">查詢</button>
+		<button id="add" type="button" class="btn1">新增</button>
+		<button id="delete" type="button" class="btn1">刪除</button>
+		<button id="jobLoad" type="button" class="btn1">重新註冊</button>
+		<button id="jobExe" type="button" class="btn1">手動執行</button>
+	</div>
+	<div id="gridview"></div>
+	<div id="qryDailog" class="hide" title="查詢">
+		<form id="qform" onsubmit="return false;">
+			<table class="row-data">
+				<tr>
+					<th nowrap="nowrap">排程代號</th>
+					<td><input type="text" id="jobId" name="jobId" maxlength="32" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div id="editDialog" class="hide" title="維護" >
+		<form id="mform" onsubmit="return false;">
+		<table class="row-data">
+			<tr>
+				<th>工作代號</th>
+				<td><input type="text" id="jobId" name="jobId" maxlength="32" class="validate[required]" /></td>
+			</tr>
+			<tr>
+				<th>Job設定檔路徑</th>
+				<td><span id="jobsRoot"></span><input type="text" id="jobResource" name="jobResource" size="70" maxlength="100" class="validate[required]" /></td>
+			</tr>
+			<tr>
+				<th>說明</th>
+				<td><textarea id="jobDesc" name="jobDesc" cols="70" rows="2" maxlength="300" class="validate[required,funcCall[maxUTF8[300]]]" ></textarea></td>
+			</tr>				
+		</table>
+		</form>
+	</div>
+	<div id="exeDailog" class="hide" title="執行結果">
+		<form id="exeform" onsubmit="return false;">
+			<table class="row-data">
+				<tr>
+					<th>工作代號</th>
+					<td><span class="filed" id="exeJobId"></span></td>
+				</tr>
+				<tr>
+					<th>執行參數						
+					</th>
+					<td><textarea id="jobParams" name="jobParams" cols="50" rows="4" maxlength="1000" class="validate[funcCall[maxUTF8[1000]]]" ></textarea>
+						<div class="memo">keyA=valueA<br/>keyB=valueB</div>
+						<button id="jglp" type="button" class="btn1">取得最後一次的執行參數</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

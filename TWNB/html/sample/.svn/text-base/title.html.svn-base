@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" href="inc/sample.css">
+<script type="text/javascript" src="inc/jquery-1.4.4.min.js"></script>
+<link type="text/css" rel="stylesheet" href="inc/SyntaxHighlighter/Styles/SyntaxHighlighter.css">
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shCore.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushCss.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript" src="inc/sample.js"></script>
+<script type="text/javascript">
+/*function resize(){
+	var ifr = parent.document.getElementsByTagName('iframe');
+    if(ifr){ifr[0].style.height = document.body.clientHeight+'px'}
+}
+addOnloadEvent(function(){
+	resize()
+})*/
+</script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div class="sample">
+
+
+<div class="tabMod1">
+	<h1>頁面主標題</h1>
+    <p class="detail">.trans_tit</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">要事提醒</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>        
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;div class="hbox"&gt;
+    &lt;div class="fl"&gt;
+        &lt;span class="trans_tit"&gt;要事提醒&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="fl"&gt;
+        &lt;a href="#" class="btn_addCommon"&gt;加入常用&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class="fr"&gt;
+        &lt;div class="commonFunc"&gt;
+            &lt;select name="commonFunc"&gt;
+                &lt;option&gt;--常用功能--&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="clear"&gt;&lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+        </li>
+    </ul>
+</div>    
+<div class="tabMod1">
+	<h1>頁面標題</h1>
+    <p class="detail">.<span class="html">page_tit</span></p>
+	<ul class="tabmenu clearfix">
+    <li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr class="page_bg">
+        <td><span class="page_tit">基金查詢</span></td>
+        <td class="rt"><a href="javascript:void(0);" class="btn_print" title="友善列印" onClick="winopen('popup.html',600,300)">友善列印</a></td>								
+    </tr>
+</table>      
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr class="page_bg"&gt;
+        &lt;td&gt;&lt;span class="page_tit"&gt;基金查詢&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="rt"&gt;&lt;a href="javascript:void(0);" class="btn_print" title="友善列印" onClick="winopen('popup.html',600,300)"&gt;友善列印&lt;/a&gt;&lt;/td&gt;								
+    &lt;/tr&gt;
+&lt;/table&gt;   
+
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+	<h1>表格標題</h1>
+    <p class="detail">.tb_tit</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><span class="tb_tit">交易明細查詢</span></td>
+        <td class="rt"><a href="javascript:void(0);" class="btn_print" title="友善列印" onClick="winopen('popup.html',600,300)">友善列印</a></td>								
+    </tr>
+</table>    
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;span class="tb_tit"&gt;交易明細查詢&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="rt"&gt;&lt;a href="javascript:void(0);" class="btn_print" title="友善列印" onClick="winopen('popup.html',600,300)"&gt;友善列印&lt;/a&gt;&lt;/td&gt;								
+    &lt;/tr&gt;
+&lt;/table&gt;      
+
+            </pre>
+        </li>
+    </ul>
+</div>
+
+
+<div class="tabMod1">
+	<h1>popupu頁面標題</h1>
+    <p class="detail">.popup_tit</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><span class="popup_tit">要事查詢</span></td>
+        <td class="rt"><a href="javascript:void(0);" class="btn_print" title="友善列印" onClick="winopen('popup.html',600,300)">友善列印</a></td>								
+    </tr>
+</table>        
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&lt;span class="popup_tit"&gt;要事查詢&lt;/span&gt;&lt;/td&gt;
+        &lt;td class="rt"&gt;&lt;a href="javascript:void(0);" class="btn_print" title="友善列印" onClick="winopen('popup.html',600,300)"&gt;友善列印&lt;/a&gt;&lt;/td&gt;								
+    &lt;/tr&gt;
+&lt;/table&gt; 
+            </pre>
+        </li>
+    </ul>
+</div>
+
+</div><!--sample-->
+<script language="javascript">  
+dp.SyntaxHighlighter.ClipboardSwf = 'inc/SyntaxHighlighter/Scripts/clipboard.swf';  
+dp.SyntaxHighlighter.HighlightAll('code');  
+</script>  
+</body>
+</html>

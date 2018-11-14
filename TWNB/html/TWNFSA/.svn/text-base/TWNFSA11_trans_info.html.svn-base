@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>國內信用狀申請</li>
+    <li>國內信用狀押匯交易</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">國內信用狀押匯交易</span>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul>
+            <li>請確認下列交易資訊</li>
+        </ul>
+    </div>
+</div>
+<dl id="step" class="clearfix">
+    <dt><span>押匯資料</span></dt>
+    <dt><span>填寫匯票</span></dt>
+    <dt><span>資料確認</span></dt>
+    <dt class="current"><span>結果頁</span></dt>                 
+</dl>
+<div class="pageCont">
+ <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+    <tr>
+        <td class="hd1" width="20%">
+            交易資訊 </td>
+        <td width="80%">
+            <div class="trans_fail">申請失敗 ，錯誤原因…</div>
+            <div class="trans_succ">申請成功，您的押匯申請號碼為：N09300001</div>
+            </td>
+    </tr>
+</table>
+    <div class="btnBlock">
+        <a href="TWNFSA11_list.html" class="btn_submit">回功能首頁</a>
+        <a href="../TWNCUQ/TWNCUQ_todo_list.html" class="btn_submit" onClick="parent.jsMenu.toggleMenu([0,1]);">回待辦事項</a>
+    </div>
+</div>
+ 
+</div>
+</body>
+</html>

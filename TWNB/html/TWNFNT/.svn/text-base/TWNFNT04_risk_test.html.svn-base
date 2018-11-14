@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+        <li>投資理財</li>
+        <li>基金交易</li>
+    <li>轉換</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">轉換</span>
+    </div>
+    <div class="fl">
+        <a href="javascript:void(0);" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul>
+        	<li class="highLight">投資屬性：穩健型</li>
+            <li>請填寫以下問題，並按「計算」鈕可得知您的投資屬性。</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont"><!-- #BeginLibraryItem "/Library/risk_test.lbi" --><table border="0" cellpadding="0" cellspacing="0" dir="ltr" width="100%" class="tb_single">
+        <tr>
+            <td class="hd4">1. 請問您的年齡：</td>
+        </tr>
+		<tr>
+			<td><input type="radio" name="rad"> a.  24 歲以下 / 66 歲以上</td>
+		</tr>
+        <tr>
+            <td><input type="radio" name="rad" checked> b.  56~65歲</td>
+		</tr>
+        <tr>
+            <td><input type="radio" name="rad"> c.  41~55歲</td>
+		</tr>
+        <tr>
+            <td><input type="radio" name="rad"> d.  25~40歲</td>
+		</tr>
+        <tr>
+            <td class="hd4">2. 您的投資目的為何？(※可複選，惟計分時以分數最高之選項計之)</td>
+        </tr>
+		<tr>
+			<td><input type="checkbox" checked> a.  子女教育或退休準備</td>
+		</tr>
+        <tr>
+			<td><input type="checkbox"> b.  購置不動產</td>
+		</tr>
+        <tr>
+			<td><input type="checkbox" checked> c.  資產配置/節稅規劃</td>
+		</tr>
+        <tr>
+			<td><input type="checkbox"> d.  閒置資金運用/資產累積</td>
+		</tr>
+		<tr>
+            <td class="hd4">3. 您的投資經驗為何？(※b、c、d 可複選，惟計分時以分數最高之選項計之)</td>
+        </tr>
+		<tr>
+			<td><input type="checkbox" checked> a.  沒有任何投資經驗</td>
+		</tr>
+        <tr>
+			<td><input type="checkbox"> b.  保險、外幣存款</td>
+		</tr>
+        <tr>
+			<td><input type="checkbox"> c.  基金、債券、房地產</td>
+		</tr>
+        <tr>
+			<td><input type="checkbox"> d.  股票、期貨、跟會、衍生性金融商品</td>
+		</tr>
+        <tr>
+            <td class="hd4">4. 您有多久的投資理財經驗？</td>
+        </tr>
+	</table><!-- #EndLibraryItem --><div class="btnBlock">
+        <a href="javascript:void(0);" class="btn_submit" onClick="jmask('#box',400,125)">計算</a>  
+        <a href="TWNFNT04_risk_test_result_final.html" class="btn_submit">送出</a>      
+    </div>
+    
+    <div id="box" class="mask">
+    <div class="mask_tit">計算結果</div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tb_single">
+        <tr>
+        	<td class="hd1" width="30%">總分數</td>
+            <td width="70%">105</td>
+        </tr>
+        <tr>
+        	<td class="hd1">您是屬於</td>
+            <td>穩健型</td>
+        </tr>
+	</table>
+    
+    <div class="btnBlock">
+        <a href="html/TWNFNT/TWNFNT04_risk_test_result.html" class="btn_submit" onClick="removeMask()" target="mainFrame">確定</a>
+        <a href="#" class="btn_submit" onClick="removeMask()">取消</a>
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

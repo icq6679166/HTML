@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>各項查詢</li>
+    <li>資產配置表查詢</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">資產配置表查詢</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+            <li>
+                XXX 先生／小姐您好：<br>
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                您的「資產配置表如下」
+          </li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <!-- #BeginLibraryItem "/Library/risk_warning.lbi" -->
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><span class="tb_tit">高風險資產配置警示</span></td>
+      </tr>
+    </table>
+    <table class="tb_multi" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" class="hd1">商品風險屬性</td>
+        <td width="20%" class="hd1">餘額</td>
+        <td width="20%" class="hd1">實際投資佔全行投資比例</td>
+        <td width="20%" class="hd1">建議投資比例</td>
+        <td width="20%" class="hd1">超過投資比例</td>
+      </tr>
+      <tr>
+        <td>流動性資產</td>
+        <td class="td_money">1,484,154.00</td>
+        <td class="rt">76.18%</td>
+        <td class="rt">20%</td>
+        <td class="rt">56.18%</td>
+      </tr>
+      <tr>
+        <td>收益性資產</td>
+        <td class="td_money">46,000.00</td>
+        <td class="rt">2.36%</td>
+        <td class="rt">55%</td>
+        <td class="rt">0.00%</td>
+      </tr>
+      <tr>
+        <td>穩健成長性資產</td>
+        <td class="td_money">51,000.00</td>
+        <td class="rt">2.62%</td>
+        <td class="rt">20%</td>
+        <td class="rt">0.00%</td>
+      </tr>
+      <tr>
+        <td>積極成長性資產</td>
+        <td class="td_money">367,060.00</td>
+        <td class="rt">18.84%</td>
+        <td class="rt">5%</td>
+        <td class="rt">13.84%</td>
+      </tr>
+    </table>
+    <!-- #EndLibraryItem -->
+<div class="btnBlock">
+    	<a href="#" class="btn_submit">確認</a>
+      <!-- #BeginLibraryItem "/Library/risk_warning2.lbi" -->
+        <div class="help">
+          <div class="title">說明：</div>
+          <ul class="olist">
+            <li>上列「資產配置表」所列餘額僅更新至前一營業日24時為止。</li>
+            <li>流動性資產包括：台幣存款、外匯存款。<br>
+              收益性資產包括：風險等級低（RR1、RR2）之各類理財商品。<br>
+              穩健成長性資產包括：風險等級中高（RR3）、高（RR4）之各類理財商品。<br>
+              積極成長性資產包括：風險等級很高（RR5）之各類理財商品。</li>
+            <li>商品風險收益等級（RR1~RR5）說明：</li>
+            <table class="tb_multi" width="96%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="13%" class="hd1">風險收益等級</td>
+                <td width="10%" class="hd1">投資風險</td>
+                <td class="hd1">投資目標</td>
+              </tr>
+              <tr>
+                <td class="ct">RR1</td>
+                <td class="ct">低</td>
+                <td>以追求穩定收益為目標，通常投資於已開發國家政府公債、或國際專業評等機構為投資級(如標準普爾評等BBB級，穆迪評等Baa級以上)之已開發國家公司債券，但也有價格下跌之風險。</td>
+              </tr>
+              <tr>
+                <td class="ct">RR2</td>
+                <td class="ct">中</td>
+                <td>以追求穩定收益為目標，通常投資於短期貨幣市場工具，如：短期票券、銀行定存，但並不保證本金不會虧損。</td>
+              </tr>
+              <tr>
+                <td class="ct">RR3</td>
+                <td class="ct">中高</td>
+                <td>以追求兼顧資本利得及固定收益為目標，通常同時投資股票及債券、或投資於較高收益之有價債券，但也有價格下跌之風險。</td>
+              </tr>
+              <tr>
+                <td class="ct">RR4</td>
+                <td class="ct">高</td>
+                <td>以追求資本利得為目標，通常投資於已開發國家股市、貨價格波動相對較穩定之區域內多國股市，但可能有大幅價格下跌之風險。</td>
+              </tr>
+              <tr>
+                <td class="ct">RR5</td>
+                <td class="ct">很高</td>
+                <td>以追求最大資本利得為目標，通常投資於積極成長型類股或波動風險轉大之股市，但可能有非常大之價格下跌風險。</td>
+              </tr>
+            </table>
+            <div class="note">※本項風險收益等級僅供參考，投資共同基金之盈虧尚受到國際金融情勢震盪和匯兌風險影響。投資人宜斟酌個人風險承擔能力及資金可運用期間之長短後投資</div>
+          </ul>
+        </div>
+    <!-- #EndLibraryItem --></div>
+    
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- InstanceBegin template="/Templates/popup.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>合作金庫-新一代企網銀</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css"></style>
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body class="popup">
+<div class="header"><img src="../../inc/img/layout/tcb_logo.gif"></div>
+<!-- InstanceBeginEditable name="content" -->
+<div class="content">
+  <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="tb_tit">中央登錄公債餘額查詢</td>
+    </tr>
+    <tr>
+      <td class="td_cont"><span class="col"> <span class="tit">牌告日期： </span><span id="YMD"></span></span>
+      <span class="col_fr">(年息%)</span></td>
+    </tr>
+  </table>
+  <table class="tb_multi" width="100%" border="0" cellspacing="0" cellpadding="0">   
+		<tr>
+			<td class="hd1" width="9%">幣別</td>
+			<td class="hd1">活期</td>
+			<td class="hd1">一星期</td>
+			<td class="hd1">一個月</td>
+			<td class="hd1">三個月</td>
+			<td class="hd1">六個月</td>
+			<td class="hd1">九個月</td>
+			<td class="hd1">一年</td>
+			<td class="hd1">歷史利率</td>
+		</tr>
+		<tr>
+			<td class="td_currency">HKD</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+		</tr>
+		<tr>
+			<td class="td_currency">GBP</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+		</tr>
+		<tr>
+			<td class="td_currency">AUD</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+		</tr>
+		<tr>
+			<td class="td_currency">SGD</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+		</tr>
+		<tr>
+			<td class="td_currency">CHF</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+		</tr>
+		<tr>
+			<td class="td_currency">CAD</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+			<td class="td_money">99.999999</td>
+		</tr>
+</table> 
+
+    <div class="btnBlock"> <a href="javascript:void(0)" class="btn_submit" onClick="window.close();">關閉</a> </div>
+</div>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd -->
+</html>

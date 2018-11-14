@@ -1,0 +1,702 @@
+/*************************************
+*		module
+**************************************/
+.hbox {
+  margin: 0 0 5px;
+  clear: both;
+}
+.hbox .fl {
+  padding: 0 5px 0 0;
+}
+.hbox .fr {
+  padding: 0 0 0 5px;
+}
+
+/*		#menu(主選單)
+---------------------------------*/
+#menu {
+  display: block;
+  clear: both;
+}
+
+#menu a, #menu span, #menu b {
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#menu dt, #menu dd {
+  float: left;
+}
+
+#menu dd {
+  display: inline;
+}
+
+/*menu style*/
+/*common*/
+#menu {
+  background: url(../img/menu/menuBar_bg.gif) repeat-x left bottom;
+}
+#menu a {
+  margin: 0 5px 0 0;
+  padding: 0 0 0 10px;
+  background: url(../img/menu/menu1.gif) no-repeat left top;
+}
+#menu a:hover b {
+  color: #306000;
+}
+#menu span {
+  padding: 0 10px 0 0;
+  background: url(../img/menu/menu3.gif) no-repeat right top;
+}
+#menu b {
+  font-size: 13px;
+  padding: 9px 0px 10px 0;
+  _padding: 11px 0px 8px 0;
+  color: #fff;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  background: url(../img/menu/menu2.gif) repeat-x left top;
+}
+#menu dd.current a, 
+#menu dd.current a:hover {
+  background: url(../img/menu/menu_current1.gif) no-repeat left top;
+}
+#menu dd.current a span, 
+#menu dd.current a:hover span {
+  color: #004522;
+  background: url(../img/menu/menu_current3.gif) no-repeat right top;
+}
+#menu dd.current a span b,
+#menu dd.current a:hover span b {
+  color: #004522;
+  background: url(../img/menu/menu_current2.gif) repeat-x right top;
+}
+
+#menu dt{
+	float:left;}
+
+#menu dt.current a, 
+#menu dt.current a:hover {
+  background: url(../img/menu/menu_current1.gif) no-repeat left top;
+}
+#menu dt.current a span, 
+#menu dt.current a:hover span {
+  color: #004522;
+  background: url(../img/menu/menu_current3.gif) no-repeat right top;
+}
+#menu dt.current a span b,
+#menu dt.current a:hover span b {
+  color: #004522;
+  background: url(../img/menu/menu_current2.gif) repeat-x right top;
+}
+
+/*		#subMenu(左側副選單)
+---------------------------------*/
+#subMenu ul, #subMenu li, #subMenu ol, #subMenu dd, #subMenu a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+#subMenu ul, #subMenu ol, #subMenu dl {
+  display: none;
+}
+
+#subMenu ul.current, #subMenu li.current ol, #subMenu ol li.current dl {
+  display: block;
+}
+
+#subMenu a, #subMenu span {
+  zoom: 1;
+  display: block;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#subMenu {
+  vertical-align: top;
+  cursor: pointer;
+  background: #fff;
+  border-top: 2px #988840 solid;
+  border-bottom: 2px #988840 solid;
+}
+
+/*2 - multi*/
+#subMenu a {
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  background: url(../img/menuSub/lv1.gif) no-repeat 3px;
+}
+
+#subMenu a:hover {
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  background: #efc339 url(../img/menuSub/lv1.gif) no-repeat 3px;
+}
+
+#subMenu li.current a,
+#subMenu li.current a:hover {
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  background: #efc339 url(../img/menuSub/lv1_current.gif) no-repeat 3px;
+}
+
+/*ie6 bug*/
+/*#subMenu li{_border:1px #FFFECE solid;}*/
+/*2 - single*/
+#subMenu li.single a {
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  background: url(../img/menuSub/lv1_single.gif) no-repeat 3px;
+}
+
+#subMenu li.single a:hover {
+  color: #665133;
+  padding: 6px 6px 6px 18px;
+  background: #efc339 url(../img/menuSub/lv1_single.gif) no-repeat 3px;
+}
+
+#subMenu li.single.current a,
+#subMenu li.single.current a:hover {
+  color: #665133;
+  padding: 6px 6px 6px 18px;
+  background: #efc339 url(../img/menuSub/lv1_single.gif) no-repeat 3px;
+}
+
+/*3 - multi*/
+#subMenu ol a,
+#subMenu .current ol a {
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  background: #f9f3b2 url(../img/menuSub/lv2.gif) no-repeat 3px;
+}
+
+#subMenu ol a:hover,
+#subMenu .current ol a:hover {
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  background: #ffffe7 url(../img/menuSub/lv2.gif) no-repeat 3px;
+}
+
+#subMenu ol .current a,
+#subMenu ol .current a:hover {
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  border-bottom: 1px #9C9A00 dashed;
+  background: #ffffe7 url(../img/menuSub/lv2_current.gif) no-repeat 3px;
+}
+
+/*ie6 bug*/
+/*#subMenu ol li{_border:1px #F9F3B2 solid;}*/
+/*3 - single*/
+#subMenu ol .single a {
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  border-bottom: 1px #9C9A00 dashed;
+  background: #f9f3b2 url(../img/menuSub/lv2_single.gif) no-repeat 3px 10px;
+}
+
+#subMenu ol .single a:hover {
+  color: #665133;
+  padding: 6px 6px 6px 18px;
+  background: #ffffe7 url(../img/menuSub/lv2_single.gif) no-repeat 3px 10px;
+}
+
+#subMenu ol .single.current a,
+#subMenu ol .single.current a:hover {
+  color: #665133;
+  padding: 6px 6px 6px 18px;
+  background: #ffffe7 url(../img/menuSub/lv2_single.gif) no-repeat 3px 10px;
+}
+
+/*4 - multi*/
+#subMenu dl a,
+#subMenu .current dl a {
+  border: none;
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  background: none;
+}
+
+#subMenu dl a:hover,
+#subMenu .current dl a:hover {
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  border: none;
+  background: #ffffe7 url(../img/menuSub/lv3_hover.gif) no-repeat right;
+}
+
+#subMenu dl .current a,
+#subMenu dl .current a:hover {
+  color: #427038;
+  padding: 6px 6px 6px 18px;
+  background: #ffffe7 url(../img/menuSub/lv3_hover.gif) no-repeat right;
+}
+
+/*************************************
+*		step
+**************************************/
+#step {
+  clear: both;
+  display: block;
+  margin: 0 0 10px;
+  height: 30px;
+  cursor: default;
+}
+#step dt {
+  float: left;
+  margin: 0 5px 0 0;
+  padding: 0 0 0 30px;
+  background: url(../img/step/step1.gif) no-repeat left top;
+}
+#step span {
+  color: #fff;
+  display: block;
+  padding: 8px 14px 6px 0;
+  background: url(../img/step/step1.gif) no-repeat right top;
+}
+#step .step1, #step .step1 span {
+  background-image: url("../img/step/step1.gif");
+}
+#step .step2, #step .step2 span {
+  background-image: url("../img/step/step2.gif");
+}
+#step .step3, #step .step3 span {
+  background-image: url("../img/step/step3.gif");
+}
+#step .step4, #step .step4 span {
+  background-image: url("../img/step/step4.gif");
+}
+#step .step5, #step .step5 span {
+  background-image: url("../img/step/step5.gif");
+}
+#step .step6, #step .step6 span {
+  background-image: url("../img/step/step6.gif");
+}
+#step .current {
+  background-position: left -30px;
+}
+#step .current span {
+  background-position: right -30px;
+}
+#step .old {
+  background-position: left top;
+}
+#step .old span {
+  background-position: right top;
+}
+
+/*************************************
+*		path
+**************************************/
+#path {
+  min-width: 300px;
+  padding: 11px 0 7px;
+  margin: 0;
+}
+#path li {
+  float: left;
+  color: #baba9e;
+  font-size: 12px;
+  display: block;
+  padding: 0px 0 6px;
+  *padding: 0px 0 2px;
+}
+
+/*************************************
+*		tabs1
+**************************************/
+#tabs1 {
+  *zoom: 1;
+  min-height: 24px;
+  margin: 0 0 5px;
+}
+#tabs1:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+#tabs1 li {
+  float: left;
+  margin: 0 5px 0 0;
+  padding: 0 1px 0 0;
+}
+#tabs1 li.current a {
+  cursor: default;
+  color: #0f732a;
+  background: #d6f5a7;
+}
+#tabs1 a {
+  display: block;
+  color: #1792ce;
+  padding: 6px 10px;
+  background: #edfec8;
+}
+#tabs1 a:hover {
+  color: #0f732a;
+}
+
+/*************************************
+*		tabs2
+**************************************/
+#tabs2 {
+  *zoom: 1;
+  min-height: 24px;
+  /*float:left;*/
+  width: 100%;
+  font-size: 93%;
+  line-height: normal;
+  margin: 0 0 10px;
+  background: url(../img/tabs/tabs10_bg.gif) repeat-x left bottom;
+  /*ff hack*/
+}
+#tabs2:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+#tabs2 ul {
+  margin: 0;
+  padding: 0 10px 0 10px;
+  list-style: none;
+}
+#tabs2 li {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+#tabs2 li.current a {
+  cursor: default;
+  background-position: left -25px;
+}
+#tabs2 li.current a span {
+  color: #006602;
+  font-weight: bold;
+  background-position: right -25px;
+}
+#tabs2 a {
+  float: left;
+  background: url(../img/tabs/tabs10.gif) no-repeat left top;
+  margin: 0 2px 0 0;
+  padding: 0 0 0 10px;
+  text-decoration: none;
+}
+#tabs2 ahover {
+  background-position: left -50px;
+}
+#tabs2 ahover span {
+  color: #006700;
+  background-position: right -50px;
+}
+#tabs2 a span {
+  /*	2011.2.10
+  未測拿掉後ie8的顯示*/
+  /*float:left;*/
+  /*line-height:24px;*/
+  color: #369726;
+  display: block;
+  background: url(../img/tabs/tabs10.gif) no-repeat right top;
+  padding: 6px 10px 4px 0;
+  padding: 9px 10px 2px 0 \9;
+}
+#tabs2 a span, #tabs2 x:-moz-any-link, #tabs2 x:default {
+  padding: 9px 10px 2px 0;
+}
+
+/*************************************
+*		calendar
+**************************************/
+/*		@calendar
+------------------------------------ */
+.calendar {
+  cursor: pointer;
+  padding: 1px 7px;
+  background: url(../calendar/img/date.gif) no-repeat left top;
+  _padding: 3px 7px;
+}
+
+.date_txt {
+  font-size: 12px;
+  width: 80px;
+  height: 16px;
+}
+
+/*************************************
+*		calendar
+**************************************/
+/*		jmask浮動遮罩
+------------------------------------ */
+.mask_tit {
+  color: #fff;
+  margin: 0 0 5px;
+  padding: 5px 3px 3px 20px;
+  background: #06944a url(../img/layout/mask_tit.gif) no-repeat 5px 8px;
+}
+
+.mask {
+  position: absolute;
+  left: 99999px;
+  top: 99999px;
+  
+}
+
+#js_overLayer {
+  display: none;
+  background: #000;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  _position: absolute;
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+  z-index: 99;
+}
+
+#js_container {
+  background: #fff;
+  width: 300px;
+  height: 300px;
+  z-index: 100;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -150px;
+  margin-left: -150px;
+  border: 3px #666 solid;
+  display: none;
+  overflow: scroll;
+}
+
+* html #js_container {
+  position: absolute;
+}
+
+#hiddenContent {
+  display: none;
+}
+
+#jmask_tit {
+  background: #eee;
+  padding: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 112;
+  display: none;
+}
+
+/*************************************
+*		Css Tool 共用
+**************************************/
+/* Font
+------------------------------------ */
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.strEnd {
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+/*齊頭尾*/
+.wordbreak {
+  word-wrap: break-word;
+  word-break: normal;
+}
+
+/*自動換行*/
+.enbreak {
+  word-break: break-word;
+}
+
+/*強制英文換行*/
+.enwrap {
+  word-break: break-all;
+}
+
+/*強制英文換行*/
+.nowrap {
+  white-space: nowrap;
+}
+
+/*強制不換行*/
+/* Color
+---------------------------------- */
+.bred {
+  background: #f00;
+}
+
+.byellow {
+  background: #ff0;
+}
+
+.bblue {
+  background: #00f;
+}
+
+.fred {
+  color: #f00;
+}
+
+.fyellow {
+  color: #ff0;
+}
+
+.bblue {
+  color: #00f;
+}
+
+/* margin
+---------------------------------- */
+.m0 {
+  margin: 0;
+}
+
+.mt3 {
+  margin-top: 3px;
+}
+
+.m10 {
+  margin: 10px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb0 {
+  margin: 0;
+}
+
+.mb5 {
+  margin-bottom: 5px;
+}
+
+/* padding
+---------------------------------- */
+.p0 {
+  padding: 0;
+}
+
+.p10 {
+  padding: 10px;
+}
+
+/* Align
+---------------------------------- */
+.lt {
+  text-align: left;
+}
+
+.ct {
+  text-align: center;
+}
+
+.rt {
+  text-align: right;
+}
+
+.vtop {
+  vertical-align: top;
+}
+
+.vmid {
+  vertical-align: middle;
+}
+
+.vbtm {
+  vertical-align: bottom;
+}
+
+/* float
+---------------------------------- */
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.full {
+  width: 100%;
+  clear: both;
+}
+
+.fluid {
+  width: auto;
+  float: none;
+}
+
+/* Border
+---------------------------------- */
+.border {
+  border: 1px #f00 solid;
+}
+
+.border0 {
+  border: none;
+}
+
+/* Cursor
+---------------------------------- */
+.cursorHand {
+  cursor: pointer;
+}
+
+/*		other
+------------------------------------ */
+.hide {
+  display: none;
+}
+
+.fixWidth {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+/*		clearfix
+------------------------------------ */
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  font-size: 1px;
+  line-height: 0;
+}

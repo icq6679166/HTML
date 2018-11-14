@@ -1,0 +1,152 @@
+﻿<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+    var grid, mform = $("#mform");
+    grid = $("#gridview").jqGrid({
+    	localFirst: true,multiselect: true,height: 380,
+    	sortname: 'grpId',sortorder: "desc",
+        colModel: [		
+        {header: '業務類別代號',name: 'grpId',width: 40,align: "left"} ,
+		{header: '業務類別名稱',name: 'grpName',width: 100,align: "left"}        
+		],
+        ondblClickRow: function(rowid, iRow, iCol, e){
+			//$("#allGrpLst").hide();
+			//$("#groupRptId").text($("#gridview").jqGrid ('getCell', rowid, 'rptId'));
+        	//$("#rptgp").show();
+        }
+    });
+      
+
+	
+	
+	gpRptGrd = $("#rptgpview").jqGrid({
+    	localFirst: true,multiselect: false,height: 200,
+    	sortname: 'rptId',sortorder: "desc",
+        colModel: [
+				
+		//{header: '項次',name: 'ItemNo',width: 50,align: "left"} ,
+		
+        {header: '報表編號',name: 'rptGpId',width: 150,align: "left"} ,
+		{header: '報表名稱',name: 'rptGpName',width: 250,align: "left"}
+        
+        ],
+        ondblClickRow: function(rowid, iRow, iCol, e){
+        	
+        }
+    }).addGridData([
+            ["ACD02A","放款及應收保證款項餘額表-全行"],
+            ["ACD57","分行資金概況表"]
+   	]);
+	
+	
+
+	$("#qryDetail").click(function(){
+		
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if (selRowIds.length > 1) {
+			alert("查看細項只能選一筆!");
+		}
+		else 
+			if (selRowIds.length == 0) {
+				alert("查看細項請選一筆資料!");
+			}
+			else 
+				if (selRowIds.length == 1) {				
+					
+					var row=grid.getRowData(selRowIds[0]);
+					$("#allGrpLst").hide();					
+					$("#groupRptId").text(row['grpId']);
+					$("#gpRpt").show();
+				}
+	});
+	
+	
+	$("#back").click(function(){
+		$("#allGrpLst").show();
+		$("#gpRpt").hide();
+	});
+	
+	
+		//執行查詢
+	
+    var qDialog = $("#qDailog");
+	qDialog.dialog({ 
+    	height: 180,width: 360,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+				
+				//if($("#keyword").val() == ""){					
+				//	alert("請輸入關鍵字");
+				//	return;
+				//}
+				//alert("需求編號 : " + "KEYWORD_2013013001");			
+    			qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+			        ["","rep_acc","一般營業用"],
+					["","credit","信用卡帳單"],
+					["","tax_acc","扣繳憑單明細"] 
+				]);
+				
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+	$("#btnQuery").click(function(){
+		qDialog.dialog('open');
+    }).trigger('click');
+	
+	
+	
+	
+});
+</script>
+</head>
+<body>
+	<div id="allGrpLst">
+	<div class="tit">業務類別報表清單查詢</div>
+	<div class="btns">		
+		<button id="btnQuery" type="button" class="btn1">查詢</button>
+		<button id="qryDetail" type="button" class="btn1">查看細項</button>
+		<button id="export" type="button" class="btn1">匯出csv</button>						
+   	</div>
+   	<div id="gridview"></div>
+	</div>
+	
+	<div id="gpRpt" style="display:none">
+		<div class="tit">業務類別報表清單查詢-業務類別代號:<Label id="groupRptId"></Label> 報表清單</div>
+		<div class="btns">
+			<button id="back" type="button" class="btn1">上一頁</button>
+	    </div>
+		<div id="rptgpview">
+		
+	</div>
+	
+   	<div id="qDailog" class="hide" title="查詢">
+		<form id="qform" onsubmit="return false;">
+			<table id="basicSetting" class="row-data">
+				<tr>
+					<th nowrap>報表業務類別代號</th>						
+					<td>	
+					  <input id="reqId" name ="reqId" type="text" size="20" maxlength="20"/>
+					</td>
+				</tr>				
+					<th nowrap>報表業務類別名稱</th>						
+					<td>	
+					  <input id="reqId" name ="reqId" type="text" size="20" maxlength="20"/>
+					</td>
+				
+				<tr>
+				</tr>
+							
+			</table>
+		</form>
+	</div>
+	
+</body>
+</html>

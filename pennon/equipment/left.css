@@ -1,0 +1,6 @@
+body {
+	background-attachment: fixed;
+	background-image: url(eq-images/left.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}

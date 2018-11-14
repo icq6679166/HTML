@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>各項查詢</li>
+    <li>ETF/債券報價查詢</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">ETF/債券報價查詢</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為
+              
+            必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td width="20%" class="hd1"><span class="star">＊</span>商品別</td>
+          <td><select name="select5">
+            <option selected>EFT</option>
+            <option>債券</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td class="hd1"><span class="star">＊</span>請選擇</td>
+          <td>
+          <label><input type="radio" name="rad2" checked>最新淨值</label><br>
+          <label><input type="radio" name="rad2">報價日期
+          From：  
+              <input type="text" class="date_txt" value="YYYY/MM/DD">  
+            <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a>  
+            To  
+            <input type="text" class="date_txt" value="YYYY/MM/DD">  
+            <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a>
+
+          </label>
+          </td>
+        </tr>
+    </table>
+    
+    <div class="btnBlock">
+    	<a href="TWNFNQ09_qry_result.html" class="btn_submit">查詢</a>
+        <a href="javascript:void(0)" class="btn_submit">清除</a>
+       
+    </div>
+    <div class="searchline"></div>
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr><td class="search_date">查詢日期：<span id="YMD"></span><span id="HMS"></span></td>
+            <td class="rt">&nbsp;</td>								
+        </tr>
+    </table>
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+        </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi mb0">
+      <tr>
+        <td class="hd1" width="5%"> 序號</td>
+        <td width="12%" class="hd1">報價日期</td>
+        <td class="hd1" width="34%">商品代號/名稱</td>
+        <td class="hd1" width="8%">名目幣別</td>
+        <td class="hd1" width="12%">賣出價</td>
+        <td class="hd1" width="12%">買進價</td>
+        <td class="hd1" width="9%">報價方式</td>
+        <td class="hd1" width="8%">到期註記</td>
+      </tr>
+      <tr>
+        <td class="td_sn"> 1</td>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td>XXXXX公司<br>N112贏家首選－年年有利3</td>
+        <td class="ct">USD</td>
+        <td class="td_money">100.0000</td>
+        <td class="td_money">10,000.00</td>
+        <td class="ct">百分比</td>
+        <td class="ct">未到期</td>
+      </tr>
+      <tr>
+        <td class="td_sn"> 2</td>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td>XXXXXX證券<br>
+S843贏家首選55－年年有利</td>
+        <td class="ct">USD</td>
+        <td class="td_money">103.3000</td>
+        <td class="td_money">103.3000
+</td>
+        <td class="ct">百分比</td>
+        <td class="ct">未到期</td>
+      </tr>
+      <tr>
+        <td class="td_sn"> 3</td>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td>XXXXXXXX投顧<br>S849贏家首選61－年年有利</td>
+        <td class="ct">USD</td>
+        <td class="td_money">101.2400</td>
+        <td class="td_money">101.2400</td>
+        <td class="ct">百分比</td>
+        <td class="ct">未到期</td>
+      </tr>
+    </table>
+    <table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+      </tr>
+    </table>
+    <div class="remarks">
+        <div class="title">備註：</div>
+        <ul class="olist">
+          <li>以上所列投資標的報價資料僅供參考，實際發行價格仍以發行公司公告為準。</li>
+        </ul>   
+    </div>
+    
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

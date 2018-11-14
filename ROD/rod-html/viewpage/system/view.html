@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<script type="text/javascript">
+function loadToDoList()
+{
+	API.loadPage("toDoList.html", function(){});
+}
+
+</script>
+
+<html>
+<body>
+	<ul id="left_menu">
+		<li><a class="lmenu" href="#" onClick="loadToDoList()">報表權限管理</a>
+		<ul style="display: none;">
+				<li><a class="lmenu" href="system/maintUser.html">使用者資料查詢</a></li>
+				<li><a class="lmenu" href="system/maintRptGrp.html">業務類別維護</a></li>
+				<!-- <li><a class="lmenu" href="system/apprMaintRptGrp.html">群組維護放行</a></li> -->
+				<li><a class="lmenu" href="system/maintUserGrp.html">使用者報表權限維護</a></li>
+				<!--
+				<li><a class="lmenu" href="system/apprMaintUserGrp.html">使用者群組權限放行</a></li>
+				-->
+				<li><a class="lmenu" href="system/qryUserRights.html">使用者權限查詢</a></li>
+				<!--
+				<li><a class="lmenu" href="system/trfBranch.html">移管作業</a></li>
+				-->
+				<li><a class="lmenu" href="system/qryGrpAllRptList.html">業務類別報表清單查詢</a></li>
+				<li><a class="lmenu" href="system/qryAccntList.html">授權紀錄查詢</a></li>
+			</ul></li>
+		<li><a class="lmenu" href="#" onClick="loadToDoList()">基本權限管理</a>
+		<ul style="display: none;">
+				<li><a class="lmenu" href="system/maintFcncRole.html">角色維護</a></li>
+				<li><a class="lmenu" href="system/maintTrans.html">交易維護</a></li>
+				<li><a class="lmenu" href="system/maintTransRights.html">交易權限維護</a></li>
+				<!--
+				<li><a class="lmenu" href="system/maintTestingUser.html">(測試環境)建立使用者</a></li>
+				<li><a class="lmenu" href="system/maintTestingPwd.html">(測試環境)修改密碼</a></li>
+				-->
+			</ul></li>
+		<li><a class="lmenu" href="#" onClick="loadToDoList()">排程監控管理</a>
+		<ul style="display: none;">				
+				<li><a class="lmenu" href="system/maintJobSetting.html">JOB維護</a></li>
+				<li><a class="lmenu" href="system/maintSched.html">排程維護</a></li>
+				<li><a class="lmenu" href="system/monSchedEexcLog.html">排程記錄監控</a></li>
+				<li><a class="lmenu" href="system/qryRptSta.html">報表記錄查詢</a></li>
+				<li><a class="lmenu" href="system/maintNtfy.html">訊息通知維護</a></li>
+			</ul></li>
+		<li><a class="lmenu" href="#" onClick="loadToDoList()">系統參數管理</a>
+		<ul style="display: none;">
+				<li><a class="lmenu" href="system/maintCodeType.html">下拉選項維護</a></li>
+				<li><a class="lmenu" href="system/maintSysParm.html">系統參數維護</a></li>
+			</ul></li>
+		
+		<!--	
+		<li><a class="lmenu" href="#" onClick="loadToDoList()">安控作業</a>
+		<ul style="display: none;">				
+				<li><a class="lmenu" href="system/qryAccntList.html">授權紀錄管理</a></li>
+				
+				<li><a class="lmenu" href="system/maintSysParmPwd.html">系統參數維護(帳號/密碼)</a></li>
+				
+			</ul></li>
+			-->
+		<li><a class="lmenu" href="#" onClick="loadToDoList()">系統及調閱記錄查詢</a>
+		<ul style="display: none;">				
+				<li><a class="lmenu" href="system/qryRptAcsLog.html">報表調閱記錄查詢</a></li>
+				<!--
+				<li><a class="lmenu" href="system/qryRptAcsKwLog.html">報表調閱記錄關鍵字查詢</a></li>
+				-->
+				<li><a class="lmenu" href="system/qryRptSysLog.html">報表系統登入登出記錄查詢</a></li>
+				<li><a class="lmenu" href="system/qryAcsTimesStat.html">報表調閱頻率統計查詢</a></li>
+				<li><a class="lmenu" href="system/qryRptLoadLog.html">報表載入統計查詢</a></li>
+				<!--<li><a class="lmenu" href="system/qryRptSpeLog.html">特定報表紀錄查詢</a></li>-->
+				
+			</ul></li>
+	</ul>
+</body>
+</html>

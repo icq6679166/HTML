@@ -1,0 +1,670 @@
+﻿<html>
+<head>
+<style>
+
+</style>
+<script type="text/javascript">
+
+function padLeft(str,lenght){
+	    if(str.length >= lenght)
+	        return str;
+	    else
+	        return padLeft("0" +str,lenght);
+}	
+	
+$(document).ready(function(){
+	
+	//
+	$("#qd2").hide();
+	$("#qd3").hide();
+	$("#qd4").hide();
+	$("#qd5").hide();
+	$("#qd6").hide();
+	
+	$("#folder").change(function(){
+	$("#qd1").hide();
+	$("#qd2").hide();
+	$("#qd3").hide();
+	$("#qd4").hide();
+	$("#qd5").hide();
+	$("#qd6").hide();
+	
+	var pd;
+	var folder = $("#folder").val();
+	//case 1
+	if(folder=="d1"){
+		$("#qd1").show();
+		grid.jqGrid('GridDestroy');
+		$("#grid").html("<div id=\"gridview\"></div>");
+		grid = $("#gridview").jqGrid({
+	    	localFirst: true,multiselect: false,height: 450,
+	    	sortname: 'rptId',sortorder: "desc",
+			colModel: [
+			{header: '報表編號',name: 'rptId',width: 40,align: "left"} ,
+			{header: '版本',name: 'rptVer',width: 15,align: "center"} ,
+			{header: '報表名稱',name: 'rptName',width: 70,align: "left"},         
+			{header: '業務類別',name: 'bizCategory',width: 55,align: "left"},         
+    		{header: '報表日期', name: 'rptDate',width: 40,align: "left"},
+    		{header: '序號',name: 'rptSeqno',width: 15,align: "center"}, 
+    		{header: '業管單位',name: 'rptMaterDept',width: 40,align: "left"}, 
+    		{header: '報表週期',name: 'rptCycle',width: 25,align: "center"},
+			{header: '分行名稱',name: 'branchId',width: 35,align: "left"},
+    		{header: '載入日期時間',name: 'rptReceiveDate',width: 40,align: "left"},
+    		{header: '載入狀態',name: 'pd',width: 25,align: "center"}
+			],
+			ondblClickRow: function(rowid, iRow, iCol, e){
+				pd = grid.getCell(rowid, "pd");
+				viewerDialog.dialog('open');
+			}
+		});
+			   	
+	}else if(folder=="d2"){ //case 2
+		$("#qd2").show();
+		grid.jqGrid('GridDestroy');
+		$("#grid").html("<div id=\"gridview\"></div>");
+		grid = $("#gridview").jqGrid({
+			localFirst: true,multiselect: false,height: 450,
+		    sortname: 'rptId',sortorder: "desc",
+			colModel: [
+			{header: '報表編號',name: 'rptId',width: 40,align: "left"} ,
+			{header: '版本',name: 'rptVer',width: 15,align: "center"} ,
+			{header: '報表名稱',name: 'rptName',width: 70,align: "left"},                  
+      		{header: '報表日期', name: 'rptDate',width: 40,align: "left"},
+      		{header: '序號',name: 'rptSeqno',width: 15,align: "center"}, 
+      		{header: '業管單位',name: 'rptMaterDept',width: 35,align: "left"}, 
+      		{header: '報表週期',name: 'rptCycle',width: 25,align: "center"},
+			{header: '分行名稱',name: 'branchId',width: 35,align: "left"},					
+      		{header: '載入日期時間',name: 'rptReceiveDate',width: 40,align: "left"},
+      		{header: '載入狀態',name: 'pd',width: 25,align: "center"}
+		     ],
+		    ondblClickRow: function(rowid, iRow, iCol, e){
+				pd = grid.getCell(rowid, "pd");
+				viewerDialog.dialog('open');
+		    }
+		});
+		   	
+	}else if(folder=="d3"){ //case 3
+		$("#qd3").show();
+		grid.jqGrid('GridDestroy');
+		$("#grid").html("<div id=\"gridview\"></div>");
+		grid = $("#gridview").jqGrid({
+			localFirst: true,multiselect: false,height: 450,
+		    sortname: 'bizNum',sortorder: "desc",
+		    colModel: [
+			{header: '統一編號',name: 'bizNum',width: 40,align: "left"} ,
+			{header: '報表編號',name: 'rptId',width: 40,align: "left"},						
+			{header: '報表名稱',name: 'rptName',width: 70,align: "left"},                  
+			{header: '報表日期', name: 'rptDate',width: 40,align: "left"},
+			{header: '序號',name: 'rptSeqno',width: 10,align: "center"}, 
+			{header: '業管單位',name: 'rptMaterDept',width: 35,align: "left"},
+			{header: '分行名稱',name: 'branchId',width: 35,align: "left"},
+			{header: '載入日期時間',name: 'rptReceiveDate',width: 40,align: "left"},
+			{header: '載入狀態',name: 'pd',width: 25,align: "center"},
+	        ],
+	        ondblClickRow: function(rowid, iRow, iCol, e){
+				pd = grid.getCell(rowid, "pd");
+		        viewerDialog.dialog('open');
+		    }
+		});
+			
+	}else if(folder=="d4"){ //case 4
+		$("#qd4").show();			
+		grid.jqGrid('GridDestroy');
+		$("#grid").html("<div id=\"gridview\"></div>");
+		grid = $("#gridview").jqGrid({
+			localFirst: true,multiselect: false,height: 450,
+			sortname: 'rptId',sortorder: "desc",
+			colModel: [
+			{header: '統一編號',name: 'rptId',width: 40,align: "left"} ,
+			{header: '報表名稱',name: 'rptName',width: 70,align: "left"},                  
+			{header: '報表日期', name: 'rptDate',width: 40,align: "left"},
+			{header: '序號',name: 'rptSeqno',width: 15,align: "center"}, 
+			{header: '業管單位',name: 'rptMaterDept',width: 35,align: "left"},
+			{header: '分行名稱',name: 'branchId',width: 35,align: "left"},
+			{header: '載入日期時間',name: 'rptReceiveDate',width: 40,align: "left"},
+			{header: '載入狀態',name: 'pd',width: 25,align: "center"}
+	        ],
+	        ondblClickRow: function(rowid, iRow, iCol, e){
+				pd = grid.getCell(rowid, "pd");
+	        	viewerDialog.dialog('open');
+		    }
+		});
+ 
+			
+	}else if(folder=="d5"){ //case 5
+		$("#qd5").show();			
+		grid.jqGrid('GridDestroy');
+		$("#grid").html("<div id=\"gridview\"></div>");
+		grid = $("#gridview").jqGrid({
+			localFirst: true,multiselect: false,height: 450,
+		    sortname: 'rptId',sortorder: "desc",
+		    colModel: [
+			{header: '身份證號',name: 'rptId',width: 40,align: "left"} ,
+			{header: '報表名稱',name: 'rptName',width: 70,align: "left"},                  
+			{header: '報表日期', name: 'rptDate',width: 40,align: "left"},
+			{header: '序號',name: 'rptSeqno',width: 15,align: "center"}, 
+			{header: '業管單位',name: 'rptMaterDept',width: 35,align: "left"},
+			{header: '分行名稱',name: 'branchId',width: 35,align: "left"},
+			{header: '載入日期時間',name: 'rptReceiveDate',width: 40,align: "left"},
+			{header: '載入狀態',name: 'pd',width: 25,align: "center"},
+	        ],
+	        ondblClickRow: function(rowid, iRow, iCol, e){
+				pd = grid.getCell(rowid, "pd");
+	        	viewerDialog.dialog('open');
+		    }
+		});
+			
+	}else if(folder=="d6"){ //case 6
+		$("#qd6").show();			
+		grid.jqGrid('GridDestroy');
+		$("#grid").html("<div id=\"gridview\"></div>");
+		grid = $("#gridview").jqGrid({
+			localFirst: true,multiselect: false,height: 450,
+		    sortname: 'Id',sortorder: "desc",
+		    colModel: [
+			{header: '身份證號',name: 'Id',width: 40,align: "left"} ,
+			{header: '報表代號',name: 'rptId',width: 20,align: "left"} ,
+			{header: '報表名稱',name: 'rptName',width: 70,align: "left"},                  
+			{header: '報表日期', name: 'rptDate',width: 40,align: "left"},
+			{header: '序號',name: 'rptSeqno',width: 15,align: "center"}, 
+			{header: '業管單位',name: 'rptMaterDept',width: 35,align: "left"},
+			{header: '分行名稱',name: 'branchId',width: 35,align: "left"},
+			{header: '載入日期時間',name: 'rptReceiveDate',width: 40,align: "left"},
+			{header: '載入狀態',name: 'pd',width: 25,align: "center"},
+		    ],
+		    ondblClickRow: function(rowid, iRow, iCol, e){
+				pd = grid.getCell(rowid, "pd");
+	        	viewerDialog.dialog('open');
+	        }
+		});
+ 
+		} //END case 6
+	});  //END $("#folder").change(function()
+	
+	
+  var grid, mform = $("#mform");
+  grid = $("#gridview").jqGrid({
+    localFirst: true,multiselect: false,height: 450,
+    sortname: 'rptId',sortorder: "desc",
+    colModel: [
+			{header: '報表編號',name: 'rptId',width: 40,align: "left"} ,
+			{header: '版本',name: 'rptVer',width: 15,align: "center"} ,
+			{header: '報表名稱',name: 'rptName',width: 70,align: "left"},         
+			{header: '業務類別',name: 'bizCategory',width: 55,align: "left"},         
+			{header: '報表日期', name: 'rptDate',width: 40,align: "left"},
+			{header: '序號',name: 'rptSeqno',width: 15,align: "center"}, 
+			{header: '業管單位',name: 'rptMaterDept',width: 35,align: "left"}, 
+			{header: '報表週期',name: 'rptCycle',width: 25,align: "center"},
+			{header: '分行名稱',name: 'branchId',width: 35,align: "left"},
+			{header: '載入日期時間',name: 'rptReceiveDate',width: 40,align: "left"},
+			{header: '載入狀態',name: 'pd',width: 25,align: "center"},
+      ],
+      ondblClickRow: function(rowid, iRow, iCol, e){	
+		pd = grid.getCell(rowid, "pd");
+       	viewerDialog.dialog('open');
+      }
+    });
+	
+	
+    var qDialog = $("#qryDailog");
+    
+		qDialog.dialog({ //查詢畫面
+    	height: 330,width: 580,modal: true,			
+			open:function(){			
+		  	var currentDate = new Date();			
+				var yesterDay = new Date(); 
+		    var day = currentDate.getDate();
+		    var month = currentDate.getMonth() + 1;
+		    var year = currentDate.getFullYear();
+			
+				yesterDay.setDate(yesterDay.getDate()-1);
+		    var day0 = yesterDay.getDate();
+		    var month0 = yesterDay.getMonth() + 1;
+		    var year0 = yesterDay.getFullYear();		
+			
+				$("#rptDateBegin").val(year0.toString() + "-" + padLeft(month0.toString(),2) + "-" +padLeft(day0.toString(),2));						
+				$("#rptDateEnd").val(year.toString() + "-" + padLeft(month.toString(),2) + "-" +padLeft(day.toString(),2));
+			
+    		},
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+				folder = $("#folder").val();
+					
+					if(folder=="d1"){
+						$("#gridview").clearGridData().addGridData([
+							["ACD01","1","總分類帳","一般營業用報表","2014-01-10","1", "會計部","日報","中山分行","2014-01-10 01:30:10","成功"],
+							["ACD02","1","放款及應收保證款項餘額表","一般營業用報表",  "2014-01-11","1", "會計部","日報","中山分行","2014-01-11 01:30:10","成功"],
+							["ACD03","1","存款及承兌匯票餘額表","一般營業用報表", "2014-01-14","1", "會計部","日報","西門分行","2014-01-14 01:30:20","成功"],
+							["ACD06","1","合庫存款準備金報表","一般營業用報表", "2014-01-10","1", "財務部","月報","西門分行","2014-01-10 01:40:20","成功"],
+							["ACM02","1", "放款平均餘額及積數月報表","一般營業用報表", "2014-01-11","1", "會計部","月報","延平分行","2014-01-11 01:40:40","失敗"],
+							["BDH01","1", "金融債券利息分戶提存表","一般帳務性報表", "2014-01-14","1", "財務部","月報","延平分行","2014-01-14 01:40:30","成功"],
+							["BID03","1", "當日交易明細表-依存款類別","一般帳務性報表", "2014-01-10","1", "財務部","日報","大稻埕分行","2014-01-10 01:50:10","成功"],
+							["BID03","1", "當日交易明細表-依存款類別","一般帳務性報表", "2014-01-11","1", "財務部","日報","東門分行","2014-01-11 01:50:15","成功"],
+							["BID03","1", "當日交易明細表-依存款類別","一般帳務性報表", "2014-01-14","1", "財務部","日報","松山分行","2014-01-14 01:50:20","失敗"]   
+						]);
+					}
+					if(folder=="d2"){
+						$("#gridview").clearGridData().addGridData([	
+							["ACD01","1","總分類帳","2014-01-10","1", "會計部","日報","中山分行","2014-01-10 01:30:10","成功"],
+							["ACD02","1","放款及應收保證款項餘額表",  "2014-01-11","1", "會計部","日報","中山分行","2014-01-11 01:30:10","成功"],
+							["ACD03","1","存款及承兌匯票餘額表", "2014-01-14","1", "會計部","日報","西門分行","2014-01-14 01:30:20","成功"],
+							["ACD06","1","合庫存款準備金報表", "2014-01-10","1", "財務部","月報","西門分行","2014-01-10 01:40:20","成功"],
+							["ACM02","1", "放款平均餘額及積數月報表", "2014-01-11","1", "會計部","月報","延平分行","2014-01-11 01:40:40","成功"],
+							["BDH01","1", "金融債券利息分戶提存表", "2014-01-14","1", "財務部","月報","延平分行","2014-01-14 01:40:30","成功"],
+							["BID03","1", "當日交易明細表-依存款類別", "2014-01-10","1", "財務部","日報","大稻埕分行","2014-01-10 01:50:10","成功"],
+							["BID03","1", "當日交易明細表-依存款類別", "2014-01-11","1", "財務部","日報","東門分行","2014-01-11 01:50:15","成功"],
+							["BID03","1", "當日交易明細表-依存款類別", "2014-01-14","1", "財務部","日報","松山分行","2014-01-14 01:50:20","成功"]   
+						]);
+					}
+					if(folder=="d3"){
+						$("#gridview").clearGridData().addGridData([
+							["12345678","PBM21","媒體薪資戶明細月報表", "2014-01-05","1", "會計部","中山分行","2014-01-10 01:05:10","成功"],
+							["12345678","PBM21","媒體薪資戶明細月報表", "2014-01-05","1", "會計部","中山分行","2014-01-10 01:05:10","成功"],
+							["12345678","PBM21","媒體薪資戶明細月報表", "2014-01-05","1", "會計部","西門分行","2014-01-10 01:05:10","成功"],
+							["12345678","PBM21","媒體薪資戶明細月報表", "2014-01-05","1", "會計部","西門分行","2014-01-10 01:05:10","成功"],
+							["12345678","PBM21","媒體薪資戶明細月報表", "2014-01-05","1", "會計部","延平分行","2014-01-10 01:05:10","成功"],
+							["12345678","PBM21","媒體薪資戶明細月報表", "2014-01-05","1", "會計部","延平分行","2014-01-10 01:05:10","成功"],
+							["12345678","PBM21","媒體薪資戶明細月報表", "2014-01-05","1", "會計部","大稻埕分行","2014-01-10 01:05:10","成功"],
+							["12345678","PBM21","媒體薪資戶明細月報表", "2014-01-05","1", "會計部","東門分行","2014-01-10 01:05:10","成功"],
+							["12345678","PBM21","媒體薪資戶明細月報表", "2014-01-05","1", "會計部","松山分行","2014-01-10 01:05:10","成功"]						
+						]);
+					}
+					if(folder=="d4"){
+						$("#gridview").clearGridData().addGridData([
+							["87654321","扣繳憑單明細表", "2014-01-03","1", "會計部","中山分行","2014-01-10 01:03:10","成功"],
+							["87654321","扣繳憑單明細表", "2014-01-03","1", "會計部","中山分行","2014-01-10 01:03:10","成功"],
+							["87654321","扣繳憑單明細表", "2014-01-03","1", "會計部","西門分行","2014-01-10 01:03:10","成功"],
+							["87654321","扣繳憑單明細表", "2014-01-03","1", "會計部","西門分行","2014-01-10 01:03:10","成功"],
+							["87654321","扣繳憑單明細表", "2014-01-03","1", "會計部","延平分行","2014-01-10 01:03:10","成功"],
+							["87654321","扣繳憑單明細表", "2014-01-03","1", "會計部","延平分行","2014-01-10 01:03:10","成功"],
+							["87654321","扣繳憑單明細表", "2014-01-03","1", "會計部","大稻埕分行","2014-01-10 01:03:10","成功"],
+							["87654321","扣繳憑單明細表", "2014-01-03","1", "會計部","東門分行","2014-01-10 01:03:10","成功"],
+							["87654321","扣繳憑單明細表", "2014-01-03","1", "會計部","松山分行","2014-01-10 01:03:10","成功"]  						
+						]);
+					}
+					if(folder=="d5"){
+						$("#gridview").clearGridData().addGridData([
+							["A87654321","信用卡帳單(身份證號)", "2014-01-23","1", "信用卡部","中山分行","2014-01-23 01:30:10","成功"],
+							["A87654321","信用卡帳單(身份證號)", "2014-01-23","1", "信用卡部","中山分行","2014-01-23 01:30:10","成功"],
+							["A87654321","信用卡帳單(身份證號)", "2014-01-23","1", "信用卡部","西門分行","2014-01-23 01:30:10","成功"],
+							["A87654321","信用卡帳單(身份證號)", "2014-01-23","1", "信用卡部","西門分行","2014-01-23 01:30:10","成功"],
+							["A87654321","信用卡帳單(身份證號)", "2014-01-23","1", "信用卡部","延平分行","2014-01-23 01:30:10","成功"],
+							["A87654321","信用卡帳單(身份證號)", "2014-01-23","1", "信用卡部","延平分行","2014-01-23 01:30:10","成功"],
+							["A87654321","信用卡帳單(身份證號)", "2014-01-23","1", "信用卡部","大稻埕分行","2014-01-23 01:30:10","成功"],
+							["A87654321","信用卡帳單(身份證號)", "2014-01-23","1", "信用卡部","東門分行","2014-01-23 01:30:10","成功"],
+							["A87654321","信用卡帳單(身份證號)", "2014-01-23","1", "信用卡部","松山分行","2014-01-23 01:30:10","成功"] 						
+						]);
+					}
+					if(folder=="d6"){
+						$("#gridview").clearGridData().addGridData([
+							["A87654321","AMD94","晶片金融卡消費扣款明細表", "2014-01-23","1", "電金部","中山分行","2014-01-23 01:30:10","成功"],
+							["A87654321","AMD94","晶片金融卡消費扣款明細表", "2014-01-23","1", "電金部","中山分行","2014-01-23 01:30:10","成功"],
+							["A87654321","AMD94","晶片金融卡消費扣款明細表", "2014-01-23","1", "電金部","西門分行","2014-01-23 01:30:10","成功"],
+							["A87654321","AMD94","晶片金融卡消費扣款明細表", "2014-01-23","1", "電金部","西門分行","2014-01-23 01:30:10","成功"],
+							["A87654321","AMD94","晶片金融卡消費扣款明細表", "2014-01-23","1", "電金部","延平分行","2014-01-23 01:30:10","成功"],
+							["A87654321","AMD94","晶片金融卡消費扣款明細表", "2014-01-23","1", "電金部","延平分行","2014-01-23 01:30:10","成功"],
+							["A87654321","AMD94","晶片金融卡消費扣款明細表", "2014-01-23","1", "電金部","大稻埕分行","2014-01-23 01:30:10","成功"],
+							["A87654321","AMD94","晶片金融卡消費扣款明細表", "2014-01-23","1", "電金部","東門分行","2014-01-23 01:30:10","成功"],
+							["A87654321","AMD94","晶片金融卡消費扣款明細表", "2014-01-23","1", "電金部","松山分行","2014-01-23 01:30:10","成功"]  
+						]);
+					}
+    		}
+    	},{	key:i18n.def.close,
+    		value:function(){
+				qDialog.dialog('close');
+    		}
+		  }])
+    	});
+	
+		$("#query").click(function(){
+				qDialog.dialog('open');
+    		}).trigger('click');
+  
+  	/* ------------------------------------------------ */  
+		/*viewer Dialog    */
+  	var viewerDialog = $("#viewerDialog");
+		
+		viewerDialog.dialog({ 
+    	height: 700,width: 1100,modal: true,			
+    	});
+
+		$("#BtnPrn").click(function(){
+			if(pd=="Y"){
+			alert("此報表含有個資資料，待主管放行後，\n請至[已放行待列印]區列印。");
+			}else if(pd=="N"){
+			//alert("注意：系統核銷為60天，\n若未於核銷天數內在系統作核銷，\n系統會發信進行稽催。");
+			}
+	    });
+	    
+		$("#BtnDl").click(function(){
+			if(pd=="Y"){
+			alert("此報表含有個資資料，待主管放行後，\n請至[已放行待下載]區下載。");
+			}else if(pd=="N"){
+			alert("待主管放行後，\n請至[已放行待下載]區下載。");
+			}
+		});
+		$("#BtnD2").click(function(){
+			if(pd=="Y"){
+			alert("此報表含有個資資料，待主管放行後，\n請至[已放行待下載]區下載。");
+			}else if(pd=="N"){
+			alert("待主管放行後，\n請至[已放行待下載]區下載。");
+			}
+		});
+    
+		$("#BtnExit").click(function(){
+				viewerDialog.dialog('close');
+    });    
+  /* ------------------------------------------------ */  
+    
+});
+
+</script>
+</head>
+<body>
+	<div class="tit">當日產生報表查詢</div>
+	<div class="btns">
+        <button id="query" type="button" class="btn1">查詢</button>
+   	</div>
+   	<div id="grid">
+   		<div id="gridview"></div>
+   	</div>
+   	<div id="qryDailog" class="hide" title="查詢">
+		<form id="qform" onsubmit="return false;">
+			<table id="basicSetting" class="row-data">
+				<tr>
+					<th>&nbsp;&nbsp;&nbsp;&nbsp;✽業務類別&nbsp;&nbsp;&nbsp;&nbsp;</th>						
+					<td>	
+					  <select id="folder" name="folder" >
+							<option value="d1" selected>一般營業用(帳務性)報表資料(TCB-REPORTS)</option>
+							<option value="d2">一般營業用(帳務性)報表資料-依統編分類(TCB-RELATION)</option>
+							<option value="d3">薪資報表資料 (TCB-SALARY)</option>
+							<option value="d4">扣繳憑單明細資料(TCB-TAX)</option>
+							<option value="d5">信用卡帳單資料(TCB-CREDIT)</option>
+							<option value="d6">VISA金融卡帳單資料(TCB-VISA)</option>								
+					   	</select>
+					</td>
+				</tr>	
+				<tr>
+						<th>✽分行名稱</th>
+						<td>	
+						<select id="branchName" name="branchName" >
+							<option value=" " selected="selected">請選擇</option>
+							<option value="bran1">中山路分行</option>
+							<option value="bran2">西門分行</option>
+							<option value="bran3">延平分行</option>
+							<option value="bran4">大稻埕分行</option>
+							<option value="bran5">東門分行</option>
+							<option value="bran6">松山分行</option>								
+					   	</select>
+					</td>
+				</tr>
+				
+			</table>
+			<!-- case 1-->
+			<table id="qd1" class="row-data">
+					<tr>
+						<th>報表編號</th>
+						<td>
+						<input id="rptId" name="rptId" type="text" size="10" maxlength="10"/>
+						</td>
+					</tr>
+					<tr>
+						<th>報表名稱</th>
+						<td>
+						<input id="rptName" name="rptName" type="text" size="30" maxlength="30"/>
+						</td>
+					</tr>
+					<tr>
+						<th>序號</th>
+						<td>
+						<input id="serNo" name="serNo" type="text" size="3" maxlength="3"/>
+						</td>
+					</tr>
+
+					<tr>
+						<th>報表週期</th>
+						<td>
+						<select id="rptCycle" name="rptCycle">
+							<option value=" " selected="selected">請選擇</option>
+							<option value="D">D-日報</option>
+							<option value="H">H-半年報</option>
+							<option value="M">M-月報</option>
+							<option value="S">S-季報</option>
+							<option value="T">T-旬報</option>
+							<option value="W">W-週報</option>
+							<option value="Y">Y-年報</option>
+						</select></td>
+					</tr>
+
+					<tr>
+						<th>✽報表日期</th>
+						<td> 起
+						<input id="rptDateBegin" name="rptDateBegin" type="text" size="10" maxlength="10" class="date" value=""/>
+						迄
+						<input id="rptDateEnd" name="rptDateEnd" type="text" size="10" maxlength="10" class="date" value=""/>
+						<!--(必填)--> </td>
+					</tr>
+			</table>
+
+			<!-- case 2 -->
+			<table id="qd2" class="row-data" style="desplay:none;">
+					<tr>
+						<th>報表編號</th>
+						<td>
+						<input id="rptId" name="rptId" type="text" size="10" maxlength="10"/>
+						</td>
+					</tr>
+					<tr>
+						<th>報表名稱</th>
+						<td>
+						<input id="rptName" name="rptName" type="text" size="30" maxlength="30"/>
+						</td>
+					</tr>
+					<tr>
+						<th>序號</th>
+						<td>
+						<input id="serNo" name="serNo" type="text" size="3" maxlength="3"/>
+						</td>
+					</tr>
+
+					<tr>
+						<th>報表週期</th>
+						<td>
+						<select id="rptCycle" name="rptCycle">
+							<option value=" " selected="selected">請選擇</option>
+							<option value="D">D-日報</option>
+							<option value="H">H-半年報</option>
+							<option value="M">M-月報</option>
+							<option value="S">S-季報</option>
+							<option value="T">T-旬報</option>
+							<option value="W">W-週報</option>
+							<option value="Y">Y-年報</option>
+						</select></td>
+					</tr>
+			</table>
+			<!-- case 3-->
+			<table id="qd3" class="row-data" style="desplay:none;">
+					<tr>
+						<th>統一編號</th>
+						<td>
+						<input id="bizNum" name="bizNum" type="text" size="10" maxlength="10"/>
+						</td>
+					</tr>
+					<tr>
+						<th>報表編號</th>
+						<td>
+						<input id="rptId" name="rptId" type="text" size="10" maxlength="10"/>
+						</td>
+					</tr>
+					<tr>
+						<th>報表名稱</th>
+						<td>
+						<input id="rptName" name="rptName" type="text" size="30" maxlength="30"/>
+						</td>
+					</tr>
+					
+					<tr>
+						<th>報表日期</th>
+						<td> 起
+						<input id="rptDateBegin" name="rptDateBegin" type="text" size="10" maxlength="10" class="date" value=""/>
+						迄
+						<input id="rptDateEnd" name="rptDateEnd" type="text" size="10" maxlength="10" class="date" value=""/>
+						(必填) </td>
+					</tr>
+			</table>
+			
+			<!-- case 4-->
+			<table id="qd4" class="row-data" style="desplay:none;">
+					<tr>
+						<th>統一編號</th>
+						<td>
+						<input id="bizNum" name="bizNum" type="text" size="10" maxlength="10"/>
+						</td>
+					</tr>					
+					
+					<tr>
+						<th>報表日期</th>
+						<td> 起
+						<input id="rptDateBegin" name="rptDateBegin" type="text" size="10" maxlength="10" class="date" value=""/>
+						迄
+						<input id="rptDateEnd" name="rptDateEnd" type="text" size="10" maxlength="10" class="date" value=""/>
+						(必填) </td>
+					</tr>
+					<!--
+					<tr>
+						<th>報表編號</th>
+						<td>
+						<input id="rptId" name="rptId" type="text" size="10" maxlength="10"/>
+						</td>
+					</tr>
+					-->
+					<tr>
+						<th>報表名稱</th>
+						<td>
+						<input id="rptName" name="rptName" type="text" size="30" maxlength="30"/>
+						</td>
+					</tr>
+					
+					
+			</table>
+			
+			<!-- case 5-->
+			<table id="qd5" class="row-data" style="desplay:none;">
+					<tr>
+						<th>身份證號</th>
+						<td>
+						<input id="bizNum" name="bizNum" type="text" size="10" maxlength="10"/>
+						</td>
+					</tr>
+					<!--
+					<tr>
+						<th>報表編號</th>
+						<td>
+						<input id="rptId" name="rptId" type="text" size="10" maxlength="10"/>
+						</td>
+					</tr>					
+					-->
+					<tr>
+						<th>報表名稱</th>
+						<td>
+						<input id="rptName" name="rptName" type="text" size="30" maxlength="30"/>
+						</td>
+					</tr>
+
+					<tr>
+						<th>報表日期</th>
+						<td> 起
+						<input id="rptDateBegin" name="rptDateBegin" type="text" size="10" maxlength="10" class="date" value=""/>
+						迄
+						<input id="rptDateEnd" name="rptDateEnd" type="text" size="10" maxlength="10" class="date" value=""/>
+						(必填) </td>
+					</tr>
+										
+			</table>
+			
+			<!-- case 6-->
+			<table id="qd6" class="row-data" style="desplay:none;">
+					<tr>
+						<th>身份證號</th>
+						<td>
+						<input id="bizNum" name="bizNum" type="text" size="10" maxlength="10"/>
+						</td>
+					</tr>					
+					<tr>
+						<th>報表編號</th>
+						<td>
+						<input id="rptId" name="rptId" type="text" size="10" maxlength="10"/>
+						</td>
+					</tr>					
+					<tr>
+						<th>報表名稱</th>
+						<td>
+						<input id="rptName" name="rptName" type="text" size="30" maxlength="30"/>
+						</td>
+					</tr>
+					<tr>
+						<th>序號</th>
+						<td>
+						<input id="serNo" name="serNo" type="text" size="3" maxlength="3"/>
+						</td>
+					</tr>
+					<tr>
+						<th>報表日期</th>
+						<td> 起
+						<input id="rptDateBegin" name="rptDateBegin" type="text" size="10" maxlength="10" class="date" value=""/>
+						迄
+						<input id="rptDateEnd" name="rptDateEnd" type="text" size="10" maxlength="10" class="date" value=""/>
+						(必填) </td>
+					</tr>
+			</table>			
+		</form>
+	</div>
+	
+	
+	<!--報表Viewer -->
+   	<div id="viewerDialog" class="hide" title="當日產生報表查詢">
+   		<form id="viewerform" onsubmit="return false;">
+   			<table id="basicSetting" class="row-data">
+				<tr>
+						<td colspan="32">
+						 	<select id="branchID" name="branchID">						   	
+								<option value="D" selected="selected">1000-1000分行</option>
+								<option value="H">2000-2000分行</option>
+								<option value="M">3000-3000分行</option>
+							</select>
+							<button id="BtnpageUpAll" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"><<</button>
+							<button id="BtnpageUp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"><</button>
+							<input id="TXTPages" name="TXTPages" type="text" size="1" maxlength="1" value ="1">/126
+							<button id="BtnpageDown" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">></button>
+							<button id="BtnpageDownAll" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">>></button>						
+							<button id="BtnSamll" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">縮小</button>
+							<button id="BtnBig" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">放大</button>
+							<input id="TXTFind" name="TXTFind" type="text" size="10" maxlength="10">							
+							<button id="BtnFind" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">字串搜尋</button>
+							<button id="BtnNext" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下一筆</button>
+							&nbsp;&nbsp;
+							<button id="BtnPrn" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">列印</button>
+							<button id="BtnDl" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下載TXT</button>
+							<button id="BtnD2" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下載PDF</button>
+							&nbsp;&nbsp;
+							<!--
+							<button id="Btnapprov" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;" >簽核</button>
+							&nbsp;&nbsp;
+							-->
+							<button id="BtnExit" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">離開</button>
+						</td>					
+				</tr>
+				
+				<tr>
+						<td colspan="32">
+						<img id="rptImage" src="../static/images/form/rptContent.jpg" alt="報表內容檔">
+						</td>
+   			</tr>
+   		</table>
+   	</form>	
+	</div>	
+	
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+        <li>投資理財</li>
+        <li>基金交易</li>
+    <li>基金單筆申購</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">基金單筆申購</span>
+    </div>
+    <div class="fl">
+        <a href="javascript:void(0);" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul>
+            <li class="highLight">投資屬性：穩健型</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont"><!-- #BeginLibraryItem "/Library/notify.lbi" -->
+
+<table class="tb_announce" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="hd1">風險承擔 / 信託報酬預告 / 其他注意事項</td>
+        </tr>
+        <tr>
+            <td class="cont">
+            <div class="info_scroll" style="height:350px;">
+            <dl>
+                <dt>一、</dt>
+                <dd style="margin-left:40px;">委託人（即本人）以信託資金交付受託人（即本行）為投資標的指示運用前，已確實詳閱投資標的相關資料及規定，並瞭解其投資風險，包括可能發生投資標的跌價、匯兌損失所導致之本金虧損，投資標的暫停賣出或贖回、合併及解散清算等風險，並基於委託人獨立審慎之投資判斷後，決定各項投資指示。 </dd>
+            </dl>
+                <dl>
+                    <dt>二、</dt>
+                    <dd style="margin-left:40px;">本信託資金運用管理所生資本利得及其孳息收益、投資所生風險可能導致本金發生虧損、投資所生費用及賦稅等，悉數由委託人享有或負擔，受託人不為信託本金及投資收益之保證。 </dd>
+                </dl>
+                <dl>
+                    <dt>三、</dt>
+                    <dd style="margin-left:40px;">委託人已瞭解本信託資金並非一般銀行存款，非屬中央存款保險公司承保範圍。瞭解投資標的以往績效不代表未來表現，亦不保證其最低收益。 </dd>
+                </dl>
+                <dl>
+                    <dt>四、</dt>
+                    <dd style="margin-left:40px;">委託人投資可能發生各種投資風險，委託人對上述事實及投資風險已經明瞭並同意自行承擔風險。 
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>五、</dt>
+                    <dd style="margin-left:40px;">委託人應負擔之費用：依投資標的種類不同，委託人應負擔之費用亦有不同。
+                    <ul class="noListStyle"> (一) 如委託人信託資金投資於國內共同基金時： </ul>
+                    <ul>
+                    	<li>
+                        申購手續費<br>
+                        ● 報酬標準：費率0％至5%，依受託人所訂費率計收。<br> 
+                        ● 計算方法：以信託本金乘上費率計算之。 <br>
+                        ● 支付時間及方法：單筆信託投資於申購時交付，定期定額信託投資於每次扣繳信託金額時一併計付。定期定額信託投資國內共同基金，每次申購手續費最低為新台幣50元。 
+                        </li>
+                        <li>
+                        轉換手續費<br>
+                        ● 報酬標準：於每次轉換時，除依各投資標的經理公司約定方式收取外，受託人依另按每筆轉換計收新台幣200元。<br> 
+                        ● 計算方法：於每次基金轉換時逐次收取。<br>
+                        ● 支付時間及方法：由委託人給付予受託人，於轉換時一次給付。 
+                        </li>
+                        <li>
+                        信託管理費<br>
+                        ● 報酬標準：費率0.2%。 <br> 
+                        ● 計算方法：自申購日後滿一年起，以信託本金乘上費率乘上持有期間計算。 <br>
+                        ● 支付時間及方法：由受託人於返還信託本益中扣收，惟每筆最低收取新台幣200元。 
+                        </li>
+                        <li>
+                        申購時之通路服務費<br>
+                        ● 報酬標準：費率0％至5%。 <br> 
+                        ● 計算方法：以信託本金乘上費率計算之。 <br>
+                        ● 支付時間及方法：由交易對手或基金經理公司於申購時給付予受託人。此服務費如係已包含於基金公開說明書所規定之費用，將由基金公司逕自各基金之每日淨資產價值中扣除。  
+                        </li>
+                        <li>
+                        持有期間之通路服務費<br>
+                        ● 報酬標準：年費率0％至5%。 <br> 
+                        ● 計算方法：以受託人於交易對手或基金經理公司之淨資產價值乘上費率計算之。 <br>
+                        ● 支付時間及方法：由交易對手或基金經理公司給付予受託人，支付方式依各基金公司而有所不同，可能採取月、季、半年、年度支付方式為之。此服務費如係已包含於基金公開說明書所規定之費用，將由基金公司逕自各基金之每日淨資產價值中扣除。  
+                        </li>
+                    </ul>
+                    <ul class="noListStyle">(二) 如委託人信託資金投資於申購時收取手續費之境外基金時：</ul>
+                    <ul>
+                    	<li>
+                        申購手續費<br>
+                        ● 報酬標準：費率0％至5%，依受託人所訂費率計收。<br> 
+                        ● 計算方法：以信託本金乘上費率計算之。 <br>
+                        ● 支付時間及方法：單筆信託投資於申購時交付，定期定額信託投資於每次扣繳信託金額時一併計付。定期定額信託投資境外基金，每次申購手續費最低為新台幣50元（或等值外幣）。
+                        </li>
+                        <li>
+                        信託管理費<br>
+                        ● 報酬標準：費率0.2%。 <br> 
+                        ● 計算方法：自申購日後滿一年起，以信託本金乘上費率乘上持有期間計算之。 <br>
+                        ● 支付時間及方法：由受託人於返還信託本益中扣收，惟每筆最低收取新台幣500元（或等值外幣）。 
+                        </li>
+                        <li>轉換手續費及通路服務費之規定同國內共同基金相關規定辦理，惟轉換手續費每筆計收新台幣500元。 </li>
+                    </ul>
+                    <ul class="noListStyle"> (三) 如委託人信託資金投資於遞延至贖回時收取或其他收費方式之境外基金時： </ul>
+                    <ul>
+                    	<li>
+                        遞延申購手續費：<br> 
+                        ● 報酬標準：費率0％至5%，依受託人及基金經理公司所訂費率計收。<br>  
+                        ● 計算方法：依贖回時市價與信託本金孰低者乘以適用費率計算之。<br>  
+                        ● 支付時間及方法：於基金贖回時由基金經理公司自贖回總額中扣收。 
+                        </li>
+                        <li>轉換手續費、信託管理費及通路服務費之規定準用前項（申購時收取手續費之境外基金）相關規定辦理。  </li>
+                        <li>委託人應了解所投資基金產品，基金經理公司需收取分銷費用，且該費用將由基金資產中支付。同時，基金在贖回時，基金經理公司將收取遞延申購手續費，該費用將自贖回總額內扣除。 </li>
+                    </ul>
+                    <ul class="noListStyle">(四) 如委託人信託資金投資於結構型商品(含連動債券)時，受託人收取之信託報酬另依委託人與受託人之產品說明書與特約條款之約定為之。 </ul>
+                    <ul class="noListStyle">(五) 受託人如調高前項各款信託費用時，應以書面通知委託人；委託人如不同意，應於寄發通知後十五日內以書面向受託人為終止信託契約之意思表示，若於上述期間委託人未為終止信託契約之表示即視為同意。 </ul>
+                    <ul class="noListStyle">(六) 委託人瞭解並同意受託人辦理本契約項下信託業務之相關交易時，可能得自交易對手之任何費用，均係作為受託人收取之信託報酬。 </ul>
+                    <ul class="noListStyle">(七) 其他費用 有關投資標的所應支付或發生之賦稅、保管費、簽證費、會計師費用，及就本信託資金交易有不可歸責於受託人之事由，而與第三人為訴訟或提付仲裁或其他交涉時所發生之訴訟費、仲裁費、律師費及依慣例應由委託人負擔之其他費用等，悉數由委託人負擔。</ul>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>六、</dt>
+                    <dd style="margin-left:40px;">委託人知悉並同意受託所銷售基金之投資人須知及公開說明書或其中譯本（包括但不限於短線交易、擇時交易及洗錢防制等事項）等相關基金資訊，委託人除可至受託人各營業單位索取外，亦可由「境外基金公開觀測站」（網址<a href="http://announce.fundclear.com.tw/" class="link" target="_blank">http://announce.fundclear.com.tw</a>）及「公開資訊觀測站」（網址<a href="http://newmops.tse.com.tw" class="link" target="_blank">http://newmops.tse.com.tw</a>）自行擷取使用，受託人已依「境外基金管理辦法」、「證券投資信託事業募集證券投資信託基金處理準則」及主管機關相關規定，善盡銷售機構告知義務。 </dd>
+                </dl>
+                <dl>
+                    <dt>七、</dt>
+                    <dd style="margin-left:40px;">委託人同意並已依「境外基金管理辦法」及「證券投資信託事業募集證券投資信託基處理準則」等規定，提供相關風險屬性資料予受託人。</dd>
+                </dl>
+                <dl>
+                    <dt>八、</dt>
+                    <dd style="margin-left:40px;">委託人如已約定由受託人寄發交易確認單（含相關表報），將於次月收到「信託資產報告書暨結算書」。</dd>
+                </dl>
+                <dl>
+                    <dt>九、</dt>
+                    <dd style="margin-left:40px;">國內基金申購以交易日當日淨值計算，贖回價格以次一營業日計算，國內基金之轉換係以贖回再申購方式辦理。境外基金申購(贖回)原則上係以基金註冊地當日淨值計算(惟仍需視個別基金而定，部份境外基金以次一營業日淨值計算)，另部份境外基金採雙向淨值報價(如:JF)，即申購與贖回淨值不同， 請詳情參閱各基金公開說明書及投資人須知。 </dd>
+                </dl>
+                <dl>
+                    <dt>十、</dt>
+                    <dd style="margin-left:40px;">委託人於網路銀行上進行交易時，該交易經客戶確認且完成後(如為申購/轉換等扣款交易，存款及基金帳務均需完成，如任一端未成功，即視為未完成)，為維護客戶權益及資料安全，本行(受託人)恕不接受修改資料或取消交易。 </dd>
+                </dl>
+                <dl>
+                    <dt>十一、</dt>
+                    <dd style="margin-left:40px;">委託人具備相當之投資專業及財務能力，且已充分瞭解本次投資基金商品之所有可能風險，並足以承擔所投資標的 之風險。委託人確認該投資標的之交易係自行判斷之投資決定，即本行係依據委託人之運用指示，由本行以受託人名義代委託人與交易相對人進行該筆投資交易。且委託人同意 貴行並不保證此交易能於時限內完成（包括但不限於投資標的已額滿、未核備、已清算或交易對象不受理等因素），且 本行亦不須對此負責。</dd>
+                </dl>
+                <dl>
+                    <dt>十二、</dt>
+                    <dd style="margin-left:40px;">委託人已依「境外基金管理辦法」、「證券投資信託事業募集證券投資信託基金處理準則」及主管機關規定，填寫「財富管理貴賓戶KYC表」/「非財富管理部門客戶KYC表」予 本行，並瞭解自身投資屬性。</dd>
+                </dl>
+                    </div>
+                </td>
+        </tr>
+        <tr>
+            <td class="hd1">基金短線交易相關注意事項</td>
+        </tr>
+        <tr>
+        	<td class="cont">
+        	<dl>
+                <dt>一、</dt>
+                <dd style="margin-left:40px;">若委託人從事基金交易符合該公開說明書之短線交易認定標準時，委託人同意本行(受託人)得將境外基金管理辦法及境外基金註冊地法令所要求之委託人相關資料 (包括但不限於身份證字號、交易資訊)，提供予境外基金機構或總代理人。 </dd>
+            </dl>
+            <dl>
+                <dt>二、</dt>
+                <dd style="margin-left:40px;">辦理境外系列基金，如有短線交易發生時，基金公司有將收取一定比例的額外交易手續費、拒絕該次申請之交易、或限制新增申購等權利，各境外系列基金「短線交易」之相關規定，請詳閱各基金公司之最新公開說明書或<a href="javascript:void(0);" class="link">本行網站</a>，若有任何相關的問題，可逕洽各分行理財專員。（依境外基金管理辦法第5條之1第1項及第42條第3項規定辦理。） </dd>
+            </dl>
+            
+        	</td>
+        </tr>
+    </table>
+<table width="100%" cellpadding="0" cellspacing="0" class="tb_warning mb5">
+    <tr>
+    	<td>※  如已瞭解並同意上述之內容，請按同意鍵以繼續進行交易；如無法同意者，請選擇不同意鍵以結束交易。</td>
+    </tr>
+</table><!-- #EndLibraryItem --><div class="btnBlock">
+    <a href="TWNFNT01_risk_warning.html" class="btn_submit">同意</a>  
+    <a href="javascript:void(0);" class="btn_submit">不同意</a></div>
+</div>
+</div>
+</div>
+</body>
+</html>

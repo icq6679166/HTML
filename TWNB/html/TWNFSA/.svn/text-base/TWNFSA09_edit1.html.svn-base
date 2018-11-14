@@ -1,0 +1,126 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>國內信用狀申請</li>
+    <li>國內信用狀開狀交易</li>
+</ul> 
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">國內信用狀開狀交易</span>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul>
+                            <li><a href="javascript:void(0);" class="btn_temeplate" onClick="winopen('../Common/cm_TWNAPT01_ct_pop.html',800,550)" title="取用群組">取用群組</a>：從您的交易群組中選取套用一筆交易資料。 </li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+<dl id="step" class="clearfix">
+    <dt class="current"><span>信用狀資料</span></dt>
+    <dt><span>匯票及單據</span></dt>
+    <dt><span>資料確認</span></dt>
+    <dt><span>結果頁</span></dt>                 
+</dl>
+<div class="pageCont">
+    
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+    <tr>
+        <td class="hd1" width="20%">
+            案件編號</td>
+        <td width="80%">
+            YYYYMMDDXXX99999</td>
+    </tr>
+    <tr>
+        <td class="hd1" width="20%">
+            公司戶名</td>
+        <td width="80%">
+            99999999 XXXXXXXXXXX</td>
+    </tr>
+    <tr>
+        <td class="hd1" width="20%">
+            公司地址</td>
+        <td width="80%">
+            XXXXXXXXXX<br>
+            XXXXXX<br>
+            XXXXXXXXXXXXX</td>
+    </tr>
+    <tr>
+        <td class="hd1" width="20%">
+            聯絡人</td>
+        <td width="80%"><input type="text">
+            </td>
+    </tr>
+    <tr>
+        <td class="hd1" width="20%">
+            聯絡電話</td>
+        <td width="80%"><input type="text">
+            </td>
+    </tr>
+    <tr>
+        <td class="hd1" width="20%">
+            <span class="star">＊</span>有效期限</td>
+        <td width="80%">
+                <input type="text" class="date_txt" value="YYYY/MM/DD">
+                <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a>
+            </td>
+    </tr>
+    <tr>
+        <td class="hd1" width="20%">
+            <span class="star">＊</span>信用狀金額</td>
+        <td width="80%">
+        <input type="text" size="10">
+            </td>
+    </tr>
+    <tr>
+        <td class="hd1" width="20%">
+            通知銀行</td>
+        <td width="80%">
+            <input type="text" size="10">
+        <a href="javascript:void(0);" class="btn_search" onClick="winopen('../Common/cm_BankCode_pop.html',800,550)" title="通知銀行查詢">通知銀行</a> 華南建成</td>
+    </tr>
+    <tr>
+        <td class="hd1">
+            <span class="star">＊</span>受益人</td>
+        <td>
+            <input type="text">
+            <a href="javascript:void(0);" class="btn_search" onClick="winopen('../Common/cm_beneficiary_pop.html',800,550)" title="受益人查詢">受益人</a></td>
+    </tr>
+    <tr>
+        <td class="hd1">
+            <span class="star">＊</span>受益人地址</td>
+        <td>
+            <span class="td_imp_r">由受益人查詢自行載入</span></td>
+    </tr>
+</table>
+    <div class="btnBlock">
+        <a href="TWNFSA09_edit2.html" class="btn_submit">下一步</a>
+        <a href="javascript:void(0)" class="btn_submit">儲存</a>
+        <a href="javascript:void(0)" class="btn_submit" onClick="confirmx('確定刪除? 範本已存在是否覆蓋?','TWNFSA09_trans_info.html','TWNFSA09_edit1.html')">刪除</a>
+        <a href="TWNFSA09_credit_line.html" class="btn_submit">取消</a>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function() {
+	var grid = $("#gridview").jqGrid({
+		localFirst:true,multiselect:true,height:450,
+		colModel : [ 
+		{header : '功能代號',name:'funcId',width : 15,align : "left"},
+		{header : '功能名稱',name:'funcDesc',width : 20,align : "left"},
+		{header : '功能順序',name:'funcOrder',width : 15,align : "left"},
+		{header : '父功能代號',name:'funcParent',width : 15,align : "left"},
+		{header : '功能入口URL',name:'funcUrl',width : 50,align : "left"} 
+		],
+		ondblClickRow: function(){
+        	//var ret = grid.getSelRowDatas();
+        	//eDialog.dialog({title:'維護'}).dialog('open').find("#mform").injectData(ret);
+        }
+	});
+
+
+	
+	var qDialog = $("#qDialog") , eDialog = $("#eDialog");
+	qDialog.dialog({ //查詢畫面
+    	height: 200,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+					["",'txn40000','基本權限管理','20200','',''],
+					["",'txn40101','角色維護','20201','txn40000','txn40101.jsp'],
+					["",'txn40201','使用者維護','20202','txn40000','txn40201.jsp'],
+					["",'txn40301','交易維護','20203','txn40000','txn40301.jsp'],
+					["",'txn40401','交易權限維護','20204','txn40000','txn40401.jsp']				
+				]);				
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+	$("#qry").click(function(){
+		qDialog.dialog('open');
+    }).trigger('click');
+	
+	eDialog.dialog({ //查詢畫面
+    	height: 300,width: 550,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+    // 新增
+    $("#add").click(function(){
+    	eDialog.dialog({title:'新增'}).dialog('open').find("#mform").reset();
+    });
+
+	//刪除多筆
+	$("#delete").click(function(){
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length==0)
+		{
+			alert("請至少選一筆資料");	
+		}
+		else
+		{
+			//var row=grid.getRowData(selRowIds[0]);
+			var row;
+			var i,msg="";
+			
+			for(i=0; i<selRowIds.length; i++ )
+			{	
+				row=grid.getRowData(selRowIds[i])
+				msg = msg + row['funcId'] + "-" + row['funcDesc'] + "\n" ;
+			}			
+			alert("確定要刪除?  \n" + msg);	
+		}		
+    });		
+
+
+	//修改畫面
+	var editDialog = $("#editDialog") 
+	editDialog.dialog({ 
+    	height: 300,width: 550,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			editDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			editDialog.dialog('close');
+    		}
+    	}])
+    });
+
+    $("#edit").click(function(){
+    	
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length>1)
+		{
+			alert("修改只能選一筆!");
+		}
+		else if(selRowIds.length == 0) 
+		{
+			alert("請至少選一筆資料!");
+		}		
+		else{
+			var row=grid.getRowData(selRowIds[0]);
+			editDialog.dialog({title:'修改'}).dialog('open');
+			$("#editFuncId").val(row['funcId']);
+			$("#editFuncDesc").val(row['funcDesc']);			
+			$("#editFuncOrder").val(row['funcOrder']);
+			$("#editFuncParent").val(row['funcParent']);
+			$("#editFuncUrl").val(row['funcUrl']);
+		}				
+    });
+});
+</script>
+</head>
+<body>
+  	<div class="tit">交易維護</div>
+  	<div class="btns">
+  			<button id="qry" type="button" class="btn1">查詢</button>		
+        <button id="add" type="button" class="btn1">新增</button>
+				<button id="edit" type="button" class="btn1">修改</button>
+        <button id="delete" type="button" class="btn1">刪除</button>
+				<button id="export" type="button" class="btn1">匯出</button>
+		
+     </div>
+     <div id="gridview" />
+     <div id="qDialog" class="hide" title="查詢" >
+     	<form id="qform" onsubmit="return false;">
+     		<table id="basicSetting" class="row-data">
+				<tr>
+					<th>功能代號</th>						
+					<td>	
+					  <input id="funcId" name ="funcId" type="text" size="10" maxlength="10">
+					</td>			
+				</tr>
+				<tr>
+					<th>功能名稱</th>						
+					<td>	
+					  <input id="funcDesc" name ="funcDesc" type="text" size="20" maxlength="20">
+					</td>			
+				</tr>
+				<tr>
+					<th nowrap="nowrap">父功能代號</th>						
+					<td>	
+					  <input id="funcParent" name ="funcParent" type="text" size="10" maxlength="10">
+					</td>			
+				</tr>
+			</table>
+     	</form>
+     </div>
+	 
+     <div id="editDialog" class="hide" title="修改">
+     	<form id="editmform" onsubmit="return false;">
+			<table id="editTable" class="row-data">
+				<tr>
+					<th>✽功能代號</th>						
+					<td>	
+					  <input id="editFuncId" name ="editFuncId" type="text" size="10" maxlength="10" disabled="disabled">
+					</td>			
+				</tr>
+				<tr>
+					<th>✽功能名稱</th>						
+					<td>	
+					  <input id="editFuncDesc" name ="editFuncDesc" type="text" size="20" maxlength="20">
+					</td>			
+				</tr>
+				<tr>
+					<th>✽功能順序</th>						
+					<td>	
+					  <input id="editFuncOrder" name ="editFuncOrder" type="text" size="4" maxlength="4">
+					</td>			
+				</tr>
+				<tr>
+					<th>✽父功能代號</th>						
+					<td>	
+					  <input id="editFuncParent" name ="editFuncParent" type="text" size="10" maxlength="10">
+					</td>			
+				</tr>
+				<tr>
+					<th>✽功能入口URL</th>						
+					<td>	
+					  <input id="editFuncUrl" name ="editFuncUrl" type="text" size="50" maxlength="50">
+					</td>			
+				</tr>
+			</table>
+		</form>
+     </div>	 
+	 
+	 
+     <div id="eDialog" class="hide" title="維護">
+     	<form id="mform" onsubmit="return false;">
+			<table id="basicSetting" class="row-data">
+				<tr>
+					<th>✽功能代號</th>						
+					<td>	
+					  <input id="funcId" name ="funcId" type="text" size="10" maxlength="10">
+					</td>			
+				</tr>
+				<tr>
+					<th>✽功能名稱</th>						
+					<td>	
+					  <input id="funcDesc" name ="funcDesc" type="text" size="20" maxlength="20">
+					</td>			
+				</tr>
+				<tr>
+					<th>✽功能順序</th>						
+					<td>	
+					  <input id="funcOrder" name ="funcOrder" type="text" size="4" maxlength="4">
+					</td>			
+				</tr>
+				<tr>
+					<th>✽父功能代號</th>						
+					<td>	
+					  <input id="funcParent" name ="funcParent" type="text" size="10" maxlength="10">
+					</td>			
+				</tr>
+				<tr>
+					<th>✽功能入口URL</th>						
+					<td>	
+					  <input id="funcUrl" name ="funcUrl" type="text" size="50" maxlength="50">
+					</td>			
+				</tr>
+			</table>
+		</form>
+     </div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>各項查詢</li>
+    <li>基金資料查詢</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">基金資料查詢</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td width="20%" class="hd1"><span class="star">＊</span>業務別</td>
+          <td><select name="select2">
+              <option selected>國外基金</option>
+            </select>
+			</td>
+        </tr>
+        <tr>
+          <td class="hd1">投資標的型態</td>
+          <td><select name="select">
+            <option selected>股票型</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td class="hd1">標的投資區域</td>
+          <td><select name="select3">
+            <option selected>---請選擇---</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td class="hd1">投資型態</td>
+          <td><select name="select4">
+            <option selected>全部</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td class="hd1">計價幣別</td>
+          <td><select name="select5">
+            <option selected>---請選擇---</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td class="hd1">發行公司代碼</td>
+          <td>From：<select name="select6">
+            <option selected>---請選擇---</option>
+          </select>  To
+            <select name="select7">
+              <option selected>---請選擇---</option>
+          </select></td>
+        </tr>
+    </table>
+    
+    <div class="btnBlock">
+    	<a href="TWNFNQ03_qry_result.html" class="btn_submit">查詢</a>
+        <a href="javascript:void(0)" class="btn_submit">清除</a>
+       
+    </div>
+    <div class="searchline"></div>
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="search_date">查詢日期：<span id="YMD"></span><span id="HMS"></span></td>
+        <td class="rt">&nbsp;</td>
+      </tr>
+    </table>
+    <table class="titleBlock2" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="td_cont">
+                <span class="col_2">
+                <span class="tit">業務別：</span> 國外基金
+                </span>
+                <span class="col_2">
+                <span class="tit">發行公司代碼:</span> 07德盛安聯投顧公司德利
+                </span>
+            </td>
+        </tr>
+    </table>
+    
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+        </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi mb0">
+      <tr>
+        <td class="hd1" width="5%"> 序號</td>
+        <td width="23%" class="hd1">發行公司<div class="tdline"></div>投資標的</td>
+        <td class="hd1" width="8%">計價幣別</td>
+        <td class="hd1" width="11%">投資標的型態</td>
+        <td class="hd1" width="13%">標的註冊地<div class="tdline"></div>標的投資區域</td>
+        <td class="hd1" width="16%">投資型態<div class="tdline"></div>預計贖回款入帳日</td>
+        <td class="hd1" width="8%">風險<br>
+        收益等級</td>
+        <td class="hd1" width="8%">交易註記</td>
+        <td class="hd1" width="8%">標的狀態</td>
+      </tr>
+      <tr>
+        <td class="td_sn"> 1</td>
+        <td>01 景順投資管理亞洲有限公司<br>0101 景順日本認股權證基金
+</td>
+        <td class=" td_currency">USD</td>
+        <td class="ct">股票型</td>
+        <td class="ct">日本<br>日本</td>
+        <td class="ct">單筆申購<br>T+100</td>
+        <td class="ct">RR5</td>
+        <td class="ct">停購停轉</td>
+        <td class="ct">成立
+</td>
+      </tr>
+      <tr>
+        <td class="td_sn"> 2</td>
+        <td>01 景順投資管理亞洲有限公司<br>
+          010 2億順亞洲高成長基金</td>
+        <td class=" td_currency">USD</td>
+        <td class="ct">股票型</td>
+        <td class="ct">盧森堡<br>盧森堡</td>
+        <td class="ct">單筆/定期定額<br>
+          T+100</td>
+        <td class="ct">&nbsp;</td>
+        <td class="ct">停購停轉</td>
+        <td class="ct">成立 </td>
+      </tr>
+      <tr>
+        <td class="td_sn"> 3</td>
+        <td>01 景順投資管理亞洲有限公司<br>
+          0101 景順日本認股權證基金 </td>
+        <td class=" td_currency">USD</td>
+        <td class="ct">股票型</td>
+        <td class="ct">盧森堡<br>
+          盧森堡</td>
+        <td class="ct">單筆申購<br>
+          T+100</td>
+        <td class="ct">&nbsp;</td>
+        <td class="ct">停購停轉</td>
+        <td class="ct">成立 </td>
+      </tr>
+    </table>
+    <table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+      </tr>
+    </table>
+    <div class="remarks">
+        <div class="title">備註：</div>
+        <ul class="olist">
+          <li>以上資料僅供參考，實際以各基金公開說明書為準。</li>
+        </ul>   
+    </div>
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

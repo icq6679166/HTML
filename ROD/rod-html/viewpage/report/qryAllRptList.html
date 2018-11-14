@@ -1,0 +1,165 @@
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+    var grid, mform = $("#mform");
+    grid = $("#gridview").jqGrid({
+    	localFirst: true,multiselect: true,height: 380,
+    	sortname: 'rptId',sortorder: "desc",
+        colModel: [		
+        {header: '報表編號',name: 'rptId',width: 40,align: "left"} ,
+		{header: '報表名稱',name: 'rptName',width: 100,align: "left"}, 
+        {header: '業管單位',name: 'rptMaterDept',width: 30,align: "left"},
+		{header: '使用單位',name: 'userUnit',width: 30,align: "left"},
+		{header: '簽核內容',name: 'sign',width: 30,align: "left"},
+        {header: '保存年限',name: 'rptSaveYear',width: 20,align: "left"}
+		],
+        ondblClickRow: function(rowid, iRow, iCol, e){
+			//$("#allRptLst").hide();
+			//$("#rptgpRptId").text($("#gridview").jqGrid ('getCell', rowid, 'rptId'));
+        	//$("#rptgp").show();
+        }
+    });	
+	
+	
+	rptgp = $("#rptgpview").jqGrid({
+    	localFirst: true,multiselect: false,height: 200,
+    	sortname: 'rptId',sortorder: "desc",
+        colModel: [		
+        {header: '報表群組代號',name: 'rptGpId',width: 100,align: "left"} ,
+		{header: '報表群組名稱',name: 'rptGpName',width: 260,align: "left"}
+        
+        ],
+        ondblClickRow: function(rowid, iRow, iCol, e){
+        	
+        }
+    }).addGridData([
+            ["rep_acc","一般營業用報表"],
+            ["reports","一般帳務性報表"]       
+   	]);
+	
+	
+
+	$("#qryDetail").click(function(){
+		
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if (selRowIds.length > 1) {
+			alert("修改只能選一筆!");
+		}
+		else 
+			if (selRowIds.length == 0) {
+				alert("修改請選一筆資料!");
+			}
+			else 
+				if (selRowIds.length == 1) {				
+					
+					var row=grid.getRowData(selRowIds[0]);
+					$("#allRptLst").hide();					
+					$("#rptgpRptId").text(row['rptId']);
+					$("#rptgpTitle").show();
+				}
+	});	
+	
+	$("#back").click(function(){
+		$("#allRptLst").show();
+		$("#rptgpTitle").hide();
+	});
+	
+	
+	  var qDialog = $("#qryDailog");
+		qDialog.dialog({ //查詢畫面
+    	height: 250,width: 300,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+			$("#gridview").clearGridData().addGridData([
+			["","ACD01","總分類帳","會計部","各分行","電子簽核","10"],
+			["","ACD02","放款及應收保證款項餘額表","會計部","各分行","電子簽核","15"],
+			["","ACD03","存款及承兌匯票餘額表","會計部","各分行","電子簽核","10"],
+			["","ACD06","合庫存款準備金報表","財務部","業管單位","人工簽核","15"],
+			["","ACM02","放款平均餘額及積數月報表","會計部","業管單位","人工簽核","10"],
+			["","BDH01","金融債券利息分戶提存表","財務部","業管單位","電子簽核","15"],
+			["","BID03","當日交易明細表-依存款類別","財務部","主辦單位","人工簽核","10"],
+			["","BID03","當日交易明細表-依存款類別","財務部","主辦單位","人工簽核","15"],
+			["","BID03","當日交易明細表-依存款類別","財務部","主辦單位","人工簽核","10"]			       
+			]);
+			
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+    
+	$("#query").click(function(){
+		qDialog.dialog('open');
+    }).trigger('click');
+	
+	
+	
+	
+	
+	
+	
+});
+</script>
+</head>
+<body>
+	<div id="allRptLst">
+	<div class="tit">全行報表使用清單查詢</div>
+	<div class="btns">					
+			<button id="query" type="button" class="btn1">查詢</button>
+			<button id="qryDetail" type="button" class="btn1">查看報表群組</button>
+	    <button id="export" type="button" class="btn1">匯出csv</button>								
+  </div>
+   	
+   	
+   	<div id="gridview"></div>
+	</div>
+	
+	<div id="rptgpTitle" style="display:none">
+		<div class="tit">全行報表使用清單查詢-報表編號:<Label id="rptgpRptId"></Label> 報表群組清單</div>
+		<div class="btns">
+			<button id="back" type="button" class="btn1">上一頁</button>
+	    </div>
+		<div id="rptgpview">		
+	</div>
+	
+	<div id="qryDailog" class="hide" title="查詢">
+		<form id="qform" onsubmit="return false;">
+			<table id="basicSetting" class="row-data">
+				<tr>
+					<th nowrap>報表編號</th>						
+					<td>	
+					  <input id="rptId" name ="rptId" type="text" size="10" maxlength="10"/>
+					</td>
+				</tr>
+				<tr>
+					<th nowrap>報表名稱</th>						
+					<td>	
+					  <input id="rptName" name ="rptName" type="text" size="20" maxlength="20"/>
+					</td>
+				</tr>
+				<tr>
+					<th>業管單位</th>
+					<td>
+						<select id="manageDept" name="manageDept">
+							<option value="G" selected="selected">ALL 全部</option>
+							<option value="D">0600 會計部</option>
+							<option value="H">0800 法金部</option>
+							<option value="M">0710 個金部</option>
+							<option value="O">0510 財務部</option>
+							<option value="S">0430 行政部</option>
+							<option value="T">0200 總務部</option>
+						</select>
+					</td>
+				</tr>							
+			</table>
+		</form>
+	</div>
+	
+</body>
+</html>

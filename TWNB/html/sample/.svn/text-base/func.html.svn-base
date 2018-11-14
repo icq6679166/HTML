@@ -1,0 +1,473 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" href="inc/sample.css">
+<script type="text/javascript" src="inc/jquery-1.4.4.min.js"></script>
+<link type="text/css" rel="stylesheet" href="inc/SyntaxHighlighter/Styles/SyntaxHighlighter.css">
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shCore.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushCss.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript" src="inc/sample.js"></script>
+<script type="text/javascript">
+/*function resize(){
+	var ifr = parent.document.getElementsByTagName('iframe');
+    if(ifr){ifr[0].style.height = document.body.clientHeight+'px'}
+}
+addOnloadEvent(function(){
+	resize()
+})*/
+</script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div class="sample">
+
+<div class="tabMod1">
+	<h1>loading</h1>
+    <p class="detail">.loading</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<a href="javascript:void(0)" onClick="jmask('#loading',400)">loading</a>
+<div id="loading" class="">
+    <div class="loading" onClick="removeMask()">
+        系統處理中!
+    </div>
+</div>                
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;a href="javascript:void(0)" onClick="jmask('#loading')"&gt;倒數計時&lt;/a&gt;
+&lt;div id="loading" class="mask"&gt;
+    &lt;div class="loading" onClick="removeMask()"&gt;
+        loading
+    &lt;/div&gt;
+&lt;/div&gt;            
+            </pre>
+        </li>
+    </ul>
+</div>    
+
+<div class="tabMod1">
+	<h1>倒數計時</h1>
+    <p class="detail">.</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<a href="javascript:void(0)" onClick="
+	jmask('#logoutMsg',400);
+    clock([0,1,30]);  
+">倒數計時</a>
+
+<div id="logoutMsg" class="">
+    <div class="logoutMsg">
+        <div class="mask_tit">系統訊息</div>  
+        <div class="cont">
+            系統將於
+            <span id="timerH">3</span>
+             分 <span id="timerM">30</span>
+             秒登出，若您需繼續使用，請按"確定"繼續，或選擇登出系統.
+        </div> 
+        <div class="btnBlock">  
+            <a href="javascript:void(0)" class="btn_submit" onClick="removeMask();clearInterval(setInt);">確定</a> 
+            <a href="index.html" class="btn_submit" onClick="">登出</a>      
+        </div> 
+    </div>    
+</div>        
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;div id="logoutMsg" class="mask"&gt;
+    &lt;div class="logoutMsg"&gt;
+        &lt;div class="mask_tit"&gt;系統訊息&lt;/div&gt;  
+        &lt;div class="cont"&gt;
+            系統將於
+            &lt;span id="timeH" class="timer"&gt;3&lt;/span&gt;
+             分 &lt;span id="timeM" class="timer"&gt;30&lt;/span&gt;
+             秒登出，若您需繼續使用，請按"確定"繼續，或選擇登出系統.
+        &lt;/div&gt; 
+        &lt;div class="btnBlock"&gt;  
+            &lt;a href="javascript:void(0)" class="btn_submit" onClick="removeMask()"&gt;確定&lt;/a&gt; 
+            &lt;a href="index.html" class="btn_submit" onClick=""&gt;登出&lt;/a&gt;      
+        &lt;/div&gt; 
+    &lt;/div&gt;    
+&lt;/div&gt;      
+            </pre>
+        </li>
+    </ul>
+</div>    
+
+<div class="tabMod1">
+  <h1>tb_pages</h1>
+  <p class="detail">表格上下分頁, 注意上下寫法不同</p>
+  <ul class="tabmenu clearfix">
+    <li class="current">Demo</li>
+    <li>PG view</li>
+  </ul>
+  <ul class="tabcont">
+    <li class="current">
+      <table class="tb_multi" width="100%" border="0" cellspacing="0" cellpadding="0">
+  <THEAD>
+  <tr>
+  <th colspan="3" class="rt"><TABLE class=panelBox id=form1:tableEx1:box2 align=right>
+    <TBODY>
+      <TR>
+        <TD>每頁</TD>
+        <TD><SELECT id=form1:tableEx1:selectPageSize2 
+            onchange=chagePageSize2() size=1 
+              name=form1:tableEx1:selectPageSize2>
+            <OPTION value=3 
+              selected>3</OPTION>
+            <OPTION value=5>5</OPTION>
+            <OPTION 
+              value=10>10</OPTION>
+        </SELECT></TD>
+        <TD>筆</TD>
+        <TD><TABLE class=pagerDeluxe id=form1:tableEx1:deluxe2 cellSpacing=0 
+            cellPadding=0 border=0>
+            <TBODY>
+              <TR>
+                <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe2__pagerFirst title=第一頁 disabled 
+                  type=image alt=第一頁 src="../../inc/img/layout/space.gif" 
+                  name=form1:tableEx1:deluxe2__pagerFirst>
+                </TD>
+                <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe2__pagerPrevious title=前翻 disabled 
+                  type=image alt=前翻 src="../../inc/img/layout/space.gif" 
+                  name=form1:tableEx1:deluxe2__pagerPrevious>
+                </TD>
+                <TD class=pagerDeluxe vAlign=top align=left><SPAN 
+                  class=pagerDeluxe_text id=form1:tableEx1:deluxe2__pagerText>第 
+                  1 / 7 頁</SPAN> </TD>
+                <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe2__pagerNext title=後翻 type=image 
+                  alt=後翻 src="../../inc/img/layout/space.gif" 
+                  name=form1:tableEx1:deluxe2__pagerNext>
+                </TD>
+                <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe2__pagerLast title=最後一頁 type=image 
+                  alt=最後一頁 src="../../inc/img/layout/space.gif" 
+                  name=form1:tableEx1:deluxe2__pagerLast>
+                </TD>
+              </TR>
+            </TBODY>
+        </TABLE></TD>
+        <TD>移至</TD>
+        <TD><SPAN class=pagerGoto id=form1:tableEx1:goto2>
+          <INPUT 
+            class=pagerGoto_inputText id=form1:tableEx1:goto2__pagerGoText 
+            size=2 value=1 name=form1:tableEx1:goto2__pagerGoText>
+          <SPAN>
+            <INPUT class=pagerGoto id=form1:tableEx1:goto2__pagerGoButton type=submit value=前往 name=form1:tableEx1:goto2__pagerGoButton>
+        </SPAN></SPAN></TD>
+        <TD><A class=btn1 id=form1:tableEx1:chagePage2 style="DISPLAY: none" 
+            onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.forms['form1'],{'form1:tableEx1:chagePage2':'form1:tableEx1:chagePage2'},'');}return false" 
+            href="http://localhost:9081/PersonalTradeJSF/sample2.faces#"></A></TD>
+      </TR>
+    </TBODY>
+  </TABLE></th>
+  </tr>
+         </THEAD>
+        <tr>
+          <td class="hd1">客戶編號</td>
+          <td class="hd1">中文名</td>
+          <td class="hd1">英文名</td>
+        </tr>
+        <tr>
+          <td class="ct">1</td>
+          <td class="ct">YYYMMDD</td>
+          <td class="td_ct">9999999</td>
+        </tr>
+        <tr>
+          <td class="ct">2</td>
+          <td class="ct">YYYMMDD</td>
+          <td class="ct">9999999</td>
+        </tr>
+  <TFOOT>
+  <TR>
+    <TD colSpan=3 class="rt"><TABLE class=panelBox id=form1:tableEx1:box1 align=right cellSpacing=0 cellPadding=0 border=0>
+      <TBODY>
+        <TR>
+          <TD>每頁</TD>
+          <TD><SELECT id=select2
+          class=pageSelect 
+            onchange=chagePageSize1() size=1 
+              name=select2>
+              <OPTION value=3 
+              selected>3</OPTION>
+              <OPTION value=5>5</OPTION>
+              <OPTION 
+              value=10>10</OPTION>
+          </SELECT></TD>
+          <TD>筆</TD>
+          <TD><TABLE class=pagerDeluxe id=form1:tableEx1:deluxe1 cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+                <TR>
+                  <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerFirst22 title=第一頁 
+                  type=image alt=第一頁 src="../../inc/img/pageNav/btn_first.gif" 
+                  name=form1:tableEx1:deluxe1__pagerFirst22>                  </TD>
+                  <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerPrevious22 title=前翻 disabled 
+                  type=image alt=前翻 src="../../inc/img/pageNav/btn_pre.gif" 
+                  name=form1:tableEx1:deluxe1__pagerPrevious22>                  </TD>
+                  <TD class=pagerDeluxe vAlign=top align=left><SPAN 
+                  class=pagerDeluxe_text id=form1:tableEx1:deluxe1__pagerText>第 
+                    1 / 7 頁</SPAN> </TD>
+                  <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerNext22 title=後翻 type=image 
+                  alt=後翻 src="../../inc/img/pageNav/btn_next.gif" 
+                  name=form1:tableEx1:deluxe1__pagerNext22>                  </TD>
+                  <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerLast22 title=最後一頁 type=image 
+                  alt=最後一頁 src="../../inc/img/pageNav/btn_end.gif" 
+                  name=form1:tableEx1:deluxe1__pagerLast22>                  </TD>
+                  <SCRIPT language=JavaScript 
+                src="sample2.files/hxclient_core_v3_1_7.js" 
+                type=text/JavaScript></SCRIPT>
+                  <SCRIPT language=JavaScript 
+                src="sample2.files/hxclient_S_v3_1_7_zh_TW.js" 
+                type=text/JavaScript></SCRIPT>
+                  <SCRIPT language=JavaScript type=text/JavaScript>
+if (hX_6) hX_6.setResourceServer("/PersonalTradeJSF/.ibmjsfres");
+if(hX_6 && hX_6.setLocale) hX_6.setLocale("zh_TW");
+
+          </SCRIPT>
+                </TR>
+              </TBODY>
+          </TABLE></TD>
+          <TD>移至</TD>
+          <TD><SPAN class=pagerGoto id=form1:tableEx1:goto1>
+            <INPUT 
+            class=pagerGoto_inputText id=form1:tableEx1:goto1__pagerGoText22 
+            size=2 value=1 name=form1:tableEx1:goto1__pagerGoText22>
+            <SPAN>
+            <INPUT class=pagerGoto_btn id=form1:tableEx1:goto1__pagerGoButton22 type=submit value=前往 name=form1:tableEx1:goto1__pagerGoButton22 alt=前往 title=前往>
+          </SPAN></SPAN></TD>
+          <TD><SCRIPT language=Javascript type=text/javascript>function dpf(f) {var adp = f.adp;if (adp != null) {for (var i = 0;i < adp.length;i++) {f.removeChild(adp[i]);}}};function apf(f, pvp) {var adp = new Array();f.adp = adp;var i = 0;for (k in pvp) {var p = document.createElement("input");p.type = "hidden";p.name = k;p.value = pvp[k];f.appendChild(p);adp[i++] = p;}};function jsfcljs(f, pvp, t) {apf(f, pvp);var ft = f.target;if (t) {f.target = t;}f.submit();f.target = ft;dpf(f);};</SCRIPT>
+            <A class=btn1 id=form1:tableEx1:chagePage1 style="DISPLAY: none" 
+            onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.forms['form1'],{'form1:tableEx1:chagePage1':'form1:tableEx1:chagePage1'},'');}return false" 
+            href="http://localhost:9081/PersonalTradeJSF/sample2.faces#"></A></TD>
+        </TR>
+      </TBODY>
+    </TABLE></TD>
+	</TR>
+      </table>
+      </li>
+    <li>
+      <TABLE class=panelBox id=form1:tableEx1:box1 align=right cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+          <TR>
+            <TD>每頁</TD>
+            <TD><SELECT id=form1:tableEx1:selectPageSize1
+          class=pageSelect 
+            onchange=chagePageSize1() size=1 
+              name=form1:tableEx1:selectPageSize1>
+              <OPTION value=3 
+              selected>3</OPTION>
+              <OPTION value=5>5</OPTION>
+              <OPTION 
+              value=10>10</OPTION>
+            </SELECT></TD>
+            <TD>筆</TD>
+            <TD><TABLE class=pagerDeluxe id=form1:tableEx1:deluxe1 cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+                <TR>
+                  <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerFirst title=第一頁 
+                  type=image alt=第一頁 src="../../inc/img/pageNav/btn_first.gif" 
+                  name=form1:tableEx1:deluxe1__pagerFirst>                  </TD>
+                  <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerPrevious title=前翻 disabled 
+                  type=image alt=前翻 src="../../inc/img/pageNav/btn_pre.gif" 
+                  name=form1:tableEx1:deluxe1__pagerPrevious>                  </TD>
+                  <TD class=pagerDeluxe vAlign=top align=left><SPAN 
+                  class=pagerDeluxe_text id=form1:tableEx1:deluxe1__pagerText>第 
+                    1 / 7 頁</SPAN> </TD>
+                  <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerNext title=後翻 type=image 
+                  alt=後翻 src="../../inc/img/pageNav/btn_next.gif" 
+                  name=form1:tableEx1:deluxe1__pagerNext>                  </TD>
+                  <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerLast title=最後一頁 type=image 
+                  alt=最後一頁 src="../../inc/img/pageNav/btn_end.gif" 
+                  name=form1:tableEx1:deluxe1__pagerLast>                  </TD>
+                  <SCRIPT language=JavaScript 
+                src="sample2.files/hxclient_core_v3_1_7.js" 
+                type=text/JavaScript></SCRIPT>
+                  <SCRIPT language=JavaScript 
+                src="sample2.files/hxclient_S_v3_1_7_zh_TW.js" 
+                type=text/JavaScript></SCRIPT>
+                  <SCRIPT language=JavaScript type=text/JavaScript>
+if (hX_6) hX_6.setResourceServer("/PersonalTradeJSF/.ibmjsfres");
+if(hX_6 && hX_6.setLocale) hX_6.setLocale("zh_TW");
+
+</SCRIPT>
+                </TR>
+              </TBODY>
+            </TABLE></TD>
+            <TD>移至</TD>
+            <TD><SPAN class=pagerGoto id=form1:tableEx1:goto1>
+              <INPUT 
+            class=pagerGoto_inputText id=form1:tableEx1:goto1__pagerGoText 
+            size=2 value=1 name=form1:tableEx1:goto1__pagerGoText>
+              <SPAN>
+                <INPUT class=pagerGoto_btn id=form1:tableEx1:goto1__pagerGoButton type=submit value=前往 name=form1:tableEx1:goto1__pagerGoButton alt=前往 title=前往>
+              </SPAN></SPAN></TD>
+            <TD><SCRIPT language=Javascript type=text/javascript>function dpf(f) {var adp = f.adp;if (adp != null) {for (var i = 0;i < adp.length;i++) {f.removeChild(adp[i]);}}};function apf(f, pvp) {var adp = new Array();f.adp = adp;var i = 0;for (k in pvp) {var p = document.createElement("input");p.type = "hidden";p.name = k;p.value = pvp[k];f.appendChild(p);adp[i++] = p;}};function jsfcljs(f, pvp, t) {apf(f, pvp);var ft = f.target;if (t) {f.target = t;}f.submit();f.target = ft;dpf(f);};</SCRIPT>
+              <A class=btn1 id=form1:tableEx1:chagePage1 style="DISPLAY: none" 
+            onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.forms['form1'],{'form1:tableEx1:chagePage1':'form1:tableEx1:chagePage1'},'');}return false" 
+            href="http://localhost:9081/PersonalTradeJSF/sample2.faces#"></A></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <div style="padding:10px;">HTML</div>
+      <pre name="code" class="html"> 
+&lt;TABLE class=panelBox id=form1:tableEx1:box1 align=right cellSpacing=0 cellPadding=0 border=0&gt;
+        &lt;TBODY&gt;
+        &lt;TR&gt;
+          &lt;TD&gt;每頁&lt;/TD&gt;
+          &lt;TD&gt;&lt;SELECT id=form1:tableEx1:selectPageSize1
+          class=pageSelect 
+            onchange=chagePageSize1() size=1 
+              name=form1:tableEx1:selectPageSize1&gt; &lt;OPTION value=3 
+              selected&gt;3&lt;/OPTION&gt; &lt;OPTION value=5&gt;5&lt;/OPTION&gt; &lt;OPTION 
+              value=10&gt;10&lt;/OPTION&gt;&lt;/SELECT&gt;&lt;/TD&gt;
+          &lt;TD&gt;筆&lt;/TD&gt;
+          &lt;TD&gt;
+            &lt;TABLE class=pagerDeluxe id=form1:tableEx1:deluxe1 cellSpacing=0 
+            cellPadding=0 border=0&gt;
+              &lt;TBODY&gt;
+              &lt;TR&gt;
+                &lt;TD class=pagerDeluxeActive vAlign=top align=left&gt;&lt;INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerFirst title=第一頁 
+                  type=image alt=第一頁 src="../../inc/img/pageNav/btn_first.gif" 
+                  name=form1:tableEx1:deluxe1__pagerFirst&gt; &lt;/TD&gt;
+                &lt;TD class=pagerDeluxeActive vAlign=top align=left&gt;&lt;INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerPrevious title=前翻 disabled 
+                  type=image alt=前翻 src="../../inc/img/pageNav/btn_pre.gif" 
+                  name=form1:tableEx1:deluxe1__pagerPrevious&gt; &lt;/TD&gt;
+                &lt;TD class=pagerDeluxe vAlign=top align=left&gt;&lt;SPAN 
+                  class=pagerDeluxe_text id=form1:tableEx1:deluxe1__pagerText&gt;第 
+                  1 / 7 頁&lt;/SPAN&gt; &lt;/TD&gt;
+                &lt;TD class=pagerDeluxeActive vAlign=top align=left&gt;&lt;INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerNext title=後翻 type=image 
+                  alt=後翻 src="../../inc/img/pageNav/btn_next.gif" 
+                  name=form1:tableEx1:deluxe1__pagerNext&gt; &lt;/TD&gt;
+                &lt;TD class=pagerDeluxeActive vAlign=top align=left&gt;&lt;INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerLast title=最後一頁 type=image 
+                  alt=最後一頁 src="../../inc/img/pageNav/btn_end.gif" 
+                  name=form1:tableEx1:deluxe1__pagerLast&gt; &lt;/TD&gt;
+                &lt;SCRIPT language=JavaScript 
+                src="sample2.files/hxclient_core_v3_1_7.js" 
+                type=text/JavaScript&gt;&lt;/SCRIPT&gt;
+
+                &lt;SCRIPT language=JavaScript 
+                src="sample2.files/hxclient_S_v3_1_7_zh_TW.js" 
+                type=text/JavaScript&gt;&lt;/SCRIPT&gt;
+
+                &lt;SCRIPT language=JavaScript type=text/JavaScript&gt;
+if (hX_6) hX_6.setResourceServer("/PersonalTradeJSF/.ibmjsfres");
+if(hX_6 &amp;&amp; hX_6.setLocale) hX_6.setLocale("zh_TW");
+
+&lt;/SCRIPT&gt;
+              &lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/TD&gt;
+          &lt;TD&gt;移至&lt;/TD&gt;
+          &lt;TD&gt;&lt;SPAN class=pagerGoto id=form1:tableEx1:goto1&gt;&lt;INPUT 
+            class=pagerGoto_inputText id=form1:tableEx1:goto1__pagerGoText 
+            size=2 value=1 name=form1:tableEx1:goto1__pagerGoText&gt; &lt;SPAN&gt;&lt;INPUT class=pagerGoto_btn id=form1:tableEx1:goto1__pagerGoButton type=submit value=前往 name=form1:tableEx1:goto1__pagerGoButton alt=前往 title=前往&gt;
+            &lt;/SPAN&gt;&lt;/SPAN&gt;&lt;/TD&gt;
+          &lt;TD&gt;
+            &lt;SCRIPT language=Javascript type=text/javascript&gt;function dpf(f) {var adp = f.adp;if (adp != null) {for (var i = 0;i &lt; adp.length;i++) {f.removeChild(adp[i]);}}};function apf(f, pvp) {var adp = new Array();f.adp = adp;var i = 0;for (k in pvp) {var p = document.createElement("input");p.type = "hidden";p.name = k;p.value = pvp[k];f.appendChild(p);adp[i++] = p;}};function jsfcljs(f, pvp, t) {apf(f, pvp);var ft = f.target;if (t) {f.target = t;}f.submit();f.target = ft;dpf(f);};&lt;/SCRIPT&gt;
+            &lt;A class=btn1 id=form1:tableEx1:chagePage1 style="DISPLAY: none" 
+            onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.forms['form1'],{'form1:tableEx1:chagePage1':'form1:tableEx1:chagePage1'},'');}return false" 
+            href="http://localhost:9081/PersonalTradeJSF/sample2.faces#"&gt;&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;            
+            </pre>
+      <div style="padding:10px;">CSS</div>
+      <pre name="code" class="html"> 
+/*************************************
+*		@PG USER
+**************************************/
+.panelBox,
+.pagerDeluxe,
+.pagerDeluxe,
+.pagerDeluxe_text,
+.pagerDeluxeActive,
+.pagerDeluxeActive_button,
+.pagerGoto,
+.pagerGoto_btn{
+	font-size:12px;
+	border:none;
+	background:none;
+	margin:0;
+	vertical-align:top;}
+.panelBox{ 
+padding:0 2px;
+}
+.panelBox td{
+	padding:0 2px;}
+.pagerDeluxe{
+	font-size:12px;
+	background:url(../img/pageNav/pageNav_bg.gif) repeat-x left top;
+}
+.pagerDeluxe td{
+  background: #ffffff;
+background:url(../img/pageNav/pageNav_bg.gif) repeat-x left top;
+	padding:0;}
+.pagerDeluxe_text{
+	padding:0 5px;
+	line-height:20px;}
+.pagerGoto_btn{
+	cursor:pointer;
+	height:22px;
+	width:44px;
+	text-align:center;
+	background: url(../img/pageNav/btn_tbpages1.gif) no-repeat left top;
+}	 
+.pagerGoto_inputText{
+height: 12px;
+}            	
+            </pre>
+    </li>
+  </ul>
+</div>
+</div><!--sample-->
+<script language="javascript">  
+dp.SyntaxHighlighter.ClipboardSwf = 'inc/SyntaxHighlighter/Scripts/clipboard.swf';  
+dp.SyntaxHighlighter.HighlightAll('code');  
+</script>  
+</body>
+</html>

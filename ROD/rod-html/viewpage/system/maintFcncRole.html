@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+	var grid = $("#gridview").jqGrid({
+		localFirst: true,multiselect : true,height : 450,
+		sortname : 'roleId',sortorder : "asc",
+		colModel : [
+		{header:'角色代號',name:'roleId',width:10,align:"left"	},
+		{header:'角色名稱',name:'roleName',width:20,align:"left"}
+		],
+		ondblClickRow: function(){			
+        	//var ret = grid.getSelRowDatas();			
+			//$("#roleId").text($("#gridview").jqGrid ('getCell', rowid, 'roleId'));
+        	//aDialog.dialog({title:'維護'}).dialog('open').find("#mform").injectData(ret);
+        }
+	});
+		
+
+	
+	//新增宣告
+	var aDialog = $("#aDialog");
+	aDialog.dialog({ //維護畫面
+    	height: 200,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			aDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+					["",'R01','一般人員'],
+					["",'R02','會計'],
+					["",'R03','存放款經辦'],
+					["",'R04','總務'],
+					["",'R05','信用卡經辦'],
+					["",'R06','SP',],
+					["",'R07','OP',]
+				]);
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			aDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+	$("#qry").click(function(){
+		aDialog.dialog({title:'查詢'}).dialog('open');
+    }).trigger('click');
+	var bDialog = $("#bDialog");
+	bDialog.dialog({ //維護畫面
+    	height: 200,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			bDialog.dialog('close');
+				
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			bDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+
+	//編輯宣告
+	var editDialog = $("#editDialog");
+	editDialog.dialog({ //維護畫面
+    	height: 200,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			editDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			editDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+
+    // 新增
+    $("#add").click(function(){
+    	bDialog.dialog({title:'新增'}).dialog('open');
+    });
+	
+	//刪除多筆
+	$("#delete").click(function(){
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length==0)
+		{
+			alert("請至少選一筆資料");	
+		}
+		else
+		{
+			//var row=grid.getRowData(selRowIds[0]);
+			var row;
+			var i,msg="";
+			
+			for(i=0; i<selRowIds.length; i++ )
+			{	
+				row=grid.getRowData(selRowIds[i])
+				msg = msg + row['roleId'] + "-" + row['roleName'] + "\n" ;
+			}			
+			alert("確定要刪除?  \n" + msg);	
+		}		
+    });		
+		
+	$("#edit").click(function(){
+		
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length>1)
+		{
+			alert("修改只能選一筆!");
+		}
+		else if (selRowIds.length == 0)
+		{
+			alert("修改請選一筆資料!");
+		}		
+		else if  (selRowIds.length == 1)
+		{
+			var row=grid.getRowData(selRowIds[0]);
+			editDialog.dialog({title:'修改'}).dialog('open');
+			$("#editRoleId").val(row['roleId']);
+			$("#editRoleName").val(row['roleName']);
+		}		
+	});
+});
+
+</script>
+</head>
+<body>
+	<div class="tit">角色維護</div>
+	<div class="btns">
+		<button id="qry" type="button" class="btn1">查詢</button>
+		
+		
+        <button id="add" type="button" class="btn1">新增</button>
+		<button id="edit" type="button" class="btn1">修改</button>
+        <button id="delete" type="button" class="btn1">刪除</button>
+		<button id="export" type="button" class="btn1">匯出</button>
+		
+     </div>
+     <div id="gridview" />
+     <div id="aDialog" class="hide" >
+     	<form id="mform" onsubmit="return false;">
+		<table id="basicSetting" class="row-data">
+			<tr>
+				<th>✽角色代號</th>						
+				<td>	
+				  <input id="roleId" name ="roleId" type="text" size="10" maxlength="10">
+				</td>			
+			</tr>
+			<tr>
+				<th>角色名稱</th>						
+				<td>	
+				  <input id="roleName" name ="roleName" type="text" size="20" maxlength="20">
+				</td>			
+			</tr>
+		</table>
+		</form>
+     </div>
+	 
+	 <div id="bDialog" class="hide" >
+     	<form id="mform" onsubmit="return false;">
+		<table id="basicSetting" class="row-data">
+			<tr>
+				<th>✽角色代號</th>						
+				<td>	
+				  <input id="roleId" name ="roleId" type="text" size="10" maxlength="10">
+				</td>			
+			</tr>
+			<tr>
+				<th>✽角色名稱</th>						
+				<td>	
+				  <input id="roleName" name ="roleName" type="text" size="20" maxlength="20">
+				</td>			
+			</tr>
+		</table>
+		</form>
+     </div>
+	 
+	 <div id="editDialog" class="hide" >
+     	<form id="editForm" onsubmit="return false;">
+		<table id="basicSetting" class="row-data">
+			<tr>
+				<th>角色代號</th>						
+				<td>	
+				  <input id="editRoleId" name ="editRoleId" type="text" size="10" maxlength="10" disabled="disabled">
+				</td>			
+			</tr>
+			<tr>
+				<th>✽角色名稱</th>						
+				<td>	
+				  <input id="editRoleName" name ="editRoleName" type="text" size="20" maxlength="20">
+				</td>			
+			</tr>
+		</table>
+		</form>
+     </div>
+</body>
+</html>

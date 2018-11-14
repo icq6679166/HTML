@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+		
+	var grid = $("#gridview").jqGrid({
+		localFirst: true,multiselect : true,height : 450,
+		sortname : 'newBranchId',sortorder : "asc",
+		colModel : [
+		{header:'(新)分行代號',name:'newBranchId',width:20,align:"left"},
+		{header:'(新)分行名稱',name:'newBranchName',width:20,align:"left"}, 
+		{header:'(原)分行代號',name:'oldBranchId',width:20,align:"left"},
+		{header:'(原)分行名稱',name:'oldBranchName',width : 20,align : "left"}
+		],
+		ondblClickRow: function(){
+        	//var ret = grid.getSelRowDatas();
+        	//aDialog.dialog({title:'維護'}).dialog('open').find("#mform").injectData(ret);
+        }
+	}).addGridData([
+		['','1107','1107分行','1100','1100分行'],
+		['','1100','1100分行','1200','1200分行']
+    ]);
+	
+	var gridviewData = new Array();
+	var aDialog = $("#aDialog");
+	aDialog.dialog({ //新增畫面
+    	height: 200,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+				if ($("#newBranchId").val() == "0000") {
+					alert('請輸入(新)單位代號!');
+					return;
+				}
+				else if($("#oldBranchId").val() == "0000") {
+					alert('請輸入(原)單位代號!');
+					return;					
+				}else if ($("#newBranchId").val() == $("#oldBranchId").val()) {
+					alert('(新)、(原)單位不可相同!');
+					return;					
+				}
+				else {
+					var rowIndex = $("#gridview").jqGrid('getDataIDs').length;
+					gridviewData[rowIndex] = {
+						newBranchId: $("#newBranchId").val(),
+						newBranchName: $("#newBranchId").val() + '分行',
+						oldBranchId: $("#oldBranchId").val(),
+						oldBranchName: $("#oldBranchId").val() + '分行'
+					};
+					
+					$('#gridview').jqGrid('addRowData', rowIndex, gridviewData[rowIndex]);
+					$('#gridview').trigger("reloadGrid");
+					aDialog.dialog('close');
+				}
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			aDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+	var qDialog = $("#qDialog");
+	qDialog.dialog({ //查詢畫面
+    	height: 150,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+	//查詢
+	$("#qry").click(function(){
+		//aDialog.dialog({title:'查詢'}).dialog('open');
+		qDialog.dialog('open');
+    });
+    // 新增
+    $("#add").click(function(){
+    	//aDialog.dialog({title:'新增'}).dialog('open');
+		aDialog.dialog('open');
+    });
+	
+	//刪除
+	
+	$("#delete").click(function(){
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length==0)
+		{
+			alert("請至少選一筆資料");	
+		}
+		else
+		{
+			//var row=grid.getRowData(selRowIds[0]);
+			var row;
+			var i,msg="";
+			
+			for(i=0; i<selRowIds.length; i++ )
+			{	
+				row=grid.getRowData(selRowIds[i]);
+				msg = msg + "(新)" + row['newBranchId'] + "-" + row['newBranchName'] + "->" +"(舊)" + row['oldBranchId']  + "-" + row['oldBranchName']+ "\n" ;
+			}			
+			alert("確定要刪除 ? \n" + msg);	
+		}		
+    });	
+	
+	
+	
+	
+	
+	aDialog.find('#oldBranchId,#newBranchId').multiselect2({
+    	minWidth: 260,
+    	selectedList: 4,
+    	multiple: false
+    }).multiselectfilter({
+    	label: "內含",
+    	placeholder: "輸入關鍵字",
+    });	
+	
+	qDialog.find('#qNewBranchId').multiselect2({
+    	minWidth: 260,
+    	selectedList: 4,
+    	multiple: false
+    }).multiselectfilter({
+    	label: "內含",
+    	placeholder: "輸入關鍵字",
+    });	
+		
+});
+
+</script>
+</head>
+<body>
+	<div class="tit">移管作業</div>
+	<div class="btns">
+		<button id="qry" type="button" class="btn1">查詢</button>
+		<button id="export" type="button" class="btn1">匯出</button>
+		<!--
+        <button id="add" type="button" class="btn1">新增</button>
+        <button id="delete" type="button" class="btn1">刪除</button>
+		-->
+     </div>
+     <div id="gridview" />
+
+     <div id="qDialog" class="hide" title="查詢">
+     	<form id="qmform" onsubmit="return false;">
+		<table id="qtab" class="row-data">
+			<tr>
+				<th nowrap>(新)分行代號</th>						
+				<td>	
+				<!--
+				  <input id="qNewBranchId" name ="qNewBranchId" type="text" size="20" maxlength="20">
+				 --> 
+					<select id="qNewBranchId" name="qNewBranchId" >
+				        <option value="0000" selected="selected">0000 - 全部</option>
+				        <option value="1100" >1100 - 1100分行</option>
+				        <option value="1200" >1200 - 1200分行</option>
+				        <option value="0590" >0590 - 0590分行</option>
+				        <option value="0690" >0690 - 0690分行</option>
+		      		</select>				  
+				</td>			
+			</tr>
+		</table>
+		</form>
+     </div>	 
+	 
+     <div id="aDialog" class="hide" title="新增">
+     	<form id="amform" onsubmit="return false;">
+		<table id="atab" class="row-data">
+			<tr>
+				<th nowrap>(新)分行代號</th>						
+				<td>
+				<!--		
+				  <input id="newBranchId" name ="newBranchId" type="text" size="10" maxlength="10">
+				-->
+					<select id="newBranchId" name="newBranchId" >
+				        <option value="0000" selected="selected">0000 - 請選擇</option>
+				        <option value="1100" >1100 - 1100分行</option>
+				        <option value="1200" >1200 - 1200分行</option>
+				        <option value="0590" >0590 - 0590分行</option>
+				        <option value="0690" >0690 - 0690分行</option>
+		      		</select>			  
+						  
+				</td>			
+			</tr>
+			<tr>
+				<th>(原)分行代號</th>						
+				<td>
+				<!--		
+				  <input id="branchId" name ="branchId" type="text" size="10" maxlength="10">
+				 --> 
+										
+						<select id="oldBranchId" name="oldBranchId" >
+					        <option value="0000" selected="selected">0000 - 請選擇</option>
+					        <option value="1100" >1100 - 1100分行</option>
+					        <option value="1200" >1200 - 1200分行</option>
+					        <option value="0590" >0590 - 0590分行</option>
+					        <option value="0690" >0690 - 0690分行</option>
+			      		</select>			  
+				</td>			
+			</tr>
+		</table>
+		</form>
+     </div>
+</body>
+</html>

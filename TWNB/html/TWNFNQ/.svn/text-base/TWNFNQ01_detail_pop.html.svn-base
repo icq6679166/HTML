@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- InstanceBegin template="/Templates/popup.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>合作金庫-新一代企網銀</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css"></style>
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body class="popup">
+<div class="header"><img src="../../inc/img/layout/tcb_logo.gif"></div>
+<!-- InstanceBeginEditable name="content" -->
+<div class="content">
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="popup_tit">投資交易明細查詢</td>
+        </tr>
+    </table>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td width="20%" class="hd1">信託帳號</td>
+          <td>1047888000046</td>
+        </tr>
+        <tr>
+          <td class="hd1">交易編號</td>
+          <td>CA000249063</td>
+        </tr>
+        <tr>
+          <td class="hd1">信託業務別</td>
+          <td>國內台幣</td>
+        </tr>
+    </table>
+    
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi noeffect">
+    	<tr>  
+            <td colspan="7" class="hd3"><span class="detail">異動性質：申購</span></td>  
+      </tr>
+      <tr>
+        <td class="hd1" width="12%">交易日期</td>
+        <td width="26%" class="hd1">投資標的</td>
+        <td class="hd1" width="10%">投資型態</td>
+        <td class="hd1" width="10%">投資幣別<div class="tdline"></div>計價幣別</td>
+        <td class="hd1" width="15%">申購淨值<div class="tdline"></div>申購匯率</td>
+        <td class="hd1" width="15%">申購金額<div class="tdline"></div>單位數</td>
+        <td class="hd1" width="12%">申購總金額<div class="tdline"></div>手續費</td>
+      </tr>
+      <tr>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td>5001 新曦健康平安基金</td>
+        <td class="ct">單筆申購</td>
+        <td class="td_currency">NTD<br>
+        NTD</td>
+        <td class="td_money">15.0000<br>1.0000</td>
+        <td class="td_money">10,000.00<br>1044.9000</td>
+        <td class="td_money">10,050.00<br>50.00</td>
+      </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi noeffect">
+    	<tr>  
+            <td colspan="6" class="hd3"><span class="detail">異動性質：合併</span></td>  
+      </tr>
+      <tr>
+        <td class="hd1" width="12%">交易日期</td>
+        <td width="31%" class="hd1">併出投資標的<div class="tdline"></div>併入投資標的</td>
+        <td class="hd1" width="15%">合併比率</td>
+        <td class="hd1" width="15%">併出淨值
+          <div class="tdline"></div>
+          併出單位數</td>
+        <td class="hd1" width="15%">併入淨值
+          <div class="tdline"></div>
+          併入單位數</td>
+        <td class="hd1" width="12%">併出總金額
+          <div class="tdline"></div>
+          併入總金額</td>
+      </tr>
+      <tr>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td>5001 新曦健康平安基金<br>6123 新光健康平安基金</td>
+        <td class="ct">&nbsp;</td>
+        <td class="td_money">15.0000<br>
+          1.0000</td>
+        <td class="td_money">15.0000<br>
+          1.0000</td>
+        <td class="td_money">15.0000<br>
+          15.0000</td>
+      </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi noeffect">
+   	  <tr>  
+            <td colspan="6" class="hd3"><span class="detail">異動性質：除息</span></td>  
+      </tr>
+      <tr>
+        <td class="hd1" width="12%">基準日期<div class="tdline"></div>分配日期</td>
+        <td width="31%" class="hd1">投資標的</td>
+        <td class="hd1" width="15%">信託單位數<div class="tdline"></div>每單位分配數</td>
+        <td class="hd1" width="15%">除息金額<div class="tdline"></div>除息匯率</td>
+        <td class="hd1" width="15%">扣稅金額<div class="tdline"></div>信託管理費</td>
+        <td class="hd1" width="12%">入帳金額<div class="tdline"></div>入賬帳號</td>
+      </tr>
+      <tr>
+        <td class="td_date">YYYY/MM/DD<br>YYYY/MM/DD</td>
+        <td>5001 新曦健康平安基金</td>
+        <td class="td_money">21.3650<br>10.000000</td>
+        <td class="td_money">15.0000<br>
+          1.0000</td>
+        <td class="td_money">15.0000<br>0.00</td>
+        <td class="td_money">10,050.00<br>9995765011773</td>
+      </tr>
+  </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi noeffect">
+<tr>  
+            <td colspan="7" class="hd3"><span class="detail">異動性質：轉換</span></td>  
+      </tr>
+      <tr>
+        <td class="hd1" width="12%">交易日期</td>
+        <td width="19%" class="hd1">轉出投資標的<div class="tdline"></div>轉入投資標的</td>
+        <td class="hd1" width="12%">轉換方式<div class="tdline"></div>分配日期</td>
+        <td class="hd1" width="15%">轉出淨值<div class="tdline"></div>轉出單位數</td>
+        <td class="hd1" width="15%">轉入淨值<div class="tdline"></div>轉入單位數</td>
+        <td class="hd1" width="15%">轉換總金額</td>
+        <td class="hd1" width="12%">轉換手續費<div class="tdline"></div>短線費用</td>
+      </tr>
+      <tr>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td>5001 新曦健康平安基金<br>
+          6123 新光健康平安基金</td>
+        <td class="td_date">全部<br>YYYY/MM/DD</td>
+        <td class="td_money">15.0000<br>
+          1.0000</td>
+        <td class="td_money">15.0000<br>1.0000</td>
+        <td class="td_money">15.0000</td>
+        <td class="td_money">200.00<br>EUR 90.00</td>
+      </tr>
+    </table>
+    
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi noeffect">
+    <tr>  
+            <td colspan="6" class="hd3"><span class="detail">異動性質：除權</span></td>  
+      </tr>
+      <tr>
+        <td class="hd1" width="12%">基準日期<div class="tdline"></div>分配日期</td>
+        <td width="31%" class="hd1">投資標的</td>
+        <td class="hd1" width="15%">信託單位數
+          <div class="tdline"></div>
+          每單位分配數</td>
+        <td class="hd1" width="15%">扣稅金額
+          <div class="tdline"></div>
+          信託管理費</td>
+        <td class="hd1" width="15%">除權前庫存單位數</td>
+        <td class="hd1" width="12%">除權後<br>
+        庫存單位數</td>
+      </tr>
+      <tr>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td>5001 新曦健康平安基金</td>
+        <td class="td_money">21.3650<br>
+          10.000000</td>
+        <td class="td_money">10.0000<br>
+          0.00</td>
+        <td class="td_money">9,999.9999</td>
+        <td class="td_money">9,999.9999</td>
+      </tr>
+    </table>
+    
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi noeffect">
+    <tr>  
+            <td colspan="9" class="hd3"><span class="detail">異動性質：贖回</span></td>  
+      </tr>
+      <tr>
+        <td class="hd1" width="12%">交易日期</td>
+        <td width="16%" class="hd1">投資標的</td>
+        <td class="hd1" width="10%">贖回方式<div class="tdline"></div>分配日期</td>
+        <td class="hd1" width="10%">投資幣別<div class="tdline"></div>計價幣別</td>
+        <td class="hd1" width="10%">贖回淨值<div class="tdline"></div>贖回匯率</td>
+        <td class="hd1" width="10%">贖回金額<div class="tdline"></div>贖回單位數</td>
+        <td class="hd1" width="10%">違約金<div class="tdline"></div>信託管理費</td>
+        <td class="hd1" width="10%">短線費用<div class="tdline"></div>遞延費用</td>
+        <td class="hd1" width="12%">贖回入帳金額<div class="tdline"></div>贖回入賬帳號</td>
+      </tr>
+      <tr>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td>5001 新曦健康平安基金</td>
+        <td class="td_date">部分<br>YYYY/MM/DD</td>
+        <td class="td_currency">NTD<br>
+          USD</td>
+        <td class="td_money">15.0000<br>
+          1.0000</td>
+        <td class="td_money">10.0000<br>
+        15.0000</td>
+        <td class="td_money">0.00<br>200.00
+</td>
+        <td class="td_money">USD 0.00<br>
+          0.00</td>
+        <td class="td_money">0.00<br>
+          0903872101918</td>
+      </tr>
+    </table>
+    
+    <div class="btnBlock">
+    <a href="javascript:void(0)" class="btn_submit" onClick="window.close();">關閉</a>
+    </div>
+
+
+    
+</div>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd -->
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css"></style>
+</head>
+
+<body>
+<div class="page_inner">
+    <ul id="path" class="clearfix">
+        <li>投資理財</li>
+        <li>基金交易</li>
+        <li>ETF委託贖回</li>
+    </ul>
+    <div class="hbox">
+        <div class="fl"> <span class="trans_tit">ETF委託贖回</span> </div>
+        <div class="fl"> <a href="#" class="btn_addCommon">加入常用</a> </div>
+        <div class="fr">
+            <div class="commonFunc">
+                <select name="commonFunc">
+                    <option>--常用功能--</option>
+                </select>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="msg">
+        <div class="msgHd">
+            <div class="msgHd_wp"></div>
+        </div>
+        <div class="msg_cont">
+            <ul>
+                <li class="highLight">投資屬性：穩健型</li>
+                <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+            </ul>
+        </div>
+    </div>
+    <dl id="step" class="clearfix">
+        <dt><span>贖回選擇</span></dt>
+        <dt class="current"><span>贖回資料</span></dt>
+        <dt><span>資料確認</span></dt>
+        <dt><span>結果頁</span></dt>
+    </dl>
+    <div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" dir="ltr" width="100%" class="tb_single">
+		<tr>
+		    <td width="20%" class="hd1">信託帳號</td>
+		    <td>0903888000283</td>
+		    </tr>
+        <tr>
+			<td class="hd1">交易編號</td>
+			<td>YB0000001627</td>
+		</tr>
+        <tr>
+            <td class="hd1">投資標的</td>
+            <td>1014聯博全球高收益債券AT美元</td>
+        </tr> 
+        <tr>
+            <td class="hd1">信託本金</td>
+            <td>XXX 999999999</td>
+        </tr>
+        <tr>
+			<td class="hd1">庫存股數</td>
+			<td>9,999,999,999</td>
+		</tr>
+        <tr>
+			<td class="hd1"><span class="star">＊</span>委賣股數</td>
+			<td>
+            <input type="text" value="10,000">
+            </td>
+		</tr>
+        <tr>
+			<td class="hd1"><span class="star">＊</span>委賣單價</td>
+			<td><select name="select" id="select">
+			    <option value="">===請選擇===</option>
+			    </select>			    <span class="tdps">(限價)</span>
+            </td>
+		</tr>
+        <tr>
+			<td class="hd1"><span class="star">＊</span>贖回款存入帳號</td>
+			<td><select name="select2" id="select2">
+              <option value="">===請選擇===</option></select></td>
+		</tr>
+        <tr>
+			<td class="hd1">贖回是否繼續扣款</td>
+			<td>
+            <input type="radio" name="rad" checked> 否<input type="radio" name="rad"> 是 
+            </td>
+		</tr>
+</table>
+    <div class="btnBlock">
+        <a href="TWNFNT07_conf.html" class="btn_submit">送審</a>
+        <a href="TWNFNT07_news.html" class="btn_submit">取消</a>
+
+    <div class="help">
+        <div class="title">備註：</div>
+        <ul class="olist">
+          <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+        </ul>
+</div>
+	
+</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

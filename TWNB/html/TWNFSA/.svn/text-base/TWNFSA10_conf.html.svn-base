@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>國內信用狀申請</li>
+    <li>國內信用狀修狀交易</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">國內信用狀修狀交易</span>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul>
+            <li>請確認下列交易資訊</li>
+        </ul>
+    </div>
+</div>
+
+<div class="pageCont"><!-- #BeginLibraryItem "/Library/cm_modify_UCP_application_pop.lbi" --><table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr align="center"> 
+      <td height="30" class="contant-l"><strong>台北分行國內信用狀修改申請書 </strong></td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellspacing="1" cellpadding="2" class="tableborder">
+    <tr class="cell-white"> 
+      <td width="15%" align="center">信用狀金額</td>
+      <td colspan="2">新台幣 陸仟萬</td>
+      <td width="15%" align="center">信用狀簽發<br>
+        日期及號碼</td>
+
+      <td width="35%">&nbsp;</td>
+    </tr>
+    <tr class="cell-white"> 
+      <td align="center">通知單位</td>
+      <td colspan="2">&nbsp;</td>
+      <td align="center">通知單位編號</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr class="cell-white"> 
+      <td rowspan="2" align="center">受益人</td>
+      <td width="8%" align="center" nowrap>名　稱</td>
+      <td>中國鋼鐵股份有限公司</td>
+      <td rowspan="2" align="center">信用狀有效期限</td>
+      <td rowspan="2"><table border="0" cellpadding="0" cellspacing="0" class="contant">
+          <tr> 
+            <td>至</td>
+
+            <td width="50" align="center">92</td>
+            <td>年</td>
+            <td width="40" align="center">2</td>
+            <td>月</td>
+            <td width="40" align="center">20</td>
+            <td align="right">日止</td>
+
+          </tr>
+        </table></td>
+    </tr>
+    <tr class="cell-white"> 
+      <td align="center">地　址</td>
+      <td>高雄市中鋼路1號</td>
+    </tr>
+    <tr align="center" class="cell-white"> 
+      <td height="30" colspan="5">申 請 修 改 事 項</td>
+
+    </tr>
+    <tr align="center" class="cell-white"> 
+      <td height="30" colspan="3">原規定情形</td>
+      <td colspan="2">申請修改情形</td>
+    </tr>
+    <tr class="cell-white"> 
+      <td height="100" colspan="3" valign="top">金額：新台幣 <span class="text-blue">陸仟萬元整<br>
+        有效期限：<span class="text-blue">92.3.31</span></span></td>
+
+      <td colspan="2" valign="top">金額：新台幣 <span class="text-blue">陸仟萬元整<br>
+        有效期限：<span class="text-blue">92.5.31</span></span></td>
+    </tr>
+    <tr class="cell-white"> 
+      <td height="30" colspan="3" align="center">准予修改日期及編號</td>
+      <td colspan="2">&nbsp;</td>
+
+    </tr>
+  </table>
+  <table width="100%" border="0" cellpadding="2" cellspacing="1" class="border-b">
+    <tr class="cell-white"> 
+      <td width="10%">&nbsp;</td>
+      <td class="cell-white"> 申請人：優勢股份有限公司　</td>
+    </tr>
+    <tr> 
+      <td>&nbsp;</td>
+      <td class="cell-white">地　址：台北市南海路100號</td>
+    </tr>
+    <tr> 
+      <td>&nbsp;</td>
+      <td class="cell-white">電　話：02-1234-5678</td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table-100" height="90">
+    <tr class="contant">
+      <td width="20%">經副理(主任)</td>
+      <td width="20%">經辦</td>
+      <td width="20%">會計</td>
+      <td width="20%">襄理(副主任)</td>
+      <td width="20%">經副理(主任)</td>
+    </tr>
+  </table><!-- #EndLibraryItem --><table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="hd1" width="20%">安控機制</td>
+        <td width="30%">
+            <select name="" id="">
+                <option value="">===請選擇===</option>
+            </select>
+        </td>
+        <td class="hd1" width="20%">密　　碼</td>
+        <td width="30%"><input type="text"></td>
+    </tr>
+</table>
+            
+    <div class="btnBlock">
+        <a href="TWNFSA10_edit2.html" class="btn_submit">上一步</a>
+        <a href="javascript:void(0);" class="btn_submit" onClick="jmask('#box')">確認送審</a>
+        <a href="javascript:void(0)" class="btn_submit">儲存</a>
+        <a href="TWNFSA10_todo_trans_info.html" class="btn_submit">刪除</a>
+        <a href="TWNFSA10_credit_line.html" class="btn_submit">取消</a>
+        <div class="demoLink">
+            <a href="javascript:void(0);" class="btn_submit" onClick="jmask('#box',400,120)">確認放行</a>
+            <a href="javascript:void(0);" class="btn_submit" onClick="jmask('#box',400,120)">確認送審</a>
+        </div>        
+    </div>
+    
+</div>
+
+
+<div id="box" class="mask">
+    <div class="mask_tit">密碼輸入</div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tb_single">
+        <tr>
+
+            <td class="hd1">使用者密碼</td>
+            <td><input type="text"></td>
+        </tr>
+    </table>    
+    <div class="btnBlock">
+        <a href="html/TWNFSA/TWNFSA10_trans_info.html" class="btn_submit" onClick="removeMask()" target="mainFrame">確定</a>
+        <a href="javascript:void(0);" class="btn_submit" onClick="removeMask()">取消</a>
+
+    </div>
+</div>
+
+</div>
+</body>
+</html>

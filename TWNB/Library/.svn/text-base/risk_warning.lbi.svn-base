@@ -1,0 +1,42 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">  
+        <tr>  
+            <td><span class="tb_tit">高風險資產配置警示</span></td>                                   
+        </tr>  
+    </table> 
+    <table class="tb_multi" width="100%" border="0" cellspacing="0" cellpadding="0">  
+    <tr>  
+        <td width="20%" class="hd1">商品風險屬性</td>  
+        <td width="20%" class="hd1">餘額</td>  
+        <td width="20%" class="hd1">實際投資佔全行投資比例</td>  
+        <td width="20%" class="hd1">建議投資比例</td> 
+        <td width="20%" class="hd1">超過投資比例</td>
+    </tr>  
+    <tr>  
+        <td>流動性資產</td>  
+        <td class="td_money">1,484,154.00</td>  
+        <td class="rt">76.18%</td>  
+        <td class="rt">20%</td>
+        <td class="rt">56.18%</td>  
+    </tr>  
+    <tr>  
+        <td>收益性資產</td>  
+        <td class="td_money">46,000.00</td>  
+        <td class="rt">2.36%</td>  
+        <td class="rt">55%</td>
+        <td class="rt">0.00%</td>  
+    </tr> 
+    <tr>  
+        <td>穩健成長性資產</td>  
+        <td class="td_money">51,000.00</td>  
+        <td class="rt">2.62%</td>  
+        <td class="rt">20%</td>
+        <td class="rt">0.00%</td>  
+    </tr> 
+    <tr>  
+        <td>積極成長性資產</td>  
+        <td class="td_money">367,060.00</td>  
+        <td class="rt">18.84%</td>  
+        <td class="rt">5%</td>
+        <td class="rt">13.84%</td>  
+    </tr> 
+</table>

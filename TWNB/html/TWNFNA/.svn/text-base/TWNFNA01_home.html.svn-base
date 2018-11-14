@@ -1,0 +1,245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner2">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>新手上路</li>
+    <li>新手上路說明</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">新手上路說明</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+<table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">  
+        <tr>  
+            <td><span class="tb_tit">如何辦理基金網路下單作業</span></td>  
+        </tr>  
+    </table>  
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tb_beginner mb10">
+      <tr>
+        <td width="8" class="hd1">&nbsp;</td>
+        <td width="20" class="hd1">一、</td>
+        <td class="hd1">存款開戶及簽訂信託契約 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>如您尚未開立信託或款帳戶，請其攜帶身分證明文件(依本行存款開戶相關規定辦理)及印鑑親至本行各分行辦理存款開戶及完成信託契約之簽約手續，並請你記得要申請網路銀行下單功能（網路下單註記）。 </td>
+      </tr>
+      <tr>
+        <td class="hd1">&nbsp;</td>
+        <td class="hd1">二、</td>
+        <td class="hd1">申請網路銀行服務轉帳功能 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>如您尚未申請本行網路銀行服務，請攜帶身分證明文件及印鑑親至本行存款往來分行申辦，並約定存款轉出帳號，請注意您需進行外幣信託基金下單者，仍需另行約定外幣轉出帳號（網路基金下單之申購款扣款帳號設定後即為該筆之現金收益存入帳號及贖回款存入帳號)。</td>
+      </tr>
+    </table>
+  <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">  
+<tr>  
+            <td><span class="tb_tit">基金網路下單的服務項目</span></td>  
+      </tr>  
+    </table>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tb_beginner mb10">
+      <tr>
+        <td class="hd1">&nbsp; </td>
+        <td colspan="2" class="hd1">我的投資組合：</td>
+      </tr>
+      <tr>
+        <td width="8">&nbsp;</td>
+        <td width="20">一、</td>
+        <td>我的投資組合-一。 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>二、</td>
+        <td>我的投資組合-二。 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>三、</td>
+        <td>我的投資組合-三。 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td> ※ 我的投資組合說明<br>
+          本交易提供您可自行設定最多30支投資標的之組合。 </td>
+      </tr>
+      <tr>
+        <td class="hd1">&nbsp; </td>
+        <td colspan="2" class="hd1">交易作業： </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>一、</td>
+        <td>申購 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>1.單筆申購(＊國內債券型基金僅限於臨櫃申購＊)。<br>2.定期定額申購。 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>二、</td>
+        <td>贖回 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>1.全部贖回。<br>
+          2.部份贖回。 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>三、</td>
+        <td>轉換</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>1.全部轉換。<br>
+          2.部份轉換。 <br>
+          ※ 交易作業說明 <br>
+          （1）國內債券型基金目前僅限於臨櫃申購。<br>
+          （2）外幣結構型債券（即交易編號為YS-XXXXXXXXX）、三合一保險金信託之定期定額基金投資
+          （即交易編號為IB-XXXXXXXXX）因業務特性，目前僅限於臨櫃辦理。 </td>
+      </tr>
+      <tr>
+        <td class="hd1">&nbsp;</td>
+        <td colspan="2" class="hd1">查詢作業：</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>一、</td>
+        <td>投資損益報告。 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>二、</td>
+        <td>投資交易明細查詢。</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>三、</td>
+        <td>投資設定查詢。</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>四、</td>
+        <td>基金資料查詢。</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>五、</td>
+        <td>基金淨值查詢。</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>六、</td>
+        <td>基金績效排名查詢。</td>
+      </tr>
+      <tr>
+        <td class="hd1">&nbsp;</td>
+        <td colspan="2" class="hd1">異動服務： </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>一、</td>
+        <td>變更現金受益存入帳號。 </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>二、</td>
+        <td>定期定額異動。</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>三、</td>
+        <td>委託人資料變更。</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>四、</td>
+        <td>停損/獲利點設定。</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>五、</td>
+        <td>信託印鑑/印鑑卡掛失。</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td> ※ 異動服務說明 <br>
+          1.外幣結構型債券（即交易編號為YS-XXXXXXXXX）、三合一保險金信託之定期定額基金投資（即交易編號為IB-XXXXXXXXX）目前僅限於臨櫃辦理。 <br>
+          2.為確保客戶資料安全，"變更現金收益存入帳號"及"定期定額異動"等交易，於同一日內僅受理申請變更一次。 </td>
+      </tr>
+      <tr>
+        <td class="hd1">&nbsp;</td>
+        <td colspan="2" class="hd1">其他服務： </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>一、</td>
+        <td>申購手續費試算。</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>二、</td>
+        <td>贖回金額/管理費試算。</td>
+      </tr>
+    </table>  
+	
+  </div>
+    
+    </div>
+    
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

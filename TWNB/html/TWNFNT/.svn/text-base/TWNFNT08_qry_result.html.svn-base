@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css"></style>
+</head>
+
+<body>
+<div class="page_inner">
+    <ul id="path" class="clearfix">
+        <li>投資理財</li>
+        <li>基金交易</li>
+        <li>預約作業查詢/取消預約</li>
+    </ul>
+    <div class="hbox">
+        <div class="fl"> <span class="trans_tit">預約作業查詢/取消預約</span> </div>
+        <div class="fl"> <a href="#" class="btn_addCommon">加入常用</a> </div>
+        <div class="fr">
+            <div class="commonFunc">
+                <select name="commonFunc">
+                    <option>--常用功能--</option>
+                </select>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="msg">
+        <div class="msgHd">
+            <div class="msgHd_wp"></div>
+        </div>
+        <div class="msg_cont">
+            <ul>
+                <li class="highLight">投資屬性：穩健型</li>
+                <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+            </ul>
+        </div>
+    </div>
+    <dl id="step" class="clearfix">
+        <dt class="current"><span>查詢資料</span></dt>
+        <dt><span>資料確認</span></dt>
+        <dt><span>結果頁</span></dt>
+    </dl>
+    <div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" dir="ltr" width="100%" class="tb_single">
+        <tr>
+            <td width="20%" class="hd1">交易狀況</td>
+            <td><select name="sel">
+          <option>全部</option>
+        </select> </td>
+        </tr>
+        <tr>
+          <td class="hd1">交易項目</td>
+          <td><select name="sel2">
+            <option>全部</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td class="hd1"><span class="star">＊</span>查詢期間</td>
+          <td>From
+            <input type="text" class="date_txt" value="YYYY/MM/DD">
+                <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a>
+                To
+                <input type="text" class="date_txt" value="YYYY/MM/DD">
+                <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a></label>
+</td>
+        </tr>
+    </table>
+    <div class="btnBlock">
+        <a href="TWNFNT08_qry_result.html" class="btn_submit">確定</a>
+        <a href="javascript:void(0);" class="btn_submit">清除</a>
+	</div>
+    <div class="searchline"></div>
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><div class="fr mt3"> <a href="#" class="btn_tbpages"><span>前往</span></a> </div>
+          <div class="fr"> 移至
+            <input type="text" class="tb_pages_txt" maxlength="3">
+          </div>
+          <div class="pageNav"> <a href="#" class="btn_first"></a> <a href="#" class="btn_pre"></a> <span class="pags_detail">第 1 / 7 頁</span> <a href="#" class="btn_next"></a> <a href="#" class="btn_end"></a> </div>
+          <div class="fr"> 每頁
+            <select name="sel1">
+              <option>50</option>
+            </select>
+            筆 </div></td>
+      </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi mb0">
+      <tr>
+        <td class="hd1" width="3%"> 序號</td>
+        <td class="hd1" width="14%"> 交易日期<div class="tdline"></div>預約編號</td>
+        <td class="hd1" width="8%"> 生效日期<div class="tdline"></div>交易項目</td>
+        <td width="14%" class="hd1">申購/贖回/轉出<br>
+        投資標的交易編號</td>
+        <td class="hd1" width="8%">投資幣別<div class="tdline"></div>基金幣別</td>
+        <td width="8%" class="hd1">申購轉換/<br>
+        贖回金額</td>
+        <td width="9%" class="hd1">申購手續費
+          <div class="tdline"></div>
+        轉換手續費</td>
+        <td width="14%" class="hd1">扣款帳號
+          <div class="tdline"></div>
+        入帳帳號</td>
+        <td width="6%" class="hd1">交易<br>
+        狀況</td>
+        <td width="9%" class="hd1">處理日期
+          <div class="tdline"></div>
+        處理結果</td>
+        <td width="6%" class="hd1"> 功能</td>
+      </tr>
+      <tr>
+        <td class="td_sn">1</td>
+        <td class="lt">2011/02/25<br>P100022500045</td>
+        <td class="ct">2011/03/01<br>單筆申購</td>
+        <td>8116安泰ING大俄羅斯基金</td>
+        <td class="td_currency">NTD<br>
+          NTD</td>
+        <td class="td_money">NTD<br>
+40,000.00</td>
+        <td class="td_money">NTD 100.00</td>
+        <td class="ct">0560227855083<br>
+          --</td>
+        <td class="lt">已取消</td>
+        <td class="td_date">2011/02/25</td>
+        <td class="td_func"><a href="TWNFNT08_edit.html" class="btn_tb">取消</a></td>
+      </tr>
+      <tr>
+        <td class="td_sn">2</td>
+        <td class="lt">2011/03/07<br>
+P100030700009</td>
+        <td class="ct">2011/03/25
+          <br>
+        贖回</td>
+        <td>0402德盛小龍基金
+NB000091368
+</td>
+        <td class="td_currency">NTD<br>
+          USD</td>
+        <td class="td_money">NTD<br>
+44,000.00</td>
+        <td class="td_money">NTD 0.00</td>
+        <td class="ct">--<br>
+        050227855083</td>
+        <td class="lt">待處理</td>
+        <td class="td_date">2011/02/25</td>
+        <td class="td_func"><a href="TWNFNT08_edit.html" class="btn_tb">取消</a></td>
+      </tr>
+    </table>
+    <table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><div class="fr mt3"> <a href="#" class="btn_tbpages"><span>前往</span></a> </div>
+          <div class="fr"> 移至
+            <input type="text" class="tb_pages_txt" maxlength="3">
+          </div>
+          <div class="pageNav"> <a href="#" class="btn_first"></a> <a href="#" class="btn_pre"></a> <span class="pags_detail">第 1 / 7 頁</span> <a href="#" class="btn_next"></a> <a href="#" class="btn_end"></a> </div>
+          <div class="fr"> 每頁
+            <select name="sel3">
+              <option>50</option>
+            </select>
+            筆 </div></td>
+      </tr>
+    </table>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

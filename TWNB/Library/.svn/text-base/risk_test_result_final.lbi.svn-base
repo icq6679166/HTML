@@ -1,0 +1,9 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+      <tr>
+        <td class="hd1" width="20%"> 交易資訊 </td>
+        <td width="80%">
+            <div class="trans_fail">送審失敗 / 審核失敗/放行失敗 / 刪除失敗：錯誤代碼，錯誤原因。</div>
+            <div class="trans_succ">送審成功 / 放行成功/ 退件成功 / 刪除成功 / 儲存成功/ 上傳成功。</div>
+        </td>
+      </tr>
+    </table>

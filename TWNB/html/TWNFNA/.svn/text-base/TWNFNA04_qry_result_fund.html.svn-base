@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>理財帳戶總覽</li>
+    <li>投資損益報告</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">投資損益報告</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td class="hd1"><span class="star">＊</span>帳　號</td>
+          <td><select>
+                        <option >全部</option>
+                    </select>
+          </td>
+        </tr>
+        <tr>
+          <td width="20%" class="hd1"><span class="star">＊</span>交易別</td>
+          <td><select name="select">
+            <option selected>基金交易</option>
+            <option >債券交易</option>
+            <option >ETF 交易</option>
+            <option >集管交</option>
+          </select></td>
+        </tr>
+    </table>
+    <div class="btnBlock">
+        <a href="javascript:void(0)" class="btn_submit">查詢</a>
+        <a href="javascript:void(0)" class="btn_submit">清除</a>
+        <div class="demoLink">
+            <a href="TWNFNA04_qry_result_fund.html">基金結果頁</a>
+            <a href="TWNFNA04_qry_result_bond.html">債券結果頁</a>
+            <a href="TWNFNA04_qry_result_ETF.html">ETF結果頁</a>
+            <a href="TWNFNA04_qry_result_CollectiveTrustFund.html">集管結果頁</a>
+        </div>
+    </div>
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">  
+            <tr class="page_bg">   
+                <td height="20"><span class="page_tit">基金交易</span></td>                                
+            </tr>  
+    </table>
+    
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">  
+    <tr>  
+        <td>  
+            <div class="fr mt3">   
+                <a href="#" class="btn_tbpages"><span>前往</span></a>   
+            </div>  
+            <div class="fr">   
+                移至 <input type="text" class="tb_pages_txt" maxlength="3">    
+            </div>             
+            <div class="pageNav">   
+                <a href="#" class="btn_first"></a>  
+                <a href="#" class="btn_pre"></a>  
+                <span class="pags_detail">第 1 / 7 頁</span>  
+                <a href="#" class="btn_next"></a>  
+                <a href="#" class="btn_end"></a>  
+            </div>  
+            <div class="fr">   
+                每頁  
+                <select name="sel1">  
+                    <option>50</option>  
+                </select>  
+                筆   
+            </div>  
+        </td>  
+    </tr>  
+</table>
+	<table class="tb_multi mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="2%" class="hd1_s">序號</td>
+        <td width="7%" class="hd1_s">交易日期</td>
+        <td class="hd1_s">交易編號<div class="tdline"></div>投資標的</td>
+        <td width="10%" class="hd1_s">信託<br>業務別<div class="tdline"></div>投資型態</td>
+        <td class="hd1_s" width="7%">投資幣別
+          <div class="tdline"></div>          計價幣別</td>
+        <td width="7%" class="hd1_s">庫存金額<div class="tdline"></div>單位數</td>
+        <td width="7%" class="hd1_s">參考單位<br>投資成本<div class="tdline"></div>參考現值</td>
+        <td width="7%" class="hd1_s">參考淨值<div class="tdline"></div>參考日期</td>
+        <td width="7%" class="hd1_s">參考匯率<div class="tdline"></div>參考日期</td>
+        <td width="7%" class="hd1_s">參考損益<div class="tdline"></div>參考報酬率(%)</td>
+        <td width="8%" class="hd1_s">累計<br>申購手續費<div class="tdline"></div>淨報酬率</td>
+        <td width="7%" class="hd1_s">預出金額<div class="tdline"></div>預出單位數</td>
+        <td width="7%" class="hd1_s">累計<br>
+          現金配息
+          <div class="tdline"></div>在途金額</td>
+		 <td width="5%" class="hd1_s">功能</td>
+        </tr>
+        <tr class="tr_s">
+          <td class="td_sn">1</td>
+          <td class=" td_date">2010/01/01</td>
+          <td>CA000053475<br>
+            5365匯豐全球趨勢組合基金(RR4)</td>
+          <td class="ct">國內台幣<br>
+            單筆申購</td>
+          <td class=" td_currency">TWD<br>
+            TWD</td>
+          <td class=" td_money">0.00<br>
+            0.0000</td>
+          <td class="td_money">0.00<br>
+            0.00</td>
+          <td class="td_money">9.2800<br>
+            2010/01/01</td>
+          <td class="td_money">1.00<br>
+            2010/01/01</td>
+          <td class="td_money"><span class="txt_profit">+0.00</span><br>
+            <span class="txt_profit">+0.00</span></td>
+          <td class="td_money">500.00<br>
+            <span class="txt_profit">+0.00</span></td>
+          <td class="td_money">100,000.00<br>
+            100,000.00</td>
+          <td class="td_money">0.00<br>
+            0.00</td>
+		 <td class="td_func">
+		  <a href="#" class="btn_tb">單筆</a>
+		  <a href="#" class="btn_tb">小額</a>
+		  <a href="#" class="btn_tb">贖回</a>
+		  <a href="#" class="btn_tb">轉換</a>
+		 </td>
+        </tr>
+        <tr class="tr_s">
+          <td class="td_sn">2</td>
+          <td class=" td_date"><p>2009/12/25</p></td>
+          <td>CA000249061<br>6262寶來全球新興市場精選組合基金(RR5)</td>
+          <td class="ct">國內台幣<br>單筆申購</td>
+          <td class=" td_currency">TWD<br>
+            TWD</td>
+          <td class=" td_money">10,000.00<br>833.4000</td>
+          <td class="td_money">12.00<br>12,934.00</td>
+          <td class="td_money">15.5200<br>2010/01/01</td>
+          <td class="td_money">1.00<br>2010/01/01</td>
+          <td class="td_money"><span class="txt_profit">+2.93</span><br><span class="txt_profit">+29.34</span></td>
+          <td class="td_money">0.00<br><span class="txt_profit">+0.00</span></td>
+          <td class="td_money">0.00<br>  
+              0.0000</td>
+          <td class="td_money">0.00<br>0.00</td>
+		 <td class="td_func">
+		  <a href="#" class="btn_tb">單筆</a>
+		  <a href="#" class="btn_tb">小額</a>
+		  <a href="#" class="btn_tb">贖回</a>
+		  <a href="#" class="btn_tb">轉換</a>
+		 </td>		  
+    </tr>
+</table>
+	<table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <td><div class="fr mt3"> <a href="#" class="btn_tbpages"><span>前往</span></a> </div>
+	      <div class="fr"> 移至
+	        <input type="text" class="tb_pages_txt" maxlength="3">
+          </div>
+	      <div class="pageNav"> <a href="#" class="btn_first"></a> <a href="#" class="btn_pre"></a> <span class="pags_detail">第 1 / 7 頁</span> <a href="#" class="btn_next"></a> <a href="#" class="btn_end"></a> </div>
+	      <div class="fr"> 每頁
+	        <select name="sel2">
+	          <option>50</option>
+            </select>
+	        筆 </div></td>
+      </tr>
+    </table>
+    <table class="tb_total_single" width="100%" border="0" cellspacing="0" cellpadding="0">  
+      <tr>  
+        <td width="18%" class="hd2">&nbsp;</td>  
+        <td width="4%" class="hd2">幣別</td>
+        <td width="11%" class="hd2">庫存金額</td>  
+        <td width="11%" class="hd2">參考現值</td>  
+        <td width="11%" class="hd2">累計現金配息</td>  
+        <td width="11%" class="hd2">參考損益</td>
+        <td width="12%" class="hd2">參考報酬率(%)</td>
+        <td width="11%" class="hd2">預出金額</td>
+        <td width="11%" class="hd2">在途金額</td>  
+      </tr>  
+    <tr>  
+        <td rowspan="2" class="hd1">單筆申購基金小計</td>
+        <td class=" td_currency">TWD</td>  
+        <td class="td_money">10,833.30</td>
+        <td class="td_money">10,833.30</td>
+        <td class="td_money">12,934.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">2933.00</td>
+        <td class="td_money">100.00</td>
+        <td class="td_money">0.00</td>
+      </tr>  
+    <tr>  
+        <td class=" td_currency">USD</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>  
+      </tr>  
+    <tr>  
+        <td rowspan="2" class="hd1">小額(含小額*)基金小計</td>
+        <td class=" td_currency">TWD</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>  
+      </tr>  
+    <tr>  
+        <td class=" td_currency">USD</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>  
+      </tr> 
+      <tr>  
+        <td rowspan="2" class="hd1">基金合計</td>
+        <td class=" td_currency">TWD</td>
+        <td class="td_money">10,833.30</td>
+        <td class="td_money">10,833.30</td>
+        <td class="td_money">12,934.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">2933.00</td>
+        <td class="td_money">100.00</td>
+        <td class="td_money">0.00</td>
+      </tr>  
+    <tr>  
+        <td class=" td_currency">USD</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>  
+      </tr> 
+      <tr>  
+        <td rowspan="2" class="hd1">債券小計</td>
+        <td class=" td_currency">TWD</td>
+        <td class="td_money">10,833.30</td>
+        <td class="td_money">10,833.30</td>
+        <td class="td_money">12,934.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">2933.00</td>
+        <td class="td_money">100.00</td>
+        <td class="td_money">0.00</td>
+      </tr>  
+    <tr>  
+        <td class=" td_currency">USD</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>  
+      </tr> 
+      <tr>  
+        <td rowspan="2" class="hd1">ETF小計</td>
+        <td class=" td_currency">TWD</td>
+        <td class="td_money">10,833.30</td>
+        <td class="td_money">10,833.30</td>
+        <td class="td_money">12,934.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">2933.00</td>
+        <td class="td_money">100.00</td>
+        <td class="td_money">0.00</td>
+      </tr>  
+    <tr>  
+        <td class=" td_currency">USD</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>  
+      </tr> 
+      <tr>  
+        <td rowspan="2" class="hd1">集管小計</td>
+        <td class=" td_currency">TWD</td>
+        <td class="td_money">10,833.30</td>
+        <td class="td_money">10,833.30</td>
+        <td class="td_money">12,934.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">2933.00</td>
+        <td class="td_money">100.00</td>
+        <td class="td_money">0.00</td>
+      </tr>  
+    <tr>  
+        <td class=" td_currency">USD</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">0.00</td>  
+      </tr>  
+      <tr>  
+        <td rowspan="3" class="hd1">投資總計</td>
+        <td width="4%" class="td_currency">TWD</td>  
+        <td width="11%" class="td_money">10,333.30</td>  
+        <td width="11%" class="td_money">12,934.00</td>  
+        <td width="11%" class="td_money">0.00</td>
+        <td width="11%" class="td_money">2933.0</td>
+        <td width="12%" class="td_money">29.33</td>
+        <td width="11%" class="td_money">100,000</td>
+        <td width="11%" class="td_money">12,934.00</td>  
+      </tr>  
+        <tr>
+          <td class=" td_currency">USD</td>
+          <td class="td_money">10,833.30</td>
+          <td class="td_money">10,833.30</td>
+          <td class="td_money">12,934.00</td>
+          <td class="td_money">0.00</td>
+          <td class="td_money">2933.00</td>
+          <td class="td_money">100.00</td>
+          <td class="td_money">96,390.00</td>
+        </tr>
+        <tr>
+          <td class=" td_currency">NZD</td>
+          <td class="td_money">10,833.30</td>
+          <td class="td_money">10,833.30</td>
+          <td class="td_money">12,934.00</td>
+          <td class="td_money">0.00</td>
+          <td class="td_money">2933.00</td>
+          <td class="td_money">100.00</td>
+          <td class="td_money">89,377.65</td>  
+      </tr>  
+</table>
+	<div class="remarks">
+        <div class="title">說明：</div>
+            <ul class="olist">
+              <li>請注意，本行特定金錢信託投資國內外共同基金均經金管會核准，惟並不表示該基金絕無風險，本行不負責基金之盈虧，亦不保證最低之收益，投資人應慎選投資標的，申購前應詳閱相關公開說明書及投資人須知等資料。</li>
+              <li>欄位說明：<ul class="ulist">  
+                    <li>『參考現值』 ：參考現值＝庫存單位數 *參考淨值 *參考匯率。 （註： 請注意，參考現值是以基金公司提供之淨值估算，並未將實際買賣價差及相關費用估算在內，亦不代表投資人實際贖回可得知金額）</li>  
+                    <li>『參考損益』 ：參考損益＝ 參考現值 – 庫存金額 + 累計現金配息（註： 累計現金配息已於配息日存入投資人指定帳戶）</li>  
+                    <li>『參考報酬率』 ：參考報酬率＝ 參考損益 / 庫存金額（註： 庫存金額不含申購、 贖回、 轉換在途未分配金額）</li>  
+                    <li>『參考單位投資成本』 ： 參考單位投資成本＝ 庫存金額/庫存單位數/參考匯率（註： 本資料僅供參考，並非為原始申購交易之淨值）</li>  
+                </ul> 
+				</li>
+                <li>依主管機關規定，結構型商品之參考淨值係揭露該商品之市價(Mark-To-MarketPrice)即「參考無回價格」。 「參考現值」係以該商品「參考贖回價格」計算後之參考贖回金額。</li>
+                <li>有關結構型商品及固定收益商品之最新商品報價（含到期日、 到期保本率）等資訊。請點選參閱下列資料
+                <ul class="ulist">  
+                    <li>國外結構型債券資訊揭露</li> 
+                    <li>國外固定收益債券資訊揭露 </li>  
+                </ul> 
+                </li>
+                <li>名詞解釋
+                <ul class="ulist">  
+                    <li>國內台幣：新台幣信託資金投資國內投資標的</li> 
+                    <li>國外台幣：新台幣信託資金投資國外投資標的</li>  
+                    <li>國外外幣：外幣信託資金投資國外投資標的</li> 
+                    <li>小計 ：係指庫存金額、參考淨值、參考總損益、在途金額等欄位依不同幣別之加總。</li>  
+                    <li>在途金額 ：係指客戶申購或轉換（轉入）交易已完成，但本行尚未處理（申購或轉換分配）之信託本金。<br>
+                        ※申購分配：自申購申請後約 5 個營業日內。<br>
+                        ※轉換分配：自轉換申請後約 7 個營業日內。</li>  
+                </ul> 
+                </li>
+            </ul>
+    </div>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" href="inc/sample.css">
+<script type="text/javascript" src="inc/jquery-1.4.4.min.js"></script>
+<link type="text/css" rel="stylesheet" href="inc/SyntaxHighlighter/Styles/SyntaxHighlighter.css">
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shCore.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushCss.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript" src="inc/sample.js"></script>
+<script type="text/javascript">
+/*function resize(){
+	var ifr = parent.document.getElementsByTagName('iframe');
+    if(ifr){ifr[0].style.height = document.body.clientHeight+'px'}
+}
+addOnloadEvent(function(){
+	resize()
+})*/
+</script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div class="sample">    
+
+
+<div class="tabMod1">
+    <p class="detail">多筆表格(雙標題)</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+    <tr>
+        <td width="11%">樣式名稱</td>
+        <td width="18%">預覽</td>
+        <td width="71%">&nbsp;</td>
+        </tr>
+    <tr>
+        <td>btn_print</td>
+        <td><a href="javascript:void(0);" class="btn_print" title="友善列印" onClick="winopen('popup.html',600,300)">友善列印</a></td>
+        <td>&lt;a href="javascript:void(0);" class="btn_print" title="友善列印" onClick="winopen('popup.html',600,300)"&gt;友善列印&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_pdf</td>
+        <td><a href="javascript:void(0);" class="btn_pdf" title="PDF下載">PDF下載</a></td>
+        <td width="71%">&lt;a href="javascript:void(0);" class="btn_pdf" title="PDF下載"&gt;PDF下載&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_addOne</td>
+        <td><a href="javascript:void(0);" class="btn_addOne" title="PDF下載">新增一筆</a></td>
+        <td>&lt;a href="javascript:void(0);" class="btn_addOne" title="PDF下載"&gt;新增一筆&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_search</td>
+        <td><a href="#" class="btn_search">收款人資料</a></td>
+        <td width="71%">&lt;a href="#" class="btn_search"&gt;收款人資料查詢&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_addCommon</td>
+        <td><a href="#" class="btn_addCommon">加入常用</a></td>
+        <td>&lt;a href="#" class="btn_addCommon"&gt;加入常用&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_update</td>
+        <td><a href="#" class="btn_update">更新資料</a></td>
+        <td>&lt;a href="#" class="btn_update"&gt;加入常用&lt;/a&gt;</td>
+    </tr>
+    <tr>
+        <td>btn_tb</td>
+        <td><a href="#" class="btn_tb">表格內按鈕</a></td>
+        <td>&lt;a href="#" class="btn_tb"&gt;表格內按鈕&lt;/a&gt;</td>
+    </tr>
+    <tr>
+        <td>表格內按鈕disabled</td>
+        <td><a href="javascript:void(0);" class="btn_tb_disabled">表格內按鈕disabled</a></td>
+        <td>&lt;a href="javascript:void(0);" class="btn_tb_disabled"&gt;表格內按鈕disabled&lt;/a&gt;</td>
+    </tr>
+    <tr>
+        <td>btn_addList</td>
+        <td><a href="javascript:void(0);" class="btn_addList">新增</a></td>
+        <td>&lt;a href="javascript:void(0);" class="btn_addList"&gt;新增&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_delList</td>
+        <td><a href="javascript:void(0);" class="btn_delList">刪除</a></td>
+        <td width="71%">&lt;a href="javascript:void(0);" class="btn_delList"&gt;刪除&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_submit</td>
+        <td><a href="javascript:void(0)" class="btn_submit">關閉</a></td>
+        <td>&lt;a href="javascript:void(0)" class="btn_submit"&gt;關閉&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_GetInfo</td>
+        <td><a href="javascript:void(0)" class="btn_GetInfo">插入資料</a></td>
+        <td>&lt;a href="javascript:void(0)" class="btn_GetInfo"&gt;插入資料&lt;/a&gt;</td>
+    </tr>
+    <tr>
+        <td>btn_draft</td>
+        <td><a href="#" class="btn_draft">草稿清單</a></td>
+        <td width="71%">&lt;a href="#" class="btn_draft"&gt;草稿清單&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_openAll</td>
+        <td><a href="#" class="btn_openAll">全部展開</a></td>
+        <td>&lt;a href="#" class="btn_openAll"&gt;全部展開&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_openAll_hide</td>
+        <td><a href="#" class="btn_openAll_hide">全部收合</a></td>
+        <td width="71%">&lt;a href="#" class="btn_openAll_hide"&gt;全部收合&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_temeplate</td>
+        <td><a href="#" class="btn_temeplate">取用群組</a></td>
+        <td>&lt;a href="#" class="btn_temeplate"&gt;取用群組&lt;/a&gt;</td>
+        </tr>
+    <tr>
+        <td>btn_upload</td>
+        <td><a href="#" class="btn_upload">檔案上傳</a></td>
+        <td>&lt;a href="#" class="btn_upload"&gt;檔案上傳&lt;/a&gt;</td>
+    </tr>
+    <tr>
+        <td>btn_download</td>
+        <td><a href="#" class="btn_download">檔案下載</a></td>
+        <td>&lt;a href="#" class="btn_download"&gt;檔案下載&lt;/a&gt;</td>
+    </tr>
+    <tr>
+        <td>btn_importPayee</td>
+        <td><a href="#" class="btn_importPayee">匯入收款人</a></td>
+        <td>&lt;a href="#" class="btn_importPayee"&gt;匯入收款人&lt;/a&gt;</td>
+    </tr>
+    <tr>
+        <td>btn_history</td>
+        <td><a href="#" class="btn_history">歷史紀錄選用</a></td>
+        <td>&lt;a href="#" class="btn_history"&gt;歷史紀錄選用&lt;/a&gt;</td>
+    </tr>
+    <tr>
+        <td>trans_succ</td>
+        <td><div class="trans_succ">交易成功</div></td>
+        <td>&lt;div class="trans_succ"&gt;交易成功&lt;/div&gt;</td>
+    </tr>
+    <tr>
+        <td>trans_fail</td>
+        <td><div class="trans_fail">交易失敗</div></td>
+        <td>&lt;div class="trans_fail"&gt;交易失敗&lt;/div&gt;</td>
+	</tr>        
+    <tr>
+        <td>verify_fail</td>
+        <td><div class="verify_fail">表單驗證失敗</div></td>
+        <td>&lt;div class="verify_fail"&gt;表單驗證失敗&lt;/div&gt;</td>
+    </tr>
+</table>
+        
+        </li>
+    </ul>
+</div>
+
+</div><!--sample-->
+<script language="javascript">  
+dp.SyntaxHighlighter.ClipboardSwf = 'inc/SyntaxHighlighter/Scripts/clipboard.swf';  
+dp.SyntaxHighlighter.HighlightAll('code');  
+</script>  
+</body>
+</html>

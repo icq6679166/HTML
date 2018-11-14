@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" href="inc/sample.css">
+<script type="text/javascript" src="inc/jquery-1.4.4.min.js"></script>
+<link type="text/css" rel="stylesheet" href="inc/SyntaxHighlighter/Styles/SyntaxHighlighter.css">
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shCore.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushCss.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript" src="inc/sample.js"></script>
+<script type="text/javascript">
+/*function resize(){
+	var ifr = parent.document.getElementsByTagName('iframe');
+    if(ifr){ifr[0].style.height = document.body.clientHeight+'px'}
+}
+addOnloadEvent(function(){
+	resize()
+})*/
+</script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div class="sample">    
+<div class="tabMod1">
+	<h1>tabs</h1>
+    <p class="detail">頁籤</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<div id="tabs2">
+    <ul>
+        <li class="current"><a href="javascript:void(0)" onClick="jmask('box',500,300)"><span>基本設定</span></a></li>
+        <li><a href="#"><span>授權功能總覽</span></a></li>
+        <li><a href="#"><span>授權帳號總覽</span></a></li>
+    </ul>
+</div>
+        </li>
+        <li>
+            <pre name="code" class="html">
+&lt;div id="tabs2"&gt;
+    &lt;ul&gt;
+        &lt;li class="current"&gt;&lt;a href="javascript:void(0)" onClick="jmask('box',500,300)"&gt;&lt;span&gt;基本設定&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;授權功能總覽&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;&lt;span&gt;授權帳號總覽&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;              
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+	<h1>#path</h1>
+    <p class="detail">頁面路徑, 注意">"箭頭是js動態產生</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<ul id="path" class="clearfix">
+    <li>訊息 / 待辦</li>
+    <li>訊息通知查詢</li>
+</ul>
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;ul id="path" class="clearfix"&gt;
+    &lt;li&gt;訊息 / 待辦&lt;/li&gt;
+    &lt;li&gt;訊息通知查詢&lt;/li&gt;
+&lt;/ul&gt;            
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+	<h1>頁面說明對話框</h1>
+    <p class="detail">.msg/p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+    <ul>
+        <li>
+            <a href="#" class="btn_temeplate">取用群組</a>：從您的交易群組中選取套用一筆交易資料。
+        </li>
+        <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+    </ul>
+    </div>
+</div>       
+        </li>
+        <li>
+            <pre name="code" class="html"> 
+&lt;div class="msg"&gt;
+    &lt;div class="msgHd"&gt;&lt;div class="msgHd_wp"&gt;&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="msg_cont"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;a href="#" class="btn_temeplate"&gt;取用群組&lt;/a&gt;：從您的交易群組中選取套用一筆交易資料。
+            &lt;/li&gt;
+            &lt;li class="highLight"&gt;標有&lt;span class="star"&gt;＊&lt;/span&gt;的欄位為必要資料，請正確填寫。&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;            
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+	<h1>交易步驟</h1>
+    <p class="detail">#step, className = current 表是為當前狀態</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<dl id="step" class="clearfix">
+    <dt><span>資料來源選擇</span></dt>
+    <dt class="current"><span>資料編輯</span></dt>
+    <dt><span>資料確認</span></dt>
+    <dt><span>執行結果</span></dt>                 
+</dl>       
+        </li>
+        <li>
+            <pre name="code" class="html">
+&lt;dl id="step" class="clearfix"&gt;
+    &lt;dt&gt;&lt;span&gt;資料來源選擇&lt;/span&gt;&lt;/dt&gt;
+    &lt;dt class="current"&gt;&lt;span&gt;資料編輯&lt;/span&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;span&gt;資料確認&lt;/span&gt;&lt;/dt&gt;
+    &lt;dt&gt;&lt;span&gt;執行結果&lt;/span&gt;&lt;/dt&gt;                 
+&lt;/dl&gt;              
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+	<h1>按鈕區塊</h1>
+    <p class="detail">.button</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<div class="btnBlock">
+    <a href="javascript:void(0)" class="btn_submit" onClick="window.close();">關閉</a>    
+</div>
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;div class="btnBlock"&gt;
+    &lt;a href="javascript:void(0)" class="btn_submit" onClick="window.close();"&gt;關閉&lt;/a&gt;    
+&lt;/div&gt;            
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+	<h1>按鈕區塊說明</h1>
+    <p class="detail">有序列表</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<div class="btnBlock">
+    <div class="help">
+        <div class="title">說明：</div>
+        <ul class="olist">
+            <li>請於開狀日下午4：00前完成最終放行流程以利本行人員作業。
+                <ul class="ulist">
+                    <li>成最終放行流</li>
+                    <li>成最終放行流</li>
+                    <li>成最終放行流</li>
+                </ul>                    
+            </li>
+            <li>成最終放行流</li>
+        </ul>
+    </div>
+</div>       
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;div class="btnBlock"&gt;
+    &lt;div class="help"&gt;
+        &lt;div class="title"&gt;說明：&lt;/div&gt;
+        &lt;ul class="olist"&gt;
+            &lt;li&gt;請於開狀日下午4：00前完成最終放行流程以利本行人員作業。
+                &lt;ul class="ulist"&gt;
+                    &lt;li&gt;成最終放行流&lt;/li&gt;
+                    &lt;li&gt;成最終放行流&lt;/li&gt;
+                    &lt;li&gt;成最終放行流&lt;/li&gt;
+                &lt;/ul&gt;                    
+            &lt;/li&gt;
+            &lt;li&gt;成最終放行流&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;               
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+    <p class="detail">無序列表</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<div class="btnBlock">
+    <div class="help">
+        <div class="title">說明：</div>
+        <ul class="ulist">
+            <li>請於開狀日下午4：00前完成最終放行流程以利本行人員作業。
+                <ul class="olist">
+                    <li>成最終放行流</li>
+                    <li>成最終放行流</li>
+                    <li>成最終放行流</li>
+                </ul>                    
+            </li>
+            <li>成最終放行流</li>
+        </ul>
+    </div>
+</div>         
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;div class="btnBlock"&gt;
+    &lt;div class="help"&gt;
+        &lt;div class="title"&gt;說明：&lt;/div&gt;
+        &lt;ul class="ulist"&gt;
+            &lt;li&gt;請於開狀日下午4：00前完成最終放行流程以利本行人員作業。
+                &lt;ul class="olist"&gt;
+                    &lt;li&gt;成最終放行流&lt;/li&gt;
+                    &lt;li&gt;成最終放行流&lt;/li&gt;
+                    &lt;li&gt;成最終放行流&lt;/li&gt;
+                &lt;/ul&gt;                    
+            &lt;/li&gt;
+            &lt;li&gt;成最終放行流&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;               
+            </pre>
+        </li>
+    </ul>
+</div>
+
+</div><!--sample-->
+<script language="javascript">  
+dp.SyntaxHighlighter.ClipboardSwf = 'inc/SyntaxHighlighter/Scripts/clipboard.swf';  
+dp.SyntaxHighlighter.HighlightAll('code');  
+</script>  
+</body>
+</html>

@@ -1,0 +1,110 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><table width="100%">
+        <tr>
+            <td width="90%"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr align="center">
+                    <td width="25%" style="font-size:14px" class="lt"><em><strong>電子信用狀專用傳票</strong></em></td>
+                    <td height="50" class="contant-l"><span style="text-decoration:underline;"><strong>合作金庫商業銀行─收入傳票(劃付總)</strong></span></td>
+                    <td width="25%"><div style="border:#000 thin solid; font-size:14px; width:65%"><br>
+                        <br>
+                        <br>
+                        <em><strong>註記</strong></em></div></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><div>&nbsp;</div></td>
+                </tr>
+                <tr>
+                    <td><table>
+                        <tr>
+                            <td class="vtop"><strong>貸：</strong></td>
+                            <td>聯行往來<br>
+                                (196930103)</td>
+                        </tr>
+                    </table></td>
+                    <td align="center" style="font-weight:bold;"><table width="50%">
+                        <tr>
+                            <td>中華民國</td>
+                            <td width="20%" class="rt">年</td>
+                            <td width="20%" class="rt">月</td>
+                            <td width="20%" class="rt">日</td>
+                        </tr>
+                    </table></td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+                <table width="100%" border="0" cellspacing="0" cellpadding="4" class="tableborder" style="border:1px #000 solid; border-left:hidden; border-right:hidden;">
+                    <tr class="cell-white">
+                        <td width="25%" class="ct" style="padding:15px 0 15px 0;"><strong>發單單位</strong></td>
+                        <td width="25%" class="ct"><strong>受單單位</strong></td>
+                        <td width="25%" class="ct"><strong>摘要</strong></td>
+                        <td width="25%" class="ct"><strong>金額(新台幣元)</strong></td>
+                    </tr>
+                    <tr class="cell-white">
+                        <td>中文(4)<br>
+                            開狀單位<br>
+                            通知單位<br>
+                            &nbsp;</td>
+                        <td width="20%">中文(4)<br>
+                            通知單位<br>
+                            開狀單位<br>
+                            &nbsp;</td>
+                        <td width="20%">中文/數字(20)<br>
+                            信用狀號碼<br>
+                            戶名<br>
+                            分錄摘要</td>
+                        <td width="20%">中文/數字(20)<br>
+                            &nbsp;<br>
+                            &nbsp;<br>
+                            &nbsp;</td>
+                    </tr>
+                    <tr class="cell-white" >
+                        <td colspan="4"><div>&nbsp;</div></td>
+                    </tr>
+                </table>
+                <table width="100%" border="0" cellpadding="2" cellspacing="0" class="table-100" >
+                    <tr>
+                        <td colspan="2"><div>&nbsp;</div></td>
+                    </tr>
+                    <tr class="contant">
+                        <td width="50%"><strong>分行別：</strong>數字(4)分行代號</td>
+                        <td width="50%"><strong>產製編號：</strong>數字(8)</td>
+                    </tr>
+                    <tr class="contant">
+                        <td><strong>交易型態：</strong>中文(10)中心記帳(國內電子信用狀)/人工處理</td>
+                        <td><strong>交易時間：</strong>時間 (7)</td>
+                    </tr>
+                    <tr class="contant">
+                        <td><strong>交易序號：</strong>數字(6)</td>
+                        <td><strong>對方科目：</strong><span style="text-decoration:underline";>聯行往來</span></td>
+                    </tr>
+                    <td colspan="2"><div>&nbsp;</div></td>
+                    </tr>
+                </table></td>
+            <td width="10%" align="right"><table width="80%" cellspacing="0" cellpadding="3" style="background-color:#000;">
+                <tr class="cell-white">
+                    <td class="ct">製票<br>
+                        <br>
+                        <br></td>
+                </tr>
+                <tr class="cell-white">
+                    <td class="ct">覆核<br>
+                        <br>
+                        <br></td>
+                </tr>
+                <tr class="cell-white">
+                    <td class="ct">記帳<br>
+                        <br>
+                        <span style="background-color:#CCC">中心記帳</span></td>
+                </tr>
+                <tr class="cell-white">
+                    <td class="ct">會計<br>
+                        <br>
+                        <br></td>
+                </tr>
+                <tr class="cell-white">
+                    <td class="ct">核章<br>
+                        <br>
+                        <br></td>
+                </tr>
+            </table></td>
+        </tr>
+    </table>

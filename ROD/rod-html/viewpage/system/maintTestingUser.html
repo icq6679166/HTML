@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+	var grid = $("#gridview").jqGrid({
+        localFirst: true,multiselect : true,height : 450,
+		colModel : [ {
+		header : '使用者代號',name:'userId',width : 10,align : "left"},
+		{header : '使用者名稱',name:'userName',width : 10,align : "left"},
+		{header : '單位代號',name:'branch',width : 10,align : "left"},
+		{header : '角色',name:'role',width : 20,align : "left"},
+		{header : '狀態',name:'State',width : 10,align : "left"}
+		],
+        ondblClickRow: function(id){
+			/*
+            var ret = grid.getSelRowDatas();
+            eDialog.dialog('open').find("#mform").injectData(ret);
+			
+			
+			if (grid.getCell(id, 'parmValue') == "*******")
+			{
+				$('input[name=encryptYesNO]')[0].checked = true; //是             
+			}
+			else 
+			{
+				$('input[name=encryptYesNO]')[1].checked = true; //否
+			}
+			*/			
+        }
+    }).addGridData([
+			['','HB0011','王曉明','0610','(測試環境)報表定義授權','正常'],
+			['','HB0012','王大名','0611','(測試環境)報表定義維護','停用']
+        ]);
+		
+	var eDialog = $("#editDialog") , qDialog = $("#qryDailog") ,aDialog = $("#addDialog");
+	
+	eDialog.dialog({
+    	height: 230,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+	aDialog.dialog({
+    	height: 230,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			aDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			aDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+	
+    qDialog.dialog({
+    	height: 230,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+                qDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+	$(".btns").find("#qry").click(function(){ //查詢	
+		qDialog.dialog('open');
+	}).end().find("#edit").click(function(){//修改
+		eDialog.dialog('open');
+	}).end().find("#add").click(function(){//新增
+		aDialog.dialog('open');
+	})	
+	
+		//修改
+	$("#edit").click(function(){
+		
+		var rowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		
+		if(rowIds.length>1)
+		{
+			eDialog.dialog('close');
+			alert("只能選一筆資料!");
+		}
+		else if(rowIds.length == 0)
+		{
+			eDialog.dialog('close');
+			alert("請選一筆資料!");
+		}
+		else if(rowIds.length == 1) 
+		{			
+			var rowData = grid.jqGrid ('getRowData', rowIds);
+			
+			eDialog.dialog('open').find("#mform").injectData(rowData);
+			
+			//設定使用者label的值
+			 $("#userId").val(rowData['userId']);
+			 $("#userName").val(rowData['userName']);			 
+			
+			//設定角色下拉選單的值
+			$("#selRole").children().each(function(){
+				var tmpAry = $(this).text().split(' ');
+    			if (tmpAry[1]  == rowData['role'])
+					{
+        			//jQuery給法
+        				$(this).attr("selected","true"); //或是給selected也可 
+        			//javascript給法
+        			//this.selected = true;  
+    				}					
+			});
+						
+			//設定狀態下拉選單的值
+			$("#selState").children().each(function(){
+				var tmp1Ary = $(this).text().split(' ');
+    			if (tmp1Ary[1]  == rowData['State'])
+					{
+        			//jQuery給法
+        				$(this).attr("selected","true"); //或是給selected也可 
+        			//javascript給法
+        			//this.selected = true;  
+    				}					
+			});				
+		}
+	});	
+	
+	
+});
+</script>
+</head>
+<body>
+	<div class="tit">(測試環境)建立使用者</div>
+	<div>
+		<div class="btns">
+			<button id="qry" type="button" class="btn1">查詢</button>
+			<button id="add" type="button" class="btn1">新增</button>
+			<button id="edit" type="button" class="btn1">修改</button>
+			<!--
+			<button id="delete" type="button" class="btn1">刪除</button>
+			-->
+		</div>
+		<div id="gridview"></div>
+		
+		
+     <div id="qryDailog" class="hide" title="查詢">
+     	<form id="qform" onsubmit="return false;">
+     	<table id="qTable" class="row-data">
+			<tr>
+				<th nowrap="nowrap">使用者代號</th>						
+				<td>	
+				  <input id="userId" name ="userId" type="text" size="10" maxlength="10"/>
+				</td>			
+			</tr>
+			<tr>
+				<th>使用者名稱</th>						
+				<td>	
+				  <input id="userName" name ="userName" type="text" size="20" maxlength="20"/>
+				</td>			
+			</tr>
+			<tr>
+				<th>角色</th>						
+				<td>
+					<select id="selRole" name="selRole">
+					<option value="0" >ALL 全部</option>	
+			        <option value="6" >RT1 (測試環境)報表定義授權</option>
+					<option value="7" >RT2 (測試環境)報表定義維護</option>					
+		      		</select> 
+				</td>
+			</tr>	
+			
+			<tr>
+				<th>狀態</th>						
+				<td>
+					<select id="selRole" name="selRole">
+					<option value="0" >ALL 全部</option>	
+			        <option value="1" >N 正常</option>
+					<option value="2" >P 停用</option>
+		      		</select> 
+				</td>
+			</tr>	
+						
+		</table>
+		</form>
+     </div>		
+		
+		
+		
+	<div id="editDialog" class="hide" title="修改" >
+		<form id="mform" onsubmit="return false;">
+		<table class="row-data">
+				<tr>
+					<th nowrap="nowrap">使用者代號</th>						
+					<td>	
+					  <!--
+					  <input id="userId" name ="userId" type="text" size="10" maxlength="10"/>
+					  -->
+					  <label id="userId" name="userId">user_Name</label>
+					</td>			
+				</tr>
+				<tr>
+					<th>使用者名稱</th>						
+					<td>
+					<!--		
+					  <input id="userName" name ="userName" type="text" size="20" maxlength="20"/>
+					-->
+					<label id="userName" name="userName">user_Name</label>
+					  
+					</td>			
+				</tr>
+				<tr>
+					<th>角色</th>						
+					<td>
+						<select id="selRole" name="selRole" >
+						<!--	
+						<option value="0" >ALL 全部</option>
+						-->	
+				        <option value="6" >RT6 (測試環境)報表定義授權</option>
+						<option value="7" >RT7 (測試環境)報表定義維護</option>					
+			      		</select> 
+					</td>
+				</tr>	
+
+				<tr>
+					<th>狀態</th>						
+					<td>
+						<select id="selState" name="selState" >
+				        <option value="1" >N 正常</option>
+						<option value="2" >P 停用</option>
+			      		</select> 
+					</td>
+				</tr>	
+				
+				
+		</table>
+	</form>
+	</div>
+		
+	<div id="addDialog" class="hide" title="新增" >
+		<form id="mform" onsubmit="return false;">
+		<table class="row-data">
+				<tr>
+					<th nowrap="nowrap">使用者代號</th>						
+					<td>	
+					  <input id="userId" name ="userId" type="text" size="10" maxlength="10"/>
+					</td>			
+				</tr>
+				<tr>
+					<th>使用者名稱</th>						
+					<td>	
+					  <input id="userName" name ="userName" type="text" size="20" maxlength="20"/>
+					</td>			
+				</tr>
+				<tr>
+					<th>角色</th>						
+					<td>
+						<select id="selRole" name="selRole" >
+						<!--	
+						<option value="0" >ALL 全部</option>
+						-->	
+				        <option value="6" >RT6 (測試環境)報表定義授權</option>
+						<option value="7" >RT7 (測試環境)報表定義維護</option>					
+			      		</select> 
+					</td>
+				</tr>	
+
+				<tr>
+					<th>狀態</th>						
+					<td>
+						<select id="selState" name="selState" disabled=true>
+				        <option value="1" >N 正常</option>
+						<option value="2" >P 停用</option>
+			      		</select> 
+					</td>
+				</tr>	
+				
+				
+		</table>
+	</form>
+	</div>
+		
+		
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function() {
+	var grid = $("#gridview").jqGrid({
+		localFirst: true,multiselect:true,height:150,pager:false,
+		colModel : [ 
+		{header : '報表編號',name:'rptId',width : 20,align : "left"}, 		
+		{header : '報表名稱',name:'rptName',width : 30,align : "left"},
+		{header : '報表版本',name:'rptVersion',width : 10,align : "right"},
+		//{header : '上版日期',name:'publishDate',width : 10,align : "left"},
+		{header : '製表日期',name:'updateTime',width : 10,align : "left"},
+		{header : '製表人員姓名',name:'updater',width : 15,align : "left"}
+		 ]
+	});
+		
+	var grid1 = $("#gridview1").jqGrid({
+		localFirst: true,multiselect:true,height:200,pager:false,
+		colModel : [ 
+		{header : '報表編號',name:'rptId',width : 20	,align : "left"},		
+		{header : '報表名稱',name:'rptName',width : 30,align : "left"},
+		{header : '報表版本',name:'rptVersion',width : 10,align : "right"},
+		//{header : '上版日期',name:'publishDate',width : 10,align : "left"},
+		{header : '製表日期',name:'updateTime',width : 10,align : "left"},
+		{header : '製表人員姓名',name:'updater',width : 15,align : "left"}
+		 ]
+	});
+	    
+	
+	
+	
+	var qDialog = $("#qDialog") , eDialog = $("#eDialog");
+	qDialog.dialog({ //查詢畫面
+    	height: 220,width: 550,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+					['','ACF10','業務費用月報','1','2014-02-11','王大仁'],
+					['','ACF11','管理費用月報','1','2014-02-11','王大仁'],
+					['','ACF12','會計各項子目本日餘額表','1','2014-02-11','王大仁'],
+					['','ACF12','業務費用總表','1','2014-02-11','王大仁'],
+					['','ACF13','銷帳科子目逐筆結轉明細表','1','2014-02-11','王大仁'],
+				]);
+				$("#gridview1").clearGridData().addGridData([
+					['','ACF01','其他應付款－出售不良債權明細表','1','2014-02-11','王大仁'],
+					['','ACF02','其他應收款－出售不良債權明細表','1','2014-02-11','王大仁'],
+
+				]);
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+	$("#qry").click(function(){
+		qDialog.dialog('open');
+    }).trigger('click');
+	eDialog.dialog({ //維謢畫面
+    	height: 200,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			eDialog.dialog('close');
+			}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	}])
+    });
+    
+    $("#print,#export").click(function(){
+    	eDialog.dialog("open");
+    });
+    $("#add").click(function(){
+    	var sel = grid.getSelRowDatas();
+    	grid1.addGridData(sel);
+    	delSelGridRow(grid);
+    });
+    $("#del").click(function(){
+    	var sel = grid1.getSelRowDatas();
+    	delSelGridRow(grid1);
+    });
+    function delSelGridRow(tGrid){
+    	var sels = tGrid.jqGrid('getGridParam', 'selarrrow'); 
+    	sels.sort().reverse();
+    	for (var r in sels){
+    		tGrid.jqGrid("delRowData",sels[r]);	
+    	}
+    	sels = tGrid.jqGrid('getGridParam', 'selarrrow'); 
+    	sels.sort().reverse();
+    	for (var r in sels){
+    		tGrid.jqGrid("delRowData",sels[r]);	
+    	}
+    	return false;
+    };    
+
+});
+</script>
+</head>
+<body>
+	<div class="tit">報表定義匯出</div>
+	<div class="btns">
+		<button id="qry" type="button" class="btn1">查詢</button>
+    </div>
+    <div id="gridview"></div>
+    <div class="btns" style="margin-top:5px;">
+		<button id="add" type="button" class="btn1">加入</button>
+		<button id="del" type="button" class="btn1">刪除</button>
+		<button id="print" type="button" class="btn1">匯出清單</button>
+		<button id="export" type="button" class="btn1">匯出資料</button>
+	</div>
+	<div id="gridview1"></div>
+    <div id="qDialog" class="hide" title="查詢">
+    	<form id="qform" onsubmit="return false;">
+	    	<table id="basicSetting" class="row-data">
+				<tr>
+					<th>報表編號</th>
+					<td colspan="3"><input id="rptId" name="rptId" type="text" size="10" maxlength="10"/></td>
+				</tr>
+				<tr>
+					<th>製表日期(起)</th>
+					<td>
+						<input id="defineDateBegin" name="defineDateBegin" type="text" size="10" maxlength="10" class="date"/>
+					</td>
+					<th>製表日期(迄)</th>
+					<td>
+						<input id="defineDateEnd" name="defineDateEnd" type="text" size="10" maxlength="10" class="date"/>
+					</td>
+				</tr>
+				<tr>
+					<th>製表人員代碼</th>
+					<td><input id="defineUserId" name="defineUserId" type="text" size="10" maxlength="10"/></td>
+					<th>製表人員姓名</th>
+					<td><input id="defineUserName" name="defineUserName" type="text" size="10" maxlength="10"/></td>
+				</tr>
+			</table>
+		</form>
+    </div>
+	<div id="eDialog" class="hide" title="匯出csv">
+		<form id="mform" onsubmit="return false;">
+			<table class="row-data">
+				<tr>
+					<th nowrap>上版批號為：</th>
+					<td><input id="batchNo" name="batchNo" type="text" size="30" readonly="readonly" value ="TCB1234_20130110_1"/></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

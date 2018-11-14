@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+	var grid = $("#gridview").jqGrid({
+		localFirst: true,multiselect : false,height: 450,
+        sortname: '上版批號',sortorder: "desc",
+        colModel: [ 
+		{header: '上版批號',name:'batchNo',width: 50,align: "left"}, 
+        {header: '製表人員代碼',name:'defineUserId',width: 75,align: "center"}, 
+        {header: '製表人員姓名',name:'defineUserName',width: 75,align: "center"},
+        {header: '匯出',name:'export',width: 20,align: "center"},
+        {header: '匯入',name:'import',width: 20,align: "center"}
+        ],
+        ondblClickRow: function(){
+        	var ret = grid.getSelRowDatas();
+        	eDialog.dialog('open').find("#mform").injectData(ret);
+        }
+    });
+
+
+	
+	//查詢
+  var qDialog = $("#qDialog");
+	qDialog.dialog({
+    	height: 260,width: 500,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.query,value:function(){
+				qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+					["TCB0001_20130113_01", "TCB0001", "王大明","Y","N"],
+					["TCB0001_20130113_02", "TCB0001", "王大明","Y","N"]				
+				]);
+			}
+    	},{ key:i18n.def.close,value:function(){qDialog.dialog('close');}
+    	}])
+    });
+    
+	$("#qry").click(function(){
+		qDialog.dialog('open');
+    }).trigger('click');      
+});
+</script>
+
+
+
+
+</head>
+<body>
+<!-- 已匯出未上版的查詢(以上版日期判斷) -->
+		<div class="tit">匯出匯入查詢</div>
+	<div class="btns">
+		<button id="qry" type="button" class="btn1">查詢</button>
+		<!--
+		<button id="clear" type="button" class="btn1">清除</button>
+		-->
+    </div>
+
+
+    <div id="qDialog" class="hide" title="查詢">
+    	<form id="qform" onsubmit="return false;">
+	    	<table id="basicSetting" class="row-data">
+				<tr>
+					<th>上版批號</th>
+					<td><input id="batchNo" name="batchNo" type="text" size="20" maxlength="20"/></td>
+				</tr>
+				<!--
+				<tr>
+					<th>上版日期</th>
+					<td>
+						<input id="upDate" name="upDate" type="text" size="10" maxlength="10" class="date"/>
+					</td>
+				</tr>
+				-->
+				<tr>
+					<th nowrap>匯出人員代碼</th>
+					<td><input id="exportUserId" name="exportUserId" type="text" size="10" maxlength="10"/></td>
+				</tr>
+				<tr>
+					<th>匯出人員姓名</th>
+					<td><input id="exportUserName" name="exportUserName" type="text" size="10" maxlength="10"/></td>
+				</tr>	
+				<tr>
+					<th>匯出</th>
+					<td>
+					   	<select id="export" name="export">
+					   	<option value="ALL" selected="selected">A 全部</option>
+							<option value="Y">Y 是</option>
+							<option value="N">N 否</option>
+						</select>
+						
+					</td>
+					
+					
+				</tr>	
+				<tr>
+					<th>匯入</th>
+					<td>	
+					   	<select id="import" name="import">
+					   	<option value="ALL" selected="selected">A 全部</option>
+							<option value="Y">Y 是</option>
+							<option value="N">N 否</option>
+						</select>
+					</td>	
+				</tr>	
+							
+			</table>
+		</form>
+    </div>
+	<div id="gridview" />			
+</body>
+</html>

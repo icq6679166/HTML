@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>首頁</li>
+    <li>待辦事項</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">待辦事項</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul>
+            <li><a href="javascript:void(0);" class="btn_openAll" onClick="tbDropDownAll(this,'.btn_switch')">全部展開</a>：展開下列所有待辦事項</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_todo">
+        <tr>
+            <td class="hd1" width="28%">
+                交易類別</td>
+            <td class="hd1" width="18%">
+                退件 (24)</td>
+            <td class="hd1" width="18%">
+                編輯 (36)</td>
+            <td class="hd1" width="18%">
+                待審核 (24)</td>
+            <td class="hd1" width="18%">
+                待放行 (24)</td>
+        </tr>
+		<tr class="lv1">
+            <td>
+                <a href="javascript:void(0)" onclick="tbDropDown(this,1)" class="btn_switch_hide">投資理財</a></td>
+            <td class="ct">
+                (1)</td>
+            <td class="ct">
+                (9)</td>
+            <td class="ct">
+                (5)</td>
+            <td class="ct">
+                (9)</td>
+        </tr>
+        <tr class="lv2">
+            <td colspan="5">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_lv2">
+                    <tr>
+                      <td width="28%" class=""><a href="javascript:void(0)" class="btn_switch_in">基金單筆申購</a></td>
+                      <td width="18%" class="ct"><a class="link" href="../TWNFNT/TWNFNT01_return_list.html">(2)</a></td>
+                      <td width="18%" class="ct"><a class="link" href="javascript:void(0);">(2)</a></td>
+                      <td width="18%" class="ct"><a class="link" href="../TWNFNT/TWNFNT01_todo_list.html">(2)</a></td>
+                      <td width="18%" class="ct"><a class="link" href="../TWNFNT/TWNFNT01_todo_list.html">(2)</a></td>
+                    </tr>
+                    <tr>
+                      <td class=""><a href="javascript:void(0)" class="btn_switch_in">小額申購</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT02_return_list.html">(2)</a></td>
+                      <td class="ct">--</td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT02_todo_list.html">(2)</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT02_todo_list.html">(2)</a></td>
+                    </tr>
+                    <tr>
+                      <td class=""><a href="javascript:void(0)" class="btn_switch_in">贖回</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT03_return_list.html">(2)</a></td>
+                      <td class="ct">--</td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT03_todo_list.html">(2)</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT03_todo_list.html">(2)</a></td>
+                    </tr>
+                    <tr>
+                      <td class=""><a href="javascript:void(0)" class="btn_switch_in">轉換</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT04_return_list.html">(2)</a></td>
+                      <td class="ct">--</td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT04_todo_list.html">(2)</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT04_todo_list.html">(2)</a></td>
+                    </tr>
+                    <tr>
+                      <td class=""><a href="javascript:void(0)" class="btn_switch_in">ETF委託申購</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT06_return_list.html">(2)</a></td>
+                      <td class="ct">--</td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT06_todo_list.html">(2)</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT06_todo_list.html">(2)</a></td>
+                    </tr>
+                    <tr>
+                      <td class=""><a href="javascript:void(0)" class="btn_switch_in">ETF委託贖回</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT07_return_list.html">(2)</a></td>
+                      <td class="ct">--</td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT07_todo_list.html">(2)</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT07_todo_list.html">(2)</a></td>
+                    </tr>
+                    <tr>
+                      <td class=""><a href="javascript:void(0)" class="btn_switch_in"> 預約作業查詢/取消預約</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT08_return_list.html">(2)</a></td>
+                      <td class="ct">--</td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT08_todo_list.html">(2)</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNT/TWNFNT08_todo_list.html">(2)</a></td>
+                    </tr>
+                    <tr>
+                      <td class=""><a href="javascript:void(0)" class="btn_switch_in">變更現金收益存入帳號</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNA/TWNFNA07_return_list.html">(2)</a></td>
+                      <td class="ct">--</td>
+                      <td class="ct"><a class="link" href="../TWNFNA/TWNFNA07_todo_list.html">(2)</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNA/TWNFNA07_todo_list.html">(2)</a></td>
+                    </tr>
+                    <tr>
+                      <td class=""><a href="javascript:void(0)" class="btn_switch_in">小額投資異動</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNA/TWNFNA08_return_list.html">(2)</a></td>
+                      <td class="ct">--</td>
+                      <td class="ct"><a class="link" href="../TWNFNA/TWNFNA08_todo_list.html">(2)</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNA/TWNFNA08_todo_list.html">(2)</a></td>
+                    </tr>
+                    <tr>
+                        <td class="">
+                            <a href="javascript:void(0)" class="btn_switch_in">委託人資料變更</a></td>
+                        <td class="ct"><a class="link" href="../TWNFNA/TWNFNA09_return_list.html">(2)</a></td>
+                        <td class="ct">--</td>
+                        <td class="ct"><a class="link" href="../TWNFNA/TWNFNA09_todo_list.html">(2)</a></td>
+                        <td class="ct"><a class="link" href="../TWNFNA/TWNFNA09_todo_list.html">(2)</a></td>
+                    </tr>
+                    <tr>
+                      <td class=""><a href="javascript:void(0)" class="btn_switch_in">信託印鑑/印鑑卡掛失</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNA/TWNFNA11_return_list.html">(2)</a></td>
+                      <td class="ct">--</td>
+                      <td class="ct"><a class="link" href="../TWNFNA/TWNFNA11_todo_list.html">(2)</a></td>
+                      <td class="ct"><a class="link" href="../TWNFNA/TWNFNA11_todo_list.html">(2)</a></td>
+                    </tr>
+                </table>            </td>
+        </tr>
+    </table>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>異動服務</li>
+    <li>停損/獲利點設定</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">停損/獲利點設定</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+          <li>請選擇欲編輯之投資標的</li>
+        </ul>
+    </div>
+</div>
+<dl id="step" class="clearfix">  
+    <dt class="current"><span>異動資料</span></dt>  
+    <dt><span>資料確認</span></dt>  
+    <dt><span>結果頁</span></dt>                   
+</dl> 
+<div class="pageCont">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi m10">
+      <tr>
+            <td width="4%" rowspan="2" class="hd1">
+                序號</td>
+            <td width="14%" rowspan="2" class="hd1">信託帳號<div class="tdline"></div>交易編號</td>
+            <td width="13%" rowspan="2" class="hd1">信託業務別<div class="tdline"></div>投資型態</td>
+            <td width="25%" rowspan="2" class="hd1">信託標的<div class="tdline"></div>投資本金</td>
+            <td width="11%" rowspan="2" class="hd1">停損點(%)</td>
+            <td width="11%" rowspan="2" class="hd1">獲利點(%)</td>
+            <td colspan="2" class="hd1">通知方式</td>
+        </tr>
+        <tr>
+          <td width="15%" class="hd1_1">即時畫面警示畫面</td>
+          <td width="7%" class="hd1_1">E-mail</td>
+        </tr>
+        <tr>
+          <td class="td_sn">1</td>
+          <td>1047-888-000046<br>CA000249061</td>
+          <td>國內基金<br>單筆申購</td>
+          <td>6262-寶來全球新興市場精選組合基金<br>10,000.00</td>
+          <td class="td_money"><input name="textfield" type="text" value="2" size="2"">
+          .00</td>
+          <td class="td_money"><input name="textfield" type="text" value="1" size="2"">
+            .00</td>
+          <td class="ct"><input name="checkbox" type="checkbox" checked></td>
+          <td class="ct"><input name="checkbox" type="checkbox"></td>
+        </tr>
+        <tr>
+            <td class="td_sn">2</td>
+            <td>1047-888-000046<br>
+              CA000249061</td>
+            <td>國內基金<br>
+              單筆申購</td>
+            <td>6262-寶來全球新興市場精選組合基金<br>
+              10,000.00</td>
+            <td class="td_money"><input name="textfield" type="text" value="1" size="2"">
+              .00</td>
+            <td class="td_money"><input name="textfield" type="text" value="2" size="2"">
+              .00</td>
+            <td class="ct"><input name="checkbox2" type="checkbox" checked></td>
+            <td class="ct"><input name="checkbox3" type="checkbox"></td>
+        </tr>
+    </table>
+  <div class="btnBlock">
+        <a href="TWNFNA10_conf.html" class="btn_submit">送出</a>
+        <a href="TWNFNA10_home.html" class="btn_submit">取消</a>
+        <div class="help">
+        <div class="title">說明：</div>
+            <ul class="olist">
+              <li>提醒您，如「停損點」、 「獲利點%」設定為0.00時，本行將不會發送E-MAIL通知。</li>
+            </ul>
+        </div>  
+    </div>
+    
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

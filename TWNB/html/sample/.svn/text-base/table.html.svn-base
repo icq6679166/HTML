@@ -1,0 +1,1114 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" href="inc/sample.css">
+<script type="text/javascript" src="inc/jquery-1.4.4.min.js"></script>
+<link type="text/css" rel="stylesheet" href="inc/SyntaxHighlighter/Styles/SyntaxHighlighter.css">
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shCore.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushCss.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript" src="inc/sample.js"></script>
+<script type="text/javascript">
+/*function resize(){
+	var ifr = parent.document.getElementsByTagName('iframe');
+    if(ifr){ifr[0].style.height = document.body.clientHeight+'px'}
+}
+addOnloadEvent(function(){
+	resize()
+})*/
+</script>
+</head>
+<body>
+<div class="sample">
+<div class="tabMod1">
+	<h1>表格欄位名稱</h1>
+    <p class="detail"></p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">說明</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+            <table class="stb1" width="70%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="hd" width="30%">類型</td>
+        <td class="hd">className</td>
+        <td class="hd">text-align</td>
+    </tr>
+    <tr>
+        <td>幣別</td>
+        <td>.td_currency</td>
+        <td>center</td>
+    </tr>
+    <tr>
+        <td>日期</td>
+        <td>.td_date</td>
+        <td>center</td>
+    </tr>
+    <tr>
+        <td>筆次/批號</td>
+        <td>.td_sn</td>
+        <td>center</td>
+    </tr>
+    <tr>
+        <td>checkbox</td>
+        <td>.td_chk</td>
+        <td>center</td>
+    </tr>
+    <tr>
+        <td>金錢</td>
+        <td>.td_money</td>
+        <td>right</td>
+    </tr>
+    <tr>
+        <td>功能(通常放按鈕)</td>
+        <td>td_func</td>
+        <td>left</td>
+    </tr>
+            </table>
+        </li>
+    </ul>
+</div>    
+<div class="tabMod1">
+	<h1>tb_single</h1>
+    <p class="detail">單筆表格兩欄</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+            <table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td class="hd1" width="20%">公司戶名hd1</td>
+                    <td>1234578 1 甲乙丙有限公司</td>
+                </tr>
+                <tr>
+                    <td class="hd1">帳　　號</td>
+                    <td>
+                        <select name="" id="">
+                            <option>---請選擇---</option>
+                            <option></option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="hd1"><span class="star">＊</span>查詢期間</td>
+                    <td>
+                        <input type="radio" name="rad1" checked>From：
+                        <input type="text" class="date_txt" value="YYYY/MM/DD">
+                        <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a>
+                        To
+                        <input type="text" class="date_txt" value="YYYY/MM/DD">
+                        <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a><br>
+                        <input type="radio" name="rad1">一周                
+                        <input type="radio" name="rad1">一個月
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td class="hd1" width="20%"&gt;公司戶名&lt;/td&gt;
+        &lt;td&gt;1234578 1 甲乙丙有限公司&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd1"&gt;帳　　號&lt;/td&gt;
+        &lt;td&gt;
+            &lt;select name="" id=""&gt;
+                &lt;option&gt;---請選擇---&lt;/option&gt;
+                &lt;option&gt;&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd1"&gt;&lt;span class="star"&gt;＊&lt;/span&gt;查詢期間&lt;/td&gt;
+        &lt;td&gt;
+            &lt;input type="radio" name="rad1" checked&gt;From：
+            &lt;input type="text" class="date_txt" value="YYYY/MM/DD"&gt;
+            &lt;a href="javascript:void(0);" class="calendar" onClick="datePicker(this)"&gt;&amp;nbsp;&lt;/a&gt;
+            To
+            &lt;input type="text" class="date_txt" value="YYYY/MM/DD"&gt;
+            &lt;a href="javascript:void(0);" class="calendar" onClick="datePicker(this)"&gt;&amp;nbsp;&lt;/a&gt;&lt;br&gt;
+            &lt;input type="radio" name="rad1"&gt;一周                
+            &lt;input type="radio" name="rad1"&gt;一個月
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+            </pre>
+        </li>
+    </ul>
+</div>
+<div class="tabMod1">
+    <p class="detail">單筆表格四欄</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+            <table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td class="hd1" width="20%">公司戶名hd1</td>
+                    <td>1234578 1 甲乙丙有限公司</td>
+                    <td class="hd1">幣　　別</td>
+                    <td>新台幣</td>
+                </tr>
+                <tr>
+                    <td class="hd1">帳　　號</td>
+                    <td>999999999999</td>
+                    <td class="hd1">查詢類型</td>
+                    <td>僅查詢當日</td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td class="hd1" width="20%"&gt;公司戶名&lt;/td&gt;
+        &lt;td&gt;1234578 1 甲乙丙有限公司&lt;/td&gt;
+        &lt;td class="hd1"&gt;幣　　別&lt;/td&gt;
+        &lt;td&gt;新台幣&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd1"&gt;帳　　號&lt;/td&gt;
+        &lt;td&gt;999999999999&lt;/td&gt;
+        &lt;td class="hd1"&gt;查詢類型&lt;/td&gt;
+        &lt;td&gt;僅查詢當日&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+    <p class="detail">單筆表格兩欄(雙標題)</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+            <table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td class="hd1" width="20%">案件編號</td>
+                    <td width="80%">999999999</td>
+                </tr>
+                <tr>
+                    <td class="hd1">
+                        <span class="star">＊</span>付款日期
+                    </td>
+                    <td>
+                        <input type="text" class="date_txt" value="YYYY/MM/DD">
+                        <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a><br>
+        
+                        <input type="checkbox">不可註銷之預約付款交易
+                    </td>            
+                </tr>
+                <tr>
+                    <td class="hd2" colspan="2">
+                        <span class="tit1">收款人資料</span>
+                        <a href="#" class="btn_search">收款人資料查詢</a>
+                        <a href="#" class="btn_tb">存入收款人資料</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="hd1">
+                        <span class="star">＊</span>收款銀行
+                    </td>
+                    <td>
+                        <a href="javascript:void(0);" class="btn_search" onClick="winopen('#',500,300)">銀行代號</a>
+                        <input type="text">
+                        華南建成
+                    </td>            
+                </tr>
+            </table>        
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+        &lt;tr&gt;
+            &lt;td class="hd1" width="20%"&gt;案件編號&lt;/td&gt;
+            &lt;td width="80%"&gt;999999999&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="hd1"&gt;
+                &lt;span class="star"&gt;＊&lt;/span&gt;付款日期
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;input type="text" class="date_txt" value="YYYY/MM/DD"&gt;
+                &lt;a href="javascript:void(0);" class="calendar" onClick="datePicker(this)"&gt;&amp;nbsp;&lt;/a&gt;&lt;br&gt;
+
+                &lt;input type="checkbox"&gt;不可註銷之預約付款交易
+            &lt;/td&gt;            
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="hd2" colspan="2"&gt;
+                &lt;span class="tit1"&gt;收款人資料&lt;/span&gt;
+                &lt;a href="#" class="btn_search"&gt;收款人資料查詢&lt;/a&gt;
+                &lt;a href="#" class="btn_tb"&gt;存入收款人資料&lt;/a&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class="hd1"&gt;
+                &lt;span class="star"&gt;＊&lt;/span&gt;收款銀行
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;a href="javascript:void(0);" class="btn_search" onClick="winopen('#',500,300)"&gt;銀行代號&lt;/a&gt;
+                &lt;input type="text"&gt;
+                華南建成
+            &lt;/td&gt;            
+        &lt;/tr&gt;
+    &lt;/table&gt;
+            </pre>
+        </li>
+    </ul>
+</div>
+<div class="tabMod1">
+	<h1>tb_multi</h1>
+    <p class="detail">多筆表格</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table class="tb_multi" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="5%" class="hd1">筆次</td>
+        <td width="30%" class="hd1">交易日期時間</td>
+        <td width="20%" class="hd1">支票號碼</td>
+        <td class="hd1">更正</td>
+    </tr>
+    <tr>
+        <td class="td_sn">1</td>
+        <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+        <td class="ct">9999999</td>
+        <td>xxxxx</td>
+    </tr>
+    <tr>
+        <td class="td_sn">2</td>
+        <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+        <td class="ct">9999999</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="td_sn">3</td>
+        <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+        <td class="ct">9999999</td>
+        <td>xxxxxxxx</td>
+    </tr>
+    <tr>
+        <td class="td_sn">4</td>
+        <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+        <td class="ct">9999999</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>     
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;table class="tb_multi" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td width="12%" class="hd1"&gt;筆次&lt;/td&gt;
+        &lt;td width="20%" class="hd1"&gt;交易日期時間&lt;/td&gt;
+        &lt;td width="27%" class="hd1"&gt;支票號碼&lt;/td&gt;
+        &lt;td width="41%" class="hd1"&gt;更正&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="td_sn"&gt;1&lt;/td&gt;
+        &lt;td class="td_date"&gt;YYYY/MM/DD HH:MM:SS&lt;/td&gt;
+        &lt;td&gt;9999999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="td_sn"&gt;1&lt;/td&gt;
+        &lt;td class="td_date"&gt;YYYY/MM/DD HH:MM:SS&lt;/td&gt;
+        &lt;td&gt;9999999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="td_sn"&gt;1&lt;/td&gt;
+        &lt;td class="td_date"&gt;YYYY/MM/DD HH:MM:SS&lt;/td&gt;
+        &lt;td&gt;9999999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="td_sn"&gt;1&lt;/td&gt;
+        &lt;td class="td_date"&gt;YYYY/MM/DD HH:MM:SS&lt;/td&gt;
+        &lt;td&gt;9999999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;        
+            </pre>
+        </li>
+    </ul>
+</div>
+
+
+<div class="tabMod1">
+    <p class="detail">多筆表格(多標題), <br>1. 注意當兩列資料合併時, 要用線隔開 class=tdline<br>2. 共有四種標題樣式, 分類標題hd3</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table class="tb_multi noeffect" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td colspan="6" class="hd3"><span class="detail">分類標題hd3</span></td>
+    </tr>
+    <tr>
+        <td rowspan="2" class="hd1">多筆表頭hd1</td>
+        <td colspan="2" class="hd1">交易金額</td>
+        <td rowspan="2" class="hd1">對方行<div class="tdline"></div>對方帳號</td>
+        <td rowspan="2" class="hd1">更正</td>
+        <td rowspan="2" class="hd1">交易摘要<div class="tdline"></div>            備註</td>
+        </tr>
+    <tr>
+        <td class="hd1_1">多筆次表頭hd1_1</td>
+        <td class="hd1_1">存入</td>
+    </tr>
+    <tr>
+        <td class="hd2">多筆直式表頭hd2</td>
+        <td class="td_money">99,999,999,999</td>
+        <td>&nbsp;</td>
+        <td>999 XX 銀行 99999999999999</td>
+        <td>&nbsp;</td>
+        <td>網際轉帳 XXXXXXXXXX</td>
+    </tr>
+    <tr>
+        <td class="hd2">9999999</td>
+        <td class="td_money">99,999,999,999</td>
+        <td>&nbsp;</td>
+        <td>999 XX 銀行 99999999999999</td>
+        <td>&nbsp;</td>
+        <td>網際轉帳 XXXXXXXXXX</td>
+    </tr>
+    <tr>
+        <td class="hd2">9999999</td>
+        <td class="td_money">99,999,999,999</td>
+        <td>&nbsp;</td>
+        <td>999 XX 銀行 99999999999999</td>
+        <td>&nbsp;</td>
+        <td>網際轉帳 XXXXXXXXXX</td>
+    </tr>
+    <tr>
+        <td class="hd2">9999999</td>
+        <td class="td_money">99,999,999,999</td>
+        <td>&nbsp;</td>
+        <td>999 XX 銀行 99999999999999</td>
+        <td>&nbsp;</td>
+        <td>網際轉帳 XXXXXXXXXX</td>
+    </tr>
+</table>   
+        </li>
+        <li>
+            <pre name="code" class="html"> 
+&lt;table class="tb_multi noeffect" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td colspan="6" class="hd3"&gt;&lt;span class="detail"&gt;分類標題hd3&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2" class="hd1"&gt;多筆表頭hd1&lt;/td&gt;
+        &lt;td colspan="2" class="hd1"&gt;交易金額&lt;/td&gt;
+        &lt;td rowspan="2" class="hd1"&gt;對方行&lt;div class="tdline"&gt;&lt;/div&gt;對方帳號&lt;/td&gt;
+        &lt;td rowspan="2" class="hd1"&gt;更正&lt;/td&gt;
+        &lt;td rowspan="2" class="hd1"&gt;交易摘要&lt;div class="tdline"&gt;&lt;/div&gt;            備註&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd1_1"&gt;多筆次表頭hd1_1&lt;/td&gt;
+        &lt;td class="hd1_1"&gt;存入&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd2"&gt;多筆直式表頭hd2&lt;/td&gt;
+        &lt;td class="td_money"&gt;99,999,999,999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;999 XX 銀行 99999999999999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;網際轉帳 XXXXXXXXXX&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd2"&gt;9999999&lt;/td&gt;
+        &lt;td class="td_money"&gt;99,999,999,999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;999 XX 銀行 99999999999999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;網際轉帳 XXXXXXXXXX&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd2"&gt;9999999&lt;/td&gt;
+        &lt;td class="td_money"&gt;99,999,999,999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;999 XX 銀行 99999999999999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;網際轉帳 XXXXXXXXXX&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd2"&gt;9999999&lt;/td&gt;
+        &lt;td class="td_money"&gt;99,999,999,999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;999 XX 銀行 99999999999999&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;網際轉帳 XXXXXXXXXX&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;               
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+	<h1>tb_pages</h1>
+    <p class="detail">表格上下分頁, 注意上下寫法不同</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    	<li>PG view</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+    </tr>
+</table>
+<table class="tb_multi mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="hd1">筆次</td>
+        <td class="hd1">交易日期時間</td>
+        <td class="hd1">支票號碼</td>
+        </tr>
+    <tr>
+        <td class="td_sn">1</td>
+        <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+        <td>9999999</td>
+    </tr>
+</table>
+<table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+    </tr>
+</table>        
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+        	&lt;div class="fr mt3"&gt; 
+            	&lt;a href="#" class="btn_tbpages"&gt;&lt;span&gt;前往&lt;/span&gt;&lt;/a&gt; 
+            &lt;/div&gt;
+        	&lt;div class="fr"&gt; 
+            	移至 &lt;input type="text" class="tb_pages_txt" maxlength="3"&gt;  
+            &lt;/div&gt;           
+            &lt;div class="pageNav"&gt; 
+                &lt;a href="#" class="btn_first"&gt;&lt;/a&gt;
+                &lt;a href="#" class="btn_pre"&gt;&lt;/a&gt;
+                &lt;span class="pags_detail"&gt;第 1 / 7 頁&lt;/span&gt;
+                &lt;a href="#" class="btn_next"&gt;&lt;/a&gt;
+                &lt;a href="#" class="btn_end"&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        	&lt;div class="fr"&gt; 
+            	每頁
+                &lt;select name="sel1"&gt;
+                    &lt;option&gt;50&lt;/option&gt;
+                &lt;/select&gt;
+                筆 
+            &lt;/div&gt;
+		&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;table class="tb_multi mb0" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td class="hd1"&gt;筆次&lt;/td&gt;
+        &lt;td class="hd1"&gt;交易日期時間&lt;/td&gt;
+        &lt;td class="hd1"&gt;支票號碼&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="td_sn"&gt;1&lt;/td&gt;
+        &lt;td class="td_date"&gt;YYYY/MM/DD HH:MM:SS&lt;/td&gt;
+        &lt;td&gt;9999999&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+        	&lt;div class="fr mt3"&gt; 
+            	&lt;a href="#" class="btn_tbpages"&gt;&lt;span&gt;前往&lt;/span&gt;&lt;/a&gt; 
+            &lt;/div&gt;
+        	&lt;div class="fr"&gt; 
+            	移至 &lt;input type="text" class="tb_pages_txt" maxlength="3"&gt;  
+            &lt;/div&gt;           
+            &lt;div class="pageNav"&gt; 
+                &lt;a href="#" class="btn_first"&gt;&lt;/a&gt;
+                &lt;a href="#" class="btn_pre"&gt;&lt;/a&gt;
+                &lt;span class="pags_detail"&gt;第 1 / 7 頁&lt;/span&gt;
+                &lt;a href="#" class="btn_next"&gt;&lt;/a&gt;
+                &lt;a href="#" class="btn_end"&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        	&lt;div class="fr"&gt; 
+            	每頁
+                &lt;select name="sel1"&gt;
+                    &lt;option&gt;50&lt;/option&gt;
+                &lt;/select&gt;
+                筆 
+            &lt;/div&gt;
+		&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;  
+            </pre>
+        </li>
+
+        <li>
+        	<TABLE class=panelBox id=form1:tableEx1:box1 align=right cellSpacing=0 cellPadding=0 border=0>
+        <TBODY>
+        <TR>
+          <TD>每頁</TD>
+          <TD><SELECT id=form1:tableEx1:selectPageSize1
+          class=pageSelect 
+            onchange=chagePageSize1() size=1 
+              name=form1:tableEx1:selectPageSize1> <OPTION value=3 
+              selected>3</OPTION> <OPTION value=5>5</OPTION> <OPTION 
+              value=10>10</OPTION></SELECT></TD>
+          <TD>筆</TD>
+          <TD>
+            <TABLE class=pagerDeluxe id=form1:tableEx1:deluxe1 cellSpacing=0 
+            cellPadding=0 border=0>
+              <TBODY>
+              <TR>
+                <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerFirst title=第一頁 
+                  type=image alt=第一頁 src="../../inc/img/pageNav/btn_first.gif" 
+                  name=form1:tableEx1:deluxe1__pagerFirst> </TD>
+                <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerPrevious title=前翻 disabled 
+                  type=image alt=前翻 src="../../inc/img/pageNav/btn_pre.gif" 
+                  name=form1:tableEx1:deluxe1__pagerPrevious> </TD>
+                <TD class=pagerDeluxe vAlign=top align=left><SPAN 
+                  class=pagerDeluxe_text id=form1:tableEx1:deluxe1__pagerText>第 
+                  1 / 7 頁</SPAN> </TD>
+                <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerNext title=後翻 type=image 
+                  alt=後翻 src="../../inc/img/pageNav/btn_next.gif" 
+                  name=form1:tableEx1:deluxe1__pagerNext> </TD>
+                <TD class=pagerDeluxeActive vAlign=top align=left><INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerLast title=最後一頁 type=image 
+                  alt=最後一頁 src="../../inc/img/pageNav/btn_end.gif" 
+                  name=form1:tableEx1:deluxe1__pagerLast> </TD>
+                <SCRIPT language=JavaScript 
+                src="sample2.files/hxclient_core_v3_1_7.js" 
+                type=text/JavaScript></SCRIPT>
+
+                <SCRIPT language=JavaScript 
+                src="sample2.files/hxclient_S_v3_1_7_zh_TW.js" 
+                type=text/JavaScript></SCRIPT>
+
+                <SCRIPT language=JavaScript type=text/JavaScript>
+if (hX_6) hX_6.setResourceServer("/PersonalTradeJSF/.ibmjsfres");
+if(hX_6 && hX_6.setLocale) hX_6.setLocale("zh_TW");
+
+</SCRIPT>
+              </TR></TBODY></TABLE></TD>
+          <TD>移至</TD>
+          <TD><SPAN class=pagerGoto id=form1:tableEx1:goto1><INPUT 
+            class=pagerGoto_inputText id=form1:tableEx1:goto1__pagerGoText 
+            size=2 value=1 name=form1:tableEx1:goto1__pagerGoText> <SPAN><INPUT class=pagerGoto_btn id=form1:tableEx1:goto1__pagerGoButton type=submit value=前往 name=form1:tableEx1:goto1__pagerGoButton alt=前往 title=前往>
+            </SPAN></SPAN></TD>
+          <TD>
+            <SCRIPT language=Javascript type=text/javascript>function dpf(f) {var adp = f.adp;if (adp != null) {for (var i = 0;i < adp.length;i++) {f.removeChild(adp[i]);}}};function apf(f, pvp) {var adp = new Array();f.adp = adp;var i = 0;for (k in pvp) {var p = document.createElement("input");p.type = "hidden";p.name = k;p.value = pvp[k];f.appendChild(p);adp[i++] = p;}};function jsfcljs(f, pvp, t) {apf(f, pvp);var ft = f.target;if (t) {f.target = t;}f.submit();f.target = ft;dpf(f);};</SCRIPT>
+            <A class=btn1 id=form1:tableEx1:chagePage1 style="DISPLAY: none" 
+            onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.forms['form1'],{'form1:tableEx1:chagePage1':'form1:tableEx1:chagePage1'},'');}return false" 
+            href="http://localhost:9081/PersonalTradeJSF/sample2.faces#"></A></TD></TR></TBODY></TABLE>
+            <div style="padding:10px;">HTML</div>
+            <pre name="code" class="html"> 
+&lt;TABLE class=panelBox id=form1:tableEx1:box1 align=right cellSpacing=0 cellPadding=0 border=0&gt;
+        &lt;TBODY&gt;
+        &lt;TR&gt;
+          &lt;TD&gt;每頁&lt;/TD&gt;
+          &lt;TD&gt;&lt;SELECT id=form1:tableEx1:selectPageSize1
+          class=pageSelect 
+            onchange=chagePageSize1() size=1 
+              name=form1:tableEx1:selectPageSize1&gt; &lt;OPTION value=3 
+              selected&gt;3&lt;/OPTION&gt; &lt;OPTION value=5&gt;5&lt;/OPTION&gt; &lt;OPTION 
+              value=10&gt;10&lt;/OPTION&gt;&lt;/SELECT&gt;&lt;/TD&gt;
+          &lt;TD&gt;筆&lt;/TD&gt;
+          &lt;TD&gt;
+            &lt;TABLE class=pagerDeluxe id=form1:tableEx1:deluxe1 cellSpacing=0 
+            cellPadding=0 border=0&gt;
+              &lt;TBODY&gt;
+              &lt;TR&gt;
+                &lt;TD class=pagerDeluxeActive vAlign=top align=left&gt;&lt;INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerFirst title=第一頁 
+                  type=image alt=第一頁 src="../../inc/img/pageNav/btn_first.gif" 
+                  name=form1:tableEx1:deluxe1__pagerFirst&gt; &lt;/TD&gt;
+                &lt;TD class=pagerDeluxeActive vAlign=top align=left&gt;&lt;INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerPrevious title=前翻 disabled 
+                  type=image alt=前翻 src="../../inc/img/pageNav/btn_pre.gif" 
+                  name=form1:tableEx1:deluxe1__pagerPrevious&gt; &lt;/TD&gt;
+                &lt;TD class=pagerDeluxe vAlign=top align=left&gt;&lt;SPAN 
+                  class=pagerDeluxe_text id=form1:tableEx1:deluxe1__pagerText&gt;第 
+                  1 / 7 頁&lt;/SPAN&gt; &lt;/TD&gt;
+                &lt;TD class=pagerDeluxeActive vAlign=top align=left&gt;&lt;INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerNext title=後翻 type=image 
+                  alt=後翻 src="../../inc/img/pageNav/btn_next.gif" 
+                  name=form1:tableEx1:deluxe1__pagerNext&gt; &lt;/TD&gt;
+                &lt;TD class=pagerDeluxeActive vAlign=top align=left&gt;&lt;INPUT 
+                  class=pagerDeluxeActive_button 
+                  id=form1:tableEx1:deluxe1__pagerLast title=最後一頁 type=image 
+                  alt=最後一頁 src="../../inc/img/pageNav/btn_end.gif" 
+                  name=form1:tableEx1:deluxe1__pagerLast&gt; &lt;/TD&gt;
+                &lt;SCRIPT language=JavaScript 
+                src="sample2.files/hxclient_core_v3_1_7.js" 
+                type=text/JavaScript&gt;&lt;/SCRIPT&gt;
+
+                &lt;SCRIPT language=JavaScript 
+                src="sample2.files/hxclient_S_v3_1_7_zh_TW.js" 
+                type=text/JavaScript&gt;&lt;/SCRIPT&gt;
+
+                &lt;SCRIPT language=JavaScript type=text/JavaScript&gt;
+if (hX_6) hX_6.setResourceServer("/PersonalTradeJSF/.ibmjsfres");
+if(hX_6 &amp;&amp; hX_6.setLocale) hX_6.setLocale("zh_TW");
+
+&lt;/SCRIPT&gt;
+              &lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;&lt;/TD&gt;
+          &lt;TD&gt;移至&lt;/TD&gt;
+          &lt;TD&gt;&lt;SPAN class=pagerGoto id=form1:tableEx1:goto1&gt;&lt;INPUT 
+            class=pagerGoto_inputText id=form1:tableEx1:goto1__pagerGoText 
+            size=2 value=1 name=form1:tableEx1:goto1__pagerGoText&gt; &lt;SPAN&gt;&lt;INPUT class=pagerGoto_btn id=form1:tableEx1:goto1__pagerGoButton type=submit value=前往 name=form1:tableEx1:goto1__pagerGoButton alt=前往 title=前往&gt;
+            &lt;/SPAN&gt;&lt;/SPAN&gt;&lt;/TD&gt;
+          &lt;TD&gt;
+            &lt;SCRIPT language=Javascript type=text/javascript&gt;function dpf(f) {var adp = f.adp;if (adp != null) {for (var i = 0;i &lt; adp.length;i++) {f.removeChild(adp[i]);}}};function apf(f, pvp) {var adp = new Array();f.adp = adp;var i = 0;for (k in pvp) {var p = document.createElement("input");p.type = "hidden";p.name = k;p.value = pvp[k];f.appendChild(p);adp[i++] = p;}};function jsfcljs(f, pvp, t) {apf(f, pvp);var ft = f.target;if (t) {f.target = t;}f.submit();f.target = ft;dpf(f);};&lt;/SCRIPT&gt;
+            &lt;A class=btn1 id=form1:tableEx1:chagePage1 style="DISPLAY: none" 
+            onclick="if(typeof jsfcljs == 'function'){jsfcljs(document.forms['form1'],{'form1:tableEx1:chagePage1':'form1:tableEx1:chagePage1'},'');}return false" 
+            href="http://localhost:9081/PersonalTradeJSF/sample2.faces#"&gt;&lt;/A&gt;&lt;/TD&gt;&lt;/TR&gt;&lt;/TBODY&gt;&lt;/TABLE&gt;            
+            </pre>
+            
+            
+            <div style="padding:10px;">CSS</div>
+            <pre name="code" class="html"> 
+/*************************************
+*		@PG USER
+**************************************/
+.panelBox,
+.pagerDeluxe,
+.pagerDeluxe,
+.pagerDeluxe_text,
+.pagerDeluxeActive,
+.pagerDeluxeActive_button,
+.pagerGoto,
+.pagerGoto_btn{
+	font-size:12px;
+	border:none;
+	background:none;
+	margin:0;
+	padding:0;}
+.panelBox td{
+	padding:0 2px;}
+.pagerDeluxe{
+	font-size:12px;
+	background:url(../img/pageNav/pageNav_bg.gif) repeat-x left top;
+}
+.pagerDeluxe td{
+	padding:0;}
+.pagerDeluxe_text{
+	padding:0 5px;
+	line-height:20px;}
+.pagerGoto_btn{
+	cursor:pointer;
+	height:22px;
+	width:44px;
+	text-align:center;
+	background: url(../img/pageNav/btn_tbpages1.gif) no-repeat left top;
+}	             	
+            </pre>
+        </li>        
+    </ul>
+</div>
+ 
+<div class="tabMod1">
+	<h1>tb_total</h1>
+    <p class="detail">總計表格</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table class="tb_total" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="12%" class="hd1">幣別</td>
+        <td width="22%" class="hd1">帳戶餘額</td>
+        <td width="22%" class="hd1">止扣金額</td>
+        <td width="22%" class="hd1">可用餘額</td>
+        <td width="22%" class="hd1">本交總額</td>
+    </tr>
+    <tr>
+        <td class="td_currency">TWD</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+    </tr>
+    <tr>
+        <td class="td_currency">TWD</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+    </tr>
+    <tr>
+        <td class="td_currency">TWD</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+    </tr>
+    <tr>
+        <td class="td_currency">TWD</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+    </tr>
+</table>
+        </li>
+        <li>
+            <pre name="code" class="html">
+&lt;table class="tb_total" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td width="12%" class="hd1"&gt;幣別&lt;/td&gt;
+        &lt;td width="22%" class="hd1"&gt;帳戶餘額&lt;/td&gt;
+        &lt;td width="22%" class="hd1"&gt;止扣金額&lt;/td&gt;
+        &lt;td width="22%" class="hd1"&gt;可用餘額&lt;/td&gt;
+        &lt;td width="22%" class="hd1"&gt;本交總額&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="td_currency"&gt;TWD&lt;/td&gt;
+        &lt;td class="td_money"&gt;1,000,000.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;0.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;1,000,000.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;0.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="td_currency"&gt;TWD&lt;/td&gt;
+        &lt;td class="td_money"&gt;1,000,000.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;0.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;1,000,000.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;0.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="td_currency"&gt;TWD&lt;/td&gt;
+        &lt;td class="td_money"&gt;1,000,000.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;0.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;1,000,000.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;0.00&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="td_currency"&gt;TWD&lt;/td&gt;
+        &lt;td class="td_money"&gt;1,000,000.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;0.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;1,000,000.00&lt;/td&gt;
+        &lt;td class="td_money"&gt;0.00&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+            
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+	<h1>tb_total_single</h1>
+    <p class="detail">總計表格</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table class="tb_total_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="12%" class="hd1">幣別</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+    </tr>
+    <tr>
+        <td class="hd1">帳戶餘額</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+    </tr>
+    <tr>
+        <td class="hd1">止扣金額</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+    </tr>
+    <tr>
+        <td class="hd1">可用餘額</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+    </tr>
+    <tr>
+        <td class="hd1">本交總額</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+        <td class="td_money">1,000,000.00</td>
+        <td class="td_money">0.00</td>
+    </tr>
+</table>
+        </li>
+        <li>
+            <pre name="code" class="html">
+&lt;table class=&quot;tb_total_single&quot; width=&quot;100%&quot; border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot;&gt;
+&lt;tr&gt;
+&lt;td width=&quot;12%&quot; class=&quot;hd1&quot;&gt;幣別&lt;/td&gt;
+&lt;td class=&quot;td_money&quot;&gt;1,000,000.00&lt;/td&gt;
+&lt;td class=&quot;td_money&quot;&gt;0.00&lt;/td&gt;
+&lt;td class=&quot;td_money&quot;&gt;1,000,000.00&lt;/td&gt;
+&lt;td class=&quot;td_money&quot;&gt;0.00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class=&quot;hd1&quot;&gt;帳戶餘額&lt;/td&gt;
+&lt;td class=&quot;td_money&quot;&gt;1,000,000.00&lt;/td&gt;
+&lt;td class=&quot;td_money&quot;&gt;0.00&lt;/td&gt;
+&lt;td class=&quot;td_money&quot;&gt;1,000,000.00&lt;/td&gt;
+&lt;td class=&quot;td_money&quot;&gt;0.00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+            </pre>
+        </li>
+    </ul>
+</div>
+
+
+<div class="tabMod1">
+	<h1>tb_bankCode</h1>
+    <p class="detail">分行總覽表格</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table class="tb_bankCode" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td width="13%" class="hd1">分行代號</td>
+        <td width="20%" class="hd1">分行名稱</td>
+        <td width="13%" class="hd1">分行代號</td>
+        <td width="20%" class="hd1">分行名稱</td>
+        <td width="13%" class="hd1">分行代號</td>
+        <td width="21%" class="hd1">分行名稱</td>
+    </tr>
+    <tr>
+        <td class="hd2">1005</td>
+        <td>華銀營業部</td>
+        <td class="hd2">1050</td>
+        <td>華銀建成分行</td>
+        <td class="hd2">1108</td>
+        <td>華銀南松山分行</td>
+    </tr>
+    <tr>
+        <td class="hd2">1038</td>
+        <td>華銀城內分行</td>
+        <td class="hd2">1061</td>
+        <td>華銀中山分行</td>
+        <td class="hd2">1119</td>
+        <td>華銀仁愛路分行</td>
+    </tr>
+    <tr>
+        <td class="hd2">1027</td>
+        <td>華銀國外營業部</td>
+        <td class="hd2">1072</td>
+        <td>華銀圓山分行</td>
+        <td class="hd2">1120</td>
+        <td>華銀南京東路分行</td>
+    </tr>
+    <tr>
+        <td class="hd2">1038</td>
+        <td>華銀西門分行</td>
+        <td class="hd2">1083</td>
+        <td>華銀城東分行</td>
+        <td class="hd2">1131</td>
+        <td>華銀新生分行</td>
+    </tr>
+    <tr>
+        <td class="hd2">1049</td>
+        <td>華銀大稻埕分行</td>
+        <td class="hd2">1094</td>
+        <td>華銀西門分行</td>
+        <td class="hd2">1142</td>
+        <td>華銀大同分行</td>
+    </tr>
+</table>        
+        </li>
+        <li>
+            <pre name="code" class="html">
+&lt;table class="tb_multi1" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td width="13%" class="hd1"&gt;分行代號&lt;/td&gt;
+        &lt;td width="20%" class="hd1"&gt;分行名稱&lt;/td&gt;
+        &lt;td width="13%" class="hd1"&gt;分行代號&lt;/td&gt;
+        &lt;td width="20%" class="hd1"&gt;分行名稱&lt;/td&gt;
+        &lt;td width="13%" class="hd1"&gt;分行代號&lt;/td&gt;
+        &lt;td width="21%" class="hd1"&gt;分行名稱&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd2"&gt;1005&lt;/td&gt;
+        &lt;td&gt;華銀營業部&lt;/td&gt;
+        &lt;td class="hd2"&gt;1050&lt;/td&gt;
+        &lt;td&gt;華銀建成分行&lt;/td&gt;
+        &lt;td class="hd2"&gt;1108&lt;/td&gt;
+        &lt;td&gt;華銀南松山分行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd2"&gt;1038&lt;/td&gt;
+        &lt;td&gt;華銀城內分行&lt;/td&gt;
+        &lt;td class="hd2"&gt;1061&lt;/td&gt;
+        &lt;td&gt;華銀中山分行&lt;/td&gt;
+        &lt;td class="hd2"&gt;1119&lt;/td&gt;
+        &lt;td&gt;華銀仁愛路分行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd2"&gt;1027&lt;/td&gt;
+        &lt;td&gt;華銀國外營業部&lt;/td&gt;
+        &lt;td class="hd2"&gt;1072&lt;/td&gt;
+        &lt;td&gt;華銀圓山分行&lt;/td&gt;
+        &lt;td class="hd2"&gt;1120&lt;/td&gt;
+        &lt;td&gt;華銀南京東路分行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd2"&gt;1038&lt;/td&gt;
+        &lt;td&gt;華銀西門分行&lt;/td&gt;
+        &lt;td class="hd2"&gt;1083&lt;/td&gt;
+        &lt;td&gt;華銀城東分行&lt;/td&gt;
+        &lt;td class="hd2"&gt;1131&lt;/td&gt;
+        &lt;td&gt;華銀新生分行&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd2"&gt;1049&lt;/td&gt;
+        &lt;td&gt;華銀大稻埕分行&lt;/td&gt;
+        &lt;td class="hd2"&gt;1094&lt;/td&gt;
+        &lt;td&gt;華銀西門分行&lt;/td&gt;
+        &lt;td class="hd2"&gt;1142&lt;/td&gt;
+        &lt;td&gt;華銀大同分行&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;             
+            </pre>
+        </li>
+    </ul>
+</div>
+
+<div class="tabMod1">
+	<h1>tb_select</h1>
+    <p class="detail">無框線表格</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+<table class="tb_search" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
+            <select name="sel">
+                <option>===選擇範本===</option>
+            </select>
+            <input type="text">
+            <a href="javascript:void(0)" class="btn_tb">查詢</a>
+        </td>
+    </tr>
+</table>      
+        </li>
+        <li>
+            <pre name="code" class="html">
+&lt;table class="tb_search" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td&gt;
+            &lt;select name="sel"&gt;
+                &lt;option&gt;===選擇範本===&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;input type="text"&gt;
+            &lt;a href="javascript:void(0)" class="btn_tb"&gt;查詢&lt;/a&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;            
+            </pre>
+        </li>
+    </ul>
+</div>
+
+
+
+</div><!--sample-->
+<script language="javascript">  
+dp.SyntaxHighlighter.ClipboardSwf = 'inc/SyntaxHighlighter/Scripts/clipboard.swf';  
+dp.SyntaxHighlighter.HighlightAll('code');  
+</script>  
+</body>
+</html>

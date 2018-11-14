@@ -1,0 +1,43 @@
+#left_menu a{
+  font-size: 14px;
+}
+
+ul#left_menu, ul#left_menu ul {
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+ul#left_menu a {
+  display: block;
+  text-decoration: none;	
+}
+
+ul#left_menu li {
+  margin-top: 1px;
+}
+
+ul#left_menu li a {
+  background: #333;
+  color: #fff;	
+  padding: 0.5em 0 0.5em 0.5em;
+}
+
+ul#left_menu li a:hover {
+  background: #000;
+}
+
+ul#left_menu li ul li a {
+  background: #ccc;
+  color: #000;
+  padding-left: 20px;
+}
+
+ul#left_menu .choosed {
+  border-right: 5px #CC0000 solid;
+}
+
+ul#left_menu li ul li a:hover {
+  background: #aaa;
+}

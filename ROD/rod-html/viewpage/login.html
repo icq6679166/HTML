@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="decorator" content="none" />
+<style type="text/css">
+table {border: 1px solid #000;border-collapse: collapse;text-align: left;font-size: 16pt;width: 100%;}
+tr,td {border: 1px solid #999;padding: 5px;background: #F5FEE9;}
+th {background: #E8FBDB;font-family: "標楷體";border: 1px solid #999;width: 30%;padding: 5px 20px;}
+input{font-size: 16pt;}
+body {background-color: #FBFDEF;}
+.divclass {background-color:white;padding:10px;margin:10px auto;border:1px solid #999;width: 500px;text-align:center;}
+.sys_title {font-family: "標楷體";font-size: 28px;margin: 0 20px;vertical-align: middle;}
+.errormsg{color:red;margin: 0 auto 10px;width:950px;text-align:center;}
+.btn_submit {font-family: "標楷體";font-size: 24px;color: #000;display: inline-block;font-weight: normal;padding: 4px 15px;margin: 2px;background: #E8FBDB;border: 1px #000000 solid #999;text-decoration: none;}
+</style>
+ <script src="../static/lib/js/jquery/jquery-1.8.2.min.js"></script>
+ <script language="javascript">
+ $(document).ready(function(){
+	
+	 
+	
+ });
+ </script>
+<title>合庫 報表管理系統</title>
+</head>
+<body>
+	<div align="center" style="margin-top: 50px;">
+		<div>
+			<img src="../static/images/system/logo_TCB.gif" />
+		</div>
+	</div>
+	<br />
+	<div style="margin:0 auto;text-align: center;">
+	<div class="divclass">
+		<form action="../loginCheck" method="post">
+        <table border="0" cellspacing="0" cellpadding="0" >
+            <tbody>
+                <tr>
+                    <td colspan="2" align="center">
+                        <div class="sys_title">報表管理系統</div>
+                    </td>
+                </tr>
+		    </tbody>
+		    <tbody>
+                <tr>
+                    <th>登入代號</th>
+                    <td><input type="text" id="username" name="username" value="" /></td>
+                </tr>
+                <tr>
+                    <th>登入密碼</th>
+                    <td><input type="password" id="password" name="password" /></td>
+                </tr>
+	    	</tbody>
+	    	<tbody>
+                <tr>
+                    <td colspan="2" align="center">
+                    	<a href="default.html" class="btn_submit">登入</a>
+
+
+                    </td>
+                </tr>
+		    </tbody>
+        </table>
+        <input type="hidden" id="fromRCMS" name="fromRCMS" value="Y"/>
+        </form>
+    </div>
+    </div>
+    <center>
+    <div id="errMsg" class="errormsg" style="display:none;">${sessionScope.SPRING_SECURITY_LAST_EXCEPTION.message}</div>
+    </center>
+</body>
+</html>

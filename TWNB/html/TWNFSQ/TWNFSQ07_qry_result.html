@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css"></style>
+</head>
+
+<body>
+<div class="page_inner">
+    <ul id="path" class="clearfix">
+        <li>國內信用狀查詢</li>
+        <li>餘額註銷查詢</li>
+    </ul>
+    <div class="hbox">
+        <div class="fl"> <span class="trans_tit">餘額註銷查詢</span> </div>
+        <div class="clear"></div>
+    </div>
+    <div class="msg">
+        <div class="msgHd">
+            <div class="msgHd_wp"></div>
+        </div>
+        <div class="msg_cont">
+            <ul>
+                <li>請輸入查詢條件</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pageCont">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+            <tr>
+                <td class="hd1" width="20%">申請日期</td>
+                <td> From：
+                    <input type="text" class="date_txt" value="YYYY/MM/DD">
+                    <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a> To：
+                    <input type="text" class="date_txt" value="YYYY/MM/DD">
+                    <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a></td>
+            </tr>
+            <tr>
+                <td class="hd1">受益人統一編號</td>
+                <td><input name="text" type="text" size="20"></td>
+            </tr>
+            <tr>
+                <td class="hd1">申請人統一編號</td>
+                <td><input name="text" type="text" size="20"></td>
+            </tr>
+            <tr>
+                <td class="hd1">狀　　態</td>
+                <td><input type="checkbox">待經辦審核
+                    <input type="checkbox">待主管審核
+                    <input type="checkbox">已確認</td>
+            </tr>
+            <tr>
+                <td class="hd1">信用狀別</td>
+                <td><input type="checkbox">
+                    即期
+                    <input type="checkbox">
+                    遠期</td>
+            </tr>
+            <tr>
+                <td class="hd1">註銷申請號碼</td>
+                <td><input name="text" type="text" size="30"></td>
+            </tr>
+        </table>
+        <div class="btnBlock"> 
+        	<a href="TWNFSQ07_qry_result.html" class="btn_submit">查詢</a> 
+        </div>
+		
+		
+    <div class="searchline"></div>
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td><span class="search_date">查詢日期：<span id="YMD"></span><span id="HMS"></span>
+</span></td>
+            <td class="rt">&nbsp;</td>								
+        </tr>
+    </table>
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">  
+    <tr>
+        <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+    </tr>  
+</table> 
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi mb0">
+        <tr>
+            <td width="5%" class="hd1">序號</td>
+            <td width="12%" class="hd1">註銷申請號碼</td>
+            <td width="15%" class="hd1">信用狀號碼</td>
+            <td class="hd1">申請人</td>
+            <td class="hd1">受益人</td>
+            <td width="15%" class="hd1">金額</td>
+            <td class="hd1">可用餘額</td>
+            <td width="10%" class="hd1">狀態</td>
+        </tr>
+        <tr>
+        	<td class="td_sn">1</td>
+            <td class="td_sn"><a href="javascript:void(0)" class="link" onClick="winopen('../common/cm_cancellation_detail_pop.html',800,480)">C09300001</a></td>
+            <td class="td_sn"><a href="TWNFSQ07_UCP_detail.html" class="link">ELC09300200001</a></td>
+            <td>網網際公司</td>
+            <td>中鋼公司</td>
+            <td class="td_money">TWD$2,000,000</td>
+            <td class="td_money">TWD$2,000,000</td>
+            <td>待主管審核</td>
+        </tr>
+        <tr>
+        	<td class="td_sn">2</td>
+            <td class="td_sn"><a href="javascript:void(0)" class="link" onClick="winopen('../common/cm_cancellation_detail_pop.html',800,480)">C09300002</a></td>
+            <td class="td_sn"><a href="TWNFSQ07_UCP_detail.html" class="link">ELC09300200002</a></td>
+            <td>網際公司</td>
+            <td>中鋼公司</td>
+            <td class="td_money">TWD$2,000,000</td>
+            <td class="td_money">TWD$2,000,000</td>
+            <td>已確認</td>
+        </tr>
+        <tr>
+        	<td class="td_sn">3</td>
+            <td class="td_sn"><a href="javascript:void(0)" class="link" onClick="winopen('../common/cm_cancellation_detail_pop.html',800,480)">C09300003</a></td>
+            <td class="td_sn"><a href="TWNFSQ07_UCP_detail.html" class="link">ELC09300200003</a></td>
+            <td>網網網際公司</td>
+            <td>中鋼公司</td>
+            <td class="td_money">TWD$40,000,000</td>
+            <td class="td_money">TWD$40,000,000</td>
+            <td>已確認</td>
+        </tr>
+        <tr>
+        	<td class="td_sn">4</td>
+            <td class="td_sn"><a href="javascript:void(0)" class="link" onClick="winopen('../common/cm_cancellation_detail_pop.html',800,480)">C09300004</a></td>
+            <td class="td_sn"><a href="TWNFSQ07_UCP_detail.html" class="link">ELC09300200004</a></td>
+            <td>網際公司</td>
+            <td>中鋼公司</td>
+            <td class="td_money">TWD$40,000,000</td>
+            <td class="td_money">TWD$40,000,000</td>
+            <td>已確認</td>
+        </tr>        
+    </table>
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">  
+    <tr>
+        <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+    </tr>  
+</table> 
+    </div>
+</div>
+</body>
+</html>

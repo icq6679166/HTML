@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+	var grid = $("#gridview").jqGrid({
+		localFirst: true,multiselect : true,height : 450,
+		sortname : 'roleId',sortorder : "asc",
+		colModel : [
+		{header:'維護科別',name:'maintainDept',width:20,align:"left"},
+		{header:'訊息通知人員',name:'frontNotify',width:40,align:"left"}				
+		],
+		ondblClickRow: function(){			
+        	//var ret = grid.getSelRowDatas();			
+			//$("#roleId").text($("#gridview").jqGrid ('getCell', rowid, 'roleId'));
+        	//aDialog.dialog({title:'維護'}).dialog('open').find("#mform").injectData(ret);
+        }
+	});
+
+	
+	//查詢宣告
+	var qDialog = $("#qDialog");
+	qDialog.dialog({ //維護畫面
+    	height: 150,width: 450,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+					["",'資訊整合科','alex@@tcb-bank.com.tw;paul@@tcb-bank.com.tw'],
+					["",'授信系統科','john@@tcb-bank.com.tw;joseph@@tcb-bank.com.tw'],
+					["",'外匯系統科','vincent@@tcb-bank.com.tw;william@@tcb-bank.com.tw']
+				
+				]);
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+
+	//$('#selMantainDept').multiselect2({
+    //	minWidth: 260,
+    //	selectedList: 4,
+    //	multiple: false
+    //}).multiselectfilter({
+    //	label: "內含",
+    //	placeholder: "輸入關鍵字",   });	
+
+
+	$("#qry").click(function(){
+		qDialog.dialog({title:'查詢'}).dialog('open');
+    }).trigger('click');
+
+	//======================================
+	
+	//新增宣告
+
+	var aDialog = $("#aDialog");
+		aDialog.dialog({ //新增畫面
+    	height: 360,width: 550,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			aDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			aDialog.dialog('close');
+    		}
+    	}])
+    });
+
+	$('#addRpt').multiselect2({
+    	minWidth: 260,
+    	selectedList: 4,
+    	multiple: false
+    }).multiselectfilter({
+    	label: "內含",
+    	placeholder: "輸入關鍵字",});	
+
+	
+	
+    // 新增
+    $("#add").click(function(){
+    	aDialog.dialog({title:'新增'}).dialog('open');
+    });
+	
+	//======================================
+	
+	
+	//修改宣告
+	var editDialog = $("#editDialog");
+	editDialog.dialog({ //維護畫面
+    	height: 360,width: 550,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			editDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			editDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+	$("#edit").click(function(){
+		
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length>1)
+		{
+			alert("修改只能選一筆!");
+		}
+		else if (selRowIds.length == 0)
+		{
+			alert("修改請選一筆資料!");
+		}		
+		else if  (selRowIds.length == 1)
+		{
+			var row=grid.getRowData(selRowIds[0]);
+			editDialog.dialog({title:'修改'}).dialog('open');
+						
+			$("#editRptId").val(row['rptId'] + " - " + row['rptName']);			
+			
+			$("#editMaintainDept").children().each(function()
+			{
+				if ($(this).text()== row['maintainDept'])
+				{
+    				$(this).attr("selected",true);
+				}
+			});
+			
+			$("#editFNotify").val(row['frontNotify']);			
+			$("#editBNotify").val(row['backNotify']);			
+			
+		}		
+	});	
+	
+	
+	//======================================
+	
+	//刪除多筆
+	$("#delete").click(function(){
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length==0)
+		{
+			alert("請至少選一筆資料");	
+		}
+		else
+		{
+			var row;
+			var i,msg="";
+			
+			for(i=0; i<selRowIds.length; i++ )
+			{	
+				row=grid.getRowData(selRowIds[i])
+				msg = msg + row['maintainDept'] + "\n" ;
+			}			
+			alert("確定要刪除以下訊息通知 ?  \n" + msg);	
+		}		
+    });		
+	
+	//======================================	
+
+});
+
+</script>
+</head>
+<body>
+	<div class="tit">訊息通知維護</div>
+	<div class="btns">
+		<button id="qry" type="button" class="btn1">查詢</button>
+        <button id="add" type="button" class="btn1">新增</button>
+		<button id="edit" type="button" class="btn1">修改</button>
+        <button id="delete" type="button" class="btn1">刪除</button>
+     </div>
+     <div id="gridview" />
+     <div id="qDialog" class="hide" >
+     	<form id="mform" onsubmit="return false;">
+		<table id="basicSetting" class="row-data">
+			<!--
+			<tr>
+				<th>報表編號</th>						
+				<td>	
+				  <input id="rptId" name ="rptId" type="text" size="10" maxlength="10">
+				</td>			
+			</tr>
+			
+			<tr>
+				<th>報表名稱</th>						
+				<td>	
+				  <input id="rptName" name ="rptName" type="text" size="20" maxlength="20">
+				</td>			
+			</tr>
+			-->
+			<tr>
+				<th>維護科別</th>						
+				<td>	
+					<select id="selMantainDept" name="selMantainDept">
+						<option value="M0" selected="selected">M0-請選擇</option>
+						<option value="M1">0650-02 資訊整合科</option>
+						<option value="M2">0760-02 授信系統科</option>
+						<option value="M3">0870-02 外匯系統科</option>
+						<option value="M4">0980-02 存匯系統科</option>
+					</select>				  
+				</td>			
+			</tr>
+			
+			
+		</table>
+		</form>
+     </div>
+
+
+	 <div id="aDialog" class="hide" >
+     	<form id="aForm" onsubmit="return false;">
+		<table id="abasicSetting" class="row-data">
+			<!--
+			<tr>
+				<th nowrap>
+					報表編號/名稱：
+				</th>	
+				<td>
+					<select id="addRpt" name="addRpt" >
+					    <option value="----" selected="selected">---- - 請選擇</option>
+					    <option value="DR60" >DR60 - 存款明細</option>
+					    <option value="DR61" >DR61 - 存單存款收支暨餘額表</option>
+					    <option value="DR61C">DR61C - 外幣存單存款收支暨餘額表</option>
+					    <option value="DR66" >DR66 - 存單存款次月份到期帳戶一覽表</option>
+						<option value="LN01" >LN01 - 放款餘額表(日報)</option>
+					</select>			  
+				</td>
+			</tr>
+			-->
+			<tr>
+				<th>✽維護科別</th>						
+				<td>	
+					<select id="addMaintainDept" name="addMaintainDept">
+						<option value="AM0" selected="selected">請選擇</option>
+						<option value="AM1">0650-02 資訊整合科</option>
+						<option value="AM2">0760-02 授信系統科</option>
+						<option value="AM3">0870-02 外匯系統科</option>
+						<option value="AM4">0980-02 存匯系統科</option>
+					</select>				  
+				</td>			
+			</tr>
+			<tr>
+				<th>✽前台訊息通知</th>						
+				<td>	
+				  <textarea id="addFNotify" name ="addFNotify" rows="4" cols="50"/>
+				</td>			
+			</tr>
+			<tr>
+				<th>✽後台訊息通知</th>						
+				<td>	
+				  <textarea id="addBNotify" name ="addBNotify" rows="4" cols="50"/>
+				</td>			
+			</tr>			
+		</table>
+			訊息通知：email以分號區隔		
+		</form>
+     </div>
+	 
+ 
+	 <div id="editDialog" class="hide" >
+     	<form id="editForm" onsubmit="return false;">
+			<table id="basicSetting" class="row-data">
+				<!--
+				<tr>
+					<th nowrap>
+						報表編號/名稱：
+					</th>	
+					<td>
+						<input id="editRptId" name ="editRptId" type="text" size="30" maxlength="50" readonly>
+					</td>
+				</tr>
+				-->
+				<tr>
+					<th>維護科別</th>						
+					<td>	
+						<select id="editMaintainDept" name="editMaintainDept">
+							<option value="EM0" selected="selected">請選擇</option>
+							<option value="EM1">0650-02 資訊整合科</option>
+							<option value="EM2">0760-02 授信系統科</option>
+							<option value="EM3">0870-02 外匯系統科</option>
+							<option value="EM4">0980-02 存匯系統科</option>
+						</select>				  
+					</td>			
+				</tr>
+				<tr>
+					<th>前台訊息通知</th>						
+					<td>	
+					  <textarea id="editFNotify" name ="editFNotify" rows="4" cols="50"/>
+					</td>			
+				</tr>
+				<tr>
+					<th>後台訊息通知</th>						
+					<td>	
+					  <textarea id="editBNotify" name ="editBNotify"  rows="4" cols="50"/>
+					</td>			
+				</tr>			
+			</table>
+				訊息通知：email以分號區隔
+		</form>
+     </div>
+</body>
+</html>

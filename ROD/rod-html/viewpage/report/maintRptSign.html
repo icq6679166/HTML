@@ -1,0 +1,848 @@
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+		function padLeft(str,lenght){
+		    if(str.length >= lenght)
+		        return str;
+		    else
+		        return padLeft("0" +str,lenght);
+		}
+			
+    var grid;
+    var lastsel;
+    var rptSignStatus;
+    grid = $("#gridview").jqGrid({
+    	localFirst: true,multiselect: true, multiboxonly: true,height: 450,
+    	sortname: 'rptId',sortorder: "desc",
+        colModel: [
+		{header: '報表編號',name: 'rptId',width: 40,align: "left"} ,
+		{header: '報表名稱',name: 'rptName',width: 100,align: "left"},         
+        {header: '報表日期', name: 'rptDate',width: 40,align: "left"},
+        {header: '序號',name: 'rptSeqno',width: 20,align: "right"}, 
+        {header: '審閱狀況',name: 'rptSignStatus',width: 50,align: "left"}, 
+        {header: '收檔日期',name: 'rptReceiveDate',width: 55,align: "left"},
+        {header: '收檔時間',name: 'rptReceiveTime',width: 55,align: "left"}],
+        onSelectRow: function(rowid, iRow, iCol, e){
+		rptSignStatus = grid.getCell(rowid, "rptSignStatus");
+      	//unselect old
+			var gridSelRow = grid.getGridParam('selrow');
+			var s;
+			s = grid.getGridParam('selarrrow');
+			if (!s || !s[0]) {
+              grid.resetSelection();
+              lastsel = null;
+              return;
+			}
+          
+			var selected = $.inArray(rowid, s) != -1;                
+
+			if (rowid && rowid !== lastsel && selected) {
+              if (lastsel) grid.setSelection(lastsel, false);
+			}
+			lastsel = rowid;
+                    
+        }
+    });
+ 
+    
+	
+
+	
+	var qDialog = $("#qryDailog");
+	qDialog.dialog({ //查詢畫面
+    	height: 250,width: 550,modal: true,
+    	open:function(){
+		    var currentDate = new Date();
+			var yesterDay = new Date(); 
+		    var day = currentDate.getDate();
+		    var month = currentDate.getMonth() + 1;
+		    var year = currentDate.getFullYear();
+			  
+			yesterDay.setDate(yesterDay.getDate()-5);
+		    var day0 = yesterDay.getDate();
+		    var month0 = yesterDay.getMonth() + 1;
+		    var year0 = yesterDay.getFullYear();
+    					
+			$("#rptDateBegin").val(year0.toString() + "-" + padLeft(month0.toString(),2) + "-" +padLeft(day0.toString(),2));						
+			$("#rptDateEnd").val(year.toString() + "-" + padLeft(month.toString(),2) + "-" +padLeft(day.toString(),2));
+			
+    	},			
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+				["","ACD01","總分類帳","2014-01-10","1", "審閱完成","2014-01-10","01:30"],
+				["","ACD02","放款及應收保證款項餘額表","2014-01-10","1", "已審閱尚未覆核","2014-01-10","01:30"],
+				["","ACD03","存款及承兌匯票餘額表", "2014-01-10","1", "已審閱尚未簽完","2013-01-10","01:35"],
+				["","ACD10", "總分類帳-ALL轉台幣", "2013-01-10","1", "未審閱","2013-01-10","01:50"],
+				["","ACD12", "放款及應收保證款項餘額表", "2013-01-10","1", "未審閱","2013-01-10","01:50"]
+				]);
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+	/*----------------------查詢--------------------*/
+	$("#query").click(function(){
+		qDialog.dialog('open');
+	}).trigger('click');
+	
+	/*----------------------依條件開啟報表視窗--------------------*/
+	$("#BntSign").click(function(){
+			
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');			
+		if (selRowIds.length > 1) {
+			alert("審閱一次只能選一筆!");
+		}else if (selRowIds.length == 0) {
+			alert("請選一筆資料作審閱!");
+		}else if (selRowIds.length == 1) {
+			if (rptSignStatus =="已審閱尚未覆核"){
+			approvAppDialog.dialog('open');
+			}else if(rptSignStatus =="未審閱"){
+			approvEmpDialog.dialog('open');
+			}else if(rptSignStatus =="審閱完成"){
+			approvDialogOk.dialog('open');
+			}else{
+			approvDialog.dialog('open');
+			}				
+		}			
+	});
+
+
+    
+
+    
+		/*--------------------------------------------主管審閱--------------------------------------------*/
+		
+		/*----報表視窗----*/
+		var approvDialog = $("#approvDialog");
+			approvDialog.dialog({ 
+			height: 700,width: 1100,modal: true,			
+		});
+		$("#BtnPrn").click(function(){
+			alert("待主管放行後，\n請至[已放行待列印]區列印\n\n注意：系統核銷為60天，\n若未於核銷天數內在系統作核銷，\n系統會發信進行稽催。");
+	    });
+		$("#BtnDl").click(function(){
+			alert("待主管放行後，\n請至[已放行待下載]區下載\n\n注意：系統核銷為60天，\n若未於核銷天數內在系統作核銷，\n系統會發信進行稽催。");
+	    });
+		$("#Btnapprov").click(function(){
+			approvSubmitDialog.dialog('open');
+	    });
+		$("#BtnExit").click(function(){
+			approvDialog.dialog('close');
+	    });
+		
+		/*----審閱視窗----*/
+		var approvSubmitDialog = $("#approvSubmitDialog");
+		approvSubmitDialog.dialog({ 
+    	height: 465,width: 595,modal: true,	   	
+		});
+		
+		var grid1;
+		grid1 = $("#gridview1").jqGrid({
+    	localFirst: true,multiselect: false,height: 150,
+    	sortname: 'rptId',sortorder: "desc",
+        colModel: [
+			{header: '員工代號',name: 'empId',width: 80,align: "left"} ,
+			{header: '員工姓名',name: 'empName',width: 80,align: "left"},         
+			{header: '審閱狀況', name: 'signStus',width: 80,align: "left"},
+			{header: '審閱時間',name: 'signDate',width: 120,align: "right"}, 
+			{header: '審閱意見',name: 'signComments',width: 150,align: "left"}],
+        ondblClickRow: function(rowid, iRow, iCol, e){
+        	
+        }
+		}).addGridData([
+			["890201","吳經辦","核准","2014-01-10","如擬"],
+			["950801","陳會計","覆核","2014-01-10","同意(會計人員覆核)"],
+			["890101","王大仁","","", ""]   
+		]);
+		
+		$("#approvSubmitBtn").click(function(){
+			alert("審閱完成");
+			approvSubmitDialog.dialog('close');
+			$("#rptImage1").attr("src","../static/images/form/rptAppContent2.jpg")
+		});
+		$("#approvSubmitrejectBtn").click(function(){
+			alert("駁回完成");
+			approvSubmitDialog.dialog('close');
+	    });
+		$("#approvSubmitExitBtn").click(function(){			
+			approvSubmitDialog.dialog('close');
+	    });
+		
+		/*--------------------------------------------審閱完成--------------------------------------------*/
+		
+		/*----報表視窗----*/
+		var approvDialogOk = $("#approvDialogOk");
+			approvDialogOk.dialog({ 
+			height: 700,width: 1100,modal: true,			
+		});
+		$("#BtnPrnOk").click(function(){
+			alert("待主管放行後，\n請至[已放行待列印]區列印\n\n注意：系統核銷為60天，\n若未於核銷天數內在系統作核銷，\n系統會發信進行稽催。");
+	    });
+		$("#BtnDlOk").click(function(){
+			alert("待主管放行後，\n請至[已放行待下載]區下載\n\n注意：系統核銷為60天，\n若未於核銷天數內在系統作核銷，\n系統會發信進行稽催。");
+	    });
+		$("#BtnExitOk").click(function(){
+			approvDialogOk.dialog('close');
+		});
+		
+		
+		/*--------------------------------------------會計人員覆核----------------------------------------*/
+		
+		/*----報表視窗----*/
+		var approvAppDialog = $("#approvAppDialog");
+			approvAppDialog.dialog({ 
+			height: 700,width: 1100,modal: true,			
+		});
+		$("#BtnPrnApp").click(function(){
+			alert("待主管放行後，\n請至[已放行待列印]區列印\n\n注意：系統核銷為60天，\n若未於核銷天數內在系統作核銷，\n系統會發信進行稽催。");
+	    });
+	    $("#BtnDlApp").click(function(){
+			alert("待主管放行後，\n請至[已放行待下載]區下載\n\n注意：系統核銷為60天，\n若未於核銷天數內在系統作核銷，\n系統會發信進行稽催。");
+	    });
+		$("#BtnapprovApp").click(function(){
+			approvAppSubmitDialog.dialog('open');
+	    });	
+		$("#BtnExitApp").click(function(){
+			approvAppDialog.dialog('close');
+	    });
+		/*----審閱視窗----*/
+		var approvAppSubmitDialog = $("#approvAppSubmitDialog");
+		approvAppSubmitDialog.dialog({ 
+    	height: 465,width: 595,modal: true,	   	
+		});
+		
+		var grid2;
+		grid2 = $("#gridview2").jqGrid({
+    	localFirst: true,multiselect: false,height: 150,
+    	sortname: 'rptId',sortorder: "desc",
+        colModel: [
+		    {header: '員工代號',name: 'empId',width: 80,align: "left"} ,
+		    {header: '員工姓名',name: 'empName',width: 80,align: "left"},         
+			{header: '審閱狀況', name: 'signStus',width: 80,align: "left"},
+			{header: '審閱時間',name: 'signDate',width: 120,align: "right"}, 
+			{header: '審閱意見',name: 'signComments',width: 150,align: "left"}],
+        ondblClickRow: function(rowid, iRow, iCol, e){
+        	
+        }
+		}).addGridData([
+			["890201","吳經辦","核准","2014-01-10","如擬"]
+		]);
+		
+		$("#approvAppSubmitBtn").click(function(){
+			alert("覆核完成");
+			approvAppSubmitDialog.dialog('close');
+			$("#rptImage2").attr("src","../static/images/form/rptAppContent2.jpg")
+	    });
+
+		$("#approvAppSubmitrejectBtn").click(function(){
+			alert("駁回完成");
+			approvAppSubmitDialog.dialog('close');
+	    });
+
+		$("#approvAppSubmitExitBtn").click(function(){			
+			approvAppSubmitDialog.dialog('close');
+	    });
+		
+		
+		/*--------------------------------------------經辦人員覆核-------------------------------------------*/	
+		
+		/*----報表視窗----*/
+		var approvEmpDialog = $("#approvEmpDialog");
+			approvEmpDialog.dialog({ 
+			height: 700,width: 1100,modal: true,			
+		});
+
+		$("#BtnPrnEmp").click(function(){
+			alert("待主管放行後，\n請至[已放行待列印]區列印\n\n注意：系統核銷為60天，\n若未於核銷天數內在系統作核銷，\n系統會發信進行稽催。");
+	    });
+		$("#BtnDlEmp").click(function(){
+			alert("待主管放行後，\n請至[已放行待下載]區下載\n\n注意：系統核銷為60天，\n若未於核銷天數內在系統作核銷，\n系統會發信進行稽催。");
+	    });
+		$("#BtnExitEmp").click(function(){
+			approvEmpDialog.dialog('close');
+	    });	
+		$("#BtnapprovEmp").click(function(){
+			approvEmpSubmitDialog.dialog('open');
+	    });
+		
+		/*----審閱視窗----*/
+		var approvEmpSubmitDialog = $("#approvEmpSubmitDialog");
+		approvEmpSubmitDialog.dialog({ 
+    	height: 465,width: 595,modal: true,	   	
+		});
+		
+		var grid3;
+		grid3 = $("#gridview3").jqGrid({
+    	localFirst: true,multiselect: false,height: 150,
+    	sortname: 'rptId',sortorder: "desc",
+        colModel: [
+		    {header: '員工代號',name: 'empId',width: 80,align: "left"} ,
+		    {header: '員工姓名',name: 'empName',width: 80,align: "left"},         
+			{header: '審閱狀況', name: 'signStus',width: 80,align: "left"},
+			{header: '審閱時間',name: 'signDate',width: 120,align: "right"}, 
+			{header: '審閱意見',name: 'signComments',width: 150,align: "left"}],
+        ondblClickRow: function(rowid, iRow, iCol, e){
+        	
+        }
+		}).addGridData([
+
+		]);
+    
+		$("#approvEmpSubmitBtn").click(function(){
+			alert("覆核完成");
+			approvEmpSubmitDialog.dialog('close');
+			$("#rptImage3").attr("src","../static/images/form/rptAppContent1.jpg")
+	    });
+		$("#approvEmpSubmitrejectBtn").click(function(){
+			alert("駁回完成");
+			approvEmpSubmitDialog.dialog('close');
+	    });
+		$("#approvEmpSubmitExitBtn").click(function(){			
+			approvEmpSubmitDialog.dialog('close');
+	    });
+     
+		/* --會簽 --*/
+		/*控制會簽或簽核 radio button*/
+		
+		$("#BtnqryDailog1").attr("disabled", true);
+		$('input:radio[name=signMethod]').change(function(){				
+		/*選擇會簽*/
+				if($("input[name='signMethod']:checked").val() == '1'){			
+						$("#selEmpApprovPerson").attr("disabled", true);						
+						$("#BtnqryDailog1").attr("disabled", false);					
+					}
+		/*選擇簽核*/	
+			  else if($("input[name='signMethod']:checked").val() == '2') {	  
+			  	$("#selEmpApprovPerson").attr("disabled", false);					
+					$("#BtnqryDailog1").attr("disabled", true);
+				}
+		});
+		
+		/*會簽人員 grid*/		
+		var gridviewx = $("#gridviewx").jqGrid({
+			localFirst: true,multiselect : true ,width : 360,height : 250,
+			sortname : 'newBranchId',sortorder : "asc",
+			colModel : [
+			{header:'使用者代碼',name:'empId',width:120,align:"left"},
+			{header:'員工姓名',name:'empName',width:300,align:"left"}
+			
+			],
+			onSelectRow: function(rowid, iRow, iCol, e){
+			
+			}
+		
+		}).addGridData([
+			['','TCB11132','王大明'],
+			['','TCB11941','陳大日'],
+			['','TCB11264','張大明'],
+			['','TCB11874','周大月'],
+			['','TCB11256','鄭大政']
+	    ]);			
+
+
+    var qryDailog1 = $("#qryDailog1");
+		qryDailog1.dialog({ //查詢畫面
+    	height: 480,width: 500,modal: true,
+		open:function(){			
+			
+    	},			
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+
+        var selRowIds = gridviewx.jqGrid ('getGridParam', 'selarrrow');
+				var row;
+				var i,msg="";
+				
+				for(i=0; i<selRowIds.length; i++ )
+				{	
+					row=gridviewx.getRowData(selRowIds[i])
+					msg = msg + row['empId'] + "-" + row['empName'] + ";" ;
+				}			
+				$("#selUserId").val(msg);				
+    		qryDailog1.dialog('close');				
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qryDailog1.dialog('close');
+    		}
+    	}])
+    });
+	/*會簽人員 button*/			
+	$("#BtnqryDailog1").click(function(){
+		qryDailog1.dialog('open');
+	});		
+
+});
+</script>
+</head>
+<body>
+	<div class="tit">報表待審閱工作區</div>
+		<div class="btns">
+        <button id="query" type="button" class="btn1">查詢</button>
+        <button id="BntSign" type="button" class="btn1">審閱</button>
+   	</div>
+   	<div id="gridview"></div>
+   	<div id="qryDailog" class="hide" title="審閱查詢">
+   		
+				<form id="qform" onsubmit="return false;">
+					<table id="basicSetting" class="row-data">
+						<tr>
+							<th>報表編號</th>						
+							<td >	
+							  <input id="rptId" name ="rptId" type="text" size="10" maxlength="10">
+							</td>
+							<th>分行代號</th>						
+							<td >	
+							  <input id="branchId" name ="branchId" type="text" size="10" maxlength="10">
+							</td>					
+						</tr>
+						
+						<tr>
+							<th>✽報表日期</th>
+							<td colspan="3">
+							   起						   
+							   <input id="rptDateBegin" name="rptDateBegin" type="text" size="10" maxlength="10" class="date" />
+							   迄						   
+							   <input id="rptDateEnd" name="rptDateEnd" type="text" size="10" maxlength="10" class="date" /><!--(必填)-->
+							</td>
+						</tr>				
+						
+						<tr>
+							<th>使用者代碼</th>
+							<td>
+							   <input id="empId" name="empId" type="text" size="15" maxlength="15" >
+							</td>
+							
+							<th>員工姓名</th>
+							<td>
+							   <input id="empName" name="empName" type="text" size="15" maxlength="15">
+							</td>					
+						</tr>
+						
+						<tr>
+							<th>報表審閱狀態</th>
+							<td >
+							   	<select id="rptSignStus" name="rptSignStus">
+							   	<option value="X" selected="selected">ALL 全部</option>
+									<option value="N">N 未審閱</option>
+									<option value="P">P 已審閱尚未簽完</option>
+									<option value="F">F 審閱完成</option>
+								</select>
+							</td>
+							<th>報表索引</th>
+							<td>
+								<input id="idxName" name="idxName" type="text" size="15" maxlength="15">
+							</td>										
+						</tr>																					
+					</table>
+				</form>
+		</div>
+		
+	<!----------------------------------------------主管審閱:報表視窗---------------------------------------------->
+   	<div id="approvDialog" class="hide" title="報表審閱">
+   		<form id="approvform" onsubmit="return false;">
+   			<table id="basicSetting" class="row-data">
+				<tr>
+						<td colspan="32">
+						 	<select id="branchID" name="branchID">						   	
+								<option value="D" selected="selected">1000-1000分行</option>
+								<option value="H">2000-2000分行</option>
+								<option value="M">3000-3000分行</option>
+							</select>
+							<button id="BtnpageUpAll" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"><<</button>
+							<button id="BtnpageUp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"><</button>
+							<input id="TXTPages" name="TXTPages" type="text" size="1" maxlength="1" value ="1">/126
+							<button id="BtnpageDown" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">></button>
+							<button id="BtnpageDownAll" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">>></button>						
+							<button id="BtnSamll" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">縮小</button>
+							<button id="BtnBig" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">放大</button>
+							<input id="TXTFind" name="TXTFind" type="text" size="10" maxlength="10">							
+							<button id="BtnFind" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">字串搜尋</button>
+							<button id="BtnNext" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下一筆</button>
+							&nbsp;&nbsp;
+							<button id="BtnPrn" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">列印</button>
+							<button id="BtnDl" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下載</button>
+							&nbsp;&nbsp;
+							<button id="Btnapprov" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">審閱</button>
+							&nbsp;&nbsp;
+							<button id="BtnExit" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">離開</button>
+						</td>					
+				</tr>
+				
+				<tr>
+						<td colspan="32">
+						<img id="rptImage1" src="../static/images/form/rptAppContent1.jpg" alt="報表內容檔">
+						</td>
+   			</tr>
+   		</table>
+   	</form>	
+	</div>	
+	
+	<!------------------------------------主管審閱:審核視窗------------------------------------>
+   	
+   	<div id="approvSubmitDialog" class="hide" title="報表審閱">
+   		<form id="approvsubmitform" onsubmit="return false;">
+   			<!--
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">審閱</legend>
+				!-->	
+							<table id="approvalSetting" class="row-data">
+								<tr>
+									<th nowrap= "nowrap">審閱意見</th>
+									<td >
+										<textarea id="approvalNote" name="approvalNote" cols="70" rows="4">
+										</textarea>
+									</td>
+								</tr>
+								
+								<tr>
+									<th nowrap= "nowrap"><div><input type="radio" id="signCoD2" name="signMethod" value="1" disabled />✽會簽&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></th>
+									<td colspan="3">
+									
+									<input id="selUserIdD2" name = "selUserIdD2" type = "text" size = "60" maxlength="60" readOnly >
+									<button id="BtnqryDailog1D2" type="button" class="btn1" style="padding: 2px 2px;min-width: 12px;min-height: 5px;" disabled >...</button>
+										
+									</td>									
+								</tr>
+
+								
+								
+								<tr>
+									<th nowrap= "nowrap"><input type="radio" id="signUpD2" name="signMethod" value="2" checked="checked" />✽呈核上級</th>
+									<td colspan="3">
+										<select id="selApprovPerson" class="multiselect-single" name="selApprovPerson1" style="height: 20px;">
+												<option value="none">請選擇</option>			
+												<option value="890101">890101-王大同</option>
+												<option value="890102">890102-張大光</option>
+												<option value="890103">890103-吳大光</option>
+										</select>										
+									</td>									
+								</tr>
+								<tr>
+									<th nowrap= "nowrap">✽審閱結果</th>
+										<td >
+											<button id="approvSubmitBtn" type="button" class="btn1">核准</button>
+											&nbsp;&nbsp;&nbsp;&nbsp;										
+											<button id="approvSubmitrejectBtn" type="button" class="btn1">駁回</button>
+											&nbsp;&nbsp;&nbsp;&nbsp;										
+											<button id="approvSubmitExitBtn" type="button" class="btn1">離開</button>										
+											
+										</td>
+								</tr>
+								<tr>
+										<td colspan = "2">
+												審閱歷程
+										</td>
+								</tr>
+								<tr>
+									<td  colspan="8">
+										<div id="gridview1"></div>
+									</td>
+								</tr>
+							</table>		
+							<!--			
+				</fieldset>
+				-->
+   		</form>
+   	</div>
+	
+	
+	
+	<!----------------------------------------------審閱完成:報表視窗---------------------------------------------->
+   	<div id="approvDialogOk" class="hide" title="報表審閱">
+   		<form id="approvform" onsubmit="return false;">
+   			<table id="basicSetting" class="row-data">
+				<tr>
+						<td colspan="32">
+						 	<select id="branchID" name="branchID">						   	
+								<option value="D" selected="selected">1000-1000分行</option>
+								<option value="H">2000-2000分行</option>
+								<option value="M">3000-3000分行</option>
+							</select>
+							<button id="BtnpageUpAll" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"><<</button>
+							<button id="BtnpageUp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"><</button>
+							<input id="TXTPages" name="TXTPages" type="text" size="1" maxlength="1" value ="1">/126
+							<button id="BtnpageDown" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">></button>
+							<button id="BtnpageDownAll" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">>></button>						
+							<button id="BtnSamll" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">縮小</button>
+							<button id="BtnBig" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">放大</button>
+							<input id="TXTFind" name="TXTFind" type="text" size="10" maxlength="10">							
+							<button id="BtnFind" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">字串搜尋</button>
+							<button id="BtnNext" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下一筆</button>
+							&nbsp;&nbsp;
+							<button id="BtnPrnOk" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">列印</button>
+							<button id="BtnDlOk" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下載</button>
+							&nbsp;&nbsp;
+							<button id="BtnapprovOk" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"  disabled="disabled">審閱</button>
+							&nbsp;&nbsp;
+							<button id="BtnExitOk" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">離開</button>
+						</td>					
+				</tr>
+				
+				<tr>
+						<td colspan="32">
+						<img id="rptImage1" src="../static/images/form/rptAppContent2.jpg" alt="報表內容檔">
+						</td>
+   			</tr>
+   		</table>
+   	</form>	
+	</div>	
+	
+	<!----------------------------------------------會計人員覆核:報表視窗---------------------------------------------->
+   	<div id="approvAppDialog" class="hide" title="會計人員覆核">
+   		<form id="approvAppform" onsubmit="return false;">
+   			<table id="basicAppSetting" class="row-data">
+				<tr>
+						<td colspan="32">
+						 	<select id="appbranchID" name="branchID">						   	
+								<option value="D" selected="selected">1000-1000分行</option>
+								<option value="H">2000-2000分行</option>
+								<option value="M">3000-3000分行</option>
+							</select>
+							<button id="BtnpageUpAllApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"><<</button>
+							<button id="BtnpageUpApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"><</button>
+							<input id="TXTPagesApp" name="TXTPages" type="text" size="1" maxlength="1" value ="1">/126
+							<button id="BtnpageDownApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">></button>
+							<button id="BtnpageDownAllApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">>></button>						
+							<button id="BtnSamllApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">縮小</button>
+							<button id="BtnBigApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">放大</button>
+							<input id="TXTFindApp" name="TXTFind" type="text" size="10" maxlength="10">							
+							<button id="BtnFindApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">字串搜尋</button>
+							<button id="BtnNextApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下一筆</button>
+							&nbsp;&nbsp;
+							<button id="BtnPrnApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">列印</button>
+							<button id="BtnDlApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下載</button>
+							&nbsp;&nbsp;
+							<button id="BtnapprovApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">覆核</button>
+							&nbsp;&nbsp;
+							<button id="BtnExitApp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">離開</button>
+						</td>					
+				</tr>
+				
+				<tr>
+						<td colspan="32">
+						<img id="rptImage2" src="../static/images/form/rptAppContent1.jpg" alt="報表內容檔">
+						</td>
+   			</tr>
+   		</table>
+   	</form>	
+	</div>
+	
+	<!------------------------------------會計覆核:覆核視窗------------------------------------>
+   	
+   	<div id="approvAppSubmitDialog" class="hide" title="會計人員覆核">
+   		<form id="approvAppSubmitForm" onsubmit="return false;">
+   			<!--
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">覆核</legend>
+				!-->	
+							<table id="approvalAppSetting" class="row-data">
+								<tr>
+									<th nowrap= "nowrap">覆核意見</th>
+									<td >
+										<textarea id="approvalAppNote" name="approvalAppNote" cols="70" rows="4">
+										</textarea>
+									</td>
+								</tr>
+								
+								<tr>
+									<th nowrap= "nowrap"><div><input type="radio" id="signCoD1" name="signMethodD1" value="1" disabled />✽會簽&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></th>
+									<td colspan="3">
+									
+									<input id="selUserIdD1" name = "selUserIdD1" type = "text" size = "60" maxlength="60" readOnly >
+									<button id="BtnqryDailog1D1" type="button" class="btn1" style="padding: 2px 2px;min-width: 12px;min-height: 5px;" disabled >...</button>
+										
+									</td>									
+								</tr>
+								
+								
+								<tr>
+									<th nowrap= "nowrap"><input type="radio" id="signUpD1" name="signMethodD1" value="2" checked="checked" />✽呈核上級</th>
+									<td colspan="3">
+										<select id="selApprovAppPerson" class="multiselect-single" name="selApprovAppPerson" style="height: 20px;">
+												<option value="none">請選擇</option>			
+												<option value="890101">890101-王大同</option>
+												<option value="890102">890102-張大光</option>
+												<option value="890103">890103-吳大光</option>
+										</select>										
+									</td>									
+								</tr>
+								<tr>
+									<th nowrap= "nowrap">✽覆核結果</th>
+										<td >
+											<button id="approvAppSubmitBtn" type="button" class="btn1">覆核</button>
+											&nbsp;&nbsp;&nbsp;&nbsp;										
+											<button id="approvAppSubmitrejectBtn" type="button" class="btn1">駁回</button>
+											&nbsp;&nbsp;&nbsp;&nbsp;										
+											<button id="approvAppSubmitExitBtn" type="button" class="btn1">離開</button>										
+											
+										</td>
+								</tr>
+								<tr>
+										<td colspan = "2">
+												審閱歷程
+										</td>
+								</tr>
+								<tr>
+									<td  colspan="8">
+										<div id="gridview2"></div>
+									</td>
+								</tr>
+							</table>		
+							<!--			
+				</fieldset>
+				-->
+   		</form>
+   	</div>
+
+	<!----------------------------------------------經辦覆核:報表視窗---------------------------------------------->
+   	<div id="approvEmpDialog" class="hide" title="報表審閱">
+   		<form id="approvEmpform" onsubmit="return false;">
+   			<table id="basicSetting" class="row-data">
+				<tr>
+						<td colspan="32">
+						 	<select id="empbranchID" name="empbranchID">						   	
+								<option value="D" selected="selected">1000-1000分行</option>
+								<option value="H">2000-2000分行</option>
+								<option value="M">3000-3000分行</option>
+							</select>
+							<button id="BtnpageUpAllEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"><<</button>
+							<button id="BtnpageUpEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;"><</button>
+							<input id="TXTPagesEmp" name="TXTPages" type="text" size="1" maxlength="1" value ="1">/126
+							<button id="BtnpageDownEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">></button>
+							<button id="BtnpageDownAllEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">>></button>						
+							<button id="BtnSamllEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">縮小</button>
+							<button id="BtnBigEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">放大</button>
+							<input id="TXTFindEmp" name="TXTFind" type="text" size="10" maxlength="10">							
+							<button id="BtnFindEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">字串搜尋</button>
+							<button id="BtnNextEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下一筆</button>
+							&nbsp;&nbsp;
+							<button id="BtnPrnEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">列印</button>
+							<button id="BtnDlEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">下載</button>
+							&nbsp;&nbsp;
+							<button id="BtnapprovEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">審閱</button>
+							&nbsp;&nbsp;
+							<button id="BtnExitEmp" type="button" class="btn1" style="padding: 2px 2px;min-width: 18px;min-height: 6px;">離開</button>
+						</td>					
+				</tr>
+				
+				<tr>
+						<td colspan="32">
+						<img id="rptImage3" src="../static/images/form/rptAppContent.jpg" alt="報表內容檔">
+						</td>
+   			</tr>
+   		</table>
+   	</form>	
+	</div>	
+			
+	<!------------------------------------經辦審閱:審核視窗------------------------------------>
+   	
+   	<div id="approvEmpSubmitDialog" class="hide" title="報表審閱">
+   		<form id="approvEmpSubmitForm" onsubmit="return false;">
+   			<!--
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">審閱</legend>
+				!-->	
+							<table id="approvalEmpSetting" class="row-data">
+								<tr>
+									<th nowrap= "nowrap">審閱意見</th>
+									<td >
+										<textarea id="approvalEmpNote" name="approvalEmpNote" cols="70" rows="4">
+										</textarea>
+									</td>
+								</tr>
+								
+								<tr>
+									<th nowrap= "nowrap"><div><input type="radio" id="signCo" name="signMethod" value="1" />✽會簽&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></th>
+									<td colspan="3">
+									
+									<input id="selUserId" name = "selUserId" type = "text" size = "60" maxlength="60" readOnly >
+									<button id="BtnqryDailog1" type="button" class="btn1" style="padding: 2px 2px;min-width: 12px;min-height: 5px;" >...</button>
+										
+									</td>									
+								</tr>
+
+
+								<tr>
+									<th nowrap= "nowrap"><input type="radio" id="signUp" name="signMethod" value="2" checked="checked" />✽呈核上級</th>
+									<td colspan="3">
+										<select id="selEmpApprovPerson" class="multiselect-single" name="selEmpApprovPerson" style="height: 20px;">
+												<option value="none">請選擇</option>			
+												<option value="890101">890101-王大同</option>
+												<option value="890102">890102-張大光</option>
+												<option value="890103">890103-吳大光</option>
+										</select>										
+									</td>									
+								</tr>
+								<tr>
+									<th nowrap= "nowrap">✽審閱結果</th>
+										<td >
+											<button id="approvEmpSubmitBtn" type="button" class="btn1">審閱</button>
+											&nbsp;&nbsp;&nbsp;&nbsp;										
+											<button id="approvEmpSubmitrejectBtn" type="button" class="btn1">駁回</button>
+											&nbsp;&nbsp;&nbsp;&nbsp;										
+											<button id="approvEmpSubmitExitBtn" type="button" class="btn1">離開</button>										
+											
+										</td>
+								</tr>
+								<tr>
+										<td colspan = "2">
+												審閱歷程
+										</td>
+								</tr>
+								<tr>
+									<td  colspan="8">
+										<div id="gridview3"></div>
+									</td>
+								</tr>								
+							</table>		
+							<!--			
+				</fieldset>
+				-->
+   		</form>
+   	</div>	
+	
+	  <!--會簽 -->
+	  <div id="qryDailog1" class="hide" title="使用者查詢">
+			<div id = "qryDailog11">
+				<form id="qform" onsubmit="return false;">
+					<table id="basicSetting" class="row-data">
+						<tr>
+							<th nowrap>使用者代碼</th>						
+							<td>	
+							  <input id="empId" name ="empId" type="text" size="25" maxlength="25" />
+							</td>
+							<td rowspan= 2>	
+				  				<div class="btns">	
+			        				<button id="qryDailog12" type="button" class="btn1">查詢</button>			        
+			  					</div>
+							</td>						
+						</tr>
+						<tr>
+							<th nowrap>員工姓名</th>						
+							<td>	
+							  <input id="empName1" name ="empName1" type="text" size="25" maxlength="25"/>
+							</td>
+						</tr>
+					</table>			
+					<div id="gridviewx" />
+				</form>		
+			</div>			
+			
+	</div>	
+
+	
+	
+</body>
+</html>

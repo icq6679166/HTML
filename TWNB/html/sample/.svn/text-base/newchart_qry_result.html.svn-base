@@ -1,0 +1,145 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+
+<!--newChart-->
+<script type="text/javascript" src="newchart/js/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="newchart/js/highcharts.js"></script>
+<script type="text/javascript" src="newchart/js/highcharts.custom.js"></script>
+<script type="text/javascript" src="newchart/js/modules/exporting.js"></script>
+<!--.newChart-->
+
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+#button_chartprt, #button_chartexp {
+	border:1px solid #b0b0b0;
+}
+
+#button_chartprt {
+	background:#eefbd2 url(../../inc/img/btn/btn_print.gif) 6px 3px no-repeat;
+}
+
+#button_chartexp {
+	background:#eefbd2 url(../../inc/img/btn/btn_download.gif) 2px 2px no-repeat;
+}
+
+#button_chartprt:hover, #button_chartexp:hover {
+	border:1px solid #8e8e8e;
+}
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>各項查詢</li>
+    <li>外幣匯率查詢</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">外幣匯率設定查詢</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td width="20%" class="hd1"><span class="star">＊</span>庫存別</td>
+          <td>
+		   <select name="Currency">
+
+					<option value="USD">美金 (USD)</option>
+
+					<option value="HKD">港幣 (HKD)</option>
+
+					<option value="GBP">英鎊 (GBP)</option>
+
+					<option value="AUD">澳幣 (AUD)</option>
+
+					<option value="CAD">加拿大幣 (CAD)</option>
+
+					<option value="SGD">新加坡幣 (SGD)</option>
+
+					<option value="CHF">瑞士法郎 (CHF)</option>
+
+					<option value="JPY">日圓 (JPY)</option>
+
+					<option value="ZAR">南非幣 (ZAR)</option>
+
+					<option value="SEK">瑞典幣 (SEK)</option>
+
+					<option value="NZD">紐元 (NZD)</option>
+
+					<option value="THB">泰幣 (THB)</option>
+
+<!--					<option value="PHP">菲國比索 (PHP)</option>
+
+					<option value="IDR">印尼幣 (IDR)</option>  -->
+
+					<option value="EUR">歐元 (EUR)</option>
+
+<!--					<option value="KRW">韓元 (KRW)</option>
+
+					<option value="VND">越南盾 (VND)</option>
+
+					<option value="MYR">馬來幣 (MYR)</option> -->
+
+					<option value="CNY">人民幣現金 (CNY)</option>
+
+				</select>
+		  </td>
+        </tr>
+    </table>
+    
+    <div class="btnBlock">
+    	<a href="javascript:void(0)" class="btn_submit">查詢</a>
+        <a href="javascript:void(0)" class="btn_submit">清除</a>
+    </div>
+    <div class="searchline"></div>
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr><td class="search_date">查詢日期：<span id="YMD"></span><span id="HMS"></span></td>
+            <td class="rt">&nbsp;</td>								
+        </tr>
+    </table>
+
+    <!--Chart-->
+	<div style="position:relative;">
+     <div id="container" style="height: 400px; margin: 0 auto; margin-bottom:10px;"></div>
+     <a href="javascript:void(0);" id="button_chartprt" title="友善列印"></a>
+     <a href="javascript:void(0);" id="button_chartexp" title="檔案下載"></a>
+	</div>
+</div>
+
+
+
+
+</div>
+</body>
+</html>

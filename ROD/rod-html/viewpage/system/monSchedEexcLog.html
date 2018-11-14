@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+    var grid = $("#gridview").jqGrid({
+        localFirst:true,multiselect: true,height: 450,
+        sortname: 'START_TIME',sortorder:"desc",
+        colModel: [
+		{header: 'ID',name: 'JOB_EXECUTION_ID',width: 5}, 
+		{header: '排程代號',name: 'JOB_NAME',width: 20}, 
+		{header: '開始日期',name: 'startDate',index:'START_TIME',width:10,align:'center',sortable:false},
+		{header: '開始時間',name: 'START_TIME',width:10,align:'center'}, 
+		{header: '花費時間',name: 'duration',width: 10,align:'center',sortable:false}, 
+		{header: '執行狀態',name: 'STATUS',width: 15,hidden:true}, 
+		{header: '執行結果',name: 'EXIT_CODE',width: 15}, 
+		{header: '執行者',name: 'EXECUTOR',width: 15},
+		{header: "preID",name: 'jobInsId',index:'JOB_INSTANCE_ID',width:5,formatter:function(val,obj,ret)
+			{
+            	return (ret[0] == val) ? "" : val;
+            }
+        }, 
+		{name:'JOB_INSTANCE_ID',hidden: true}
+		],
+		
+        ondblClickRow: function()
+		{
+            /*
+            var ret = grid.getSelRowDatas();
+            exeDetail.dialog('open')
+            openExeDetail(ret);
+            */
+        }
+    });
+
+	
+    var qDialog = $("#qryDailog");
+    qDialog.dialog({ //查詢畫面
+    	height: 230,width: 420,modal: true,
+    	open:function(){
+    		qDialog.find("#startDate").val(CommonAPI.getToday()).end().find("#startTime").val("00:00");
+    	},
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+				['','386','SCH0001','2013-01-07','15:27:59','00:00:00.205','COMPLETED','COMPLETED','SYSTEM',''],
+				['','385','SCH0002','2013-12-31','23:00:00','00:00:04.253','FAILED','FAILED','SYSTEM','']
+				]);
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    }).dialog('open');
+	
+    $(".btns").find("#qry").click(function(){ //查詢
+    	qDialog.dialog('open');
+    }).end().find("#jobDetail").click(function(){//檢視明細
+    	/*
+    	var ret = grid.getSelRowDatas();
+		
+		if (ret) {
+			exeDetail.dialog('open');
+        	openExeDetail(ret);
+        } else {
+            API.showErrorMessage(i18n.def.grid_selector);
+        }
+		*/
+		
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length>1)
+		{
+			alert("只能選一筆!");
+		}
+		else if(selRowIds.length == 0) 
+		{
+			alert("請選一筆資料!");
+		}		
+		else{
+			var row=grid.getRowData(selRowIds[0]);
+			exeDetail.dialog('open');
+			
+			$("#detailJobId").val(row['JOB_EXECUTION_ID']);
+			$("#detailJobName").val(row['JOB_NAME']);
+			$("#detailStart").val(row['startDate'] + " " + row['START_TIME']);
+			$("#detailDuration").val(row['duration']);
+			$("#detailExecutor").val(row['EXECUTOR']);
+			$("#detailPId").val(row['jobInsId']);	
+			
+			
+			//選定select 中的值
+			$("#EXIT_CODE").children().each(function()
+			{
+					if ($(this).text()== row['EXIT_CODE'])
+					{
+	    				$(this).attr("selected",true);
+					}	
+			});
+						
+		}	
+    }).end().find("#jobStop").click(function(){ //中斷執行
+    
+    	var selRowIds1 = grid.jqGrid ('getGridParam', 'selarrrow');
+		var row1;
+				
+		if(selRowIds1.length == 0)
+		 {
+		 	alert("請選一筆資料");
+		 }
+		 else if(selRowIds1.length >1)
+		 {
+		 	alert("只能選一筆資料");
+		 }		 
+		 else if (selRowIds1.length == 1)
+		 {
+			row1=grid.getRowData(selRowIds1[0]);
+			alert("確定中斷執行  Job : " + row1['JOB_EXECUTION_ID'] + " ?"); 	
+		 }		
+		
+    }).end().find("#jobRestart").click(function(){ //重新啟動
+		var selRowIds2 = grid.jqGrid ('getGridParam', 'selarrrow');
+		var row2;
+
+		if(selRowIds2.length == 0)
+		 {
+		 	alert("請選一筆資料");
+		 }
+		 else if(selRowIds2.length >1)
+		 {
+		 	alert("只能選一筆資料");
+		 }		 
+		 else if (selRowIds2.length == 1)
+		 {
+			row2=grid.getRowData(selRowIds2[0]);
+			alert("確定重新啟動  Job : " + row2['JOB_EXECUTION_ID'] + " ?"); 	
+		 }		
+    });
+    
+    var exeDetail = $("#exeDetailDialog");
+    exeDetail.dialog({ //Job Execution Detail畫面
+    	height: 500,width: 650,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.close,
+    		value:function(){
+    			exeDetail.dialog('close');
+    		}
+    	}]),
+    	close:function(){
+    		exeDetail.find("#jdform").reset();
+    	}
+    });
+    var openExeDetail = function(ret){
+    	jdgrid.iGridFitSize();
+    	exeDetail.find("#jdform").injectData(ret);
+    };
+    var jdgrid = $("#jobDetailgrid").jqGrid({
+        localFirst:true,
+        pager:false,height: 150,cmTemplate: {sortable:false},
+        colModel: [
+		{header: 'step',name: 'STEP_NAME',width: 150,align:'left'},
+		{header: 'read',name: 'READ_COUNT',width:50,formatter:'integer',align:'right'},
+		{header: 'write',name: 'WRITE_COUNT',width:50,formatter:'integer',align:'right'}, 
+		{header: 'commit',name: 'COMMIT_COUNT',width:50,formatter:'integer',align:'right'},
+		{header: 'rollback',name: 'ROLLBACK_COUNT',width:50,formatter:'integer',align:'right'}, 
+		{header: '花費時間',name: 'duration',width: 100,align:'center'},
+		{header: i18n.def.status,name: 'EXIT_CODE',width: 100}, 
+		{name: 'EXIT_MESSAGE',hidden: true}
+		],
+		
+        ondblClickRow: function(){
+            var ret = jdgrid.getSelRowDatas();
+            ret.EXIT_MESSAGE && CommonAPI.showMessage(ret.EXIT_MESSAGE);
+        }
+    }).addGridData([
+		['deletePostStep','368','368','369','0','00:00:04.197','COMPLETED',''],
+		['insertPostStep','0','0','0','0','00:00:04.253','FAILED','org.springframework.batch.item.ItemStreamException: Failed to initialize the reader at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:137) at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39) at ..']
+    ]);
+});
+</script>
+</head>
+<body>
+	<div class="tit">排程記錄監控</div>
+	<div class="btns">
+		<button id="qry" type="button" class="btn1">查詢</button>
+		<button id="jobDetail" type="button" class="btn1">執行明細</button>
+		<button id="jobStop" type="button" class="btn1">中斷執行</button>
+		<button id="jobRestart" type="button" class="btn1">重新啟動</button>
+	</div>
+	<div id="gridview"></div>
+	
+	<div id="qryDailog" class="hide" title="查詢">
+		<form id="qform" onsubmit="return false;">
+			<table class="row-data">
+				<tr>
+					<th>排程代號</th>
+					<td><input type="text" id="jobId" name="jobId" maxlength="32" /></td>
+				</tr>
+				<tr>
+					<th nowrap="nowrap">JOB執行結果</th>
+					<td><select id="jobExitCode" name="jobExitCode">
+						<option value=""></option>
+						<option value="EXECUTING">EXECUTING</option>
+						<option value="COMPLETED">COMPLETED</option>
+						<option value="NOOP">NOOP</option>
+						<option value="STOPPED">STOPPED</option>
+						<option value="FAILED">FAILED</option>
+						<option value="UNKNOWN">UNKNOWN</option>
+					</select></td>
+				</tr>
+				<tr>
+					<th>開始時間</th>
+					<td><input type="text" id="startDate" name="startDate" class="date" />&nbsp; 
+						<input type="text" id="startTime" name="startTime" class="time" size="7" maxlength="5" value="00:00" /></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	
+	<div id="exeDetailDialog" class="hide" title="執行結果明細">
+		<form id="jdform" onsubmit="return false;">
+			<table class="row-data">
+				<tr>
+					<th>排程代號</th>
+					<td><input type="text" id="detailJobName" name="detailJobName" size ="20" /></td>
+					<th>ID</th>
+					<td><input type="text" id="detailJobId" name="detailJobId"  size ="10"/></td>
+				</tr>
+				<tr>
+					<th>開始時間</th>
+					<td><input type="text" id="detailStart" name="detailStart"  size ="25" readonly/></td>
+					<th>花費時間</th>
+					<td><input type="text" id="detailDuration" name="detailDuration"  size ="20" readonly/></td>
+				</tr>
+				<tr>
+					<th>JOB執行狀態</th>
+					<td><select id="jobStatus" name="jobStatus" disabled="disabled" >
+						<option value="STARTING">STARTING</option>
+					</select></td>
+					<th>JOB執行結果</th>
+					<td><select id="EXIT_CODE" name="EXIT_CODE" disabled="disabled">
+						<option value="COMPLETED">COMPLETED</option>
+						<option value="FAILED">FAILED</option>
+					</select></td>
+				</tr>
+				<tr>
+					<th>執行者</th>
+					<td><input type="text" id="detailExecutor" name="detailExecutor"  size ="15" readonly/></td>
+					<th>Parent ID</th>
+					<td><input type="text" id="detailPId" name="detailPId"  size ="15" readonly/></td>
+				</tr>
+				<tr>
+					<th>排程參數</th>
+					<td colspan="3"><textarea id="jobParams" name="jobParams" cols="70" rows="2" readonly="readonly"></textarea></td>
+				</tr>
+				<tr class="hide">
+					<th>其它資訊</th>
+					<td colspan="3"><textarea id="exitMessage" name="exitMessage" cols="70" rows="2" readonly="readonly"></textarea></td>
+				</tr>
+			</table>
+		</form>
+		<div id="jobDetailgrid"></div>
+	</div>
+</body>
+</html>

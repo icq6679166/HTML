@@ -1,0 +1,187 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body class="popup">
+<div class="header"><img src="../../inc/img/layout/tcb_logo.gif"></div>
+<div class="content">
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="popup_tit">利率看板</td>
+        </tr>
+    </table>
+	
+	<div id="tabs2">  
+     <ul>  
+      <li><a href="TWNCUQ05_NTD_saving_loan_rate.html"><span>臺幣存放款利率</span></a></li>  
+      <li><a href="TWNCUQ05_exchange_saving_rate.html"><span>外幣存款利率</span></a></li>
+      <li><a href="TWNCUQ05_exchange_loan_rate.html"><span>外幣放款利率</span></a></li>
+      <li><a href="TWNCUQ05_history_qry.html"><span>歷史利率走勢圖</span></a></li>
+      <li class="current"><a href="#"><span>票債券利率</span></a></li>
+     </ul>  
+	</div>
+	
+	<table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+		 <td class="search_date">債券牌告日期：<span id="YMD"></span><span id="HMS"></span></td>
+        </tr>
+    </table>
+	
+	<table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">  
+     <tr><td><span class="tb_tit">債券附買回交易參考利率</span></td></tr>  
+	</table>
+	
+	<table class="tb_multi noeffect" width="100%" border="0" cellspacing="0" cellpadding="0">
+	 <tr>
+	  <td class="hd1" width="20%">期間</td>
+	  <td class="hd1">R/P 利率</td>
+	 </tr>
+	 <tr>
+	  <td class="hd2">10天</td>
+	  <td class="ct">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd2 ct">20天</td>
+	  <td class="ct">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd2 ct">30天</td>
+	  <td class="ct">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd2 ct">60天</td>
+	  <td class="ct">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd2 ct">90天</td>
+	  <td class="ct">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd2 ct">120天</td>
+	  <td class="ct">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd2 ct">150天</td>
+	  <td class="ct">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd2 ct">180天</td>
+	  <td class="ct">0.30%</td>
+	 </tr>
+	</table>
+	<br/>
+	
+	<table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+		 <td class="search_date">票券牌告日期：<span id="YMD"></span><span id="HMS"></span></td>
+		 <td class="rt">單位：年利率%</td>	
+        </tr>
+    </table>
+	
+	<table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">  
+     <tr><td><span class="tb_tit">票券參考利率</span></td></tr>  
+	</table> 
+	
+	<table class="tb_multi2 noeffect" width="100%" border="0" cellspacing="0" cellpadding="0">
+	 <tr>
+	  <td class="hd1" rowspan="2" width="20%">天期</td>
+	  <td class="hd1" colspan="2" width="40%">次級市場</td>
+	  <td class="hd1" colspan="2">初級市場</td>
+	 </tr>
+	 <tr>
+	  <td class="hd1">買進(含RS)</td>
+	  <td class="hd1">賣出(含R/P)</td>
+	  <td class="hd1">CP2</td>
+	  <td class="hd1">BA</td>
+	 </tr>
+	 <tr>
+	  <td class="hd3">10天</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd3">20天</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd3">30天</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd3">60天</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd3">90天</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd3">120天</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd3">150天</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	 </tr>
+	 <tr>
+	  <td class="hd3">180天</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	  <td class="rt">0.30%</td>
+	 </tr>
+	</table>
+	
+	
+	
+    <div class="btnBlock">
+	 <a href="javascript:void(0)" class="btn_submit" onClick="">重新查詢</a>
+	 <div class="help">  
+        <div class="title">備註：</div>  
+        <ul class="ulist">  
+            <li>債券利率顯示：公債買賣斷交易利率參照櫃檯買賣中心最新報價，實際承作利率請洽本行財務部債票券科，聯絡電話(02)27400628 分機785、786、787。</li>  
+			<li>票券利率顯示：以上報價為本行參考利率，實際承作利率請洽本行財務部債票券科。票券業務洽詢電話(02)2740-0628 分機 782、783，FAX：(02)2731-7298</li>
+        </ul>  
+     </div>  
+        
+    </div>
+
+	
+	
+</div>
+
+</body>
+</html>

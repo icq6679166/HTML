@@ -1,0 +1,77 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_loginIndex">
+
+<div class="page_index">
+    <div class="pic"></div>
+    <div class="page_cont">
+    	<div class="hd">投資理財</div>
+        <div class="txt1">親愛的網銀用戶您好：<br>
+歡迎使用新版新一代企網銀，請直點選左側的功能選項進行您要的投資理財功能。 </div>
+		<div class="line"></div>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="table1">
+		  <tr>
+		    <td width="13%" class="tit">新手上路</td>
+		    <td width="3%" class="lt"><div class="arrow"></div></td>
+		    <td>本系統說明及介紹。</td>
+	      </tr>
+		  <tr>
+		    <td class="tit">本行特惠專案</td>
+		    <td class="lt"><div class="arrow"></div></td>
+		    <td>查詢本行特惠專案。</td>
+	      </tr>
+		  <tr>
+		    <td class="tit">精選基金</td>
+		    <td class="lt"><div class="arrow"></div></td>
+		    <td>本行精選基金。</td>
+	      </tr>
+          <tr>
+		    <td class="tit">理財規劃</td>
+		    <td class="lt"><div class="arrow"></div></td>
+		    <td>透過簡易理財試算，規劃理財目標。</td>
+	      </tr>
+          <tr>
+		    <td class="tit">利率/匯率查詢</td>
+		    <td class="lt"><div class="arrow"></div></td>
+		    <td>查詢利率、匯率。</td>
+	      </tr>
+          <tr>
+		    <td class="tit">風險承受測驗</td>
+		    <td class="lt"><div class="arrow"></div></td>
+		    <td>透過風險承受度測驗表，瞭解投資風險等級。</td>
+	      </tr>
+          <tr>
+		    <td class="tit">基金金庫</td>
+		    <td class="lt"><div class="arrow"></div></td>
+		    <td>查詢國外共同基金淨值、投資標的淨值查詢、投資標的績效排名查詢。</td>
+	      </tr>
+          <tr>
+		    <td class="tit">客戶留言</td>
+		    <td class="lt"><div class="arrow"></div></td>
+		    <td>提供留言服務，解答您理財相關問題 。</td>
+	      </tr>
+	  </table>
+		<div class="clear"></div>
+    </div>
+</div>
+<div class="page_btm"></div>
+
+
+</div><!--page_loginIndex-->
+</body>
+</html>

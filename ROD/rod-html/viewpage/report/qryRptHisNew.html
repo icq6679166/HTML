@@ -1,0 +1,255 @@
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	function padLeft(str,lenght){
+	    if(str.length >= lenght)
+	        return str;
+		else
+	        return padLeft("0" +str,lenght);
+	}
+			
+    var grid;
+    var lastsel;
+    
+    grid = $("#gridview").jqGrid({
+    	localFirst: true,multiselect: true, multiboxonly: true,height: 450,
+    	sortname: 'rptId',sortorder: "desc",
+        colModel: [
+		{header: '報表編號',name: 'rptId',width: 45,align: "left"} ,
+		{header: '報表名稱',name: 'rptName',width: 90,align: "left"},         
+        {header: '報表日期', name: 'rptDate',width: 35,align: "left"},
+		{header: '版本',name: 'rptVer',width: 15,align: "center"}, 
+        {header: '序號',name: 'rptSeqno',width: 15,align: "center"}, 
+        {header: '申請日期',name: 'rptApplicationDate',width: 50,align: "left"},
+        {header: '放行日期',name: 'rptApproveDate',width: 50,align: "left"}],
+        onSelectRow: function(rowid, iRow, iCol, e){
+        	
+      	//unselect old
+      	var gridSelRow = grid.getGridParam('selrow');
+        var s;
+        s = grid.getGridParam('selarrrow');
+        if (!s || !s[0]) {
+            grid.resetSelection();
+            lastsel = null;
+            return;
+        }
+          
+        var selected = $.inArray(rowid, s) != -1;                
+
+        if (rowid && rowid !== lastsel && selected) {
+            if (lastsel) grid.setSelection(lastsel, false);
+        }
+        lastsel = rowid;
+        }
+    });
+   
+	/* ------------------------------------------------ */
+	var qDialog = $("#qryDailog");
+   	qDialog.dialog({ //查詢畫面
+    	height: 220,width: 450,modal: true,
+    	open:function(){
+		    var currentDate = new Date();
+			var yesterDay = new Date(); 
+		    var day = currentDate.getDate();
+		    var month = currentDate.getMonth() + 1;
+		    var year = currentDate.getFullYear();
+			  
+			yesterDay.setDate(yesterDay.getDate()-5);
+		    var day0 = yesterDay.getDate();
+		    var month0 = yesterDay.getMonth() + 1;
+		    var year0 = yesterDay.getFullYear();
+		
+			$("#rptAppDateBegin").val(year0.toString() + "-" + padLeft(month0.toString(),2) + "-" +padLeft(day0.toString(),2));						
+			$("#rptAppDateEnd").val(year.toString() + "-" + padLeft(month.toString(),2) + "-" +padLeft(day.toString(),2));
+
+			
+    	},			
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+					["","ACD01","總分類帳","2014-01-10","1","1", "2014-01-10 09:30","2014-01-16 14:30"],
+					["","ACD02","放款及應收保證款項餘額表","2014-01-10","1","1", "2014-01-10 01:30","2014-01-12 14:30"],
+					["","ACD03","存款及承兌匯票餘額表", "2014-01-10","1","1","2013-01-10 01:35","2014-01-16",""],
+					["","ACD10", "總分類帳-ALL轉台幣", "2013-01-10","1","1", "2014-01-15 09:30","2014-01-16 11:30"],
+					["","ACD12", "放款及應收保證款項餘額表", "2013-01-10","1","1","2013-01-10 01:50",""]
+				]);	
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+    
+	$("#query").click(function(){
+		qDialog.dialog('open');
+	}).trigger('click');
+	
+	
+	/* ------------------------------------------------ */
+	
+	var eDialog = $("#editDialog");
+	eDialog.dialog({ //新增畫面
+        height: 300,width: 500,modal: true,
+		open:function(){
+		    var currentDate = new Date();
+			var yesterDay = new Date(); 
+		    var day = currentDate.getDate();
+		    var month = currentDate.getMonth() + 1;
+		    var year = currentDate.getFullYear();
+			  
+			yesterDay.setDate(yesterDay.getDate()-5);
+		    var day0 = yesterDay.getDate();
+		    var month0 = yesterDay.getMonth() + 1;
+		    var year0 = yesterDay.getFullYear();
+    					
+			$("#addRptDateBegin").val(year0.toString() + "-" + padLeft(month0.toString(),2) + "-" +padLeft(day0.toString(),2));						
+			$("#addRptDateEnd").val(year.toString() + "-" + padLeft(month.toString(),2) + "-" +padLeft(day.toString(),2));
+		},
+        buttons:API.createJSON([{
+        	key:i18n.def.sure,
+        	value:function(){
+				eDialog.dialog('close');
+        	}
+        },{
+        	key:i18n.def.close,
+        	value:function(){
+        		eDialog.dialog('close');
+        	}
+        }])
+    });
+
+    $("#add").click(function(){
+        eDialog.dialog('open');
+    });
+    
+});
+</script>
+</head>
+<body>
+	<div class="tit">歷史報表查詢申請</div>
+		<div class="btns">
+    <button id="query" type="button" class="btn1">查詢</button>
+		<button id="add" type="button" class="btn1">新增</button>
+		<button id="del" type="button" class="btn1">刪除</button>
+		<!--
+        <button id="BntSign" type="button" class="btn1">隱碼簽核</button>
+		-->
+   	</div>
+   	<div id="gridview"></div>
+   	<div id="qryDailog" class="hide" title="查詢">
+   		
+				<form id="qform" onsubmit="return false;">
+					<table id="basicSetting" class="row-data">
+						<tr>
+							<th>報表編號</th>						
+							<td >	
+							  <input id="rptId" name ="rptId" type="text" size="10" maxlength="10">
+							</td>					
+						</tr>
+
+						<tr>
+							<th>報表名稱</th>						
+							<td >	
+							  <input id="rptName" name ="rptName" type="text" size="10" maxlength="10">
+							</td>					
+						</tr>
+						
+						<tr>
+							<th>報表日期</th>
+							<td colspan="3">
+							   起						   
+							   <input id="rptDateBegin" name="rptDateBegin" type="text" size="10" maxlength="10" class="date" />
+							   迄						   
+							   <input id="rptDateEnd" name="rptDateEnd" type="text" size="10" maxlength="10" class="date" />
+							</td>
+						</tr>				
+						<tr>
+
+				</tr>
+																											
+					</table>
+				</form>
+		</div>
+		
+
+			<div id="qryDailog" class="hide" title="查詢">
+			<form id="qform" onsubmit="return false;">
+				<table class="row-data">
+					<tr>
+						<th nowrap="nowrap">選單代號</th>
+						<td><input type="text" id="codeType" name="codeType"
+							maxlength="32" class="validate[required,funcCall[maxUTF8[32]]]" /></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+		<div id="editDialog" class="hide" title="新增歷史報表查詢申請" >
+			<form id="mform" onsubmit="return false;">
+				<input type="text" id="oid" name="oid" class="hide" />
+				<input type="text" id="mtype" name="mtype" class="hide" />
+				<table class="row-data">
+					<tr>
+						<th>✽使用者代碼</th>
+						<td colspan="3">TCB11658<id="userId" name="userId"  onfocus="this.blur()" 
+							maxlength="32" <!--class="validate[required,funcCall[maxUTF8[32]]]" /--></td>
+					</tr>
+					<tr>
+						<th nowrap>✽報表編號</th>
+						<td colspan="3"><input type="text" id="rptId" name="rptId"
+							maxlength="32" <!--class="validate[required,funcCall[maxUTF8[32]]]" --></td>
+					</tr>
+					<tr>
+						<th>序號</th>
+						<td><input type="text" id="rptSeqno" name="rptSeqno"
+							maxlength="3" size="3"
+							<!--class="validate[required,custom[integer],funcCall[maxUTF8[3]]] numeric"  -->
+						</td>
+					</tr>
+					<tr>
+						<th>報表名稱</th>
+						<td colspan="3"><input type="text" id="rptName" maxlength="100"
+							name="rptName" <!--class="validate[required,funcCall[maxUTF8[100]]]" -->
+						</td>
+					</tr>
+					<tr>
+						<th>✽報表日期</th>
+							<td colspan="3">
+							   <!-- 起 -->
+							   <input id="addRptDateBegin" name="addRptDateBegin" type="text" size="10" maxlength="10" class="date" />
+							   
+							   <!--
+							   迄						   
+							   <input id="addRptDateEnd" name="addRptDateEnd" type="text" size="10" maxlength="10" class="date" />
+							   -->
+							</td>
+					</tr>
+					
+					<tr>
+						<th nowrap= "nowrap">✽呈核上級</th>
+						<td colspan="3">
+							<select id="selApprovPerson" class="multiselect-single" name="selApprovPerson1" style="height: 20px;">
+									<option value="none">請選擇</option>			
+									<option value="890101">890101-王大同</option>
+									<option value="890102">890102-張大光</option>
+									<option value="890103">890103-吳大光</option>
+							</select>										
+						</td>									
+					</tr>
+					
+				</table>
+				<input type="hidden" id="locale" name="locale" value="zh_TW"/>
+				<input type="hidden" id="type" name="type" value=""/>
+			</form>
+		</div>
+		
+		
+</body>
+</html>

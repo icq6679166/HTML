@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_loginIndex">
+<ul id="path" class="clearfix">
+    <li>訊息 / 待辦</li>
+    <li>訊息通知查詢</li>
+</ul>
+
+
+<div class="hbox">
+    <div class="fl">
+        <span class="page_tit">要事提醒</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <div class="left">
+            <div class="tit">
+                <span>公司名稱:</span>測試虛擬公司
+                <span>使用者:</span>網銀經辦[<span class="user">陳曉明</span>]
+            </div>
+            <div class="loginMsg">
+                <ul>
+                    <li><span>上次登入成功時間：</span>9999/99/99 hh:mm:ss (IP: nnn.nnn.nnn.nnn)</li>
+                    <li><span>上次登入成功時間：</span><span class="highline">9999/99/99 hh:mm:ss (IP: nnn.nnn.nnn.nnn 失敗原因： 失敗原因 失敗原因)</span></li>
+                    <li><span>上次成功交易：</span>台幣單筆交易 YYYY/MM/DD hh:mm:ss</li>
+                    <li><span>上次失敗交易：</span><span class="highline">台幣整批交易 YYYY/MM/DD hh:mm:ss</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div class="calendarMsg">
+                <table class="tb_calendar" width="224" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td colspan="7" class="hd1">
+                            <a href="#" class="year_pre">&nbsp;</a>
+                            <a href="#">2011</a>
+                            <a href="#" class="year_next">&nbsp;</a>
+                            <a href="#" class="month_pre">&nbsp;</a>
+                            <a href="#">四月</a>
+                            <a href="#" class="month_next">&nbsp;</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hd2">日</td>
+                        <td class="hd2">一</td>
+                        <td class="hd2">二</td>
+                        <td class="hd2">三</td>
+                        <td class="hd2">四</td>
+                        <td class="hd2">五</td>
+                        <td class="hd2">六</td>
+                    </tr>
+                    <tr>
+                        <td class="weekDay"></td>
+                        <td class="xxxx"></td>
+                        <td class="xxxx">1</td>
+                        <td class="xxxx">2</td>
+                        <td class="xxxx">3</td>
+                        <td class="xxxx">4</td>
+                        <td class="weekDay">5</td>
+                    </tr>
+                    <tr>
+                        <td class="weekDay">6</td>
+                        <td class="xxxx">7</td>
+                        <td class="xxxx currentDay">8</td>
+                        <td class="xxxx">9</td>
+                        <td class="xxxx">10</td>
+                        <td class="xxxx">11</td>
+                        <td class="weekDay">12</td>
+                    </tr>
+                    <tr>
+                        <td class="weekDay">13</td>
+                        <td class="xxxx">14</td>
+                        <td class="xxxx">15</td>
+                        <td class="xxxx">16</td>
+                        <td class="xxxx">17</td>
+                        <td class="xxxx">18</td>
+                        <td class="weekDay">19</td>
+                    </tr>
+                    <tr>
+                        <td class="weekDay">20</td>
+                        <td class="xxxx">21</td>
+                        <td class="xxxx">22</td>
+                        <td class="xxxx">23</td>
+                        <td class="xxxx">24</td>
+                        <td class="xxxx">25</td>
+                        <td class="weekDay">26</td>
+                    </tr>
+                    <tr>
+                        <td class="weekDay">27</td>
+                        <td class="xxxx">28</td>
+                        <td class="xxxx">29</td>
+                        <td class="xxxx">30</td>
+                        <td class="xxxx">31</td>
+                        <td class="xxxx"></td>
+                        <td class="weekDay"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="pageCont">
+    <div class="hbox">
+        <div class="fl">
+            <span class="notify_tit">訊息通知</span>
+        </div>
+        <div class="fr">
+            <a href="#" class="btn_more">more</a>
+        </div>
+        <div class="clear"></div>
+    </div>    
+    <table class="tb_notify" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="hd1">未閱讀</td>
+            <td class="hd1">序號</td>
+            <td class="hd1">通知時間</td>
+            <td class="hd1">通知訊息</td>
+        </tr>
+        <tr>
+            <td><a href="#" class="msgAlert_btn">&nbsp;</a></td>
+            <td>1</td>
+            <td>9999/99/99 HH:MM:SS</td>
+            <td>預約付款通知</td>
+        </tr>
+        <tr>
+            <td><a href="#" class="msg_btn">&nbsp;</a></td>
+            <td>1</td>
+            <td>9999/99/99 HH:MM:SS</td>
+            <td>預約付款通知</td>
+        </tr>
+        <tr>
+            <td><a href="#" class="msg_btn">&nbsp;</a></td>
+            <td>1</td>
+            <td>9999/99/99 HH:MM:SS</td>
+            <td>預約付款通知</td>
+        </tr>
+        <tr>
+            <td><a href="#" class="msg_btn">&nbsp;</a></td>
+            <td>1</td>
+            <td>9999/99/99 HH:MM:SS</td>
+            <td>預約付款通知</td>
+        </tr>
+        <tr>
+            <td><a href="#" class="msg_btn">&nbsp;</a></td>
+            <td>1</td>
+            <td>9999/99/99 HH:MM:SS</td>
+            <td>預約付款通知</td>
+        </tr>
+        <tr>
+            <td><a href="#" class="msg_btn">&nbsp;</a></td>
+            <td>1</td>
+            <td>9999/99/99 HH:MM:SS</td>
+            <td>預約付款通知</td>
+        </tr>
+    </table>
+
+</div>
+</div>
+<!--<div style="filter: alpha(opacity=33);position:absolute;left:0;top:0;background:#000;width:100%;height:100%;">dddd</div>-->
+</body>
+</html>

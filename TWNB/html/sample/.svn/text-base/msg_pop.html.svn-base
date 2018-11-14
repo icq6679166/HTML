@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body class="popup">
+<div class="header"><img src="../../inc/img/layout/tcb_logo.gif" alt="合作金庫-新一代企網銀"></div>
+<div class="content">
+	<table class="tb_msg_pop" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="hd1">活動說明</td>
+      </tr>
+      <tr>
+        <td class="cont">
+			<span class="tit1">申報期間：</span>
+        	<p class="date">
+            	100年5月1日
+            </p>
+            <span class="tit1">申報期間：</span>
+        	<p class="msg_cont">
+            	1. 申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間
+            </p>
+            <span class="tit1">申報期間：</span>
+        	<p class="msg_cont">
+            	2. 申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間申報期間
+            </p>
+            <p class="rt">
+            	合作金庫 敬上
+            </p>
+        </td>
+      </tr>
+    </table>
+
+    
+    <div class="btnBlock">
+        <a href="javascript:void(0)" class="btn_submit" onClick="window.close();">關閉</a>
+    </div>
+</div>   
+</body>
+</html>

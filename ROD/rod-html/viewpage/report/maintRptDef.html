@@ -1,0 +1,811 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript"  src="../static/js/report/doc10101.js" />
+</head>
+<body>
+	<div class="tit">報表定義維護</div>
+	<div class="btns">
+        <button id="query" type="button" class="btn1">查詢</button>
+        <button id="addDef" type="button" class="btn1">新增</button>
+		<button id="modDef" type="button" class="btn1">修改</button>
+        <button id="delete" type="button" class="btn1">刪除</button>
+		<button id="apply" type="button" class="btn1">送審</button>
+   	</div>
+   	<div id="gridview"></div> 
+   	<div id="qryDailog" class="hide" title="查詢">
+   		<form id="qform" onsubmit="return false;">
+   			<table id="basicSetting" class="row-data">
+				<tr>
+					<th>報表編號</th>						
+					<td colspan="3">	
+					  <input id="rptId" name ="rptId" type="text" size="10" maxlength="10">
+					</td>
+				</tr>
+				<tr>
+					<th>報表版本</th>
+					<td>
+					   <input id="rptVersion" name="rptVersion" type="text" size="4" maxlength="4" class="validate[custom[integer]]">
+					</td>
+					
+					<th>最新版本</th>
+					<td>
+					   <input id="rptLast" name="rptLast" type="checkbox"">
+					</td>
+					
+				</tr>
+				<tr>
+					<th>報表週期</th>
+					<td >
+					   	<select id="rptCycle" name="rptCycle">
+					   	<option value="X" selected="selected">ALL 全部</option>
+							<option value="D">D 日報</option>
+							<option value="H">H 半年報</option>
+							<option value="M">M 月報</option>
+							<option value="O">O 不定期報</option>
+							<option value="S">S 季報</option>
+							<option value="T">T 旬報</option>
+							<option value="W">W 週報</option>
+							<option value="Y">Y 年報</option>
+						</select>
+					</td>
+					<th>維護科別</th>
+					<td >
+						<select id="maintainDept1" name="maintainDept1">
+							<option value="M0" selected="selected">ALL 全部</option>
+							<option value="M1">0650-02 資訊整合科</option>
+						</select>					   	
+					</td>
+					
+				</tr>											
+				<tr>
+					<th>製表日期</th>
+					<td nowrap colspan="3">
+					   起						   
+					   <input id="defineDateBegin" name="defineDateBegin" type="text" size="10" maxlength="10" class="date">
+					   迄					   
+					   <input id="defineDateEnd" name="defineDateEnd" type="text" size="10" maxlength="10" class="date">
+					</td>
+				</tr>	
+				<tr>
+					<th nowrap>製表人員代碼</th>
+					<td colspan="3">
+					   <input id="defineUserId" name="defineUserId" type="text" size="10" maxlength="10">
+					</td>
+				</tr>
+				<tr>
+					<th>狀態</th>
+						<td colspan="3">
+						<select id="rptActive" name="rptActive" >
+							<option value="S1" select = "selected">ALL 全部</option>
+							<option value="A1">已放行</option>
+							<option value="D1">未放行</option>							
+						</select>							
+					</td>
+				</tr>
+			</table>
+   		</form>
+   	</div>
+	
+			<div id="applyDialog" class="hide" title="送審" >
+			<form id="mform" onsubmit="return false;">
+				<input type="text" id="oid" name="oid" class="hide" />
+				<input type="text" id="mtype" name="mtype" class="hide" />
+				<table class="row-data">
+					<tr>
+						<th>使用者代碼</th>
+						<td colspan="3">TCB11658<id="userId" name="userId"  onfocus="this.blur()" 
+							maxlength="32" <!--class="validate[required,funcCall[maxUTF8[32]]]" /--></td>
+					</tr>
+					<tr>
+						<th nowrap>報表編號</th>
+						<td colspan="3">ACD01<type="text" id="rptId" name="rptId"
+							maxlength="32" <!--class="validate[required,funcCall[maxUTF8[32]]]" --></td>
+					</tr>
+					<tr>
+						<th>版本</th>
+						<td><input type="text" id="rptVer" name="rptVer"
+							maxlength="3" size="3"
+							<!--class="validate[required,custom[integer],funcCall[maxUTF8[3]]] numeric"  -->
+						</td>
+					</tr>
+					<tr>
+						<th>報表名稱</th>
+						<td colspan="3"><input type="text" id="rptName" maxlength="100"
+							name="rptName" <!--class="validate[required,funcCall[maxUTF8[100]]]" -->
+						</td>
+					</tr>
+					
+					<tr>
+						<th nowrap= "nowrap">呈核下一級</th>
+						<td colspan="3">
+							<select id="selApprovPerson" class="multiselect-single" name="selApprovPerson1" style="height: 20px;">
+									<option value="none">請選擇</option>			
+									<option value="890101">890101-王大同</option>
+									<option value="890102">890102-張大光</option>
+									<option value="890103">890103-吳大光</option>
+							</select>										
+						</td>									
+					</tr>
+					
+				</table>
+				<input type="hidden" id="locale" name="locale" value="zh_TW"/>
+				<input type="hidden" id="type" name="type" value=""/>
+			</form>
+		</div>
+	
+   	<div id="editDialog" class="hide" title="編輯">
+   		<form id="mform" onsubmit="return false;">
+		<div id="tabs" class="tabs">
+			<ul>
+				<li><a href="#tabs-1">基本資料</a></li>
+				<li><a href="#tabs-2">索引維護</a></li>
+				<li id = "li3"><a href="#tabs-3">套表表格欄位定義</a></li>
+				<li id = "li4"><a href="#tabs-4">隱碼設定</a></li>
+			</ul>
+			
+			<div id="tabs-1">
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">屬性設定</legend>
+
+					<table id="basicSetting" class="row-data">
+						<tr>
+							<th>✽報表編號</th>
+							<td colspan=3><input id="rptId" name="rptId" type="text" size="10"
+								maxlength="10" class="validate[required]" value="ACD12">
+							</td>
+							<th>✽報表索引</th>
+							<td colspan=3><input id="rptIndex" name="rptIndex" type="text" size="20"
+								maxlength="10" class="validate[required]" value="LODC.ACD01">
+						</tr>
+
+						<tr>
+							<th>✽報表名稱</th>
+							<td  colspan=7> 
+							<input id="rptName" name="rptName" type="text" size="100" maxlength="32" class="validate[required]">
+							</td>							
+						</tr>
+						<tr>
+							<th>主機程式名稱</th>
+							<td colspan = 3><input id="mainframeAppName"
+								name="mainframeAppName" type="text" size="30" maxlength="30">
+							</td>
+							<th>✽使用單位</th>
+							<td colspan=3>
+									<select id="userUnit" name="userUnit">
+										<option value="S" selected="selected">請選擇</option>
+										<option value="U">各分行</option>
+										<option value="G">業管單位</option>
+										<option value="M">主辦單位</option>
+																
+									</select>							
+							</td>
+						</tr>
+						<tr>
+							<th>✽報表版本</th>
+							<td colspan = 3><input id="rptVersion" name="rptVersion" type="text"
+								size="3" maxlength="3" value="1">
+							</td>
+							<th>✽業管單位</th>
+							<td colspan=3>
+									<select id="governingUnit" name="governingUnit">
+										<option value="G" selected="selected">請選擇</option>
+										<option value="D">0600 財務會計部</option>
+										<option value="H">0800 營運管理部</option>
+										<option value="M">0710 個金行銷部</option>
+										<option value="O">0510 財務部</option>
+										<option value="S">0430 行政部</option>
+										<option value="T">0200 總務部</option>										
+									</select>							
+							</td>
+						</tr>
+						<tr>
+							<th>✽報表週期</th>
+							<td colspan = 3>
+								<div id="reportFrequency">
+									<select id="rptCycle" name="rptCycle">
+								   	<option value="X" selected="selected">請選擇</option>
+										<option value="D">D 日報</option>
+										<option value="H">H 半年報</option>
+										<option value="M">M 月報</option>
+										<option value="O">O 不定期報</option>
+										<option value="S">S 季報</option>
+										<option value="T">T 旬報</option>
+										<option value="W">W 週報</option>
+										<option value="Y">Y 年報</option>										
+										
+									</select>
+								</div>
+							</td>
+							<th>✽報表種類</th>
+							<td>
+								<div id="reportTypes">
+									<select id="rptType" name="rptType" onchange="getval(this);">
+										<option value="N" selected="selected">請選擇</option>
+										<option value="B">B 白表</option>
+										<option value="F">F 套表</option>
+									</select>
+									<script type="text/javascript">
+    									function getval(sel) {
+       												if (sel.value == 'B')
+       													{
+																	$('#li3').hide();
+   																$('#tabs-3').hide();
+    														}
+    													else if  (sel.value == 'F')
+    														{
+																	$('#li3').show();
+   																$('#tabs-3').show();
+    													  }
+    													else
+    														{
+																	$('#li3').hide();
+   																$('#tabs-3').hide();
+    													  }  
+    											}		  
+								 </script>
+								</div>								
+							</td>
+							
+							<div id="bFontSize">
+							<th>✽白表字型</th>
+							<td>
+							
+									<select id="myFontSize" name="myFontSize">
+										<option value="f_10" selected="selected">10</option>
+										<option value="f_12">12</option>
+										<option value="f_16">16</option>
+										<option value="f_18">18</option>
+										<option value="f_20">20</option>
+										<option value="f_22">22</option>
+										<option value="f_24">24</option>
+									</select>						
+							</td>
+							</div>
+						</tr>
+						<!--
+						<tr>
+							<th>✽下載PDF</th>
+							<td colspan="3">
+								<div id="dlPdf">
+									<input type="radio" id="dlPdfOk" name="dlPdf" value="可" />
+									<label for="dlPdfOk">可</label> 
+									<input type="radio" id="dlPdfNot" name="dlPdf" value="否" checked="checked" />
+									<label for="dlPdfNot">否</label>
+								</div>
+							</td>
+							<th>✽下載TXT</th>
+							<td colspan="3">
+								<div id="dlTxt">
+									<input type="radio" id="dlTxtOk" name="dlTxt"
+										 value="可" /><label for="dlTxtOk">可
+									</label> <input type="radio" id="dlTxtNot" name="dlTxt"
+										value="否" checked="checked" /><label for="dlTxtNot"> 否</label>
+								</div>
+							</td>
+						</tr>	
+						-->
+						
+						
+						<tr>
+							<th>✽含個資資料</th>
+							<td colspan=3>
+								<div id="dlPdf">
+									<input type="radio" id="personalNoteYes" name="personalNoteYesNo" value="是" />
+									<label for="personalNoteYes">是</label> 
+									<input type="radio" id="personalNoteNo" name="personalNoteYesNo" value="否" checked="checked" />
+									<label for="personalNoteNo">否</label>
+								</div>
+							</td>
+							
+							<th>✽含敏感資料</th>
+							<td colspan=3>
+								<div id="dlPdf">
+									<input type="radio" id="sensitiveYes" name="sensitiveYesNo" value="是" />
+									<label for="sensitiveYes">是</label> 
+									<input type="radio" id="sensitiveNo" name="sensitiveYesNo" value="否" checked="checked" />
+									<label for="sensitiveNo">否</label>
+								</div>
+							</td>
+
+							
+						</tr>
+						
+						<tr>
+							<th>✽顯示浮水印</th>
+							<td colspan="3">
+								<div id="waterMark">
+									<input type="radio" id="waterMark1" name="wM" value="可" checked="checked"/>
+									<label for="wMOK">可</label> 
+									<input type="radio" id="waterMark2" name="wM" value="否" />
+									<label for="wMNot"> 否</label>
+								</div>
+							</td>
+							
+							<th>✽隱碼</th>
+							<td colspan = 3>
+								<div>
+									<input type="radio" id="hiddenCode1" name="hiddenCode"  value="Y" />
+									<label for="hiddenCode">是</label> 
+									<input type="radio" id="hiddenCode2" name="hiddenCode"  value="N" checked="checked" />
+									<label for="hiddenCode">否</label>
+								</div>
+							</td>
+							
+							<!--
+							<th>✽列印</th>
+							<td colspan="3">
+								<div id="Printer">
+									<input type="radio" id="print1" name="p1" value="可" checked="checked"/>
+									<label for="printerOk">可</label> 
+									<input type="radio" id="print2" name="p1" value="否" />
+									<label for="printerNot"> 否</label>
+								</div>
+							</td>
+							-->
+						</tr>	
+
+						
+						<tr>
+							<th>✽保存年限</th>
+							<td colspan = 3>
+							<input id="keepYear" name="keepYear" type="text" size="2" maxlength="2">(99：永久保存)
+							</td>
+							<th>✽維護科別</th>
+							<td  colspan=3>
+									<select id="maintainDept" name="maintainDept">
+										<option value="M0" selected="selected">請選擇</option>
+										<option value="M1">0650-02 資訊整合科</option>
+									</select>
+							</td>							
+						</tr>
+						<tr>
+							<th>✽審閱</th>
+							<td>
+								<div>
+									<input type="radio" id="BntSign" name="BntSign" value="是" />
+									<label for="BntSign">是</label> 
+									<input type="radio" id="BntSign" name="BntSign" value="否" checked="checked" />
+									<label for="BntSign">否</label>
+								</div>
+							</td>
+							<th>✽簽核層級</th>
+							<td>
+								<div>
+									<select id="signLevel" name="signLevel">
+										<option value="L0" selected="selected">請選擇</option>
+										<option value="L2">2階</option>
+										<option value="L3">3階</option>
+										<option value="L4">4階</option>
+									</select>
+								</div>
+							</td>
+							
+						</tr>
+					</table>
+				</fieldset>
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all"> 簽核選項 </legend>
+
+					<table id="basicSetting" class="row-data">
+						<tr>
+							<th>✽簽核層級</th>
+							<td>
+								<div>
+									<select id="signLevel" name="signLevel">
+										<option value="L0" selected="selected">請選擇</option>
+										<option value="L2">2階</option>
+										<option value="L3">3階</option>
+										<option value="L4">4階</option>
+									</select>
+								</div>
+							</td>
+
+							<th>✽審閱</th>
+							<td>
+								<div>
+									<input type="radio" id="BntSign" name="BntSign" value="是" />
+									<label for="BntSign">是</label> 
+									<input type="radio" id="BntSign" name="BntSign" value="否" checked="checked" />
+									<label for="BntSign">否</label>
+								</div>
+							</td>
+							
+							<th>✽會計人員覆核</th>
+							<td colspan="3">
+								<div id="Printer">
+									<input type="radio" id="App1" name="p1" value="可" />
+									<label for="AppOk">可</label> 
+									<input type="radio" id="App2" name="p1" value="否" checked="checked"/>
+									<label for="AppNot"> 否</label>
+								</div>
+							</td>
+							
+						</tr>
+					</table>
+				</fieldset>
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all"> 預覽資料設定 </legend>
+
+					<table width="100%">
+						<tr>
+							<td>
+
+							<td class="middleRight">
+							<select id="uploadDataSample" name="uploadDataSample" >
+										<option value="P" select = "selected">✽請選擇</option>
+										<option value="D">DR40M_20130108120905</option>
+										<option value="H">DR40M_20130108121305</option>				   	
+					   		</select>							
+							
+							<input type="file" id="sampleFileName" name="sampleFileName" style="margin-left:20px; margin-right:5px;" />
+							<button id="sampleFileUpload" type="button" class="btn1">上傳</button>							
+							
+						</tr>
+					</table>
+				</fieldset>
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">頁面設定</legend>
+					<table id="pageSetting" class="row-data">
+						<tr>
+							<th>✽頁面左邊距</th>
+							<td><input id="fvpmLeft" name="fvpmLeft" type="text"
+								size="3" maxlength="3"> (mm)
+							</td>
+							<th>✽頁面上邊距</th>
+							<td><input id="fvpmTop" name="fvpmTop" type="text" size="3"
+								maxlength="3"> (mm)
+							</td>
+						</tr>
+						<tr>
+							<th>✽頁面大小</th>
+							<td>
+								<div id="pageSize">
+									<select id="pageSize" name="pageSize">
+										<option value="A3" selected="selected">A3 A3</option>
+										<option value="A4">A4 A4</option>
+										<option value="A5">A5 A5</option>
+										<option value="B3">B3 B3</option>
+										<option value="B4">B4 B4</option>
+										<option value="B5">B5 B5</option>
+									</select>
+								</div>
+							</td>
+							<th>✽頁面方向</th>
+							<td colspan="3">
+								<div id="pageOrientation1">
+									<input type="radio" id="poPortrait" name="pageOrientation" value="直式" />
+									<label for="poPortrait">直式	</label> 
+									<input type="radio" id="poLandscape" name="pageOrientation" checked="checked" value="橫式" />
+									<label for="poLandscape"> 橫式</label>
+								</div>
+							</td>
+						</tr>
+					</table>
+
+				</fieldset>
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">業務類別設定</legend>
+
+					<select id="grp_auth" class="multiselect" multiple="multiple"
+						name="grp_auth[]" style="height: 150px;">
+						<option value="headoffice">headoffice-總行群組</option>
+						<option value="rep_acc">rep_acc-一般營業用報表資料群組</option>
+						<option value="tax_acc">tax_acc-扣繳憑單明細資料群組</option>
+						<option value="reports">reports-一般帳務性報表資料群組</option>
+						<option value="salary">salary-薪資報表資料群組</option>
+						<option value="credit">credit-信用卡帳單資料群組</option>			
+					</select>
+				</fieldset>
+				<div id="submit1" style="text-align: right">
+					<button id="preview1" type="button" class="btn1">預覽</button>
+					<button id="sub1" type="button" class="btn1">確定</button>
+				</div>
+			</div>
+
+
+			<div id="tabs-2">
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">欄位定義</legend>
+					<table id="filedMaintain" width="100%" class="row-data">
+						<tr>
+
+							<td nowrap><input id="fieldType" name="fieldType" type="radio" checked="checked" value="rpt">檔案內容
+							<input id="fieldType" name="fieldType" type="radio" value="tag">固定字串
+							<input id="fixedStr" name="fixedStr" type="text" maxlength = "10" size = "10">
+								<button id="fieldAdd" name="fieldAdd" type="button"
+									class="btn1">新增</button>
+								<button id="fieldDel" name="fieldDel" type="button"
+									class="btn1">刪除</button>
+							</td>
+
+						</tr>
+
+						<tr>
+
+							<td>
+								<div id="fieldData" class="list"></div>
+							</td>
+						</tr>
+					</table>
+
+				</fieldset>
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">索引定義</legend>
+					<table id="IndexMaintain" width="100%" class="row-data">
+						<tr>
+							<td nowrap>
+							✽索引代號<input id="indexId" name="indexId" type="text" size="10" maxlength="10"> 
+							✽索引名稱<input id="indexName" name="indexName" type="text" size="20"
+								maxlength="20"> 
+							<select id="dateSel" name="dateSel" style="display:none">
+									<option value="c_date">民國</option>
+									<option value="r_date">西元</option>
+							</select>
+								<button id="indexUpdate" name="indexAdd" type="button"
+									class="btn1">儲存</button>
+									
+								<button id="indexDel" name="indexDel" type="button"
+									class="btn1">清除</button>
+									
+								<!--	
+								<button id="indexAdd" name="indexAdd" type="button"
+									class="btn1">新增</button>
+								<button id="indexDel" name="indexDel" type="button"
+									class="btn1">刪除</button>
+								-->	
+							</td>
+
+						</tr>
+						<tr>
+							<td nowrap>
+								✽索引內容 <input id="indexDef"
+								name="indexDef" type="text" size="50" maxlength="50" readonly>
+								<select id="indexSel" name="indexSel">
+									<option value="rpt_id">*報表編號</option>
+									<option value="rpt_name">*報表名稱</option>
+									<option value="prg_name">*主機程式名稱</option>
+									<option value="rpt_ver">*報表版本</option>
+									<option value="main_dept">*業管單位</option>
+							</select>
+							</td>
+						</tr>
+
+						<tr>
+
+							<td>
+								<div id="indexData" class="list"></div>
+							</td>
+						</tr>
+					</table>
+
+				</fieldset>
+
+
+				<div id="submit1" style="text-align: right">
+					<button id="preview2" type="button" class="btn1">預覽</button>
+					<button id="sub2" type="button" class="btn1">確定</button>
+				</div>
+			</div>
+			<div id="tabs-3">
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">底圖設定</legend>
+					<table width="100%" class="row-data">
+						<tr>
+							<th>✽套用頁數</th>
+							<td nowrap>第<input id="pageCnt" name="pageCnt" type="text"
+								size="5" maxlength="5">頁
+								<button id="pageAdd" name="pageAdd" type="button"
+									class="btn1">新增</button>
+							</td>
+							<th>上傳底圖</th>
+							<td nowrap><div id="formImageUpload">
+									<input type="file" id="ufile" name="ufile" />
+									<button id="imgUpload" type="button" class="btn1">上傳</button>
+								</div></td>
+
+						</tr>
+
+						<tr>
+							<td colspan=2>
+								<div id="inputPageData" class="list"></div>
+							</td>
+							<td colspan=2><img id="formImage"
+								src="../static/images/form/LLDLN085.png" alt="底圖">
+							</td>
+
+						</tr>
+					</table>
+
+				</fieldset>
+
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">欄位設定</legend>
+					<table id="mainLayout" class="row-data">
+						<tr>
+							<th>✽代號</th>
+							<td><input id="formFieldId" name="formFieldId" type="text" size="20"
+								maxlength="20"></td>
+							<th>✽名稱</th>
+							<td><input id="formFieldName" name="formFieldName" type="text" size="20"
+								maxlength="20"></td>
+						</tr>
+						<tr>
+							<th>✽種類</th>
+							<td><input id="formFieldType" type="radio" name="formFieldType" value="多重">
+								多重 <input id="formFieldType" type="radio" name="formFieldType" value="單一"
+								checked="checked"> 單一</td>
+						</tr>
+					</table>
+				</fieldset>
+				<div class="btns" colspan="4" style="text-align: right">
+					<button id="formFieldAdd" type="button" class="btn1">新增</button>
+					<button id="delete" type="button" class="btn1">刪除</button>
+					<button id="locate" type="button" class="btn1">定位</button>
+				</div>
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all"> 欄位列表 </legend>
+					<div id="list" class="list"></div>
+				</fieldset>
+
+				<div id="submit2" style="text-align: right">
+					<button id="preview3" type="button" class="btn1">預覽</button>
+					<button id="sub3" type="button" class="btn1">確定</button>
+				</div>
+			</div>
+
+			<div id="tabs-4">
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">隱碼設定</legend>
+					<table id="hiddenCode" width="100%" class="row-data">
+						<tr>
+
+								<button id="hiddenCodeAdd" name="hiddenCodeAdd" type="button"
+									class="btn1">新增</button>
+								<button id="hiddenCodeDel" name="hiddenCodeDel" type="button"
+									class="btn1">刪除</button>
+							</td>
+
+						</tr>
+
+						<tr>
+
+							<td>
+								<div id="hiddenCodeData" class="list"></div>
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+				<div id="submit1" style="text-align: right">
+					<button id="preview4" type="button" class="btn1">預覽</button>
+					<button id="sub4" type="button" class="btn1">確定</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="form-report-viewer" title="欄位定位" style="display: none;">
+			<div id="pageFrame"></div>
+			<div id="formArea"></div>
+		</div>
+
+		<div id="plain-report-viewer" title="白表瀏覽" style="display: none;">
+
+			<div
+				class="fg-toolbar ui-widget-header ui-corner-all ui-helper-clearfix">
+				<div class="fg-buttonset ui-helper-clearfix">
+					<table>
+						<tr>
+							<td><select id="fwDefault" class="ui-widget ui-corner-all"
+								style="position: relative;">
+									<option selected="selected" value="normal">XX分行</option>
+									<option value="bold">YY分行</option>
+							</select></td>
+							<td><a title="前一頁"
+								class="fg-button ui-state-default fg-button-icon-solo ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-arrowthick-1-w"></span>
+									Save</a> <a title="後一頁"
+								class="fg-button ui-state-default fg-button-icon-solo ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-arrowthick-1-e"></span>
+									Delete</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="fg-buttonset ui-helper-clearfix">
+					<table>
+						<tr>
+							<td><a id="plainMark" title="標記"
+								class="fg-button ui-state-default fg-button-icon-left ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-pencil"></span>標記
+								(<span
+									id="plainMarkNum">0</span>)</a> <a id="plainMarkClearAll"
+								title="全部清除" class="fg-button ui-state-default ui-corner-all"
+								href="#">全部清除</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="fg-buttonset ui-helper-clearfix">
+					<table>
+						<tr>
+							<td><a id="plainComment" title="註解"
+								class="fg-button ui-state-default fg-button-icon-left ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-comment"></span>
+									註解
+								(<span
+									id="plainCommentNum">0</span>)</a> <a id="plainCommentClearAll"
+								title="全部清除" class="fg-button ui-state-default ui-corner-all"
+								href="#">
+									全部清除
+								</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="fg-buttonset fg-buttonset-single ui-helper-clearfix">
+					<button
+						class="fg-button fg-text ui-state-default ui-priority-primary ui-corner-left ui-state-active">Edit</button>
+					<button
+						class="fg-button fg-text ui-state-default ui-priority-primary ui-corner-right">View</button>
+				</div>
+			</div>
+
+			<div id="pageFrame"></div>
+			<div id="plainArea"></div>
+		</div>
+		
+		<div id="form-data-editor" title="資料定位" style="display: none;">
+			<div id = "fdToolBar" 
+				class="fg-toolbar ui-widget-header ui-corner-all ui-helper-clearfix">
+				
+				<div class="fg-buttonset ui-helper-clearfix">
+					<table>
+						<tr>
+							<td><a id="fieldDataBtn" title="選定"
+								class="fg-button ui-state-default fg-button-icon-left ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-pencil"></span>選定</a> 
+								<a id="fieldDataCancelBtn"
+								title="清除" class="fg-button ui-state-default ui-corner-all"
+								href="#">清除</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>		
+		
+		    <div id="formDataArea"></div>
+		</div>
+		
+		<div id="hiddenCode-data-editor" title="隱碼資料定位" style="display: none;">
+			<div id = "fdToolBar" 
+				class="fg-toolbar ui-widget-header ui-corner-all ui-helper-clearfix">
+				
+				<div class="fg-buttonset ui-helper-clearfix">
+					<table>
+						<tr>
+							<td><a id="hiddenCodeDataBtn" title="選定"
+								class="fg-button ui-state-default fg-button-icon-left ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-pencil"></span>選定</a> 
+							</td>
+							<td>輸入 : 起始列<input id=locLineStart value=0 size=5> 
+							 結束列<INPUT id=locLineEnd value=0 size=5> 
+							 起始位置<INPUT id=locPosStart value=0 size=5> 
+							 結束位置<INPUT id=locPosEnd value=0 size=5>
+							 欄位列數<INPUT id=nextSubItems value=0 size=5>
+							 欄位空行數<INPUT id=nextSubItems value=0 size=5>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>		
+		
+		    <div id="hiddenCodeDataArea"></div>
+		</div>
+	</form>
+   	</div>
+</body>
+</html>

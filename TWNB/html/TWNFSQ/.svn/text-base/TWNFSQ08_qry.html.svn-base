@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css"></style>
+</head>
+
+<body>
+<div class="page_inner">
+    <ul id="path" class="clearfix">
+        <li>國內信用狀查詢</li>
+        <li>押匯申請查詢</li>
+    </ul>
+    <div class="hbox">
+        <div class="fl"> <span class="trans_tit">押匯申請查詢</span> </div>
+        <div class="clear"></div>
+    </div>
+    <div class="msg">
+        <div class="msgHd">
+            <div class="msgHd_wp"></div>
+        </div>
+        <div class="msg_cont">
+            <ul>
+                <li>請輸入查詢條件</li>
+            </ul>
+        </div>
+    </div>
+    <div class="pageCont">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+            <tr>
+                <td width="20%" class="hd1">申請日期</td>
+                <td width="80%"> From：
+                    <input type="text" class="date_txt" value="YYYY/MM/DD">
+                    <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a> To：
+                    <input type="text" class="date_txt" value="YYYY/MM/DD">
+                    <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a></td>
+            </tr>
+            <tr>
+                <td class="hd1">受益人統一編號</td>
+                <td><input name="text" type="text" size="20"></td>
+            </tr>
+            <tr>
+                <td class="hd1">申請人統一編號</td>
+                <td><input name="text" type="text" size="20"></td>
+            </tr>
+            <tr>
+                <td class="hd1">狀　　態</td>
+                <td><input type="checkbox">
+                    企業編輯中
+                    <input type="checkbox">
+                    待企業審核
+                    <input type="checkbox">
+                    待企業放行
+                    <input type="checkbox">
+                    企業審核者退回
+                    <input type="checkbox">
+                    企業放行者退回<br>
+                    <input type="checkbox">
+                    待銀行受理
+                    <input type="checkbox">
+                    待銀行審核
+                    <input type="checkbox">
+                    銀行主管退回
+                    <input type="checkbox">
+                    銀行已拒絕
+                    <input type="checkbox">
+                    已開立</td>
+            </tr>
+            <tr>
+                <td class="hd1">信用狀別</td>
+                <td><input type="checkbox">
+                    即期
+                    <input type="checkbox">
+                    遠期</td>
+            </tr>
+            <tr>
+                <td class="hd1">信用狀號碼</td>
+                <td><input name="text" type="text" size="30"></td>
+            </tr>
+            <tr>
+                <td class="hd1">匯票號碼</td>
+                <td><input name="text" type="text" size="30"></td>
+            </tr>
+        </table>
+        <div class="btnBlock"> 
+        	<a href="TWNFSQ08_qry_result.html" class="btn_submit">查詢</a> 
+        </div>
+    </div>
+</div>
+</body>
+</html>

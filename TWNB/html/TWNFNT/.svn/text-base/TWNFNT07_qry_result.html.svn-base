@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css"></style>
+</head>
+
+<body>
+<div class="page_inner">
+    <ul id="path" class="clearfix">
+        <li>投資理財</li>
+        <li>基金交易</li>
+        <li>ETF委託贖回</li>
+    </ul>
+    <div class="hbox">
+        <div class="fl"> <span class="trans_tit">ETF委託贖回</span> </div>
+        <div class="fl"> <a href="#" class="btn_addCommon">加入常用</a> </div>
+        <div class="fr">
+            <div class="commonFunc">
+                <select name="commonFunc">
+                    <option>--常用功能--</option>
+                </select>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="msg">
+        <div class="msgHd">
+            <div class="msgHd_wp"></div>
+        </div>
+        <div class="msg_cont">
+            <ul>
+                <li class="highLight">投資屬性：穩健型</li>
+                <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+            </ul>
+        </div>
+    </div>
+    <dl id="step" class="clearfix">
+        <dt class="current"><span>贖回選擇</span></dt>
+        <dt><span>贖回資料</span></dt>
+        <dt><span>資料確認</span></dt>
+        <dt><span>結果頁</span></dt>
+    </dl>
+    <div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" dir="ltr" width="100%" class="tb_single">
+        <tr>
+            <td width="20%" class="hd1"><span class="star">＊</span>投資標的</td>
+            <td><input type="text"></td>
+        </tr>
+</table>
+    <div class="btnBlock">
+        <a href="TWNFNT07_qry_result.html" class="btn_submit">查詢</a>
+        <a href="javascript:void(0);" class="btn_submit">清除</a>
+	</div>
+<div class="searchline"></div>
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+        </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi mb0">
+        <tr>
+            <td class="hd1" width="5%">
+                序號</td>
+            <td class="hd1" width="13%">
+                信託帳號</td>
+            <td class="hd1" width="12%">
+                交易編號</td>
+            <td class="hd1">
+                投資標的</td>
+            <td class="hd1" width="8%">
+                名目幣別</td>
+            <td width="8%" class="hd1">
+                信託本金</td>
+			<td width="8%" class="hd1">
+                股數</td>
+			<td width="7%" class="hd1">
+                功能</td>
+        </tr>
+        <tr>
+            <td class="td_sn">1</td>
+            <td class="ct">0903888000283</td>
+            <td class="ct">CB000011998</td>
+            <td>6309新光創新科技基金</td>
+            <td class="td_currency">XXX</td>
+            <td class="td_money">99999999</td>
+            <td class="td_money">999999999</td>
+            <td class="td_func"><a href="TWNFNT07_edit.html" class="btn_tb">贖回</a></td>
+        </tr>
+        <tr>
+            <td class="td_sn">2</td>
+            <td class="ct">0903888000283</td>
+            <td class="ct">NA000069633</td>
+            <td>2103柏瑞日本新遠景基金A美元</td>
+            <td class="td_currency">XXX</td>
+            <td class="td_money">99999999</td>
+            <td class="td_money">999999999</td>
+            <td class="td_func"><a href="TWNFNT07_edit.html" class="btn_tb">贖回</a></td>
+        </tr>
+        <tr>
+            <td class="td_sn">3</td>
+            <td class="ct">0903888000283</td>
+            <td class="ct">YB000001627</td>
+            <td>1014聯博全球高收益債券AT股美元</td>
+            <td class="td_currency">XXX</td>
+            <td class="td_money">99999999</td>
+            <td class="td_money">999999999</td>
+            <td class="td_func"><a href="TWNFNT07_edit.html" class="btn_tb">贖回</a></td>
+        </tr>
+    </table>
+    <table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>首頁</li>
+    <li>訊息通知</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">訊息通知</span>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="pageCont">
+	<table class="tb_multi" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="4%" class="hd1"><input type="checkbox" name="chkAll" onClick="checkAllBox(this,'chk1');"></td>
+            <td width="5%" class="hd1">筆次</td>
+            <td width="8%" class="hd1">未閱讀</td>
+            <td width="35%" class="hd1">訊息通知</td>
+            <td width="30%" class="hd1">通知時間</td>
+            <td width="10%" class="hd1">功能</td>
+        </tr>
+        <tr>
+            <td class="ct"><input type="checkbox" name="chk1"></td>
+            <td class="ct">1</td>
+            <td class="ct"><span class="read">&nbsp;</span></td>
+            <td>憑證到期前三十天通知</td>
+            <td class="ct">YYYY/MM/DD HH:MM:SS</td>
+            <td class="ct"><a href="javascript:winopen('TWNCUQ_DTL.html',800,420)" class="btn_tb">檢視</a> </td>
+        </tr>
+        <tr>
+            <td class="ct"><input type="checkbox" name="chk1"></td>
+            <td class="ct">2</td>
+            <td class="ct"><span class="read">&nbsp;</span></td>
+            <td>預約付款到期前通知</td>
+             <td class="ct">YYYY/MM/DD HH:MM:SS</td>
+            <td class="ct"><a href="javascript:winopen('TWNCUQ_DTL.html',800,420)" class="btn_tb">檢視</a></td>
+        </tr>
+        <tr>
+            <td class="ct"><input type="checkbox" name="chk1"></td>
+            <td class="ct">3</td>
+            <td class="ct"><span class="unread">&nbsp;</span></td>
+            <td>預約付款到期前通知</td>
+             <td class="ct">YYYY/MM/DD HH:MM:SS</td>
+            <td class="ct"><a href="javascript:winopen('TWNCUQ_DTL.html',800,420)" class="btn_tb">檢視</a></td>
+        </tr>
+        <tr>
+            <td class="ct"><input type="checkbox" name="chk1"></td>
+            <td class="ct">4</td>
+            <td class="ct"><span class="read">&nbsp;</span></td>
+            <td>臺外幣付款交易通知結果</td>
+             <td class="ct">YYYY/MM/DD HH:MM:SS</td>
+            <td class="ct"><a href="javascript:winopen('TWNCUQ_DTL.html',800,420)" class="btn_tb">檢視</a></td>
+        </tr>
+        <tr>
+            <td class="ct"><input type="checkbox" name="chk1"></td>
+            <td class="ct">5</td>
+            <td class="ct"><span class="read">&nbsp;</span></td>
+            <td>臺外幣付款交易通知結果</td>
+            <td class="ct">YYYY/MM/DD HH:MM:SS</td>
+            <td class="ct"><a href="javascript:winopen('TWNCUQ_DTL.html',800,420)" class="btn_tb">檢視</a></td>
+        </tr>
+        <tr>
+            <td class="ct"><input type="checkbox" name="chk1"></td>
+            <td class="ct">6</td>
+            <td class="ct"><span class="read">&nbsp;</span></td>
+            <td>臺外幣付款交易通知結果</td>
+             <td class="ct">YYYY/MM/DD HH:MM:SS</td>
+            <td class="ct"><a href="javascript:winopen('TWNCUQ_DTL.html',800,420)" class="btn_tb">檢視</a></td>
+        </tr>
+    </table>
+    <div class="btnBlock">  
+        <a href="#" class="btn_submit">刪除</a>
+        <a href="#" class="btn_submit">標示為已讀</a>
+        <a href="#" class="btn_submit">標示為未讀</a>
+        <a href="TWNCUQ_msg.html" class="btn_submit">回功能首頁</a>
+        <div class="help">  
+            <div class="title">說明：</div>  
+            <ul class="ulist">
+            	<li>訊息通知事項僅保留十五日，超過十五日系統自動刪除，請儘速閱讀。</li>  
+            </ul>  
+        </div>
+    </div>   
+</div>
+
+</div>
+</body>
+</html>

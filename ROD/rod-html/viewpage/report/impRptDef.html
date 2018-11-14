@@ -1,0 +1,1441 @@
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	var batchGrid = $("#batchgridview").jqGrid({
+		
+		localFirst: true, multiselect: true,height:450,
+		colModel : [ 
+			{header : '上版批號',name:'batchNo',width : 20,align : "left"},
+			{header : '上版日期',name:'publishDate',width : 10,align : "left"},
+			{header : '製表人員代碼',name:'updaterId',width : 15,align : "left"}, 
+			{header : '製表人員姓名',name:'updater',width : 15,align : "left"}
+			],
+		 ondblClickRow: function(){
+		 	//改到查看明細按鍵
+        	//$("#batchList").hide();			
+			//$("#batchNo").text($("#batchgridview").jqGrid ('getCell', rowid, 'batchNo'));
+			//$("#rptList").show();
+        }
+	});
+
+
+	
+	var qDialog = $("#qDialog");
+	qDialog.dialog({ //查詢畫面
+    	height: 150,width: 400,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			qDialog.dialog('close');
+				$("#batchgridview").clearGridData().addGridData([
+					['','TCB1234_20130109_1','2013-01-10','TCB1234','王大明'],
+					['','TCB1234_20130109_2','2013-01-11','TCB1234','王大明'],
+					['','TCB1234_20130109_3','2013-01-11','TCB1234','王大明'],
+					['','TCB1234_20130109_4','2013-01-12','TCB1234','王大明'],
+					['','TCB1234_20130109_5','2013-01-12','TCB1234','王大明']
+				]);
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+	
+	//報表定義匯入[查詢]
+	
+	$("#qry").click(function(){
+		qDialog.dialog('open');
+    }).trigger('click');
+	
+	//查看上版批號明細
+	
+	$("#qryDetail").click(function(){
+		
+		//var selRowIds = $("#batchgridview").jqGrid ('getGridParam', 'selarrrow');	
+		var selRowIds = batchGrid.jqGrid ('getGridParam', 'selarrrow');
+		
+		if(selRowIds.length==0){
+			alert("請選一筆資料!");
+		}
+		else if(selRowIds.length>1)
+		{
+			alert("只能選一筆資料!");
+		}	
+		else if(selRowIds.length == 1)
+		{
+			var row=batchGrid.getRowData(selRowIds[0]);			
+        	$("#batchList").hide();				
+			$("#batchNo").text(row['batchNo']);
+			$("#rptList").show();			
+		}
+    });
+
+	//查看報表編號明細
+	
+	$("#qryDetail1").click(function(){
+		eDialog.dialog('open');
+    });
+
+	
+	//thomas add >>>
+	var eDialog = $("#editDialog");
+    eDialog.dialog({
+    	height:700,width:800,modal:true
+    });
+	
+	//rptList
+	rptgrid = $("#rptgridview").jqGrid({
+    	localFirst: true,multiselect: true,height: 450,
+    	sortname: 'rptId',sortorder: "desc",
+        colModel: [		
+        {header: '報表編號',name: 'rptId',width: 80,align: "center"} ,
+		{header: '報表名稱',name: 'rptName',width: 160,align: "left"}, 
+        {header: '版本',name: 'rptVersion',width: 80,align: "center"}, 
+        {header: '製表日期',name: 'prodDate',width: 80,align: "center"}, 
+        {header: '製表人員姓名',name: 'prodName',width: 100,align: "center"}
+        ],
+        ondblClickRow: function(rowid, iRow, iCol, e){
+        	//eDialog.dialog('open');
+        }
+    }).addGridData([
+            ["","ACD10","會計過帳明細表",  "2","2014-02-11", "王大明"],
+            ["","ACD11","總分類帳-全部", "1","2014-02-11", "王大明"]       
+   	]);
+	
+	$("#back").click(function(){
+		$("#batchList").show();
+		$("#rptList").hide();
+	});
+	
+	
+	//old
+	var formDataArray = new Array();
+	var indexgrid, grid, mform = $("#mform"),pagegrid,fieldgrid,indexgrid;
+	grid = $("#list").jqGrid({
+		datatype : 'local',
+		mtype : 'GET',
+		colNames : [ '代號', '名稱', '種類', '位置', '欄寬', '對齊','行數','起始位置','結束位置' ],
+		colModel : [ {
+			name : 'fid',
+			index : 'fid',
+			width : 100
+		}, {
+			name : 'fname',
+			index : 'fname',
+			width : 120
+		}, {
+			name : 'ftype',
+			index : 'ftype',
+			width : 50,
+			align : 'center'
+		}, {
+			name : 'flocation',
+			index : 'flocation',
+			width : 100,
+			align : 'left'
+		}, {
+			name : 'fwidth',
+			index : 'fwidth',
+			width : 50,
+			align : 'left'
+		}, {
+			name : 'ftalign',
+			index : 'ftalign',
+			width : 50,
+			align : 'center'
+		}, {
+			name : 'line1Cnt',
+			index : 'ftalign',
+			width : 50,
+			align : 'center'
+		} , {
+			name : 'startPos',
+			index : 'startPos',
+			width : 80,
+			align : 'center'
+		}, {
+			name : 'endPos',
+			index : 'endPos',
+			width : 80,
+			align : 'center'
+		}],
+		onSelectRow : function(id) {
+			selected = $(".ui-selected").each(function() {
+				var el = $(this);
+				el.removeClass("ui-selected");
+			});
+			$('#id' + id).click();
+		},
+		height: 100
+	});
+
+	
+	pagegrid= $("#inputPageData").jqGrid({
+		datatype : 'local',
+		mtype : 'GET',
+		colNames : [ '項次','頁數' ],
+		colModel : [ {
+			name : 'items',
+			index : 'items',
+			width : 100,
+			align : 'center'
+		},{
+			name : 'page',
+			index : 'page',
+			width : 100,
+			align : 'center'
+		}],
+		onSelectRow : function(id) {
+			selected = $(".ui-selected").each(function() {
+				var el = $(this);
+				el.removeClass("ui-selected");
+			});
+			$('#id' + id).click();
+		},
+		height : 80
+	});
+	
+	
+	fieldgrid= $("#fieldData").jqGrid({
+		datatype : 'local',
+		mtype : 'GET',
+		colNames : [ '項次','行數','起始位置','結束位置','固定字串' ],
+		colModel : [ 
+		    {name : 'items', index : 'items', width : 40, align : 'center'},
+		    {name : 'sline',index : 'sline',width : 80, align : 'center'},
+		    {name : 'sstart',index : 'sstart', width : 80, align : 'center'},
+		    {name : 'slen',index : 'slen',width : 80, align : 'center'},
+		    {name : 'sfixed',index : 'sfixed', width : 150, align : 'center'}
+		],
+		onSelectRow : function(id) {
+			selected = $(".ui-selected").each(function() {
+				var el = $(this);
+				el.removeClass("ui-selected");
+			});
+			$('#id' + id).click();
+		},
+		height : 80
+	});		
+		
+		
+		var indexSelId;
+		indexgrid= $("#indexData").jqGrid({
+			datatype : 'local',
+			mtype : 'GET',
+			colNames : [ '項次','索引代號','索引名稱','索引內容' ],
+			colModel : [ {
+				name : 'items',
+				index : 'items',
+				width : 40,
+				align : 'center'
+			},{
+				name : 'indexId',
+				index : 'indexId',
+				width : 150,
+				align : 'center'
+			},{
+				name : 'indexName',
+				index : 'indexName',
+				width : 150,
+				align : 'center'
+			},{
+				name : 'indexDef',
+				index : 'indexDef',
+				width : 200,
+				align : 'center'
+			}],		
+		
+		onSelectRow : function(id) {
+			selected = $(".ui-selected").each(function() {
+				var el = $(this);
+				el.removeClass("ui-selected");
+			});
+			$('#id' + id).click();
+			indexSelId = id;
+		},
+		height : 80
+	});
+	
+	
+	
+	
+	
+	$("#tabs").tabs();
+
+	$('#form-report-viewer').dialog({
+		autoOpen : false,
+		height : 1400,
+		width : 980,
+		modal : true
+	});
+
+	$('#plain-report-viewer').dialog({
+		autoOpen : false,
+		height : 650,
+		width : 1024,
+		modal : true
+	});
+
+	$('#form-data-editor').dialog({
+		autoOpen : false,
+		height : 650,
+		width : 1024,
+		modal : true
+	});
+	
+	$('#form-data-editor').dialog({
+		autoOpen : false,
+		height : 650,
+		width : 1024,
+		modal : true
+	});	
+
+	$('#field-locator').dialog({
+		height : 700,
+		width : 980,
+		modal : true
+	});
+
+	
+	var configClosed = "ui-icon-circle-triangle-e";
+	var configOpened = "ui-icon-circle-triangle-s";
+	var columnPlus = "ui-icon-plusthick";
+	var columnMinus = "ui-icon-minusthick";
+	var moveImageClass = "ui-icon-arrow-4-diag";
+
+	var selected = $([]), offset = {
+		top : 0,
+		left : 0
+	};
+
+	// // Retrieve the object from storage (HTML 5)
+	var fields = new Array();
+	var indexfields = new Array();
+	// 設定頁面邊距
+	var marginLeft = 5; // Todo: Lib parament: (5) 預設頁面邊距左距
+	var marginTop = 10; // Todo: Lib parament: (10) 預設頁面邊距頂距
+
+	$('#formImage').css('margin-left', marginLeft).css('margin-top', marginTop);
+	$('#formArea').css('margin-left', marginLeft).css('margin-top', marginTop);
+
+	$('#formArea').draggable({ containment : "#pageFrame" , handle : "span" });
+	var moveImage = $('<span style="float:left;margin-left:5px;margin-top:5px;" class="ui-icon"></span>');
+	moveImage.addClass(moveImageClass);
+	$('#formArea').append(moveImage);
+
+	$('#fvpmLeft').val(marginLeft).keydown(function(e) {
+		// todo: 改回 change()
+		if (e.keyCode == 13) {
+			var ml = parseInt($(this).val());
+			if (ml >= 0) {
+				marginLeft = ml;
+				$('#formImage').css('margin-left', marginLeft);
+				$('#formArea').css('margin-left', marginLeft);
+			}
+		}
+	});
+
+	$('#fvpmTop').val(marginTop).keydown(function(e) {
+		if (e.keyCode == 13) {
+			var mt = parseInt($(this).val());
+			if (mt >= 0) {
+				marginTop = mt;
+				$('#formImage').css('margin-top', marginTop);
+				$('#formArea').css('margin-top', marginTop);
+			}
+		}
+	});
+
+	// 設定頁面大小
+	var pageSize = "A4"; // Todo: Lib parament: (A4) 預設頁面大小
+	// [A3|A4|A5|B3|B4|B5]
+	$("#pageSize").buttonset().find('label').width(50); // Todo:
+	// UI
+	// parament:
+	// (50)
+	// 預設頁面大小按鈕大小
+
+	// 設定頁面方向
+	var pageOrientation = "P"; // Todo: Lib parament: (P)
+	// 預設頁面方向
+	// [P(ortrait)|L(andscape)]
+	$("#pageOrientation").buttonset().find('label').width(100).height(25); // Todo:
+	// 下載PDF
+	$("#dlPdf").buttonset().find('label').width(80).height(25); // Todo:
+	// 下載TXT
+	$("#dlTxt").buttonset().find('label').width(80).height(25); // Todo:
+	
+	// UI
+	// parament:
+	// (100)
+	// 預設頁面方向按鈕大小
+
+	$('#pageFrame').addClass('pageSize-' + pageOrientation + '-' + pageSize);
+
+	$("#reportType label").click(function(e) {
+		var newType = $(this).children('span').html();
+		changeReportType(newType);
+	});
+
+	$("#pageSize label").click(function(e) {
+		var newSize = $(this).children('span').html();
+		var newOrientation = pageOrientation;
+		updatePageSetting(newSize, newOrientation);
+	});
+	
+	$("#pageOrientation label").click(function(e) {
+		var newSize = pageSize;
+		var newOrientation = $(this).children('span').html();
+		updatePageSetting(newSize, newOrientation);
+	});
+
+	var changeReportType = function(theReportType) {
+	// alert(theReportType);
+		if (theReportType == '白表') {
+			$("#tabs").tabs("option", "disabled", [ 1, 2 ]);
+		} else if (theReportType == '套表') {
+			$("#tabs").tabs("enable", 1);
+			$("#tabs").tabs("enable", 2);
+		}
+	};
+
+	var updatePageSetting = function(theSize, theOrientation) {
+		if (theOrientation == '直式' || theOrientation == 'P') {
+			theOrientation = "P";
+		} else {
+			theOrientation = "L";
+		}
+
+		$('#pageFrame').removeClass('pageSize-' + pageOrientation + '-' + pageSize)
+			.addClass( 'pageSize-' + theOrientation + '-' + theSize);
+		pageOrientation = theOrientation;
+		pageSize = theSize;
+	};
+
+	var createListObj = function() {
+		var listObject = {
+			fid : "1",
+			fgid : "0",
+			fx : "100",
+			fy : "200",
+			fwidth : "160",
+			flalign : "right",
+			ftext : "XX"
+		};
+		return listObject;
+	};
+
+	$("button").button();
+
+	/*
+	// 處理[初始定位]
+	var initLocation = function(fields) {
+		$("#formArea div").remove();
+		for ( var i = 0; i < fields.length; i++) {
+			createField(fields[i]);
+		}
+
+		$("#list").jqGrid("clearGridData", true);
+		for ( var i = 0; i <= fields.length; i++) {
+			$('#list').jqGrid('addRowData', i + 1, fields[i]);
+		}
+		$('#list').trigger("reloadGrid");
+	};
+	
+	$("#initButton").click(function() {
+		initLocation(fields);
+	});
+	*/
+
+	// 處理[載入定位]
+	$("#loadButton").click(function() {
+		$("#formArea div").remove();
+		$.ajax({
+			//url : "webroot/txn10102handler/getRptDef",
+			data : $.extend(mform.serializeData(), {
+				type : "A"
+			}),
+			success : function(data) {
+				fields = data.fields;
+				for ( var i = 0; i < fields.length; i++) {
+					createField(fields[i]);
+				}
+				$("#list").jqGrid("clearGridData",true);
+				for ( var i = 0; i <= fields.length; i++) {
+					$('#list').jqGrid('addRowData',i + 1,fields[i]);
+				}
+
+				$('#list').trigger("reloadGrid");
+			}
+		});
+	});
+
+	// 處理[完成定位]
+	$("#locate").click( function() {	
+		$("#formArea div").remove();
+		for ( var i = 0; i < fields.length; i++) {
+			createField(fields[i]);
+		}
+		
+    	var nocache = new Date();    	
+		$('#formArea').css("background-image", 
+				"url(../static/images/form/LLDLN085.png)");
+		
+		$('#form-report-viewer').dialog("open");
+								
+		$('#form-report-viewer').dialog({
+			close:function(event,ui){
+				$("#list").jqGrid("clearGridData", true);
+				setLocations(fields);
+				$('#list').trigger("reloadGrid");
+			}
+		});
+	});
+	
+	// 將dialog上的欄位位置寫入grid
+	var setLocations = function (fields){
+		for ( var i = 0; i < fields.length; i++) {
+			
+			var theLeft = parseInt($('#id' + (i + 1)).css('left'));
+			var theTop = parseInt($('#id' + (i + 1)).css('top'));
+			var nextSubItems = $('#id' + (i + 1)).data('nextSubItems');
+			var topInterval = $('#id' + (i + 1)).data('topInterval');
+			if (fields[i].ftype == '多重') {
+				fields[i].flocation = theLeft + ','
+				+ theTop + ',' + nextSubItems
+				+ ',' + topInterval;
+			} else {
+				fields[i].flocation = theLeft + ','+ theTop;
+			}
+
+			fields[i].fwidth = parseInt($('#id' + (i + 1)).css('width'));
+			fields[i].ftalign = $('#id' + (i + 1)).data('ftalign');
+			
+			$('#list').jqGrid('addRowData', i, fields[i]);
+		}
+	}
+	
+	// 處理[定位]
+	$("#dataPositionBtn").click(function() {
+		$("#formDataArea div").remove();
+		var plains;
+		$.ajax({
+			//url : "webroot/txn10102handler/getFormData",
+			data : $.extend(mform.serializeData(), {
+				type : "A"
+			}),
+			success : function(data) {
+				plains = data.formData;
+				for ( var i = 0; i < plains.length; i++) {
+					var lineDiv = $("<div id='line"+ i + "' class='pvPlainLine'></div>");
+					$(lineDiv).html(plains[i]);
+					$('#formDataArea').append(lineDiv);
+				}
+			}
+		});
+		
+		// 建立欄位下拉列表
+		var fieldNum = indexgrid.getGridParam("reccount");
+		
+		if(fieldNum > 0){
+			// 清掉之前的結果
+			///$('.combobox-ui').remove();
+			//$('#fields').show();
+			//$('#fields').combobox('destroy');
+			
+			$('#fieldDataSel').find('option').remove().end();
+			for(var i = 0; i < fieldNum; i++){				
+				//alert(indexgrid.getCell(i, 'fname'));
+				$('#fieldDataSel').append('<option value="'+indexgrid.getCell(i, 'fid')+'" >'+indexgrid.getCell(i, 'fname')+'</option>');			
+			}			
+		}
+		
+		//alert("b4 combobox");
+		//$('#fields').combobox();
+	    $('#form-data-editor').dialog("open");
+	    $('#formDataArea').show();
+	});
+
+	$('#plainpvButton').click(function() {
+		$("#plainArea div").remove();
+		var plains;
+		$.ajax({
+			//url : "webroot/txn10102handler/getPlainPage",
+			data : $.extend(mform.serializeData(), {
+				type : "A"
+			}),
+			success : function(data) {
+				plains = data.plains;
+				for ( var i = 0; i < plains.length; i++) {
+					var lineDiv = $("<div id='line"+ i + "' class='pvPlainLine'></div>");
+					$(lineDiv).html(plains[i]);
+					$('#plainArea').append(lineDiv);
+				}
+			}
+		});
+	    $('#plain-report-viewer').dialog("open");
+	    $('#plainArea').show();
+	});
+	
+	//hide pager
+	$("#list-pager").hide();
+	$("#indexData-pager").hide();
+	$("#fieldData-pager").hide();
+	$("#inputPageData-pager").hide();
+
+	var downloadURL = function downloadURL(url) {
+		var iframe;
+		iframe = document.getElementById("hiddenDownloader");
+		if (iframe === null) {
+			iframe = document.createElement('iframe');
+			iframe.id = "hiddenDownloader";
+			iframe.style.visibility = 'hidden';
+			document.body.appendChild(iframe);
+		}
+		iframe.src = url;
+	};
+
+	$('#printButton').click(function() {
+		// window.location =
+		// "webroot/codetypehandler/getPDF";
+		downloadURL("webroot/codetypehandler/getPDF");
+	});
+
+	$("fieldset legend").click(function() {
+		// alert($(this).attr("id"));
+		$(this).next().toggle();
+	});
+	
+	$("#sub").click(function() {
+		if ($('#mform').validationEngine('validate')) {
+		$.ajax({
+			//url : "webroot/txn10102handler/parseGrid",
+			 data: {
+				 "grid": JSON.stringify(grid.serializeGridData()),
+				 "mform" : JSON.stringify(mform.serializeData()),
+				 "indexgrid" : JSON.stringify(indexgrid.serializeGridData())
+		     },
+			success : function(data) {
+				alert("success!!!");
+			}
+		});
+		}
+	});
+
+	$("#add").click(function() {
+		var rowIndex = $("#list").jqGrid('getDataIDs').length;
+		fields[rowIndex] = {
+			id : rowIndex+1,
+			fid : $("#fid").val(),
+			fname : $("#fname").val(),
+			ftype : $("input[name='fClass']:checked").val(),
+			flocation : "",
+			fwidth : "",
+			ftalign : "",
+			fstatus : ""
+		};
+
+		$('#list').jqGrid('addRowData', rowIndex, fields[rowIndex]);
+		$('#list').trigger("reloadGrid");
+
+		//為設定資料格式頁面添加輸入框
+		rowIndex = $("#inputDataFormat").jqGrid('getDataIDs').length;
+		indexfields[rowIndex] = {
+			id : rowIndex+1,
+			fid : $("#fid").val(),
+			fname : $("#fname").val(),
+			lineNo : "",
+			dataStart : "",
+			dataEnd : ""
+		};
+		
+		$('#inputDataFormat').jqGrid('addRowData', rowIndex, indexfields[rowIndex]);
+		$('#inputDataFormat').trigger("reloadGrid");
+
+	});
+
+	$("#delete").click(function(){
+		var rowIndex = $("#list").jqGrid('getGridParam','selrow');
+		$("#list").jqGrid("delRowData", rowIndex);
+		$("#inputDataFormat").jqGrid("delRowData", rowIndex);
+
+		removeArr(fields,rowIndex);
+		removeArr(indexfields,rowIndex);
+	});
+
+    $('#fieldDataBtn').click(function() {
+    	var theField = $('#fieldDataSel').val();
+
+        var theSel = findSelect();
+
+        if(theSel.start==theSel.end){
+            alert("請選擇欲標記範圍");
+            return;
+        }
+        else if(!theSel.lineNum){
+            alert("標記範圍與已設定欄位重疊");
+            return;
+        }
+        else{
+            var isOverlap = false;
+            for(var i = 0; i < formDataArray.length; i++)
+            {
+                if(formDataArray[i].lineNum==theSel.lineNum){
+                    if (theSel.start <= formDataArray[i].start && theSel.end > formDataArray[i].start)
+                    {
+                        isOverlap = true;
+                        break;
+                    }
+                    if (formDataArray[i].start < theSel.start && theSel.start < formDataArray[i].end)
+                    {
+                        isOverlap = true;
+                        break;
+                    }
+                }
+            }
+            if (isOverlap)
+            {
+                alert("標記範圍與已設定欄位重疊");
+                return;
+            }
+            
+            formDataArray[theField] = theSel;            
+        }
+
+        // 顯示在editor的bar上
+        var realLineNo = parseInt(theSel.lineNum.replace("line","")) + 1;
+        $('#fieldDataPos').val(realLineNo + "," + theSel.start + "," + theSel.end);
+        
+        // 加到grid上
+        var theIndex = $('#fieldDataSel').get(0).selectedIndex;
+        indexgrid.jqGrid("setCell", theIndex, 2, realLineNo);
+        indexgrid.jqGrid("setCell", theIndex, 3, theSel.start);
+        indexgrid.jqGrid("setCell", theIndex, 4, theSel.end);
+        
+        markText("pink");
+        removeSelect();        
+    });
+   
+    $("#fieldDataSel").change( function() {
+    	var selectedIndex = $('#fieldDataSel').get(0).selectedIndex;
+    });    
+   
+	//array的删除操作
+	var removeArr = function(arr,n){
+		if(isNaN(parseInt(n))) 
+			return false;
+		if(n>=arr.length || n<0) 
+			return false;
+		for(var i=n;i<arr.length-1;i++) 
+			arr[i]=arr[i+1];
+		arr.pop();
+		return true;
+	}
+
+	$("#rptId").change(function(){
+		$.ajax({   
+            type:'GET'  
+            ,url:'webroot/validatehandler/validateidversion'  
+            ,data:{
+            	rptId : $("#rptId").val(),
+            	rptVersion : $("#rptVersion").val()
+            }                             
+            ,contentType:'text/html;charset=utf-8'//编码格式   
+            ,beforeSend:function(data){   
+   
+            }//发送请求前   
+            ,success:function(data){     
+            	jQuery('#rptId').validationEngine('showPrompt', data.success, 'pass') ;
+            }//请求成功后   
+            ,error:function(data){   
+               
+            }//请求错误   
+        });
+	});
+	
+	$("#upload").click(function(){
+    	$.capFileUpload({
+	        url: "webroot/fileUploadhandler/formImageUpload",
+	        fileElementId: "ufile",
+	        fileCheck: ["jpg", "jpeg", "png", "gif"],
+	        //limitSize: 5 *1024*1024,
+	        data: {
+            	rptId : $("#rptId").val(),
+            	rptVersion : $("#rptVersion").val()
+	        },
+	        success: function(data){
+	            //showMess(data.mktMatlType, data.mktMatl, $("#showMessage"), data.size);
+	            
+	        	// 顯示底圖的縮圖
+	        	var nocache = new Date();
+	        	$('#formImage').attr("src","webroot/fileDownloadhandler/formImageDownload?"+nocache.getTime()+"&rptId="+$("#rptId").val()+"&rptVersion="+$("#rptVersion").val());
+	        }
+	    });
+	});
+	
+	$(".multiselect").multiselect();
+	
+	//
+	$("#fieldAdd").click(function() {
+		var rowIndex = $("#fieldData").jqGrid('getDataIDs').length;
+		if($("#fixedStr").val()==""){
+			fields[rowIndex] = {
+					items : rowIndex+1,
+					sline : $("#lineCnt").val(),
+					slen : parseInt($("#startCnt").val()) + parseInt($("#lenCnt").val())-1,
+					sstart : $("#startCnt").val()
+			};
+		}else{
+			fields[rowIndex] = {
+					items : rowIndex+1,
+					sfixed : $("#fixedStr").val()
+			};
+		}
+		
+
+		$('#fieldData').jqGrid('addRowData', rowIndex, fields[rowIndex]);
+		$('#fieldData').trigger("reloadGrid");
+
+		//clear input
+		 $("#lineCnt").val("");
+		 $("#startCnt").val("");
+		 $("#lenCnt").val("");
+		 $("#fixedStr").val("");
+		 
+		 //add index option
+		 $("#indexSel").append('<option value="'+(rowIndex+1)+'">field'+(rowIndex+1)+'</option>');
+
+	});
+	
+	$("#indexSel").change(function(){
+		if($("#indexDef").val()==""){
+			$("#indexDef").val($("#indexDef").val() + $("#indexSel option:selected").text());
+		}else{
+			$("#indexDef").val($("#indexDef").val()+","+ $("#indexSel option:selected").text());
+		}
+	});
+	
+	$("#indexAdd").click(function() {
+		var rowIndex = $("#indexData").jqGrid('getDataIDs').length;
+		fields[rowIndex] = {
+				items : rowIndex+1,
+				indexId : $("#indexId").val(),
+				indexName : $("#indexName").val(),
+				indexDef : $("#indexDef").val()
+		};
+
+		$('#indexData').jqGrid('addRowData', rowIndex, fields[rowIndex]);
+		$('#indexData').trigger("reloadGrid");
+
+		//clear input
+		 $("#indexId").val("");
+		 $("#indexName").val("");
+		 $("#indexDef").val("");
+	});
+	
+	$("#indexDel").click(function(){
+        if (indexGrid.getSelRowDatas()) {
+        	API.showConfirmMessage(i18n.def.actoin_001,function(data){
+        		data &&  $.ajax({
+                url: "webroot/services/codetypehandler/delete",
+                data: {
+                    oid: $("#oid").val()
+                },
+                success: function(){
+                	indexGrid.trigger("reloadGrid");
+                }
+            });
+        });
+        }
+        else {
+            API.showErrorMessage(i18n.def.grid_selector);
+        }
+        
+    });
+	
+	$("#pageAdd").click(function() {
+		var rowIndex = $("#inputPageData").jqGrid('getDataIDs').length;
+		fields[rowIndex] = {
+				items : rowIndex+1,
+				page : $("#pageCnt").val()
+		};
+
+		$('#inputPageData').jqGrid('addRowData', rowIndex, fields[rowIndex]);
+		$('#inputPageData').trigger("reloadGrid");
+
+		//clear input
+		 $("#pageCnt").val("");
+	});
+	
+	$("#imgUpload").click(function(){
+    	$.capFileUpload({
+	        url: "webroot/fileUploadhandler/formImageUpload",
+	        fileElementId: "ufile",
+	        fileCheck: ["jpg", "jpeg", "png", "gif"],
+	        //limitSize: 5 *1024*1024,
+	        data: {
+            	rptId : $("#rptId").val(),
+            	rptVersion : $("#rptVersion").val()
+	        },
+	        success: function(data){
+	            //showMess(data.mktMatlType, data.mktMatl, $("#showMessage"), data.size);
+	            
+	        	// 顯示底圖的縮圖
+	        	var nocache = new Date();
+	        	$('#formImage').attr("src","webroot/fileDownloadhandler/formImageDownload?"+nocache.getTime()+"&rptId="+$("#rptId").val()+"&rptVersion="+$("#rptVersion").val());
+	        }
+	    });
+	});
+	
+	$("#formFieldAdd").click(function() {
+		var rowIndex = $("#list").jqGrid('getDataIDs').length;
+
+		fields[rowIndex] = {
+				id : rowIndex+1,
+				fid : $("#formFieldId").val(),
+				fname: $("#formFieldName").val(),
+				ftype: $("input[name='formFieldType']:checked").val(),
+				flocation: "",
+				fwidth: "",
+				ftalign: "",
+				line1Cnt: "",
+				startPos: "",
+				endPos: "",
+		};
+
+		$('#list').jqGrid('addRowData', rowIndex, fields[rowIndex]);
+		$('#list').trigger("reloadGrid");
+
+		//clear input
+		 $("#formFieldId").val("");
+		 $("#formFieldName").val("");
+		 
+	});
+});
+</script>
+</head>
+<body>
+	
+	<div id="batchList">
+		<div class="tit">報表定義匯入</div>
+		<div class="btns">
+			<button id="qry" type="button" class="btn1">查詢</button>
+			<button id="qryDetail" type="button" class="btn1">查看明細</button>
+	        <button id="exec" type="button" class="btn1">立即生效</button>
+			<button id="import" type="button" class="btn1">匯入</button>
+	    </div>
+	    <div id="batchgridview"></div>
+	    <div id="qDialog" class="hide" >
+	    	<form id="qform" onsubmit="return false;">
+		    	<table class="row-data">
+					<tr>
+						<th>上版批號</th>
+						<td><input id="batchNo" name="batchNo" type="text" readonly="readonly"/></td>
+					</tr>
+				</table>
+			</form>
+	    </div>
+	</div>
+	<div id="rptList" style="display:none">
+		<div class="tit">報表定義匯入-上版批號:<Label id="batchNo"></Label> 報表清單</div>
+		<div class="btns">
+			<button id="back" type="button" class="btn1">上一頁</button>
+			<button id="qryDetail1" type="button" class="btn1">查看細項</button>
+	    </div>
+		<div id="rptgridview"></div>
+	</div>	
+	
+	<div id="editDialog" class="hide" title="編輯">
+   		<form id="mform" onsubmit="return false;">
+		<div id="tabs" class="tabs">
+			<ul>
+				<li><a href="#tabs-1">基本資料</a></li>
+				<li><a href="#tabs-2">索引維護</a></li>
+				<li><a href="#tabs-3">套表表格欄位定義</a></li>
+			</ul>
+			
+			<div id="tabs-1">
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">屬性設定</legend>
+
+					<table id="basicSetting" class="row-data">
+						<tr>
+							<th>報表編號</th>
+							<td><input id="rptId" name="rptId" type="text" size="10"
+								maxlength="10" class="validate[required]" value="ACD06">
+							</td>
+							<th>報表名稱</th>
+							<td><input id="rptName" name="rptName" type="text" size="32"
+								maxlength="32" class="validate[required]" value = "合庫存款準備金報表">
+							</td>
+						</tr>
+
+						<tr>
+							<th>主機程式名稱</th>
+							<td colspan="3"><input id="mainframeAppName"
+								name="mainframeAppName" type="text" size="50" maxlength="50">
+							</td>
+						</tr>
+						<tr>
+							<th>報表版本</th>
+							<td><input id="rptVersion" name="rptVersion" type="text"
+								size="3" maxlength="3" value="1">
+							</td>
+							<th>業管單位</th>
+							<td>
+									<select id="governingUnit" name="governingUnit">
+										<option value="G" selected="selected">請選擇</option>
+										<option value="D">0600 財務部</option>
+										<option value="H">0800 法金部</option>
+										<option value="M">0710 個金部</option>
+										<option value="S">0430 行政部</option>
+										<option value="T">0200 總務部</option>										
+									</select>															
+							</td>
+						</tr>
+						<tr>
+							<th>報表週期</th>
+							<td>
+								<div id="reportFrequency">
+									<select id="rptCycle" name="rptCycle">
+								   	<option value="X" selected="selected">請選擇</option>
+									<option value="D">D 日報</option>
+									<option value="H">H 半年報</option>
+									<option value="M">M 月報</option>
+									<option value="O">O 不定期報</option>
+									<option value="S">S 季報</option>
+									<option value="T">T 旬報</option>
+									<option value="W">W 週報</option>
+									<option value="Y">Y 年報</option>									
+									</select>
+								</div>
+							</td>
+							<th>報表種類</th>
+							<td>
+								<div id="reportTypes">
+									<select id="rptType" name="rptType">
+										<option value="N" selected="selected">請選擇</option>
+										<option value="D">B 白表</option>
+										<option value="H">F 套表</option>
+									</select>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th>下載PDF</th>
+							<td colspan="1">
+								<div id="dlPdf">
+									<input type="radio" id="dlPdfOk" name="dlPdf"
+										 value="可" /><label for="dlPdfOk">可
+									</label> <input type="radio" id="dlPdfNot" name="dlPdf"
+										value="否" checked="checked" /><label for="dlPdfNot"> 否</label>
+								</div>
+							</td>
+							<th>下載TXT</th>
+							<td colspan="1">
+								<div id="dlTxt">
+									<input type="radio" id="dlTxtOk" name="dlTxt"
+										 value="可" /><label for="dlTxtOk">可
+									</label> <input type="radio" id="dlTxtNot" name="dlTxt"
+										value="否" checked="checked" /><label for="dlTxtNot"> 否</label>
+								</div>
+							</td>
+						</tr>	
+						<tr>
+							<th>保存年限</th>
+							<td>
+							<input id="keepYear" name="keepYear" type="text" size="2" maxlength="2">(99：永久保存)
+							</td>
+						</tr>					
+						<!--
+						<tr>
+							<th>上版日期</th>
+							<td nowrap><input id="publishDate" name="publishDate"
+								type="text" class="date" size="8" maxlength="8">
+							</td>
+							<th>上版時間</th>
+							<td><input id="publishTime" name="publishTime" type="text"
+								class="time" size="6" maxlength="6">
+							</td>
+						</tr>
+						<tr>
+							<th>到期日期</th>
+							<td nowrap><input id="dueDate" name="dueDate" type="text"
+								class="date" size="8" maxlength="8">
+							</td>
+							<th>到期時間</th>
+							<td><input id="dueTime" name="dueTime" type="text"
+								class="time" size="6" maxlength="6">
+							</td>
+						</tr>
+						-->
+
+					</table>
+				</fieldset>
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all"> 預覽資料設定 </legend>
+
+					<table width="100%">
+						<tr>
+							<td class="middleRight">
+							<select id="uploadDataSample" name="uploadDataSample" >
+										<option value="P" select = "selected">請選擇</option>
+										<option value="D">LLDLN023_20130108120905</option>
+										<option value="H">LLDLN023_20130108121305</option>
+				   	
+					   	</select>							
+
+								<button id="dataUpload" type="button" class="btn1">選定資料</button></td>
+						</tr>
+					</table>
+				</fieldset>
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">頁面設定</legend>
+					<table id="pageSetting" class="row-data">
+						<tr>
+							<th>頁面左邊距</th>
+							<td><input id="fvpmLeft" name="fvpmLeft" type="text"
+								size="3" maxlength="3"> (mm)
+							</td>
+							<th>頁面上邊距</th>
+							<td><input id="fvpmTop" name="fvpmTop" type="text" size="3"
+								maxlength="3"> (mm)
+							</td>
+						</tr>
+						<tr>
+							<th>頁面大小</th>
+							<td>
+								<div id="pageSize">
+									<select id="pageSize" name="pageSize">
+										<option value="A3">P0 A3</option>
+										<option value="A4" selected="selected">P1 A4</option>
+										<option value="A5">P2 A5</option>
+										<option value="B3">P3 B3</option>
+										<option value="B4">P4 B4</option>
+										<option value="B5">P5 B5</option>
+									</select>
+								</div>
+							</td>
+							<th>頁面方向</th>
+							<td colspan="3">
+								<div id="pageOrientation">
+									<input type="radio" id="poPortrait" name="pageOrientation"
+										 value="直式" /><label for="poPortrait">直式
+									</label> <input type="radio" id="poLandscape" name="pageOrientation"
+										checked="checked" value="橫式" /><label for="poLandscape"> 橫式</label>
+								</div>
+							</td>
+						</tr>
+						
+					</table>
+
+				</fieldset>
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">報表群組設定</legend>
+
+					<select id="grp_auth" class="multiselect" multiple="multiple"
+						name="grp_auth[]" style="height: 150px;">
+						<option value="headoffice" selected >headoffice-總行群組</option>
+						<option value="rep_acc">rep_acc-一般營業用報表資料群組</option>
+						<option value="tax_acc">tax_acc-扣繳憑單明細資料群組</option>
+						<option value="reports">reports-一般帳務性報表資料群組</option>
+						<option value="salary">salary-薪資報表資料群組</option>
+						<option value="credit">credit-信用卡帳單資料群組</option>			
+					</select>
+				</fieldset>
+				<div id="submit1" style="text-align: right">
+					<button id="preview1" type="button" class="btn1">預覽</button>
+					<button id="sub1" type="button" class="btn1">確定</button>
+				</div>
+
+			</div>
+
+
+			<div id="tabs-2">
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">欄位定義</legend>
+					<table id="filedMaintain" width="100%" class="row-data">
+						<tr>
+
+							<td nowrap>行數<input id="lineCnt" name="lineCnt" type="text"
+								size="3" maxlength="3"> 起始位置<input id="startCnt"
+								name="startCnt" type="text" size="3" maxlength="3"> 長度<input
+								id="lenCnt" name="lenCnt" type="text" size="2" maxlength="2">
+								固定字串<input id="fixedStr" name="fixedStr" type="text" size="5"
+								maxlength="5">
+								<button id="fieldAdd" name="fieldAdd" type="button"
+									class="btn1">新增</button>
+							</td>
+
+						</tr>
+
+						<tr>
+
+							<td>
+								<div id="fieldData" class="list"></div>
+							</td>
+						</tr>
+					</table>
+
+				</fieldset>
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">索引定義</legend>
+					<table id="IndexMaintain" width="100%" class="row-data">
+						<tr>
+							<td nowrap>
+							索引代號<input id="indexId" name="indexId" type="text" size="10" maxlength="10"> 
+							索引名稱<input id="indexName" name="indexName" type="text" size="20"
+								maxlength="20"> 
+
+								<button id="indexAdd" name="indexAdd" type="button"
+									class="btn1">新增</button>
+								<button id="indexDel" name="indexDel" type="button"
+									class="btn1">刪除</button>
+							</td>
+
+						</tr>
+						<tr>
+							<td nowrap>
+								索引內容 <input id="indexDef"
+								name="indexDef" type="text" size="50" maxlength="50" readonly>
+								<select id="indexSel" name="indexSel">
+									<option value="rpt_id">*報表編號</option>
+									<option value="rpt_name">*報表名稱</option>
+									<option value="prg_name">*主機程式名稱</option>
+									<option value="rpt_ver">*報表版本</option>
+									<option value="main_dept">*業管單位</option>
+							</select>
+							</td>
+						</tr>
+
+						<tr>
+
+							<td>
+								<div id="indexData" class="list"></div>
+							</td>
+						</tr>
+					</table>
+
+				</fieldset>
+
+
+				<div id="submit1" style="text-align: right">
+					<button id="preview2" type="button" class="btn1">預覽</button>
+					<button id="sub2" type="button" class="btn1">確定</button>
+				</div>
+
+				<!-- 
+				<ul class="impNote">
+					<li><span><font size="2">1.若由doc10101畫面之[新增]進入本畫面，<報表版本>欄位ReadOnly，其他輸入欄位皆可輸入。
+								
+						</font> </span></li>
+					<li><span><font size="2">2.使用者輸入之<報表編號>，若在RPT_DEFINE_MASTER_PLAN
+								table 中有相同報表編號，系統顯示"此報表修改中，不可新增版次"訊息。 
+						</font> </span></li>
+					<li><span><font size="2">3.<報表版本>欄位由系統自行維護，若RPT_DEFINE_MASTER沒有相同報表編號，<報表版本>欄位值為1，若RPT_DEFINE_MASTER有相同報表編號，<報表版本>欄位值為<報表版本>+1。
+								
+						</font> </span></li>
+					<li><span><font size="2">4.若由doc10101畫面之[修改]進入本畫面，<報表編號>、<報表版本>欄位ReadOnly，其他輸入欄位皆可輸入。
+								
+						</font> </span></li>
+					<li><span><font size="2">5.若由doc10101畫面之Double
+								click進入本畫面，所有欄位ReadOnly，[預覽]可操作。</font> </span></li>
+					<li><span><font size="2">6.若點選[預覽]按鍵，程式須先檢核{資料定義}頁籤中資料已上傳。</font>
+					</span></li>
+				</ul>
+ 				-->
+			</div>
+			<div id="tabs-3">
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">底圖設定</legend>
+					<table width="100%" class="row-data">
+						<tr>
+							<th>套用頁數</th>
+							<td nowrap>第<input id="pageCnt" name="pageCnt" type="text"
+								size="5" maxlength="5">頁
+								<button id="pageAdd" name="pageAdd" type="button"
+									class="btn1">新增</button>
+							</td>
+							<th>上傳底圖</th>
+							<td nowrap><div id="formImageUpload">
+									<input type="file" id="ufile" name="ufile" />
+									<button id="imgUpload" type="button" class="btn1">上傳</button>
+								</div></td>
+
+						</tr>
+
+						<tr>
+							<td colspan=2>
+								<div id="inputPageData" class="list"></div>
+							</td>
+							<td colspan=2><img id="formImage"
+								src="../static/images/form/LLDLN085.png" alt="底圖">
+							</td>
+
+						</tr>
+					</table>
+
+				</fieldset>
+
+
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all">欄位設定</legend>
+					<table id="mainLayout" class="row-data">
+						<tr>
+							<th>代號</th>
+							<td><input id="formFieldId" name="formFieldId" type="text" size="20"
+								maxlength="20"></td>
+							<th>名稱</th>
+							<td><input id="formFieldName" name="formFieldName" type="text" size="20"
+								maxlength="20"></td>
+						</tr>
+						<tr>
+							<th>種類</th>
+							<td><input id="formFieldType" type="radio" name="formFieldType" value="多重">
+								多重 <input id="formFieldType" type="radio" name="formFieldType" value="單一"
+								checked="checked"> 單一</td>
+						</tr>
+					</table>
+				</fieldset>
+				<div class="btns" colspan="4" style="text-align: right">
+					<button id="formFieldAdd" type="button" class="btn1">新增</button>
+					<button id="delete" type="button" class="btn1">刪除</button>
+					<button id="locate" type="button" class="btn1">定位</button>
+				</div>
+				<fieldset class="ui-widget ui-widget-content ui-corner-all">
+					<legend class="ui-widget-header ui-corner-all"> 欄位列表 </legend>
+					<div id="list" class="list"></div>
+				</fieldset>
+
+				<div id="submit2" style="text-align: right">
+					<button id="preview2" type="button" class="btn1">預覽</button>
+					<button id="sub2" type="button" class="btn1">確定</button>
+				</div>
+				<!-- 
+				<ul class="impNote">
+					<li><span><font size="2">1.若{基本定義}頁籤之<報表種類>
+								radio button，點選為"白表"，此頁籤不能操作(ReadOnly) 
+						</font> </span></li>
+					<li><span><font size="2">2.若{基本定義}頁籤之<報表種類>
+								radio button，點選為"套表" 
+						</font> </span></li>
+					<li><span><font size="2">2.1.若由doc10101畫面之[新增]進入本畫面，欄位皆可輸入。</font>
+					</span></li>
+					<li><span><font size="2">2.2.若由doc10101畫面之[修改]進入本畫面，欄位皆可輸入。</font>
+					</span></li>
+					<li><span><font size="2">2.3.若由doc10101畫面之Double
+								click進入本畫面，所有欄位ReadOnly，[預覽]可操作。</font> </span></li>
+					<li><span><font size="2">2.4.若點選[預覽]按鍵，程式須先檢核{資料定義}頁籤中資料已上傳。</font>
+					</span></li>
+
+				</ul>
+ 				-->
+			</div>
+
+		</div>
+
+		<div id="form-report-viewer" title="欄位定位" style="display: none;">
+			<div id="pageFrame"></div>
+			<div id="formArea"></div>
+		</div>
+
+		<div id="plain-report-viewer" title="白表瀏覽" style="display: none;">
+
+			<div
+				class="fg-toolbar ui-widget-header ui-corner-all ui-helper-clearfix">
+				<div class="fg-buttonset ui-helper-clearfix">
+					<table>
+						<tr>
+							<td><select id="fwDefault" class="ui-widget ui-corner-all"
+								style="position: relative;">
+									<option selected="selected" value="normal">XX分行</option>
+									<option value="bold">YY分行</option>
+							</select></td>
+							<td><a title="前一頁"
+								class="fg-button ui-state-default fg-button-icon-solo ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-arrowthick-1-w"></span>
+									Save</a> <a title="後一頁"
+								class="fg-button ui-state-default fg-button-icon-solo ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-arrowthick-1-e"></span>
+									Delete</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="fg-buttonset ui-helper-clearfix">
+					<table>
+						<tr>
+							<td><a id="plainMark" title="標記"
+								class="fg-button ui-state-default fg-button-icon-left ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-pencil"></span>標記
+								(<span
+									id="plainMarkNum">0</span>)</a> <a id="plainMarkClearAll"
+								title="全部清除" class="fg-button ui-state-default ui-corner-all"
+								href="#">全部清除</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="fg-buttonset ui-helper-clearfix">
+					<table>
+						<tr>
+							<td><a id="plainComment" title="註解"
+								class="fg-button ui-state-default fg-button-icon-left ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-comment"></span>
+									註解
+								(<span
+									id="plainCommentNum">0</span>)</a> <a id="plainCommentClearAll"
+								title="全部清除" class="fg-button ui-state-default ui-corner-all"
+								href="#">
+									全部清除
+								</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="fg-buttonset fg-buttonset-single ui-helper-clearfix">
+					<button
+						class="fg-button fg-text ui-state-default ui-priority-primary ui-corner-left ui-state-active">Edit</button>
+					<button
+						class="fg-button fg-text ui-state-default ui-priority-primary ui-corner-right">View</button>
+				</div>
+			</div>
+
+			<div id="pageFrame"></div>
+			<div id="plainArea"></div>
+		</div>
+		
+		<div id="form-data-editor" title="資料定位" style="display: none;">
+			<div id = "fdToolBar" 
+				class="fg-toolbar ui-widget-header ui-corner-all ui-helper-clearfix">
+				<select id="fieldDataSel" name="fieldDataSel" class="fg-buttonset combobox">				
+				</select>
+				<input id="fieldDataPos" name="fieldDataPos" type="text" size="16" maxlength="16" />
+				<div class="fg-buttonset ui-helper-clearfix">
+					<table>
+						<tr>
+							<td><a id="fieldDataBtn" title="選定"
+								class="fg-button ui-state-default fg-button-icon-left ui-corner-all"
+								href="#"><span class="ui-icon ui-icon-pencil"></span>選定</a> 
+								<a id="fieldDataCancelBtn"
+								title="清除" class="fg-button ui-state-default ui-corner-all"
+								href="#">清除</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>		
+		
+		    <div id="formDataArea"></div>
+		</div>
+	</form>
+   	</div>
+	
+</body>
+</html>

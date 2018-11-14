@@ -1,0 +1,175 @@
+/* Default attributes of table container for entire calendar */
+.jscalendar-DB-table-style a{text-decoration:none;}
+.jscalendar-DB-table-style {
+	line-height:1.8em;
+	font-family:arial;
+	font-size:11px;
+	background-color: #FFFFFF;
+	border: 1pt solid #d4d4d4;
+}
+
+/* Default attributes of DIV containing table container for entire calendar.
+ * You probably don't want to alter this style.
+ */
+.jscalendar-DB-div-style {
+	z-index: 998;
+	position: absolute;
+	visibility: hidden;
+}
+
+/* Default attributes used in calendar title (month and year columns).*/
+.jscalendar-DB-title-style {
+	padding:2px;
+	font-family:arial;
+	font-size:11px;
+	font-weight:bold;
+	color:#fff;
+}
+/* Default attributes used in calendar title background.*/
+.jscalendar-DB-title-background-style {
+	/*background-color: #ffc700;*/
+	background-color: #73B610;
+}
+.jscalendar-DB-title-background-style tr {
+	height:1.8em;
+}
+.jscalendar-DB-title-background-style td {
+	padding:2px;
+}
+.jscalendar-DB-title-background-style td img {
+	padding-top:3px;
+	text-align:right;
+}
+
+/* Normal appearance of controls in calendar title. */
+/* Note: The right, left and down icons are images, jscalendar-DBich must be edited if you need to change them. */
+.jscalendar-DB-title-control-normal-style {
+	cursor: pointer;
+	/*border: 1pt solid #CCF8FD;*/
+}
+
+/* Moused-over (selected) appearance of controls in calendar title. */
+.jscalendar-DB-title-control-select-style {
+	cursor: pointer;
+	/*border: 1pt solid #CCF8FD;*/
+}
+
+/* Default attributes of drop down lists (month and year). */
+.jscalendar-DB-dropdown-style {
+	font-family: arial;
+	font-size: 12px;
+	background-color:#F5FFE6;
+	color:#666666;
+	cursor: pointer;
+	border: 1pt solid #666666;
+}
+
+.jscalendar-DB-dropdown-style tr {
+	height:1.8em;
+}
+
+.jscalendar-DB-dropdown-style td {
+	text-align:center;
+}
+
+/* Default attributes selected (mouse-over) item in drop down lists (month and year). */
+.jscalendar-DB-dropdown-select-style {
+	background-color: #73b610;
+	color:#F5F5F5;
+}
+
+/* Default attributes unselected (mouse-off) item in drop down lists (month and year). */
+.jscalendar-DB-dropdown-normal-style {
+	background-color: #f5ffe6;
+}
+
+/* Default attributes of calendar body (weekday titles and numbers). */
+.jscalendar-DB-body-style {
+	width:210px;
+	background-color: #F0F0F0;
+	font-family: arial;
+	font-size: 10px;
+	color:#828282;
+}
+
+.jscalendar-DB-body-style td{
+	line-height:1.8em;
+	text-align:right;
+}
+
+/* 今天 */
+.jscalendar-DB-current-day-style {
+	font-family: arial;
+	font-size: 11px;
+	line-height:1.8em;
+	color: #73B610;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* 週末 */
+.jscalendar-DB-end-of-weekday-style {
+	font-family: arial;
+	font-size: 11px;
+	line-height:1.8em;
+	color: #909090;
+	text-decoration: none;
+}
+
+/* 星期一到五 沒選到的日子 */
+.jscalendar-DB-normal-day-style {
+	font-family: arial;
+	font-size: 11px;
+	line-height:1.8em;
+	color: black;
+	text-decoration: none;
+}
+
+/* 滑鼠在上面的日子 也就是即將被選的 */
+.jscalendar-DB-would-be-selected-day-style {
+	font-family: arial;
+	font-size: 11px;
+	line-height:1.8em;
+	background-color: #73b610;
+	color: #ffffcc;
+}
+
+/* 已經選的日子 */
+.jscalendar-DB-selected-day-style {
+	font-family: arial;
+	font-size: 11px;
+	line-height:1.8em;
+	border: 1px solid #73B610;
+}
+
+/* Default attributes of designated holidays. */
+.jscalendar-DB-holiday-style {
+	font-family: arial;
+	font-size: 11px;
+	line-height:1.8em;
+	background-color: #FFDDDD;
+}
+
+/* Attributes of today display at bottom on calendar */
+.jscalendar-DB-today-style {
+	font-family: arial;
+	font-size: 10px;
+	line-height:1.8em;
+	padding: 0px;
+	color: black;
+	background-color: #f0f0f0;
+	text-align: center;
+	text-decoration: none;
+}
+
+/* Attributes of today display label at bottom on calendar */
+.jscalendar-DB-today-lbl-style {
+	padding: 5px;
+	text-align: center;
+}
+
+/* Attributes of week number division (divider.gif) */
+.jscalendar-DB-weeknumber-div-style {
+	background-color: #d0d0d0;
+	padding: 0px;
+}

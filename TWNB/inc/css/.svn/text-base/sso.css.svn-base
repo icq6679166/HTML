@@ -1,0 +1,388 @@
+/*************************************
+*		@sso(SSO_home.html)
+**************************************/
+.ssoBorder, .sso #wrapper {
+	border-left: 1px #c0ced7 solid;
+	border-right: 1px #c0ced7 solid;
+}
+.sso {
+	background: #edf2f5 url(../img/layout/login_wrapper.gif) repeat-x left top;
+}
+.sso #wrapper {
+	margin: 0 auto;
+	width: 960px;
+}
+.sso #header {
+	/*@extend .loginBorder;*/
+  background-position: left 0;
+}
+.sso .header_wp {
+	height: 50px;
+	padding: 0 14px;
+}
+.sso #content {
+	margin: 0;
+	background: #00964a url(../img/layout/content_bg.gif) repeat-x left top;
+}
+.sso .content_wp {
+	margin: 0;
+	border: 0;
+	padding: 0 15px 0 0;
+	background: #afd455 url(../img/layout/content_bg.gif) repeat-x left top;
+}
+.sso #pageBody .pageBody_wp {
+	padding: 10px 10px 0;
+	border: 1px #00974A solid;
+	background: #fff;/*min-height:400px;*/
+}
+.sso #pageBody .pageBody_wp .sideRight {
+	/*border: #F00 thin solid;*/
+	float: left;
+	background:#FFF;
+	padding: 0 10px 0 0;
+	width:260px;
+}
+.sso_login {
+	margin:0 0 0 0;
+	padding: 0 0 10px 0;
+}
+.sso_loginForm {
+	border-left:#b5b5b5 thin solid;
+	border-right:#b5b5b5 thin solid;
+	padding: 10px 8px 0px 8px;
+}
+.sso_loginForm td {
+	padding: 2px 2px;
+}
+.sso_loginForm .hd1 {
+	text-align: right;
+}
+#sso_tabs {
+ *zoom: 1;
+	width: 100%;
+	font-size: 93%;
+	line-height: normal;
+	margin: 0 0 0;
+	background: url(../img/tabs/tabs10_bg.gif) repeat-x left bottom;
+}
+#sso_tabs ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#sso_tabs li {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+#sso_tabs .current a {
+	display:inline-block;
+	width: 80px;
+	margin: 0 0 0 0;
+	padding:0 10px 0 0;
+	background:url(../img/sso/tabs/tab_right_curr.gif) no-repeat right bottom;
+}
+#sso_tabs a {
+	color:#00716c;
+	font-weight:bold;
+	display:inline-block;
+	width: 80px;
+	margin: 0 0 0 0;
+	padding:0 10px 0 0;
+	background:url(../img/sso/tabs/tab_right.gif) no-repeat right bottom;
+}
+#sso_tabs .current .tab1 {
+	width:55px;
+	display:inline-block;
+	margin: 0 0 0 0;
+	padding: 12px 0 6px 30px;
+	background:url(../img/sso/tabs/tab_1_left_curr.gif) no-repeat left bottom;
+}
+#sso_tabs .tab1 {
+	width:55px;
+	display:inline-block;
+	margin: 0 0 0 0;
+	padding: 12px 0 6px 30px;
+	background:url(../img/sso/tabs/tab_1_left.gif) no-repeat left bottom;
+}
+#sso_tabs .current .tab2 {
+	width:55px;
+	display:inline-block;
+	margin: 0 0 0 0;
+	padding: 12px 0 6px 30px;
+	background:url(../img/sso/tabs/tab_2_left_curr.gif) no-repeat left bottom;
+}
+#sso_tabs .tab2 {
+	width:55px;
+	display:inline-block;
+	margin: 0 0 0 0;
+	padding: 12px 0 6px 30px;
+	background:url(../img/sso/tabs/tab_2_left.gif) no-repeat left bottom;
+}
+.sso #pageBody .pageBody_wp .ssoContent {
+	padding: 0 0;
+	width: 70%;
+	float: left;
+}
+.sso #pageBody .pageBody_wp .ssoContent .ssoContent_tit {
+	height:70px;
+}
+.sso #pageBody .pageBody_wp .ssoContent .ssoContent_tit .ssoContent_tit2 {
+	height:70px;
+	background:url(../img/sso/sso_welcome.gif) no-repeat left top;
+}
+.sso #pageBody .pageBody_wp .ssoContent .ssoContent_tit .ssoContent_tit3 {
+	height:70px;
+	background:url(../img/sso/sso_welcome3.gif) no-repeat right top;
+}
+.sso #pageBody .pageBody_wp .ssoBtn {
+	padding: 10px 0;
+	margin: 0;
+	text-align: center;
+	background: #FFF;
+	border-left: thin #b5b5b5 solid;
+	border-right: thin #b5b5b5 solid;
+	border-bottom: thin #b5b5b5 solid;
+}
+.ssoContent_head {
+	padding: 0 0 0 0;
+	background:url(../img/sso/sso_welcome1.gif) repeat-x left top;
+}
+.ssoContent_front {
+	padding: 0 0 0 0;
+	display:block;
+	height: 70px;
+	background:url(../img/sso/sso_welcome2.gif) no-repeat left top;
+}
+.ssoContent_end {
+	padding: 0 0 0 0;
+	display:block;
+	height: 70px;
+	background:url(../img/sso/sso_welcome3.gif) no-repeat right top;
+}
+.ssoBoard {
+	margin:0 0 20px 0;
+}
+.ssoBoard div {
+	display:inline-block;
+}
+.ssoBoard_more {
+	margin: 5px 0 0 0;
+	float:right;
+}
+.ssoBoardLine {
+	display:block;
+	padding: 1px 0 0;
+	margin: 0 0 7px;
+	border-bottom: 2px #73b610 solid;
+}
+.ssoBoard h1 {
+	text-indent: -1000px;
+	background:url(../img/sso/sso_board_tit.gif) no-repeat left;
+}
+.ssoBoard div a {
+	display:block;
+	margin: 0 0 0 5px;
+	padding: 4px 0 4px 15px;
+	background:url(../img/sso/green_dot.gif) no-repeat left
+}
+/*************************************
+*		@sso(上方banner)
+**************************************/
+#ssoBanner {
+	margin:0;
+	padding:0;
+}
+#ssoBanner .sso_banner_cont{
+	 width:620px;
+	 height:235px;
+}
+#ssoBanner .sso_banner_cont .sso_banner_btn_L{
+	 width:5%;
+}
+#prev{
+	 height:85px; 
+	 margin:0 0 0 0;
+}
+#ssoBanner .sso_banner_cont .sso_banner_btn_R{
+	 width:5%;
+}
+#next{
+	 height:85px; 
+	 margin:0 0 0 -7px;
+}
+#img_container {
+	 height:170px; 
+	 width:540px; 
+	 margin:0 0 0 3px;
+}
+/*按鈕*/
+#ssoBanner .enabled_L{
+	border:#F00 0 solid;
+	text-decoration:none;
+	margin:0;
+	padding:0 40px 35px 0;
+	background:#FFF url(../img/sso/banner/btn_L.gif) no-repeat left bottom;
+}
+#ssoBanner .disabled_L{
+	border:#F00 0 solid;
+	text-decoration:none;
+	margin:0;
+	padding:0 40px 35px 0;
+	background:#FFF url(../img/sso/banner/btn_L_dis.gif) no-repeat left bottom;
+}
+#ssoBanner .enabled_R{
+	border:#F00 0 solid;
+	text-decoration:none;
+	margin:0;
+	padding:0 40px 35px 0;
+	background:#FFF url(../img/sso/banner/btn_R.gif) no-repeat right bottom;
+}
+#ssoBanner .disabled_R{
+	border:#F00 0 solid;
+	text-decoration:none;
+	margin:0;
+	padding:0 40px 35px 0;
+	background:#FFF url(../img/sso/banner/btn_R_dis.gif) no-repeat right bottom;
+}
+/*視窗*/
+#ssoBanner #img_container{
+	border:#FF0 0px solid;
+	/*background:#FFF url(../img/sso/banner/bg.gif) repeat-x left bottom;*/
+}
+#ssoBanner ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+#ssoBanner ul li {
+	display:none;
+	float:left;
+	height:155px;
+	margin:0 0px 0 8px;
+	padding:0 0 0 0;
+	border:#C39 0 solid;
+	background:#FFF url(../img/sso/banner/img_shadow.gif) repeat-x left bottom;
+}
+#ssoBanner .current{
+	display:inline-block;
+}
+#ssoBanner ul li img{
+	border:#e1e1e1 thin solid;
+	width:165px;
+	height:120px;
+	padding-top:0px;
+	padding-left:0px;
+}
+#ssoBanner ul li img:hover{
+	border:#85bf48 1px solid;
+	width:165px;
+	height:120px;
+	padding-top:0px;
+	padding-left:0px;
+}
+.cursorArrow{cursor:default;}
+
+/*      keyBoard 
+---------------------------------*/  
+.keyBoard{
+    position:absolute;  
+    width:242px;
+	clear:both;
+} 	
+.keyBoard .btn_keyBoard_close{
+    display:inline-block;  
+    margin:0;   
+    color:#fff;  
+    width:36px;  
+    text-align:left;  
+    padding:6px 0 4px 23px;  
+    background:url(../../inc/img/keyboard/btn_keyBoard_close.gif) no-repeat left top;
+} 
+#container {
+	font: normal 12px  Arial, Helvetica, sans-serif, "新細明體";	
+	background-color:#b5e287;
+	border:#37681b 1px solid;
+	padding:12px 0 0 5px;
+	width: 235px;
+	height: 142px;  
+}  
+#keys {
+	cursor:pointer;  
+	margin: 2px;  
+	padding: 0;  
+	list-style: none;  
+} 
+#keys .tab, #keys .upper {
+    width: 41px;
+}
+#keys .tab:hover, #keys .upper:hover  {
+	background:url(../../inc/img/keyboard/btn_bg_hover.gif) repeat-x left;
+    width: 41px;
+} 
+#keys .submit, #keys .refresh {
+	background: #f9fb97;
+  	border: 1px #060 solid;
+    width: 110px;
+}
+#keys .submit:hover, #keys .refresh:hover  {
+	background: #ffe640;
+    width: 110px;
+}
+ 
+#keys li {
+	background:url(../../inc/img/keyboard/btn_bg.gif) repeat-x left;
+    float: left;  
+    margin: 0 3px 3px 0;  
+    width: 18px;  
+    height: 21px;  
+    line-height: 21px;  
+    text-align: center;   
+    border: 1px solid #6d6d6d;
+} 
+#keys li:hover {
+	background:url(../../inc/img/keyboard/btn_bg_hover.gif) repeat-x left;
+    float: left;  
+    margin: 0 3px 3px 0;  
+    width: 18px;  
+    height: 21px;  
+    line-height: 21px;  
+    text-align: center;   
+    border: 1px solid #6d6d6d;
+}  
+#keys .num{
+	background:url(../../inc/img/keyboard/btn2_bg.gif) repeat-x left;
+    float: left;  
+    margin: 0 3px 3px 0;  
+    width: 18px;  
+    height: 21px;  
+    line-height: 21px;  
+    text-align: center;
+	color:#FFF;  
+    border: 1px solid #6d6d6d;
+}  
+#keys .num:hover{
+	background:url(../../inc/img/keyboard/btn2_bg_hover.gif) repeat-x left;
+    float: left;  
+    margin: 0 3px 3px 0;  
+    width: 18px;  
+    height: 21px;  
+    line-height: 21px;  
+    text-align: center;
+	color:#FFF;  
+    border: 1px solid #6d6d6d;
+} 
+/*      btn_keyBoard 
+---------------------------------*/  
+.btn_keyBoard,.btn_keyBoard span{
+	color:#4b566e;  
+    display:inline-block;  
+    background:url(../../inc/img/keyboard/btn_keyBoard.gif) no-repeat left top;}
+.btn_keyBoard span{
+	padding:13px 35px 10px 0; 
+    background-position:right top;}
+.btn_keyBoard{
+	margin:0 0 0 0;
+    padding:0 0 0 5px;}   
+/*.btn_keyBoard span{  
+    padding:4px 35px 2px 0;}  

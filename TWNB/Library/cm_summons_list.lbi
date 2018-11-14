@@ -1,0 +1,92 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td><span class="tb_tit">傳票清單</span></td>
+    </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi">
+    <tr>
+        <td width="5%" class="hd1">序號</td>
+        <td width="28%" class="hd1">產製編號</td>
+        <td width="28%" class="hd1">傳票種類</td>
+        <td width="28%" class="hd1">金額</td>
+        <td class="hd1">功能</td>
+    </tr>
+    <tr>
+        <td class="td_sn">1</td>
+        <td class="td_sn">12345671</td>
+        <td class="lt">轉帳支出傳票</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_A.html',750,500)" class="btn_tb">列印傳票</a></td>
+    </tr>
+    <tr>
+        <td class="td_sn">2</td>
+        <td class="td_sn">12345672</td>
+        <td class="lt">轉帳收入傳票</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_B.html',750,500)" class="btn_tb">列印傳票</a></td>
+    </tr>
+    <tr>
+        <td class="td_sn">3</td>
+        <td class="td_sn">12345673</td>
+        <td class="lt">手續費收據</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_C.html',750,450)" class="btn_tb">列印傳票</a></td>
+    </tr>
+    <tr>
+        <td class="td_sn">4</td>
+        <td class="td_sn">12345674</td>
+        <td class="lt">放款繳息存根(利息收據)</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_D.html',770,480)" class="btn_tb">列印傳票</a></td>
+    </tr>
+    <tr>
+        <td class="td_sn">5</td>
+        <td class="td_sn">12345675</td>
+        <td class="lt">支出傳票(劃付總)</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_E.html',750,500)" class="btn_tb">列印傳票</a></td>
+    </tr>
+    <tr>
+        <td class="td_sn">6</td>
+        <td class="td_sn">12345676</td>
+        <td class="lt">收入傳票(劃付總)</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_F.html',750,500)" class="btn_tb">列印傳票</a></td>
+    </tr>
+    <tr>
+        <td class="td_sn">7</td>
+        <td class="td_sn">12345677</td>
+        <td class="lt">支出傳票</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_G.html',750,510)" class="btn_tb">列印傳票</a></td>
+    </tr>
+    <tr>
+        <td class="td_sn">8</td>
+        <td class="td_sn">12345678</td>
+        <td class="lt">收入傳票</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_H.html',750,520)" class="btn_tb">列印傳票</a></td>
+    </tr>
+    <tr>
+        <td class="td_sn">9</td>
+        <td class="td_sn">12345679</td>
+        <td class="lt">收入傳票</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_I.html',750,530)" class="btn_tb">列印傳票</a></td>
+    </tr>
+    <tr>
+        <td class="td_sn">10</td>
+        <td class="td_sn">12345670</td>
+        <td class="lt">匯款傳票</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_J.html',750,530)" class="btn_tb">列印傳票</a></td>
+    </tr>
+    <tr>
+        <td class="td_sn">11</td>
+        <td class="td_sn">12345680</td>
+        <td class="lt">解付傳票</td>
+        <td class="td_money">TWD 999,999,999</td>
+        <td class="td_func"><a href="javascript:winopen('../Common/cm_summons_K.html',750,620)" class="btn_tb">列印傳票</a></td>
+    </tr>
+</table>

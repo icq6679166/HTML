@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- InstanceBegin template="/Templates/popup.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>合作金庫-新一代企網銀</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css"></style>
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body class="popup">
+<div class="header"><img src="../../inc/img/layout/tcb_logo.gif"></div>
+<!-- InstanceBeginEditable name="content" -->
+<div class="content">
+  <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="popup_tit">匯款性質選擇</td>
+    </tr>
+  </table>
+  <div id="tabs2">
+    <ul>
+      <li><a href="cm_purpose_code_buyForeign_pop_TWNAPT08.html"><span>進口貨品價款</span></a></li>
+      <li class="current"><a href="cm_purpose_code_buyForeign_pop_TWNAPT08_nonCitizen.html"><span>償付非居住民服務支出</span></a></li>
+      <li><a href="#"><span>其他匯出款項</span></a></li>
+    </ul>
+  </div>
+  <table class="tb_multi" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="10%" class="hd1">匯款性質編號</td>
+      <td width="16%" class="hd1">匯款性質名稱</td>
+      <td width="74%" class="hd1">匯款性質說明</td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">111</a></td>
+      <td>海運貨運費支出</td>
+      <td>支付海上貨物運輸費用。</td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">115</a></td>
+      <td>航空貨運費支出</td>
+      <td>支付航空貨物運輸費用。</td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">131</a></td>
+      <td>商務支出</td>
+      <td>居住民出國洽辦商務之旅費支出。</td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">192</a></td>
+      <td>貿易佣金及代理費支出</td>
+      <td>為貿易有關的服務所支付之佣金及代理費用。</td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">194</a></td>
+      <td>金融服務支出</td>
+      <td>支付國外為辦理各種金融業如外匯交易、證券交易、金融衍生商品交易、資產管理、代客金融操作與證券保管等服務所產生的手續費及佣金支出。</td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">195</a></td>
+      <td>無形資產使用權支出</td>
+      <td>使用國外專利權、商標、經銷權、版權或生產技術等所支付之費用。</td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">197</a></td>
+      <td>三角貿易匯出款</td>
+      <td>貨物非由我國通關進口而由他國進口，但貨物係由我國支付者。</td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">19B</a></td>
+      <td>電話與資訊支出</td>
+      <td>本項涵蓋電腦與新聞相關之服務，包括一、支付國外有關電腦硬體的開發、設計、諮詢、管理、安裝、資料處理及電腦相關設備維修的費用。二、向國外訂購報紙、期刊及書籍(未經進口報關)的支出。三、支付國外新聞代理、照片和報導的費用。</td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">19D</a></td>
+      <td>專業技術事務支出</td>
+      <td>支付國外有關法律、會計、管理顧問、公關、廣告、市場調查、民意測驗、商業展覽、公證、檢驗等服務之支出，包括董監事酬勞。</td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">410</a></td>
+      <td>非居住民薪資匯出</td>
+      <td><p>在台外籍人員(憑護照或未滿一年之居留證)薪資匯出(或由其雇主代匯)，及支付駐外軍政機關或無營運收入支國外分支機構當地雇員薪資款。</p></td>
+    </tr>
+    <tr>
+      <td class="ct"><a href="javascript:window.close();" class="btn_GetInfo">511</a></td>
+      <td>工作者匯款</td>
+      <td>在台居留一年以上之外籍工作者的薪資匯出款(或由其雇主代匯)。</td>
+    </tr>
+  </table>
+  <div class="btnBlock"> 
+   	<a href="javascript:void(0)" class="btn_submit" onClick="window.close();">關閉</a></div>
+</div>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd -->
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css"></style>
+</head>
+
+<body>
+<div class="page_inner">
+    <ul id="path" class="clearfix">
+        <li>投資理財</li>
+        <li>基金交易</li>
+        <li>小額申購</li>
+    </ul>
+    <div class="hbox">
+        <div class="fl"> <span class="trans_tit">小額申購</span> </div>
+        <div class="fl"> <a href="#" class="btn_addCommon">加入常用</a> </div>
+        <div class="fr">
+            <div class="commonFunc">
+                <select name="commonFunc">
+                    <option>--常用功能--</option>
+                </select>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="msg">
+        <div class="msgHd">
+            <div class="msgHd_wp"></div>
+        </div>
+        <div class="msg_cont">
+            <ul>
+                <li class="highLight">投資屬性：穩健型</li>
+                <li>請確認下列交易資訊。</li>
+            </ul>
+        </div>
+    </div>
+    <dl id="step" class="clearfix">
+        <dt><span>申購資料</span></dt>
+        <dt class="current"><span>資料確認</span></dt>
+        <dt><span>結果頁</span></dt>
+    </dl>
+    <div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" dir="ltr" width="100%" class="tb_single">
+		<tr>
+		  <td class="hd1">交易編號</td>
+		  <td colspan="3">XXXXXXXXXXXXXXXXX</td>
+	  </tr>
+		<tr>
+		    <td width="20%" class="hd1">申購日期</td>
+		    <td width="30%">yyyy/mm/dd</td>
+		    <td width="20%" class="hd1">生效日期</td>
+		    <td>yyyy/mm/dd</td>
+		</tr>
+        <tr>
+		    <td width="20%" class="hd1">扣款起始日</td>
+		    <td width="30%">yyyy/mm/dd</td>
+		    <td width="20%" class="hd1">每月扣款日</td>
+		    <td>16日</td>
+		</tr>
+		<tr>
+		    <td width="20%" class="hd1">投資幣別</td>
+		    <td colspan="3">臺幣</td>
+		    </tr>
+		<tr>
+			<td class="hd1">信託帳號</td>
+			<td colspan="3">0560888015545</td>
+		</tr> 
+        <tr>
+		  <td class="hd1">業務別</td>
+		  <td colspan="3">國內投資標的</td>
+	  </tr>
+      	<tr>
+			<td class="hd1">投資方式</td>
+			<td colspan="3">定期不定額</td>
+		</tr>
+        <tr>
+			<td class="hd1">投資標的</td>
+			<td colspan="3">5402 元大多多基金 (RR5)</td>
+		</tr>
+        <tr>
+        	<td class="hd1">投資金額</td>
+        	<td>NTD 5,000 元</td>
+        	<td class="hd1">總扣款金額</td>
+        	<td>新台幣 50,050.00 元</td>
+        </tr> 
+        <tr>
+			<td class="hd1">約定扣款轉出帳號</td>
+			<td>9997227123785</td>
+		  <td class="hd1">現金收益存入帳號</td>
+			<td>9997227123785</td>
+		</tr> 
+        <tr>
+			<td class="hd1">分行理專</td>
+			<td colspan="3">XXXXXXXX</td>
+		</tr>
+        <tr>
+			<td class="hd1">分行轉介行員</td>
+			<td colspan="3">XXXXXXXXXX</td>
+		</tr>
+        <tr>
+			<td class="hd1">公開說明書交付方式 </td>
+			<td colspan="3">已由基金公司交付或於貴行取得並審閱。</td>
+		</tr>
+        <tr>
+			<td class="hd1">高收益債券基金</td>
+			<td colspan="3">本人已知申購高收益債券基金時，該基金可能主要係投資於非投資等級之高風險債券，且該基金之配息來源可能為本金，並已詳閱基金公司公開說明書等相關資訊後，執行本筆申購。</td>
+		</tr> 
+        <tr>
+			<td class="hd1">基金通路報酬</td>
+			<td colspan="3">本人已取得本行銷售本基金之通路報酬資料，並瞭解各項費用及注意事項內容。</td>
+		</tr>
+        <tr>
+          <td class="hd1">合庫巴黎投信為本行<br>
+            利害關係人</td>
+          <td colspan="3">本人已知悉本次之交易為貴行利害關係人合庫巴黎投信發行(總代理)之基金。</td>
+        </tr> 
+    </table>
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">  
+<tr>  
+                    <td><span class="tb_tit">手續費</span></td>                                
+                </tr>  
+            </table> 
+    <table border="0" cellpadding="0" cellspacing="0" dir="ltr" width="100%" class="tb_single">
+        <tr>
+            <td class="hd1" width="16%">申購手續費</td>
+            <td class="td_money">新台幣 50.00 元</td>
+            <td class="hd1" width="16%">申購手續費基本費率</td>
+            <td width="17%">1.000%</td>
+            <td class="hd1" width="16%">申購手續費優惠費率</td>
+            <td width="17%" >1.000%</td>
+        </tr>
+    </table>
+    <table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="hd1" width="20%">退件原因</td>
+          <td><input type="text" size="50"></td>
+        </tr>
+      </table>
+    <table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+    <td class="hd1" width="20%">安控機制</td>
+    <td width="30%"><select name="select" id="select">
+      <option value="">===請選擇===</option>
+      <option value="">OTP</option>
+      <option value="">FXML</option>
+      <option value="">晶片金融卡</option>
+    </select></td>
+    <td class="hd1" width="20%">密　　碼</td>
+    <td width="30%"><input type="text"></td>
+    </tr>
+    </table>
+     <div class="btnBlock">
+        <a href="javascript:void(0);" class="btn_submit" onClick="jmask('#box',400,120)">確認送審</a>
+        <a href="javascript:void(0);" class="btn_submit" onClick="jmask('#box',400,120)">確認放行</a>
+        <a href="javascript:void(0);" class="btn_submit" onClick="jmask('#box',400,120)">確認審核</a>
+		<a href="javascript:void(0);" class="btn_submit" onClick="jmask('#box',400,120)">退件</a>
+        <a href="TWNFNT02_edit.html" class="btn_submit">取消</a>
+        
+         
+        <div class="help">  
+            <div class="title">注意事項：</div>
+                    <ul class="olist">  
+                        <li>如您按下確定後，本行將自動從您指定帳戶扣取投資金額及手續費。</li>  
+                        <li>請確定約定扣款帳號之存款帳上需有足夠的扣款金額，才能有效投資！</li>  
+                        <li>交易完成後請至「查詢作業」之「投資交易明細查詢」及扣款帳戶查詢並確認本交易已成功無誤！<br>
+                        ( 如為次日交易請於下一營業日查詢「投資交易明細查詢」及扣款資料)</li>  
+                    </ul> 
+        </div>
+        <div id="box" class="mask">
+            <div class="mask_tit">密碼輸入</div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tb_single">
+                <tr>
+                    <td class="hd1">使用者密碼</td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            
+            <div class="btnBlock">
+                <a href="html/TWNFNT/TWNFNT02_trans_info.html" class="btn_submit" onClick="removeMask()" target="mainFrame">確定</a>
+                <a href="#" class="btn_submit" onClick="removeMask()">取消</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

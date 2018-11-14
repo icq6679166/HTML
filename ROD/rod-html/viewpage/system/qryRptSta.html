@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+	
+
+function padLeft(str,lenght){
+	    if(str.length >= lenght)
+	        return str;
+	    else
+	        return padLeft("0" +str,lenght);
+}	
+	
+	
+$(document).ready(function(){
+	var grid = $("#gridview").jqGrid({
+		localFirst: true,height: 450,rownumbers:true,
+        sortname: '項次',sortorder: "desc",
+        colModel: [ 
+		    {header: '燈號',name:'lights',width: 6,align: "center"}, 
+        {header: '執行時間',name:'exeDateTime',width: 25,align: "center"}, 
+        {header: '報表編號',name:'rptId',width: 20,align: "center"},
+        {header: '報表日期',name:'rptDate',width: 20,align: "center"},
+		    {header: '報表序號',name:'rptSeq',width: 10,align: "center"},		
+        {header: '維護科別',name:'mDept',width: 20,align: "center"},
+        {header: '執行狀態',name:'status',width: 15,align: "center"},
+		    {header: '訊息',name:'log',width: 20,align: "center"}
+        ],
+        onSelectRow: function(rowid,iRow,iCol,e)
+		{		
+			var row = grid.getRowData(rowid);
+		
+			if ( row['status']== "失敗") 
+			{
+				$("#restart").button("enable");
+			}
+			else
+			{	
+				$("#restart").button("disable");
+			}		
+        }
+    });
+
+	
+	//查詢
+  var qDialog = $("#qDialog");
+	qDialog.dialog({
+    	height: 230,width: 500,modal: true,
+		open:function(){			
+		    var currentDate = new Date();			
+		    var day = currentDate.getDate();
+		    var month = currentDate.getMonth() + 1;
+		    var year = currentDate.getFullYear();
+						
+			$("#exeStartDate").val(year.toString() + "-" + padLeft(month.toString(),2) + "-" +padLeft(day.toString(),2));
+			$("#exeEndDate").val(year.toString() + "-" + padLeft(month.toString(),2) + "-" +padLeft(day.toString(),2));
+    	},			
+    	buttons:API.createJSON([{
+    		key:i18n.def.query,value:function(){
+			qDialog.dialog('close');
+			$("#gridview").clearGridData().addGridData([
+				 ["","<span class='r-icon r-icon-green'/>", "2014-02-18 15:30:10","ACD05","2014-02-11","2","資訊整合科","成功",""],
+				 ["","<span class='r-icon r-icon-red'/>", "2014-02-18 14:30:10", "ACD05","2014-02-11","1","資訊整合科","失敗","日期格式錯誤"],
+				 ["","<span class='r-icon r-icon-green'/>", "2014-02-18 13:30:10", "ACD11","2014-02-11","3","資訊整合科","成功",""],
+				 ["","<span class='r-icon r-icon-green'/>", "2014-02-18 13:00:10", "BACD11","2014-02-11","2","資訊整合科","成功",""],
+				 ["","<span class='r-icon r-icon-red'/>", "2014-02-18 12:30:10", "ACD12","2014-02-11","1","資訊整合科","失敗","日期格式錯誤"],
+				 ["","<span class='r-icon r-icon-green'/>", "2014-02-18 13:30:10", "ACD13","2014-02-11","3","資訊整合科","成功",""],
+				 ["","<span class='r-icon r-icon-red'/>", "2014-02-18 13:00:10", "ACD14","2014-02-11","2","資訊整合科","失敗","日期格式錯誤"],
+				 ["","<span class='r-icon r-icon-green'/>", "2014-02-18 12:30:10", "ACD14","2014-02-11","1","資訊整合科","成功",""],              
+				 ["","<span class='r-icon r-icon-grey'/>", "2014-02-18 16:30:10", "ACD15","2014-02-11","1","資訊整合科","待執行",""],         
+				 ["","<span class='r-icon r-icon-yellow'/>","2014-02-18 16:30:10","ACD16","2014-02-11","1","資訊整合科","執行中",""]
+	
+			]);
+			}
+    	},{ key:i18n.def.close,value:function(){qDialog.dialog('close');}
+    	}])
+    });
+    
+	$("#qry").click(function(){
+		qDialog.dialog('open');
+    }).trigger('click');  
+	
+	$("#restart").click(function()
+	{
+		
+		var selRowIds = grid.jqGrid ('getGridParam', 'selrow');
+		var row=grid.getRowData(selRowIds);		
+		alert("確定重新執行，報表 : " + row['rptId'] + " ?");
+	});
+	    
+});
+</script>
+
+
+
+
+</head>
+<body>
+
+		<div class="tit">報表記錄查詢</div>
+	<div class="btns">
+		<button id="qry" type="button" class="btn1">查詢</button>
+		<button id="restart" type="button" class="btn1" disabled >重新執行</button>
+    </div>
+
+
+    <div id="qDialog" class="hide" title="查詢">
+    	<form id="qform" onsubmit="return false;">
+	    	<table id="basicSetting" class="row-data">
+								
+				<tr>
+					<th>報表編號</th>
+					<td><input id="rptId" name="rptId" type="text" size="10" maxlength="10"/></td>
+				</tr>
+
+				
+				<tr>
+					<th nowrap >✽執行時間起迄</th>
+					<td>
+						<input id="exeStartDate" name="exeStartDate" type="text" size="10" maxlength="10" class="date" value=""/>至
+						<input id="exeEndDate" name="exeEndDate" type="text" size="10" maxlength="10" class="date"  value=""/>
+					</td>
+				</tr>
+				<tr>
+					<th>狀態</th>
+					<td>
+						<select id="rptStatus" name="rptStatus">
+						<option>ALL 全部</option>	
+						<option>S 成功</option>
+						<option>P 執行中</option>
+						<option>W 待執行</option>
+						<option>F 失敗</option>
+					</td>
+				</tr>				
+							
+			</table>
+		</form>
+    </div>
+	<div id="gridview" />			
+</body>
+</html>

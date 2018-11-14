@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body class="print">
+<div class="header"><img src="../../inc/img/layout/tcb_logo.gif"></div>
+<div class="content">
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="tb_tit">台幣帳號交易明細</td>	
+        </tr>
+        <tr>
+            <td class="td_cont">
+                <span class="col">
+                    <span class="tit">查詢日期：
+                    </span><span id="YMD"></span><span id="HMS"></span>
+                </span>
+                <span class="col">
+                    <span class="tit">列印者:</span> 99999  陳XXXXXX
+                </span>
+            </td>
+        </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi">
+        <tr>
+            <td class="hd1">
+                序號</td>
+            <td class="hd1">
+                交易日期</td>
+            <td class="hd1">
+                摘要<div class="tdline"></div>交易行庫</td>
+            <td class="hd1">
+                提款金額</td>
+            <td class="hd1">
+                存款金額</td>
+            <td class="hd1">
+                餘額</td>
+            <td class="hd1">
+                備註<div class="tdline"></div>
+                支票號碼</td>
+        </tr>
+        <tr>
+            <td class="td_sn">
+                1</td>
+            <td class="td_date">
+                YYYY/MM/DD</td>
+            <td>
+                XXXXXX<br>
+                XXXXXX</td>
+            <td class="td_money"> 999,999,999</td>
+            <td class="td_money">
+                999,999,999</td>
+            <td class="td_money">
+                999,999,999</td>
+            <td>
+                XXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                9999999999</td>
+        </tr>
+        <tr>
+            <td class="td_sn">
+                2</td>
+            <td class="td_date">
+                YYYY/MM/DD</td>
+            <td>
+                XXXXXX<br>
+                XXXXXX</td>
+            <td class="td_money">
+                999,999,999</td>
+            <td class="td_money">
+                999,999,999</td>
+            <td class="td_money"> 999,999,999</td>
+            <td>
+                XXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                9999999999</td>
+        </tr>
+        <tr>
+            <td class="td_sn">
+                3</td>
+            <td class="td_date">
+                YYYY/MM/DD</td>
+            <td>
+                XXXXXX<br>
+                XXXXXX</td>
+            <td class="td_money">
+                999,999,999</td>
+            <td class="td_money">
+                999,999,999</td>
+            <td class="td_money"> 999,999,999</td>
+            <td>&nbsp;
+            </td>
+        </tr>
+    </table>
+      
+<table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="hd1" width="20%">公司戶名</td>
+        <td>1234578 1 甲乙丙有限公司</td>
+    </tr>
+    <tr>
+        <td class="hd1">帳　　號</td>
+        <td>
+            <select name="" id="">
+                <option>---請選擇---</option>
+                <option></option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="hd1"><span class="star">＊</span>查詢期間</td>
+        <td>
+            <input type="radio" name="rad1" checked>From：
+            <input type="text" class="date_txt" value="YYYY/MM/DD">
+            <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a>
+            To
+            <input type="text" class="date_txt" value="YYYY/MM/DD">
+            <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a><br>
+            <input type="radio" name="rad1">一周                
+            <input type="radio" name="rad1">一個月
+        </td>
+    </tr>
+</table>
+            
+    <div class="btnBlock">
+        <a href="javascript:void(0)" class="btn_submit" onClick="window.print();">列印</a>
+        <a href="javascript:void(0)" class="btn_submit" onClick="window.close();">關閉</a>
+    </div>
+</div>   
+</body>
+</html>

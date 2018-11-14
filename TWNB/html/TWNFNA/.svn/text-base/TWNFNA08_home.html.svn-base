@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>異動服務</li>
+    <li>小額投資異動</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">小額投資異動</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td width="20%" class="hd1"><span class="star">＊</span>庫存別</td>
+          <td><label><input type="radio" name="rad2" checked>全部</label>
+          <label><input type="radio" name="rad2">無庫存</label>
+          <label><input type="radio" name="rad2">有庫存</label></td>
+        </tr>
+    </table>
+    <div class="btnBlock">
+        <a href="javascript:void(0)" class="btn_submit">查詢</a>
+    </div>
+    
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td><span class="search_date">查詢日期：1999/02/06 13:40:20</span></td>
+      </tr>
+    </table>
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+        </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi mb0">
+        <tr>
+          <td width="5%" class="hd1">序號</td>
+            <td width="10%" class="hd1">信託帳號<div class="tdline"></div>交易編號</td>
+            <td width="15%" class="hd1">投資標的</td>
+            <td width="5%" class="hd1">投資<br>型態</td>
+            <td width="5%" class="hd1">計價<br>幣別</td>
+            <td width="5%" class="hd1">投資<br>幣別</td>
+            <td width="9%" class="hd1">信託本金</td>
+            <td width="7%" class="hd1">單位數</td>
+            <td width="6%" class="hd1">扣款<br>狀態</td>
+            <td width="9%" class="hd1">每次<br>扣款金額</td>
+            <td width="9%" class="hd1">每月<br>扣款日期</td>
+            <td width="9%" class="hd1">每月<br>扣款金額</td>
+            <td width="6%" class="hd1">功能</td>
+        </tr>
+        <tr>
+            <td class="td_sn">1</td>
+            <td class="ct">9997898880017<br>
+            NB000342268</td>
+            <td>0202 JF東協基金美元</td>
+            <td class="ct">小額</td>
+            <td class="td_currency">USD</td>
+            <td class="td_currency">TWD</td>
+            <td class="td_money">23,000.00</td>
+            <td>10.3450</td>
+            <td class="ct">正常扣款</td>
+            <td class="td_money">4,000</td>
+            <td class="td_date">04 18 28</td>
+            <td class="td_money">12,000.00</td>
+            <td class="td_func"><a href="TWNFNA08_edit.html" class="btn_tb">編輯</a></td>
+        </tr>
+        <tr>
+            <td class="td_sn">
+                2</td>
+            <td class="ct">0560888015545<br>
+            YB000020598</td>
+            <td>0946富坦全球 - 大中華金基金美元</td>
+            <td class="ct">小額</td>
+            <td class="td_currency">USD</td>
+            <td class="td_currency">USD</td>
+            <td class="td_money">1,800.00</td>
+            <td>86.3760</td>
+          <td class="ct">暫停扣款</td>
+            <td class="td_money">300</td>
+            <td class="td_date">04 18 28</td>
+            <td class="td_money">&nbsp;</td>
+            <td class="td_func"><a href="TWNFNA08_edit.html" class="btn_tb">編輯</a></td>
+        </tr>
+    </table>
+    <table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+      </tr>
+    </table>
+    
+<table class="tb_total" width="100%" border="0" cellspacing="0" cellpadding="0">  
+        <tr>  
+            <td width="50%" class="hd1">幣別</td>  
+            <td width="50%" class="hd1">每月扣款金額小計</td>  
+        </tr>  
+        <tr>  
+            <td class="td_currency">TWD</td>  
+            <td class="td_money">12,000.00</td>  
+        </tr>  
+    </table>
+
+     <div class="remarks">
+        <div class="title">備註：</div>
+        <ul class="olist">
+          <li>三合一保險金信託之定期定額基金投資（即交易編號為 IB-xxxxxxxxx）目前僅限於臨櫃辦理。</li>
+              <li>舊信託帳戶（即信託帳戶非為 xxx-888-xxxxxx）因契約條款特殊，目前僅限臨櫃辦理。</li>
+              <li>委託人申請辦理定期定額信託投資或投資設定異動事項時，最遲應於指定委託扣款利日之前一營業申請並經委託人（本人）</li>
+              <li>(1) 「小額」：表示「定期定額」類型之交易。
+                  <br>(2) 「小額＊」：表示「定期不定額」類型之交易。</li>
+        </ul>   
+    </div>
+
+
+    </div>
+    
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

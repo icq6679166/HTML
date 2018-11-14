@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>理財帳戶總覽</li>
+    <li>投資組合設定與查詢</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">投資組合設定與查詢</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+ <dl id="step" class="clearfix">
+        <dt class="current"><span>投資組合名稱</span></dt>
+        <dt><span>編輯</span></dt>
+        <dt><span>結果頁</span></dt>
+  </dl>
+
+
+<div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td width="20%" class="hd1"><span class="star">＊</span>投資組合名稱</td>
+          <td><input type="text" name="textfield"></td>
+        </tr>
+    </table>
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+        </tr>
+    </table>
+    <table class="tb_multi noeffect mb0" width="100%" border="0" cellspacing="0" cellpadding="0"> 
+    <tr>
+      <td width="4%" rowspan="2" class="hd1">全選<br><input type="checkbox" name="chkAll" onClick="checkAllBox(this,'chk1');"></td>  
+        <td width="4%" rowspan="2" class="hd1">序號</td>  
+        <td colspan="2" class="hd1">投資標的</td>  
+        <td width="9%" rowspan="2" class="hd1">投資<br>標的型態</td>  
+        <td width="10%" rowspan="2" class="hd1">淨值日期</td>  
+        <td width="5%" rowspan="2" class="hd1">幣別</td>
+        <td width="12%" rowspan="2" class="hd1">參考價值<br>(贖回價格)
+</td>
+        <td width="8%" rowspan="2" class="hd1">前日<br>漲跌幅(%)</td>
+        <td width="8%" rowspan="2" class="hd1">一個月<br>漲跌幅(%)</td>
+        <td width="8%" rowspan="2" class="hd1">六個月<br>漲跌幅(%)</td>
+        <td width="8%" rowspan="2" class="hd1">一年<br>漲跌幅(%)</td>  
+        </tr>  
+    <tr>  
+        <td width="8%" class="hd1_1">標的代碼</td>  
+        <td width="16%" class="hd1_1">標的名稱</td>  
+    </tr>  
+    <tr>
+      <td class="ct"><input type="checkbox" name="chk1"></td>  
+        <td class="td_sn">1</td>  
+        <td class="ct">2603</td>  
+        <td>霸菱東歐基金美元</td>  
+        <td class="ct">股票型</td>  
+        <td class="td_date">YYYY/MM/DD </td>  
+        <td class="td_currency">USD</td>
+        <td class="td_money">116.3000</td>
+        <td class="td_money"><span class="txt_profit">+2.2507</span></td>
+        <td class="td_money"><span class="txt_profit">+9.3148</span></td>
+        <td class="td_money"><span class="txt_profit">+9.3148</span></td>
+        <td class="td_money"><span class="txt_profit">+15.7559</span></td>
+      </tr>  
+    <tr>
+      <td class="ct"><input type="checkbox" name="chk1"></td> 
+      <td class="td_sn">2</td>
+      <td class="ct">7907</td>
+      <td>第一金亞洲科技基金</td>
+      <td class="ct">股票型</td>
+      <td class="td_date">YYYY/MM/DD </td>
+      <td class="td_currency">TWD</td>
+      <td class="td_money">116.3000</td>
+      <td class="td_money"><span class="txt_lose">-0.5208</span></td>
+      <td class="td_money"><span class="txt_profit">+4.3716</span></td>
+      <td class="td_money"><span class="txt_profit">+4.3716</span></td>
+      <td class="td_money"><span class="txt_profit">+5.7753</span></td>
+      </tr>  
+</table> 
+
+    <table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+      </tr>
+    </table>
+    <div class="btnBlock">
+        <a href="javascript:winopen('TWNFNA03_add_InvestmentTarget_pop.html',700,500)" class="btn_submit">新增標的</a>
+        <a href="TWNFNA03_trans_info.html"  class="btn_submit" onClick="confirm('確認刪除？');">刪除標的</a>
+        <a href="TWNFNA03_edit_3.html" class="btn_submit">儲存組合</a>
+        <a href="TWNFNA03_qry.html" class="btn_submit">回功能首頁</a>
+        <div class="help">
+            <div class="title">說明：</div>
+            <ul class="olist">
+              <li>部分基金公司淨值係採雙向報價（即："申購價格" 、"贖回價格"不同），詳請登入「查詢作業」/「基金淨值查詢」。</li>
+              <li>部分基金無法於網路銀行執行申購或轉換等申請（基金公司已停止新申購或轉入），詳請登入「查詢作業」/「基金資料查詢」。</li>
+            </ul>
+      </div>
+    </div>
+   
+
+
+  </div>
+    
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

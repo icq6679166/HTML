@@ -1,0 +1,21 @@
+html, body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, form, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: normal;
+  list-style: none;
+}
+
+/*清除連結虛線*/
+a {
+  outline: none;
+  /* for Firefox */
+  hlbr: expression(this.onFocus=this.blur());
+  /* for IE */
+  text-decoration: none;
+}
+
+select, input, textarea {
+  font: normal 12px  Arial;
+}

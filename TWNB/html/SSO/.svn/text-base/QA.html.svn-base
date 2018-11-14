@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body class="popup">
+<div class="header"><img src="../../inc/img/layout/tcb_logo.gif" alt="合作金庫-新一代企網銀"></div>
+<div class="content">
+	<table class="tb_announce" width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td class="hd1">目　　錄</td>
+      </tr>
+      <tr>
+        <td class="cont">
+			<span class="tit1"><a name="top1">一、 網路銀行簡介</a></span>
+        		<ul style="margin-left:23px;">
+					<li><a href="#1_1" class="link">網路銀行的好處？</a></li>
+                    <li><a href="#1_2" class="link">網路銀行的功能？</a></li> 
+                    <li><a href="#1_3" class="link">網路銀行服務時間及帳務劃分點？</a></li> 
+                    <li><a href="#1_4" class="link">使用網路銀行之軟、硬體配備為何？</a></li>
+                    <li><a href="#1_5" class="link">有網路銀行的問題如何解決？</a></li> 
+                   	<li><a href="#1_6" class="link">使用網路銀行應注意事項？</a></li>
+                    <li><a href="#1_7" class="link">瀏覽器Microsoft Internet Explorer 如何升級？</a></li>
+                    <li><a href="#1_8" class="link">SSL安全保護機制如何升級至128-位元？</a></li>
+                </ul>
+            <span class="tit1"><a name="top2">二、 如何申請網路銀行</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#2_1" class="link">申請網路銀行須攜帶之文件？</a></li> 
+                    <li><a href="#2_2" class="link">申請對象？ </a></li>
+                    <li><a href="#2_3" class="link">貴行提供幾種網路銀行系統？</a></li> 
+                    <li><a href="#2_4" class="link">申請網路銀行流程？</a></li> 
+                    <li><a href="#2_5" class="link">密碼那麼多該如何區分？</a></li>
+                    <li><a href="#2_6" class="link">個人銀行及企業銀行的差異？</a></li>
+                </ul>
+            <span class="tit1"><a name="top3">三、 登入與簽出</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#3_1" class="link">無法登入網路銀行? (請選擇您的電腦系統：XP Vista)</a></li>  
+                    <li><a href="#3_2" class="link">我是舊網路銀行客戶，如何登入？ </a></li>
+                    <li><a href="#3_3" class="link">點選【個人銀行】或【企業銀行】要登入時出現「無法顯示網頁」之訊息如何處理？</a></li>  
+                    <li><a href="#3_4" class="link">網路銀行之網路連線代號可否變更？ </a></li>
+                    <li><a href="#3_5" class="link">忘記網路連線代號，如何處理？ </a></li>
+                    <li><a href="#3_6" class="link">網路銀行之登入密碼可否變更？ </a></li>
+                    <li><a href="#3_7" class="link">忘記登入密碼或連續錯誤五次遭鎖碼時如何處理？</a></li> 
+                    <li><a href="#3_8" class="link">電腦記憶了我的身分證字號/統一編號及密碼，如何消除？</a></li>
+                    <li><a href="#3_9" class="link">登入後之注意事項？ </a></li>
+                    <li><a href="#3_10" class="link">為何首次登入或於另一台電腦首次使用合庫網路銀行時會出現請下載Active X的提醒頁面?</a></li>  
+                    <li><a href="#3_11" class="link">無法正常下載Active X或NON-SET憑證? </a></li> 
+                    <li><a href="#3_12" class="link">為何要「簽出」？ </a></li>
+                </ul>
+            <span class="tit1"><a name="top4">四、 查詢服務</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#4_1" class="link">各種帳務明細的查詢期間？</a></li>  
+                    <li><a href="#4_2" class="link">交易明細可否下載？</a></li>
+                    <li><a href="#4_3" class="link">查詢交易明細有無筆數限制？</a></li>  
+                    <li><a href="#4_4" class="link">前一營業日查詢與一般存款查詢的差異性？</a></li>
+                </ul>
+            <span class="tit1"><a name="top5">五、 SSL轉帳</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#5_1" class="link">何謂SSL？</a></li>  
+                    <li><a href="#5_2" class="link">申請網路銀行SSL轉帳服務流程？</a></li>  
+                    <li><a href="#5_3" class="link">約定轉出及轉入帳號的限制？ </a></li> 
+                    <li><a href="#5_4" class="link">SSL轉帳交易的限額？ </a></li> 
+                    <li><a href="#5_5" class="link">SSL轉帳密碼如何變更？ </a></li> 
+                    <li><a href="#5_6" class="link">忘記SSL轉帳密碼或錯誤三次遭鎖碼，應如何處理？</a></li>  
+                    <li><a href="#5_7" class="link">貴行提供哪些SSL轉帳交易功能？ </a></li> 
+                    <li><a href="#5_8" class="link">SSL轉帳手續費？ </a></li> 
+                    <li><a href="#5_9" class="link">SSL及NON-SET二種轉帳機制有什麼不同？</a></li>  
+                    <li><a href="#5_10" class="link">網路銀行辦理綜合存款轉定期存款的限制? </a></li> 
+                    <li><a href="#5_11" class="link">SL無法轉帳的原因? </a></li> 
+                </ul>
+            <span class="tit1"><a name="top6">六、 NON-SET轉帳及FXML憑證服務</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#6_1" class="link">何謂NON-SET？</a></li>  
+                    <li><a href="#6_2" class="link">申請網路銀行NON-SET轉帳服務流程？</a></li>  
+                    <li><a href="#6_3" class="link">約定轉出及轉入帳號的限制？ </a></li> 
+                    <li><a href="#6_4" class="link">NON-SET轉帳交易限額？ </a></li> 
+                   	<li><a href="#6_5" class="link">NON-SET轉帳手續費？ </a></li> 
+                    <li><a href="#6_6" class="link">NON-SET轉帳交易功能 </a></li> 
+                    <li><a href="#6_7" class="link">貴行NON-SET轉帳機制的安全設計如何?</a></li>  
+                    <li><a href="#6_8" class="link">何謂私密金鑰? </a></li> 
+                    <li><a href="#6_9" class="link">何謂公開金鑰? </a></li> 
+                    <li><a href="#6_10" class="link">何謂憑證？ </a></li> 
+                    <li><a href="#6_11" class="link">何謂金鑰及憑證儲存媒體(憑證載具)?</a></li>  
+                    <li><a href="#6_12" class="link">如何申請FXML憑證（憑證儲存在硬碟）? </a></li> 
+                    <li><a href="#6_13" class="link">何謂憑證載具（ezSign）? </a></li> 
+                    <li><a href="#6_14" class="link">如何申請FXML憑證（憑證儲存在ezSign）?</a></li>  
+                    <li><a href="#6_15" class="link">若在申請憑證過程中連線中斷，該如何處理? </a></li> 
+                    <li><a href="#6_16" class="link">申請FXML憑證時，對電腦軟硬體有何要求? </a></li> 
+                    <li><a href="#6_17" class="link">如何妥善保管私密金鑰及憑證? </a></li> 
+                    <li><a href="#6_18" class="link">憑證存放於硬碟時，私密金鑰及憑證如何匯出?</a></li>  
+                    <li><a href="#6_19" class="link">憑證存放於硬碟時，私密金鑰及憑證如何匯入? </a></li> 
+                    <li><a href="#6_20" class="link">已申請FXML憑證成功，並且可使用NON-SET轉帳，為何在其他電腦無法使用NON-SET轉帳?</a></li>  
+                    <li><a href="#6_21" class="link">如何註銷FXML憑證? </a></li> 
+                    <li><a href="#6_22" class="link">註銷FXML憑證後，我還能再進行網路銀行轉帳業務嗎?</a></li>  
+                    <li><a href="#6_23" class="link">FXML憑證有效期間多久? </a></li> 
+                    <li><a href="#6_24" class="link">為何需要更新FXML憑證? </a></li> 
+                    <li><a href="#6_25" class="link">如何更新FXML憑證? </a></li> 
+                    <li><a href="#6_26" class="link">FXML憑證更新後，原有電子憑證是否有效?</a></li>  
+                    <li><a href="#6_27" class="link">逾期的FXML憑證如何處理? </a></li> 
+                    <li><a href="#6_28" class="link">重新安裝作業系統以後，原來的FXML憑證是否有效?</a></li>  
+                    <li><a href="#6_29" class="link">瀏覽器升級後，原來的FXML憑證是否有效? </a></li> 
+                    <li><a href="#6_30" class="link">如何變更憑證載具（ezSign）密碼? </a></li> 
+                    <li><a href="#6_31" class="link">更新或下載ezSign憑證時出現「設備空間已滿」訊息，如何刪除ezSign內過期或無效的憑證及金鑰?</a></li>  
+                    <li><a href="#6_32" class="link">申請FXML憑證時一直重複出現同意條款與申請憑證的畫面，而無法正常申請憑證? </a></li> 
+                    <li><a href="#6_33" class="link">轉帳時出現訊息「5204」私密金鑰不存在的原因?如何解決? </a></li> 
+                    <li><a href="#6_34" class="link">NON-SET無法轉帳的原因? </a></li> 
+                </ul>
+            <span class="tit1"><a name="top7">七、 預約轉帳</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#7_1" class="link">可進行多久期限內之預約轉帳交易？</a></li>  
+                    <li><a href="#7_2" class="link">預約轉帳交易之單日轉帳限額，是以轉帳日或預約日計算？</a></li>   
+                    <li><a href="#7_3" class="link">預約轉帳交易能否取消？ </a></li>  
+                    <li><a href="#7_4" class="link">轉帳當日若餘額不足，該如何處理？</a></li>   
+                    <li><a href="#7_5" class="link">可否預約假日為轉帳日？ </a></li>  
+                    <li><a href="#7_6" class="link">註銷網路銀行服務與結清銷戶後，原申請的預約轉帳仍會在轉帳日執行嗎？</a></li>   
+                </ul>
+            <span class="tit1"><a name="top8">八、 申請服務</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#8_1" class="link">線上申請的種類？</a></li>  
+                    <li><a href="#8_2" class="link">線上申請的費用？</a></li>  
+                </ul>
+            <span class="tit1"><a name="top9">九、 掛失服務</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#9_1" class="link">掛失服務的種類？</a></li>  
+                    <li><a href="#9_2" class="link">金融卡掛失服務的費用?</a></li>  
+                </ul>
+            <span class="tit1"><a name="top10">十、繳納停車費業務</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#10_1" class="link">有那些縣市的汽、機車路邊停車費可以申請代繳?</a></li>  
+                    <li><a href="#10_2" class="link">如何申請停車費代繳服務?</a></li>  
+                    <li><a href="#10_3" class="link">申請路邊停車費代繳服務後，何時開始扣繳？</a></li>  
+                </ul>
+            <span class="tit1"><a name="top11">十一、 外匯服務</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#11_1" class="link">申請網路銀行「台幣轉外幣」、「外幣轉台幣」及「外幣間轉帳」交易是否有資格之限制？</a></li>   
+                    <li><a href="#11_2" class="link">如何申請網路銀行「台幣轉外幣」、「外幣轉台幣」及「外幣間轉換」交易？ </a></li>  
+                    <li><a href="#11_3" class="link">網路銀行外匯服務有否收取手續費？ </a></li>  
+                    <li><a href="#11_4" class="link">網路銀行外匯轉帳服務營業時間？ </a></li>  
+                    <li><a href="#11_5" class="link">「台外幣轉帳」是否限為本人帳戶間之交易？</a></li>   
+                    <li><a href="#11_6" class="link">「外幣間轉帳」是否可辦理非約定帳戶之轉帳？ </a></li>  
+                    <li><a href="#11_7" class="link">外匯轉帳交易所依據之匯率為何？ </a></li>  
+                    <li><a href="#11_8" class="link">網路銀行外匯轉帳金額的限制？ </a></li>  
+                    <li><a href="#11_9" class="link">網路銀行外匯業務是否有預約交易的申請？</a></li>     
+                </ul>
+            <span class="tit1"><a name="top12">十二、信用卡服務</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#12_1" class="link">如何申請線上查詢信用卡帳單？</a></li>  
+                    <li><a href="#12_2" class="link">『信用卡專區』提供哪些功能？ </a></li> 
+                    <li><a href="#12_3" class="link">信用卡款繳付方式？ </a></li> 
+                    <li><a href="#12_4" class="link">若對信用卡消費明細有疑義時應如何處理？</a></li>  
+                    <li><a href="#12_5" class="link">信用卡的問題如何解決？ </a></li> 
+                    <li><a href="#12_6" class="link">我已經繳納信用卡款，為何網路上仍看不到已繳款訊息？</a></li>     
+                </ul>
+            <span class="tit1"><a name="top13">十三、授信業務</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#13_1" class="link">如何辦理線上繳納借款本金(息)?</a></li>  
+                    <li><a href="#13_2" class="link">『預約繳納借款本金(息)』可預約期數與預約日期為何？</a></li> 
+                    <li><a href="#13_3" class="link">『預約繳納借款本金(息)』繳款金額如何訂定</a></li>    
+                </ul>
+            <span class="tit1"><a name="top14">十四、資料變更</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#14_1" class="link">變更哪些個人資料不必再跑銀行，線上就可以變更?</a></li>  
+                    <li><a href="#14_2" class="link">如何變更連線代號或各種密碼？</a></li>    
+                </ul>
+            <span class="tit1"><a name="top15">十五、通知服務</a></span>
+        		<ul style="margin-left:23px;">
+                    <li><a href="#15_1" class="link">貴行提供哪些通知服務？</a></li>  
+                    <li><a href="#15_2" class="link">為何收不到通知？</a></li>    
+                </ul>
+            <span class="tit1"><a name="top16">十六、<a href="http://www.tcb-bank.com.tw/tcb/product/trust/Fund_QA.htm" target="_blank">基金Q & A</a></a></span>
+        		<ul style="margin-left:23px;">  
+                </ul>
+        </td>
+      </tr>
+      <tr>
+      	<td class="cont">
+        		<div class="tit1"><a name="1_1">1. 網路銀行的好處？</a></div>
+                <div style="display:inline-block; float:left; font-weight:bold; margin-top:4px;">A:</div>
+        		<ul style="margin-left:23px;">
+					<li>提供您快速且安心的線上服務</li>  
+                    <li>隨時隨地24小時不打烊，不必出門就可查詢下載您的帳務明細，進行資金調度、繳費、繳稅、停車費約定代繳及購買基金</li>
+                    <li>理財DIY，輕輕鬆鬆一指搞定完成記帳、投資與理財</li> 
+                    <li>忘了理財也沒關係，可依您的需要，設定讓合庫利用E-MAIL隨時提醒您定存或繳款到期通知</li>   
+                </ul>
+                <div align="right"><a href="#top1" class="link">回上方</a></div>
+                
+                <div class="tit1"><a name="1_2">2. 網路銀行的功能？ </a></div>
+                <div style="display:inline-block; float:left; font-weight:bold; margin-top:4px;">A:</div>
+        		<ul style="margin-left:23px;">
+                    <ul class="noListStyle2">
+                        本行網路銀行提供個人及企業戶台/外幣帳務查詢、台/外幣轉帳、繳費、繳稅、停車費約定代繳、基金申購、基金贖回、帳務提醒功能與金融資訊查詢等服務。
+                    </ul>   
+                </ul>
+                <div align="right"><a href="#top1" class="link">回上方</a></div>
+                
+                <div class="tit1"><a name="1_3">3. 網路銀行服務時間及帳務劃分點？ </a></div>
+                <div style="display:inline-block; float:left; font-weight:bold; margin-top:4px;">A:</div>
+        		<ul style="margin-left:23px;">
+					<ul class="noListStyle2">
+                    本行網路銀行24小時不打烊，存戶利用網路銀行進行轉帳交易，於交易當日即時登錄於存摺。
+                    </ul>
+                    <li>
+                    台幣轉帳作業：<br> 
+                    (a) 存戶於營業日15：30後轉入合庫帳戶者，該筆款項即時入帳，存入之款項可利用自動化服務設備提取，但無法支付當日應付交換票款、股款交割及臨櫃提領。<br> 
+  					(b) 存戶於營業日15：30後轉入其他銀行帳戶者，入帳日期依轉入銀行規定處理(可能為當日或次營業日)。 
+                    </li>  
+                    <li>
+                    外幣轉帳作業：<br> 
+                    (a) 同幣別外匯存款轉帳，營業時間為星期一至星期五09：00至15：30。<br> 
+  					(b) 台幣與外幣存款轉帳及不同幣別外匯存款轉帳，營業時間為星期一至星期五9：10至15：30。 
+                    </li>  
+                </ul>
+                <div align="right"><a href="#top1" class="link">回上方</a></div>
+        </td>
+      </tr>
+    </table>
+
+    
+    <div class="btnBlock">
+        <a href="javascript:void(0)" class="btn_submit" onClick="window.close();">關閉</a>
+    </div>
+</div>   
+</body>
+</html>

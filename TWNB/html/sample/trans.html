@@ -1,0 +1,216 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<ul id="path" class="clearfix">
+    <li>訊息 / 待辦</li>
+    <li>訊息通知查詢</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">要事提醒</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul>
+            <li>
+                <a href="#" class="btn_temeplate">取用群組</a>：從您的交易群組中選取套用一筆交易資料。
+            </li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+<dl id="step" class="clearfix">
+    <dt><span>資料來源選擇</span></dt>
+    <dt class="current"><span>資料編輯</span></dt>
+    <dt><span>資料確認</span></dt>
+    <dt><span>執行結果</span></dt>                 
+</dl>
+<div class="pageCont">
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr class="page_bg">
+            <td class="page_tit">基金查詢</td>
+            <td class="rt"><a href="javascript:void(0);" class="btn_print" title="友善列印" onClick="winopen('popup.html',600,300)">友善列印</a></td>								
+        </tr>
+    </table>
+    <table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="hd1" width="20%">案件編號</td>
+            <td width="80%">999999999</td>
+        </tr>
+        <tr>
+            <td class="hd1">
+                <span class="star">＊</span>付款日期
+            </td>
+            <td>
+                <input type="text" class="date_txt" value="YYYY/MM/DD">
+                <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a><br>
+
+                <input type="checkbox">不可註銷之預約付款交易
+            </td>            
+        </tr>
+        <tr>
+            <td class="hd2" colspan="2">
+                <span class="tit1">付款人資料</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="hd1"><span class="star">＊</span>付款人統編號/戶名 </td>
+            <td>
+                <select name="sel2">
+                    <option>---請選擇---</option>
+                    <option selected>1234567989 XX股份有限公司</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="hd1"><span class="star">＊</span>付款銀行/帳號 </td>
+            <td>
+                中和分行
+                <select name="sel2">
+                    <option>---請選擇---</option>
+                    <option selected>999999999 XX帳戶</option>
+                </select>
+                <a href="#" class="btn_tb">餘額查詢</a>
+                餘額：99999
+            </td>
+        </tr>
+        <tr>
+            <td class="hd1"><span class="star">＊</span>付款金額 </td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td class="hd2" colspan="2">
+                <span class="tit1">收款人資料</span>
+                <a href="#" class="btn_search">收款人資料查詢</a>
+                <a href="#" class="btn_tb">存入收款人資料</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="hd1">
+                <span class="star">＊</span>收款銀行
+            </td>
+            <td>
+                <a href="javascript:void(0);" class="btn_search" onClick="winopen('#',500,300)">銀行代號</a>
+                <input type="text">
+                華南建成
+            </td>            
+        </tr>
+    </table>
+    <div class="lay1">
+        範本名稱
+        <input type="text">
+        <a href="#" class="btn_submit">存入範本</a>
+    </div>
+    <table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="hd1" width="20%">公司戶名</td>
+            <td>1234578 1 甲乙丙有限公司</td>
+            <td class="hd1" width="20%">幣　　別</td>
+            <td width="30%">新台幣</td>
+        </tr>
+        <tr>
+            <td class="hd1">帳　　號</td>
+            <td>999999999999</td>
+            <td class="hd1">查詢類型</td>
+            <td>僅查詢當日</td>
+        </tr>
+    </table>
+    
+    <table class="tb_multi" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td colspan="8" class="hd3">
+                <a href="javascript:void(0);" class="btn_close">會計憑證資料</a>
+                <a href="javascript:void(0);" class="btn_addList">新增</a>
+            </td>
+        </tr>
+        <tr>
+            <td width="12%" class="hd1">筆次</td>
+            <td width="20%" class="hd1">交易日期時間</td>
+            <td width="27%" class="hd1">支票號碼</td>
+            <td width="41%" class="hd1">更正</td>
+        </tr>
+        <tr>
+            <td class="td_sn">1</td>
+            <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+            <td>9999999</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="td_sn">1</td>
+            <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+            <td>9999999</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="td_sn">1</td>
+            <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+            <td>9999999</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="td_sn">1</td>
+            <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+            <td>9999999</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <div class="btnBlock">
+        <a href="javascript:void(0)" class="btn_submit" onClick="window.close();">關閉</a>
+        <div class="help">
+            <div class="title">說明：</div>
+            <ul class="olist">
+                <li>請於開狀日下午4：00前完成最終放行流程以利本行人員作業。
+                    <ul class="ulist">
+                        <li>成最終放行流</li>
+                        <li>成最終放行流</li>
+                        <li>成最終放行流</li>
+                    </ul>                    
+                </li>
+                <li>成最終放行流</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--div id="popup1" class="winpopup " style="left:200px;top:210px;">
+    <div class="hd">
+        <div class="title">玉山銀行企業網路銀行</div>
+        <a href="javascript:void(0);" class="close" onClick="closePopup('popup1')">&nbsp;</a>
+    </div>
+    <div class="cont"><div class="cont_in">
+        您所填寫的信用狀貿易條件非CIP或CIF，是否需要求保單?
+        <div class="btn_block">
+            <a href="AH02001_20.html" class="btn_submit" onClick="closePopup('popup1')"><span>是，返回修改</span></a>
+            <a href="AH02001_30.html" class="btn_submit" onClick="closePopup('popup1')"><span>否，確定引入</span></a>
+        </div>
+    </div></div>
+</div-->
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body class="popup">
+<div class="header"><img src="../../inc/img/layout/tcb_logo.gif"></div>
+<div class="content">
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="popup_tit">要事查詢</td>
+            <td class="rt"><a href="javascript:void(0);" class="btn_print" title="友善列印" onClick="winopen('popup.html',600,300)">友善列印</a></td>								
+        </tr>
+    </table>
+    <table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="hd1" width="20%">公司戶名</td>
+            <td>1234578 1 甲乙丙有限公司</td>
+            <td class="hd1">幣　　別</td>
+            <td>新台幣</td>
+        </tr>
+        <tr>
+            <td class="hd1">帳　　號</td>
+            <td>999999999999</td>
+            <td class="hd1">查詢類型</td>
+            <td>僅查詢當日</td>
+        </tr>
+    </table>
+    <table class="tb_multi" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="8%" class="hd1">筆次</td>
+            <td width="19%" class="hd1">交易日期時間</td>
+            <td width="24%" class="hd1">支票號碼</td>
+            <td width="49%" class="hd1">更正</td>
+        </tr>
+        <tr>
+            <td class="td_sn">1</td>
+            <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+            <td>9999999</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="td_sn">1</td>
+            <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+            <td>9999999</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="td_sn">1</td>
+            <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+            <td>9999999</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="td_sn">1</td>
+            <td class="td_date">YYYY/MM/DD HH:MM:SS</td>
+            <td>9999999</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <div class="btnBlock">
+        <a href="javascript:void(0)" class="btn_submit" onClick="window.close();">關閉</a>
+    </div>
+</div>   
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>各項查詢</li>
+    <li>ETF/債券交易明細查詢</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">ETF/債券交易明細查詢</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為
+              
+            必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td width="20%" class="hd1"><span class="star">＊</span>商品別</td>
+          <td><select name="select5">
+            <option selected>全部</option>
+            <option>EFT</option>
+            <option>債券</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td class="hd1"><span class="star">＊</span>庫存別</td>
+          <td><label><input type="radio" name="rad2" checked>全部</label>
+          <label><input type="radio" name="rad2">無庫存</label>
+          <label><input type="radio" name="rad2">有庫存</label></td>
+        </tr>
+        <tr>
+          <td class="hd1"><span class="star">＊</span>查詢日期區間</td>
+          <td><label>
+            <input type="radio" name="rad3" checked>
+            最近一週明細</label>
+            <br>
+            <label>
+              <input type="radio" name="rad3">
+              最近一個月明細</label>
+            <br>
+            <label>
+              <input type="radio" name="rad3">
+              From：
+              <input type="text" class="date_txt" value="YYYY/MM/DD">
+              <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a> To
+              <input type="text" class="date_txt" value="YYYY/MM/DD">
+              <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a></label></td>
+        </tr>
+    </table>
+    
+    <div class="btnBlock">
+    	<a href="TWNFNQ10_qry_result.html" class="btn_submit">查詢</a>
+        <a href="javascript:void(0)" class="btn_submit">清除</a>
+    </div>
+    
+    <div class="searchline"></div>
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr><td class="search_date">查詢日期：<span id="YMD"></span><span id="HMS"></span></td>
+            <td class="rt">&nbsp;</td>								
+        </tr>
+    </table>
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+        </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi mb0">
+      <tr>
+        <td class="hd1" width="5%"> 序號</td>
+        <td width="13%" class="hd1">信託帳號
+          <div class="tdline"></div>交易編號</td>
+        <td class="hd1" width="27%">商品代號/名稱</td>
+        <td class="hd1" width="8%">投資型態</td>
+        <td class="hd1" width="6%">投資<br>
+        幣別</td>
+        <td class="hd1" width="11%">信託本金</td>
+        <td class="hd1" width="11%">單位數/股數</td>
+        <td class="hd1" width="11%">最後交易日</td>
+        <td class="hd1" width="8%">功能</td>
+      </tr>
+      <tr>
+        <td class="td_sn"> 1</td>
+        <td class="ct">1047888000046<br>CA000249061</td>
+        <td>XXXXX公司<br>
+N112贏家首選－年年有利3</td>
+        <td class="ct">單筆申購</td>
+        <td class="ct">NTD</td>
+        <td class="td_money">10,000.00</td>
+        <td class="td_money">833.40000</td>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td class="td_func">
+        <a href="javascript:void(0);" class="btn_tb" title="明細" onClick="winopen('TWNFNQ11_detail_pop_bond.html',770,500)">明細</a></td>
+      </tr>
+      <tr>
+        <td class="td_sn"> 2</td>
+        <td class="ct">1047888000046<br>CA000249061</td>
+        <td>XXXXXX證券<br>
+S843贏家首選55－年年有利</td>
+        <td class="ct">單筆申購</td>
+        <td class="ct">NTD</td>
+        <td class="td_money">10,000.00</td>
+        <td class="td_money">833.40000</td>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td class="td_func"><a href="javascript:void(0);" class="btn_tb" title="明細" onClick="winopen('TWNFNQ11_detail_pop_ETF.html',770,500)">明細</a></td>
+      </tr>
+      <tr>
+        <td class="td_sn"> 3</td>
+        <td class="ct">1047888000046<br>CA000249061</td>
+        <td>XXXXXXXX投顧<br>
+S849贏家首選61－年年有利</td>
+        <td class="ct">單筆申購</td>
+        <td class="ct">NTD</td>
+        <td class="td_money">10,000.00</td>
+        <td class="td_money">833.40000</td>
+        <td class="td_date">YYYY/MM/DD</td>
+        <td class="td_func"><a href="javascript:void(0);" class="btn_tb" title="明細" onClick="winopen('TWNFNQ11_detail_pop_ETF.html',770,500)">明細</a></td>
+      </tr>
+    </table>
+    <table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+      </tr>
+    </table>
+    <div class="remarks">
+        <div class="title">備註：</div>
+        <ul class="olist">
+          <li>本功能提供資料為 5 年內（自今日起）投資交易明細查詢。</li>
+          <li>如您所需資料不在本功能提供期間內或有其他疑問，請您臨櫃洽詢。</li>
+          <li>以上損益/庫存/交易資料仍以本行帳載為主，本頁僅供參考，不得作為相關往來之憑證用途。</li>
+        </ul>   
+    </div>
+    
+    
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+.padi {
+	border: 1px dashed #FFFFFF;
+}
+.link_news {
+	font-family: "新細明體";
+	font-size: 11px;
+	line-height: 15px;
+	color: #333333;
+	text-decoration: none;
+}
+.link_news:hover {
+	font-family: "新細明體";
+	font-size: 11px;
+	line-height: 15px;
+	color: #29537C;
+	text-decoration: none;
+}
+.link_event {
+	font-family: "新細明體";
+	font-size: 11px;
+	line-height: 15px;
+	color: #666666;
+	text-decoration: none;
+}
+.link_event:hover {
+	font-family: "新細明體";
+	font-size: 11px;
+	line-height: 15px;
+	color: #988B34;
+	text-decoration: none;
+}
+.copyright {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+}
+.A_title {
+	font-family: "新細明體";
+	font-size: 12px;
+	color: #224551;
+	text-decoration: none;
+}
+.A_title:hover {
+	font-family: "新細明體";
+	font-size: 12px;
+	color: #663333;
+	text-decoration: none;
+}
+.in_words {
+	font-family: "新細明體";
+	font-size: 12px;
+	line-height: 18px;
+	color: #333333;
+}
+.contact {
+	font-family: "細明體";
+	font-size: 12px;
+	line-height: 20px;
+	color: #663333;
+	text-decoration: none;
+}
+A_link {
+	font-family: "新細明體";
+	font-size: 12px;
+	color: #003366;
+	text-decoration: underline;
+}
+
+A_link:hover {
+	font-family: "新細明體";
+	font-size: 12px;
+	color: #663333;
+	text-decoration: underline;
+}

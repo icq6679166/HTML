@@ -1,0 +1,316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>各項查詢</li>
+    <li>交易處理狀態查詢</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">交易處理狀態查詢</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為
+              
+            必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td width="20%" class="hd1"><span class="star">＊</span>交易日期</td>
+          <td>From
+              <input type="text" class="date_txt" value="YYYY/MM/DD">
+              <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a> To
+              <input type="text" class="date_txt" value="YYYY/MM/DD">
+              <a href="javascript:void(0);" class="calendar" onClick="datePicker(this)">&nbsp;</a></td>
+        </tr>
+        <tr>
+          <td class="hd1"><span class="star">＊</span>交易類型</td>
+          <td><select name="sel1">
+                    <option selected>===請選擇===</option>
+                    <option>變更現金收益存入帳號</option>
+                    <option>小額投資異動</option>
+                    <option>委託人資料變更</option>
+                    <option>信託印鑑印鑑卡掛失</option>
+                    <option>基金單筆申購</option>
+                    <option>小額申購</option>
+                    <option>贖回</option>
+                    <option>轉換</option>
+                    <option>ETF委託申購</option>
+                    <option>ETF委託申購</option>
+                    <option>取消預約(預約作業查詢/取消預約)</option>
+                </select></td>
+        </tr>
+    </table>
+    
+    <div class="btnBlock">
+    	<a href="TWNFNQ12_qry_result.html" class="btn_submit">查詢</a>
+        <a href="javascript:void(0)" class="btn_submit">清除</a>
+    </div>
+    <div class="searchline"></div>
+     <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr><td class="search_date">查詢日期：<span id="YMD"></span><span id="HMS"></span></td>							
+        </tr>
+  </table>
+  <table class="tb_total" width="100%" border="0" cellspacing="0" cellpadding="0">  
+    <tr>  
+        <td width="30%" class="hd1">狀態</td>  
+        <td width="35%" class="hd1">總筆數</td>  
+        <td width="35%" class="hd1">總金額</td>  
+    </tr>  
+    <tr>  
+        <td class="ct">編輯中</td>  
+        <td class="td_sn">999,999,9999</td>  
+        <td class="td_money">999,999,9999</td>  
+    </tr>  
+    <tr>
+      <td class="ct">待審核</td>
+      <td class="td_sn">999,999,9999</td>
+      <td class="td_money">999,999,9999</td>  
+    </tr>  
+    <tr>
+      <td class="ct">交易完成</td>
+      <td class="td_sn">999,999,9999</td>
+      <td class="td_money">999,999,9999</td>  
+    </tr>  
+</table>  
+<table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+
+                </select>
+                筆 
+            </div>
+		</td>
+        </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi mb0">
+        <tr>
+            <td class="hd1" width="5%"> 序號</td>
+            <td class="hd1" width="14%">交易日期</td>
+            <td class="hd1">交易名稱</td>
+            <td width="13%" class="hd1">申請人</td>
+            <td width="20%" class="hd1">作業內容</td>
+            <td width="10%" class="hd1">結果</td>
+            <td width="15%" class="hd1"> 功能</td>
+        </tr>
+        <tr>
+            <td class="td_sn">
+                1</td>
+            <td class="td_date">YYYYMMDDXXX9999</td>
+            <td>變更現金收益存入帳號</td>
+            <td class="ct">UserName1</td>
+            <td>XXXXXXXXXXXXXXXXXXXXX</td>
+            <td class="ct">待審核</td>
+            <td class="td_func">
+            <a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNA07_pop.html',750,320)">檢視</a> 
+            <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+            <td class="td_sn">
+                2</td>
+            <td class="td_date">YYYYMMDDXXX9999</td>
+            <td>小額投資異動</td>
+            <td class="ct">UserName1</td>
+            <td>XXXXXXXXXXXXXXXXXXXXX</td>
+            <td class="ct">交易成功</td>
+            <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNA08_pop.html',750,450)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">3</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>基金單筆申購</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">待審核</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNT01_pop.html',750,570)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">4</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>小額申購</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">交易成功</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNT02_pop.html',750,570)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">5</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>贖回</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">待審核</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNT03_pop.html',750,650)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">6</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>轉換</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">交易成功</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNT04_pop.html',750,570)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">7</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>ETF委託申購</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">待審核</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNT06_pop.html',750,450)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">8</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>ETF委託贖回</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">交易成功</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNT07_pop.html',750,470)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">9</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>取消預約贖回</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">待審核</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNT08_03_pop.html',750,590)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">10</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>取消預約單筆申購</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">交易成功</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNT08_01_pop.html',750,600)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">11</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>取消預約轉換</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">待審核</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNT08_04_pop.html',750,480)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">12</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>信託印鑑印鑑卡掛失</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">交易成功</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNA11_pop.html',750,260)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">13</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>變更通訊資料</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">待審核</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNA09_add_pop.html',750,340)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+        <tr>
+          <td class="td_sn">14</td>
+          <td class="td_date">YYYYMMDDXXX9999</td>
+          <td>變更對帳單寄發方式</td>
+          <td class="ct">UserName1</td>
+          <td>XXXXXXXXXXXXXXXXXXXXX</td>
+          <td class="ct">交易成功</td>
+          <td class="td_func"><a href="javascript:void(0)" class="btn_tb" onClick="winopen('TWNFNQ12_detail_TWNFNA09_bill_pop.html',750,330)">檢視</a> <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,340)">審核歷程</a></td>
+        </tr>
+    </table>
+    <table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+      </tr>
+  </table>
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

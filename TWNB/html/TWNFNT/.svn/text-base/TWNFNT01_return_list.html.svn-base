@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+        <li>投資理財</li>
+        <li>基金交易</li>
+        <li>基金單筆申購</li>
+</ul>
+<div class="hbox">
+    <div class="fl"><span class="trans_tit">基金單筆申購</span></div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="pageCont">
+    <table class="titleBlock" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="tb_tit">退件清單</td>				
+        </tr>
+    </table>
+    <table class="tb_pages mb0" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+        <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+    </tr>
+    </table>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_multi mb0">
+        <tr>
+            <td width="5%" class="hd1">
+                全選
+            <br>                <input type="checkbox" name="chkAll" onClick="checkAllBox(this,'chk1');"></td>
+            <td width="5%" class="hd1">
+                序號</td>
+            <td width="15%" class="hd1">
+                退件原因</td>
+            <td class="hd1" width="15%">
+            案件編號</td>
+        <td width="20%" class="hd1">
+            送審時間 <div class="tdline"></div>
+            經辦</td>
+            <td class="hd1">
+                作業內容</td>
+            <td width="15%" class="hd1">
+                功能</td>
+        </tr>
+        <tr>
+            <td class="td_chk"><input type="checkbox" name="chk1"></td>
+            <td class="td_sn">1</td>
+            <td>xxxxxxxx</td>
+            <td class="ct">1000310000008</td>
+			<td class="ct">
+                YYYY/MM/DD HH:MM:SS<br>
+                林明明</td>
+            <td>交易名稱：單筆申購<br>
+投資標的名稱：6901 日盛上選基金<br>
+申購日期：2011/11/15<br>
+信託帳號：0560888015545<br>
+交易金額：50,000
+</td>
+            <td>
+            <a href="TWNFNT01_edit.html" class="btn_tb">編輯</a>
+            <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,300)">審核歷程</a></td>
+        </tr>
+        <tr>
+            <td class="td_chk"><input type="checkbox" name="chk1"> </td>
+            <td class="td_sn">
+                2</td>
+            <td>xxxxxxxx</td>
+            <td class="ct">1000310000008</td>
+			<td class="ct">
+                YYYY/MM/DD HH:MM:SS<br>
+                林明明</td>
+            <td>交易名稱：單筆申購<br>
+投資標的名稱：6901 日盛上選基金<br>
+申購日期：2011/11/15<br>
+信託帳號：0560888015545<br>
+交易金額：50,000</td>
+            <td>
+            <a href="TWNFNT01_edit.html" class="btn_tb">編輯</a>
+            <a href="javascript:void(0)" class="btn_tb" onClick="winopen('../Common/cm_audit_pcs.html',700,300)">審核歷程</a></td>
+        </tr>
+    </table>
+    
+    <table class="tb_pages" width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+        <td>
+        	<div class="fr mt3"> 
+            	<a href="#" class="btn_tbpages"><span>前往</span></a> 
+            </div>
+        	<div class="fr"> 
+            	移至 <input type="text" class="tb_pages_txt" maxlength="3">  
+            </div>           
+            <div class="pageNav"> 
+                <a href="#" class="btn_first"></a>
+                <a href="#" class="btn_pre"></a>
+                <span class="pags_detail">第 1 / 7 頁</span>
+                <a href="#" class="btn_next"></a>
+                <a href="#" class="btn_end"></a>
+            </div>
+        	<div class="fr"> 
+            	每頁
+                <select name="sel1">
+                    <option>50</option>
+                </select>
+                筆 
+            </div>
+		</td>
+    </tr>
+    </table>
+    <div class="btnBlock">
+    	<a href="TWNFNT01_todo_conf_multi.html" class="btn_submit">送審</a>
+        <a href="javascript:confirmx('確定刪除所勾選的交易資料？')" class="btn_submit">刪除</a>
+        <a href="../TWNCUQ/TWNCUQ_todo_list_ib.html" class="btn_submit">回待辦事項</a>
+    </div>
+</div>
+
+</div>
+</body>
+</html>

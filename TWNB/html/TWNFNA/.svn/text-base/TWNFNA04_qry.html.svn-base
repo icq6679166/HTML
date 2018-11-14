@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>投資理財</li>
+    <li>理財帳戶總覽</li>
+    <li>投資損益報告</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">投資損益報告</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+    <div class="msgHd"><div class="msgHd_wp"></div></div>
+    <div class="msg_cont">
+        <ul><li class="highLight">投資屬性：穩健型</li>
+            <li class="highLight">標有<span class="star">＊</span>的欄位為必要資料，請正確填寫。</li>
+        </ul>
+    </div>
+</div>
+<div class="pageCont">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td class="hd1"><span class="star">＊</span>帳　號</td>
+          <td><select>
+                        <option >全部</option>
+                    </select>
+          </td>
+        </tr>
+        <tr>
+          <td width="20%" class="hd1"><span class="star">＊</span>交易別</td>
+          <td><select name="select">
+            <option selected>基金交易</option>
+            <option >債券交易</option>
+            <option >ETF 交易</option>
+            <option >集管交</option>
+          </select></td>
+        </tr>
+    </table>
+    <div class="btnBlock">
+        <a href="javascript:void(0)" class="btn_submit">查詢</a>
+        <a href="javascript:void(0)" class="btn_submit">清除</a>
+        
+        <div class="demoLink">
+            <a href="TWNFNA04_qry_result_fund.html">基金結果頁</a>
+            <a href="TWNFNA04_qry_result_bond.html">債券結果頁</a>
+            <a href="TWNFNA04_qry_result_ETF.html">ETF結果頁</a>
+            <a href="TWNFNA04_qry_result_CollectiveTrustFund.html">集管結果頁</a>
+        </div>
+        
+        <div class="help">
+            <div class="title">說明：</div>
+            <ul class="olist">
+              <li>請注意，本行特定金錢信託投資國內外共同基金均經金管會核准，惟並不表示該基金絕無風險，本行不負責基金之盈虧，亦不保證最低之收益，投資人應慎選投資標的，申購前應詳閱相關公開說明書及投資人須知等資料。</li>
+              <li>欄位說明：<ul class="ulist">  
+                    <li>『參考現值』 ：參考現值＝庫存單位數 *參考淨值 *參考匯率。 （註： 請注意，參考現值是以基金公司提供之淨值估算，並未將實際買賣價差及相關費用估算在內，亦不代表投資人實際贖回可得知金額）</li>  
+                    <li>『參考損益』 ：參考損益＝ 參考現值 – 庫存金額 + 累計現金配息（註： 累計現金配息已於配息日存入投資人指定帳戶）</li>  
+                    <li>『參考報酬率』 ：參考報酬率＝ 參考損益 / 庫存金額（註： 庫存金額不含申購、 贖回、 轉換在途未分配金額）</li>  
+                    <li>『參考單位投資成本』 ： 參考單位投資成本＝ 庫存金額/庫存單位數/參考匯率（註： 本資料僅供參考，並非為原始申購交易之淨值）</li>  
+                </ul> 
+				</li>
+                <li>依主管機關規定，結構型商品之參考淨值係揭露該商品之市價(Mark-To-MarketPrice)即「參考無回價格」。 「參考現值」係以該商品「參考贖回價格」計算後之參考贖回金額。</li>
+                <li>有關結構型商品及固定收益商品之最新商品報價（含到期日、 到期保本率）等資訊。請點選參閱下列資料
+                <ul class="ulist">  
+                    <li>國外結構型債券資訊揭露</li> 
+                    <li>國外固定收益債券資訊揭露 </li>  
+                </ul> 
+                </li>
+                <li>名詞解釋
+                <ul class="ulist">  
+                    <li>國內台幣：新台幣信託資金投資國內投資標的</li> 
+                    <li>國外台幣：新台幣信託資金投資國外投資標的</li>  
+                    <li>國外外幣：外幣信託資金投資國外投資標的</li> 
+                    <li>小計 ：係指庫存金額、參考淨值、參考總損益、在途金額等欄位依不同幣別之加總。</li>  
+                    <li>在途金額 ：係指客戶申購或轉換（轉入）交易已完成，但本行尚未處理（申購或轉換分配）之信託本金。<br>
+                        ※申購分配：自申購申請後約 5 個營業日內。<br>
+                        ※轉換分配：自轉換申請後約 7 個營業日內。</li>  
+                </ul> 
+                </li>
+            </ul>
+      </div>
+        </div>
+    
+    </div>
+    
+    
+</div>
+
+
+
+
+</div>
+</body>
+</html>

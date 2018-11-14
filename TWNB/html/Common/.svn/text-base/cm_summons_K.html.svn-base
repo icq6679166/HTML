@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- InstanceBegin template="/Templates/print.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>合作金庫-新一代企網銀</title>
+<style type="text/css">
+ol li{
+	margin: 0 0 0 -20px;
+	list-style-type:decimal;	
+}
+</style>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css"></style>
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body class="print">
+<div class="header"><img src="../../inc/img/layout/tcb_logo_print.gif"></div>
+<!-- InstanceBeginEditable name="content" -->
+<div class="content"><!-- #BeginLibraryItem "/Library/cm_summons_K.lbi" --><table width="100%">
+        <tr>
+            <td width="90%"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr align="center">
+                    <td width="25%" style="font-size:14px" class="lt"><em><strong>電子信用狀專用傳票</strong></em></td>
+                    <td height="50" class="contant-l"><span style="text-decoration:underline;"><strong>合作金庫商業銀行─解付傳票</strong></span></td>
+                    <td width="25%"><div style="border:#000 thin solid; font-size:14px; width:65%"><br>
+                        <br>
+                        <br>
+                        <em><strong>註記</strong></em></div></td>
+                </tr>
+                <tr>
+                    <td colspan="3"><div>&nbsp;</div></td>
+                </tr>
+                <tr>
+                    <td><table>
+                        <tr>
+                            <td class="vtop"><strong>借/貸</strong>中文(2)<strong>：</strong></td>
+                            <td>聯行往來<br>(196930103)</td>
+                        </tr>
+                    </table></td>
+                    <td align="center" style="font-weight:bold; height:30px;"><table width="50%">
+                        <tr>
+                            <td>中華民國</td>
+                            <td width="20%" class="rt">年</td>
+                            <td width="20%" class="rt">月</td>
+                            <td width="20%" class="rt">日</td>
+                        </tr>
+                    </table></td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+                
+                <table width="100%" border="0" cellspacing="0" cellpadding="4" class="tableborder" style="border:1px #000 solid; border-left:hidden; border-right:hidden;">
+                    <tr class="cell-white">
+                        <td width="25%" class="ct" style="padding:15px 0 15px 0;"><strong>匯出單位</strong></td>
+                        <td width="25%" class="ct"><strong>解付單位</strong></td>
+                        <td width="25%" class="ct"><strong>摘要</strong></td>
+                        <td width="25%" class="ct"><strong>金額(新台幣元)</strong></td>
+                    </tr>
+                    <tr class="cell-white">
+                        <td>中文(4)<br>
+                            開狀單位<br>
+                            通知單位<br>
+                            &nbsp;</td>
+                        <td>中文(4)<br>
+                            通知單位<br>
+                            開狀單位<br>
+                            &nbsp;</td>
+                        <td>中文/數字(20)<br>
+                            信用狀號碼<br>
+                            戶名<br>
+                            分錄摘要</td>
+                        <td>數字(20)<br>
+                            &nbsp;<br>
+                            &nbsp;<br>
+                            &nbsp;</td>
+                    </tr>
+                    <tr class="cell-white" >
+                        <td colspan="4"><div>&nbsp;</div></td>
+                    </tr>
+                </table>
+                
+                <table width="100%" border="0" cellpadding="2" cellspacing="0" class="table-100" style="border-bottom:thin #000 solid">
+                    <tr>
+                        <td colspan="2"><div>&nbsp;</div></td>
+                    </tr>
+                    <tr class="contant">
+                        <td width="50%"><strong>分行別：</strong>數字(4)分行代號</td>
+                        <td width="50%"><strong>產製編號：</strong>數字(8)</td>
+                    </tr>
+                    <tr class="contant">
+                        <td><strong>交易型態：</strong>中文(10)中心記帳(國內電子信用狀)</td>
+                        <td><strong>交易時間：</strong>時間 (7)</td>
+                    </tr>
+                    <tr class="contant">
+                        <td width="50%"><strong>交易序號：</strong>數字(6)</td>
+                        <td width="50%"><strong>對方科目：</strong><span style="text-decoration:underline;">聯行往來</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                </table>
+                
+            <div style="margin:10px 0 0 0;">
+            	註記之註解：</div>
+                    <ol>
+                        <li>正常交易者"空白"</li>
+                        <li>沖正交易者"沖正"</li>
+                        <li>補正交易者"補正"</li>
+                        <li>補印交易者"補印"</li>
+                        <li>人工放行者"強制"</li>
+                    </ol>
+            </td>
+            <td width="10%" align="center"><table width="80%" cellspacing="0" cellpadding="3" style="background-color:#000;">
+                <tr class="cell-white">
+                    <td class="ct">製票<br>
+                        <br>
+                        <br></td>
+                </tr>
+                <tr class="cell-white">
+                    <td class="ct">記帳<br>
+                        <br>
+                        <span style="background-color:#CCC">中心記帳</span></td>
+                </tr>
+                <tr class="cell-white">
+                    <td class="ct">會計<br>
+                        <br>
+                        <br></td>
+                </tr>
+                <tr class="cell-white">
+                    <td class="ct">核章<br>
+                        <br>
+                        <br></td>
+                </tr>
+            </table></td>
+        </tr>
+    </table><!-- #EndLibraryItem --><div class="btnBlock"> 
+    	<a href="javascript:void(0)" class="btn_submit" onClick="window.close();">關閉</a>
+        <a href="javascript:void(0)" class="btn_submit" onClick="window.print();">列印</a>
+    </div>
+</div>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd -->
+</html>

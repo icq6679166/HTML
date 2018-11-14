@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript">
+$(document).ready(function(){
+	var grid = $("#gridview").jqGrid({
+        localFirst:true,multiselect : true,sortname: 'parmId',height: 450,
+        colModel: [
+		{header: '參數代號',name: 'parmId', width: 20},
+		{header: '參數值',name: 'parmValue',width: 30},
+		{header: '加密否',name: 'isEncrypt',width: 10},
+		{header: '說明',name: 'parmDesc',width: 30},
+		{header: i18n.def.lastModBy,name: 'updater',width: 15,align: "center"},
+		{header: i18n.def.lastModTm,name: 'updateTime',width: 15,align: "center"}
+		],
+        ondblClickRow: function(id){
+			/*
+            var ret = grid.getSelRowDatas();
+            eDialog.dialog('open').find("#mform").injectData(ret);
+			
+			
+			if (grid.getCell(id, 'parmValue') == "*******")
+			{
+				$('input[name=encryptYesNO]')[0].checked = true; //是             
+			}
+			else 
+			{
+				$('input[name=encryptYesNO]')[1].checked = true; //否
+			}
+			*/			
+        }
+    });
+
+		
+	var eDialog = $("#editDialog") , qDialog = $("#qryDailog");
+	eDialog.dialog({
+    	height: 280,width: 650,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			eDialog.dialog('close');
+    		}
+    	}])
+    });
+    qDialog.dialog({
+    	height: 180,width: 350,modal: true,
+    	buttons:API.createJSON([{
+    		key:i18n.def.sure,
+    		value:function(){
+                qDialog.dialog('close');
+				$("#gridview").clearGridData().addGridData([
+					['','Potal','http://rcmssrv/index.jsp','N','入口網站','王大明','2012-12-31'],
+					['','PageNum','20','N','Viewer下載頁數','王大明','2012-12-31'],
+					['','ResultCnt','20','N','查詢結果一頁筆數','王大明','2012-12-31'],
+					['','Timeout','60','N','Timeout時間(秒)','王大明','2013-02-18']
+
+				]);
+    		}
+    	},{
+    		key:i18n.def.close,
+    		value:function(){
+    			qDialog.dialog('close');
+    		}
+    	}])
+    });
+	$(".btns").find("#qry").click(function(){//查詢
+		qDialog.dialog('open');
+	}).trigger('click').end().find("#add").click(function(){//新增,修改
+		eDialog.dialog('open');
+	})
+	
+		//修改
+	$("#edit").click(function(){
+		var rowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		
+		if(rowIds.length>1)
+		{
+			alert("只能選一筆資料!");
+		}
+		else if(rowIds.length == 0)
+		{
+			alert("請選一筆資料!");
+		}
+		else if(rowIds.length == 1) 
+		{
+			var rowData = grid.jqGrid ('getRowData', rowIds);
+			eDialog.dialog('open').find("#mform").injectData(rowData);
+		}
+	});	
+	
+		//刪除多筆
+	$("#delete").click(function(){
+		var selRowIds = grid.jqGrid ('getGridParam', 'selarrrow');
+		if(selRowIds.length==0)
+		{
+			alert("請至少選一筆資料");	
+		}
+		else
+		{
+			var row;
+			var i,msg="";
+			
+			for(i=0; i<selRowIds.length; i++ )
+			{	
+				row=grid.getRowData(selRowIds[i])
+				msg = msg + row['parmId'] + "-[" + row['parmValue'] + "]\n" ;
+			}			
+			alert("確定要刪除?  \n" + msg);	
+		}		
+    });			
+	
+	
+});
+</script>
+</head>
+<body>
+	<div class="tit">系統參數維護</div>
+	<div>
+		<div class="btns">
+			<button id="qry" type="button" class="btn1">查詢</button>			
+			<button id="add" type="button" class="btn1">新增</button>
+			<button id="edit" type="button" class="btn1">修改</button>
+			<button id="delete" type="button" class="btn1">刪除</button>
+			
+			<button id="export" type="button" class="btn1">匯出</button>
+		</div>
+		<div id="gridview"></div>
+		<div id="qryDailog" class="hide" title="查詢">
+			<form id="qform" onsubmit="return false;">
+				<table class="row-data">
+					<tr>
+						<th nowrap="nowrap">參數代號</th>
+						<td>
+							<input type="text" id="parmId" name="parmId" maxlength="30" />
+						</td>
+					</tr>
+					<tr>
+						<th nowrap="nowrap">說明</th>
+						<td>
+							<input type="text" id="parmDesc" name="parmDesc" maxlength="40"  />
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div id="editDialog" class="hide" title="編輯" >
+			<form id="mform" onsubmit="return false;">
+			<table class="row-data">
+				<tr>
+					<th>✽參數代號</th>
+					<td><input type="text" id=parmId name="parmId" maxlength="30"  /></td>
+				</tr>
+				<tr>
+					<th>✽參數值</th>
+					<td><input type="text" id="parmValue" name="parmValue" size="70" maxlength="300"  /></td>
+				</tr>
+				<tr>
+					<th>✽加密</th>
+					<td><input type="radio" id="encryptYesNo" name="encryptYesNO"  value="Y"  />是
+						<input type="radio" id="encryptYesNo" name="encryptYesNO"  value="N" checked="checked" />否 
+					</td>
+				</tr>				
+				<tr>
+					<th>✽說明</th>
+					<td><textarea id="parmDesc" cols="70" rows="2" maxlength="300" name="parmDesc" ></textarea></td>
+				</tr>				
+			</table>
+		</form>
+		</div>
+	</div>
+</body>
+</html>

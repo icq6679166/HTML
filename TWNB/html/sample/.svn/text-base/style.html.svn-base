@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" href="inc/sample.css">
+<script type="text/javascript" src="inc/jquery-1.4.4.min.js"></script>
+<link type="text/css" rel="stylesheet" href="inc/SyntaxHighlighter/Styles/SyntaxHighlighter.css">
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shCore.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushXml.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushCss.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushJScript.js"></script>
+<script language="javascript" src="inc/SyntaxHighlighter/Scripts/shBrushPhp.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript" src="inc/sample.js"></script>
+<script type="text/javascript">
+/*function resize(){
+	var ifr = parent.document.getElementsByTagName('iframe');
+    if(ifr){ifr[0].style.height = document.body.clientHeight+'px'}
+}
+addOnloadEvent(function(){
+	resize()
+})*/
+</script>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+<div class="sample">    
+<div class="tabMod1">
+	<h1>tb_single</h1>
+    <p class="detail">單筆表格兩欄</p>
+	<ul class="tabmenu clearfix">
+    	<li class="current">Demo</li>
+    	<li>HTML</li>
+    </ul>
+    <ul class="tabcont">
+        <li class="current">
+            <table class="stb1" width="41%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="hd">類型</td>
+        <td class="hd">className</td>
+        <td class="hd">text-align</td>
+    </tr>
+    <tr>
+        <td width="31%">幣別</td>
+        <td width="52%">.td_currency</td>
+        <td width="17%">center</td>
+    </tr>
+    <tr>
+        <td>日期</td>
+        <td>.td_date</td>
+        <td>center</td>
+    </tr>
+    <tr>
+        <td>筆次/批號</td>
+        <td>.td_sn</td>
+        <td>center</td>
+    </tr>
+    <tr>
+        <td>checkbox</td>
+        <td>.td_chk</td>
+        <td>center</td>
+    </tr>
+    <tr>
+        <td>金錢</td>
+        <td>.td_money</td>
+        <td>right</td>
+    </tr>
+</table>
+        </li>
+        <li>
+            <pre name="code" class="html">  
+&lt;table class="tb_single" width="100%" border="0" cellspacing="0" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td class="hd1" width="20%"&gt;公司戶名&lt;/td&gt;
+        &lt;td&gt;1234578 1 甲乙丙有限公司&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd1"&gt;帳　　號&lt;/td&gt;
+        &lt;td&gt;
+            &lt;select name="" id=""&gt;
+                &lt;option&gt;---請選擇---&lt;/option&gt;
+                &lt;option&gt;&lt;/option&gt;
+            &lt;/select&gt;
+        &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td class="hd1"&gt;&lt;span class="star"&gt;＊&lt;/span&gt;查詢期間&lt;/td&gt;
+        &lt;td&gt;
+            &lt;input type="radio" name="rad1" checked&gt;From：
+            &lt;input type="text" class="date_txt" value="YYYY/MM/DD"&gt;
+            &lt;a href="javascript:void(0);" class="calendar" onClick="datePicker(this)"&gt;&amp;nbsp;&lt;/a&gt;
+            To
+            &lt;input type="text" class="date_txt" value="YYYY/MM/DD"&gt;
+            &lt;a href="javascript:void(0);" class="calendar" onClick="datePicker(this)"&gt;&amp;nbsp;&lt;/a&gt;&lt;br&gt;
+            &lt;input type="radio" name="rad1"&gt;一周                
+            &lt;input type="radio" name="rad1"&gt;一個月
+        &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+            </pre>
+        </li>
+    </ul>
+</div>
+</div><!--sample-->
+<script language="javascript">  
+dp.SyntaxHighlighter.ClipboardSwf = 'inc/SyntaxHighlighter/Scripts/clipboard.swf';  
+dp.SyntaxHighlighter.HighlightAll('code');  
+</script>  
+</body>
+</html>

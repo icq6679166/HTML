@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>合作金庫-新一代企網銀</title>
+<link rel="stylesheet" type="text/css" media="all" href="../../inc/css/base.css">
+<link rel="stylesheet" type="text/css" media="print" href="../../inc/css/print.css">
+<script type="text/javascript" src="../../inc/calendar/popCalendar.js"></script>
+<script type="text/javascript" src="../../inc/js/base.js"></script>
+<script type="text/javascript">
+
+</script>
+<style type="text/css">
+
+</style>
+</head>
+
+<body>
+<div class="page_inner">
+<ul id="path" class="clearfix">
+    <li>管理中心</li>
+    <li>國內信用狀受款人管理</li>
+</ul>
+<div class="hbox">
+    <div class="fl">
+        <span class="trans_tit">國內信用狀受款人管理</span>
+    </div>
+    <div class="fl">
+        <a href="#" class="btn_addCommon">加入常用</a>
+    </div>
+    <div class="fr">
+        <div class="commonFunc">
+            <select name="commonFunc">
+                <option>--常用功能--</option>
+            </select>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="msg">
+  <div class="msgHd">
+    <div class="msgHd_wp"></div>
+  </div>
+  <div class="msg_cont">
+    <ul>
+      <li><a href="TWNBMA03_edit.html" class="btn_addEdit" title="新增一筆">新增一筆</a>：線上編輯國內信用狀受款人管理並新增。</li>
+      <li>請輸入查詢條件。</li>
+    </ul>
+  </div>
+</div>
+<div class="pageCont">
+  <table border="0" cellpadding="0" cellspacing="0" width="100%" class="tb_single">
+        <tr>
+          <td class="hd1" width="20%">統一編號</td>
+           <td><input name="text1" type="text" size="30"></td>
+        </tr>
+        <tr>
+          <td class="hd1">受益人戶名</td>
+          <td><input name="text2" type="text" size="30"></td>
+        </tr>
+    </table>
+    
+    <div class="btnBlock">
+    <a href="TWNBMA03_qry_result.html" class="btn_submit">查詢</a>
+    <a href="javascript:void(0)" class="btn_submit">清除</a></div>
+</div>
+</div>
+</body>
+</html>
